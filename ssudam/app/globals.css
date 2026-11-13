@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+
+  --color-cream: #fbf7f1;
+  --color-ink: #3a3550;
+  --color-ink-soft: #6f6a85;
+
+  --color-brand-50: #f5f2ff;
+  --color-brand-100: #ebe6ff;
+  --color-brand-200: #d8cfff;
+  --color-brand-300: #bcaefb;
+  --color-brand-400: #9f8ef5;
+  --color-brand-500: #8572ec;
+  --color-brand-600: #6d59d6;
+  --color-brand-700: #5645b0;
+
+  --color-peach-50: #fff5ee;
+  --color-peach-100: #ffe8d9;
+  --color-peach-200: #ffd3b6;
+  --color-peach-300: #ffb98f;
+  --color-peach-400: #f99f6d;
+  --color-peach-500: #e9834f;
+
+  --color-mint-50: #effaf6;
+  --color-mint-100: #d8f3ea;
+  --color-mint-200: #b0e6d6;
+  --color-mint-300: #82d4be;
+  --color-mint-400: #56bea4;
+  --color-mint-500: #38a48a;
+  --color-mint-700: #23715f;
+
+  --color-butter-50: #fffaea;
+  --color-butter-100: #fff2c6;
+  --color-butter-200: #ffe79b;
+
+  --animate-fade-up: fade-up 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-pop: pop 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.3) both;
+  --animate-float: float 7s ease-in-out infinite;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes pop {
+    from {
+      opacity: 0;
+      transform: scale(0.85);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  word-break: keep-all;
+}
+
+button,
+a,
+select,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:not(:disabled),
+select {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-400);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
