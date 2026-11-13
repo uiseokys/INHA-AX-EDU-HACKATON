@@ -7,16 +7,19 @@ AI 감정 변화 분석 기반 학교폭력 피해학생 조기 발견 및 지�
 > **시연용 프로토타입입니다.** 학생·학교·기관 정보는 모두 합성 데이터이며 실제 정보가 아닙니다.
 > 분석 결과는 진단이나 판정이 아닌 참고 정보이고, 로그인·암호화 등 민감정보 보호 기능은 구현되어 있지 않습니다.
 
-## 구성
+## 실행
 
-같은 서비스를 두 가지 방식으로 구현했습니다. 화면과 시연 흐름은 같습니다.
+Python(FastAPI + Jinja2)으로 구현했으며 코드는 [`ssudam-py/`](ssudam-py) 폴더에 있습니다. Python 3.10 이상이 필요합니다.
 
-| 폴더 | 구현 | 실행 |
-| --- | --- | --- |
-| [`ssudam-py/`](ssudam-py) | Python · FastAPI · Jinja2 (서버에서 화면 렌더링, 상태는 로컬 JSON 파일) | `uvicorn app.main:app --reload` → http://localhost:8000 |
-| [`ssudam/`](ssudam) | Next.js · TypeScript · Tailwind · Recharts (상태는 브라우저 localStorage) | `npm run dev` → http://localhost:3000 |
+```bash
+cd ssudam-py
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload     # http://localhost:8000
+```
 
-설치와 테스트 방법, 폴더 구조, 실제 AI 모델을 붙이는 위치는 각 폴더의 README를 참고하세요.
+테스트 방법, 폴더 구조, 실제 AI 모델을 붙이는 위치는 [`ssudam-py/README.md`](ssudam-py/README.md)를 참고하세요.
 
 ## 시연 흐름
 
