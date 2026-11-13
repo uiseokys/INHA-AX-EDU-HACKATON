@@ -1,0 +1,265 @@
+{# 여러 화면에서 함께 쓰는 UI 조각 #}
+
+{% macro logo(size="md") %}
+<span class="inline-flex items-center gap-2">
+  {{ bokbok("happy", "size-14" if size == "lg" else "size-10") }}
+  <span class="font-extrabold tracking-tight text-leaf-700 {{ 'text-4xl' if size == 'lg' else 'text-xl' }}">{{ SERVICE }}</span>
+</span>
+{% endmacro %}
+
+{# 복복이: 새싹을 단 몽글몽글 털뭉치 (자체 제작 캐릭터). mood: happy | cheer | care #}
+{% macro bokbok(mood="happy", cls="size-24", label=None) %}
+<svg viewBox="0 0 120 120" class="{{ cls }}" {% if label %}role="img" aria-label="{{ label }}"{% else %}aria-hidden="true"{% endif %}>
+  {# 팔·발 #}
+  {% for x, y in [(20, 76), (100, 76), (46, 102), (74, 102)] %}
+  <circle cx="{{ x }}" cy="{{ y }}" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  {% endfor %}
+  {# 몽글몽글 테두리 #}
+  {% for x, y in FLUFF %}
+  <circle cx="{{ x }}" cy="{{ y }}" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  {% endfor %}
+  <ellipse cx="60" cy="66" rx="38" ry="36" fill="var(--color-fluff)" />
+  {# 새싹 #}
+  <path d="M60 33 C60 26 60 22 60 17" stroke="var(--color-leaf-600)" stroke-width="3" stroke-linecap="round" fill="none" />
+  <path d="M60 20 C52 9 40 11 41 19 C47 23 55 23 60 20Z" fill="var(--color-leaf-400)" stroke="var(--color-leaf-600)" stroke-width="2" stroke-linejoin="round" />
+  <path d="M60 18 C67 6 80 8 79 16 C73 21 65 21 60 18Z" fill="var(--color-leaf-300)" stroke="var(--color-leaf-600)" stroke-width="2" stroke-linejoin="round" />
+  {# 볼 #}
+  <ellipse cx="40" cy="75" rx="6.5" ry="3.8" fill="#f4a3a0" opacity="0.55" />
+  <ellipse cx="80" cy="75" rx="6.5" ry="3.8" fill="#f4a3a0" opacity="0.55" />
+  {# 눈·입 #}
+  {% if mood == "cheer" %}
+  <path d="M43 65 q5 -6 10 0 M67 65 q5 -6 10 0" stroke="#3b2f2a" stroke-width="3" stroke-linecap="round" fill="none" />
+  <path d="M52 72 q8 11 16 0 z" fill="#3b2f2a" />
+  <path d="M56 76 q4 3 8 0" stroke="#f08a84" stroke-width="2.5" stroke-linecap="round" fill="none" />
+  {% elif mood == "care" %}
+  <ellipse cx="48" cy="65" rx="3" ry="3.6" fill="#3b2f2a" />
+  <ellipse cx="72" cy="65" rx="3" ry="3.6" fill="#3b2f2a" />
+  <path d="M44 57 l7 2 M76 57 l-7 2" stroke="#3b2f2a" stroke-width="2.4" stroke-linecap="round" />
+  <path d="M55 75 q5 3 10 0" stroke="#3b2f2a" stroke-width="2.6" stroke-linecap="round" fill="none" />
+  {% else %}
+  <ellipse cx="48" cy="65" rx="3.2" ry="4" fill="#3b2f2a" />
+  <ellipse cx="72" cy="65" rx="3.2" ry="4" fill="#3b2f2a" />
+  <circle cx="49.2" cy="63.4" r="1.1" fill="#fff" />
+  <circle cx="73.2" cy="63.4" r="1.1" fill="#fff" />
+  <path d="M54 72 q6 6 12 0" stroke="#3b2f2a" stroke-width="2.8" stroke-linecap="round" fill="none" />
+  {% endif %}
+</svg>
+{% endmacro %}
+
+{# 감정 스티커 (기획서 색상) #}
+{% macro sticker(eid, cls="size-12") %}
+{% set e = E[eid] %}
+<svg viewBox="0 0 100 100" class="{{ cls }}" role="img" aria-label="{{ e.label }} 스티커">
+  <circle cx="50" cy="52" r="42" fill="{{ e.color }}" />
+  <ellipse cx="34" cy="30" rx="11" ry="6" fill="#fff" opacity="0.4" transform="rotate(-25 34 30)" />
+  <g stroke="#3b2f2a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+  {% if eid == "joy" %}
+    <path d="M31 48 q6 -8 12 0 M57 48 q6 -8 12 0" />
+    <path d="M37 60 q13 16 26 0 z" fill="#3b2f2a" />
+  {% elif eid == "calm" %}
+    <path d="M31 49 q6 6 12 0 M57 49 q6 6 12 0" />
+    <path d="M42 63 q8 7 16 0" />
+  {% elif eid == "sad" %}
+    <path d="M30 41 L41 37 M70 41 L59 37" />
+    <path d="M42 68 q8 -8 16 0" />
+  {% elif eid == "anxious" %}
+    <path d="M36 66 q3.5 -4 7 0 q3.5 4 7 0 q3.5 -4 7 0 q3.5 4 7 0" />
+  {% elif eid == "angry" %}
+    <path d="M30 38 L43 44 M70 38 L57 44" />
+    <path d="M41 68 q9 -7 18 0" />
+  {% endif %}
+  </g>
+  {% if eid in ("sad", "anxious", "angry") %}
+  <circle cx="37" cy="51" r="3.6" fill="#3b2f2a" />
+  <circle cx="63" cy="51" r="3.6" fill="#3b2f2a" />
+  {% endif %}
+  {% if eid in ("joy", "calm") %}
+  <ellipse cx="27" cy="60" rx="6" ry="3.5" fill="#f08a84" opacity="0.45" />
+  <ellipse cx="73" cy="60" rx="6" ry="3.5" fill="#f08a84" opacity="0.45" />
+  {% endif %}
+  {% if eid == "sad" %}<path d="M68 57 q-4 7 0 10 q4 -3 0 -10z" fill="#5b8fd8" />{% endif %}
+  {% if eid == "anxious" %}<path d="M78 28 q-5 8 0 11 q5 -3 0 -11z" fill="#8fb8ec" />{% endif %}
+</svg>
+{% endmacro %}
+
+{% macro card_title(icon_name, title, hint=None) %}
+<div class="mb-4 flex items-start justify-between gap-3">
+  <div class="flex min-w-0 items-center gap-2.5">
+    {% if icon_name %}
+    <span class="grid size-9 shrink-0 place-items-center rounded-2xl bg-leaf-50 text-leaf-600">{{ icon(icon_name) }}</span>
+    {% endif %}
+    <div class="min-w-0">
+      <h2 class="text-base font-bold text-ink">{{ title }}</h2>
+      {% if hint %}<p class="mt-0.5 text-xs text-ink-soft">{{ hint }}</p>{% endif %}
+    </div>
+  </div>
+  {% if caller %}{{ caller() }}{% endif %}
+</div>
+{% endmacro %}
+
+{% macro notice(tone="info") %}
+<p class="flex gap-2 rounded-2xl px-4 py-3 text-xs leading-relaxed {{ 'bg-amber-50 text-amber-900/85 ring-1 ring-amber-100' if tone == 'warn' else 'bg-leaf-50 text-leaf-800/90 ring-1 ring-leaf-100' }}">
+  {{ icon("info", "mt-0.5 size-3.5 shrink-0") }}<span>{{ caller() }}</span>
+</p>
+{% endmacro %}
+
+{% macro switch(name, checked, title, desc, autosubmit=False) %}
+<label class="flex cursor-pointer items-center justify-between gap-3 rounded-2xl bg-stone-50 px-4 py-3">
+  <span class="text-sm text-ink">
+    <span class="font-semibold">{{ title }}</span>
+    <span class="block text-xs text-ink-soft">{{ desc }}</span>
+  </span>
+  <input type="checkbox" name="{{ name }}" value="1" class="peer sr-only" {% if checked %}checked{% endif %} {% if autosubmit %}data-autosubmit{% endif %} />
+  <span class="relative h-6 w-11 shrink-0 rounded-full bg-stone-300 transition peer-checked:bg-leaf-500 peer-focus-visible:ring-4 peer-focus-visible:ring-leaf-100 after:absolute after:top-0.5 after:left-0.5 after:size-5 after:rounded-full after:bg-white after:shadow after:transition peer-checked:after:translate-x-5"></span>
+</label>
+{% endmacro %}
+
+{% macro level_chip(level) %}
+<span class="{{ chip }} {{ LEVELS[level].chip }}"><span class="size-1.5 rounded-full {{ LEVELS[level].dot }}"></span>{{ LEVELS[level].label }}</span>
+{% endmacro %}
+
+{# 전화 걸기 버튼: 누르면 확인 창이 뜸 (자바스크립트가 없으면 바로 전화 연결) #}
+{% macro call_button(cid, cls="") %}
+{% set c = CONTACTS[cid] %}
+<a href="tel:{{ c.number }}" data-call="{{ c.number }}" data-call-name="{{ c.name }}"
+   class="flex items-center justify-between gap-3 rounded-2xl px-4 py-3 transition {{ 'bg-rose-50 hover:bg-rose-100' if c.urgent else 'bg-stone-50 hover:bg-leaf-50' }} {{ cls }}">
+  <span class="min-w-0">
+    <span class="block text-sm font-semibold text-ink">{{ c.name }}</span>
+    <span class="block text-xs text-ink-soft">{{ c.desc }}</span>
+  </span>
+  <span class="flex shrink-0 items-center gap-1 text-lg font-extrabold {{ 'text-rose-600' if c.urgent else 'text-leaf-700' }}">{{ icon("phone", "size-4") }}{{ c.number }}</span>
+</a>
+{% endmacro %}
+
+{# 최근 14일 마음 점수 그래프: 선은 SVG, 점·눈금은 백분율 위치의 HTML 요소 #}
+{% macro mood_chart(chart, height="h-56") %}
+<div>
+  <div class="relative mt-4 mr-3 ml-7 {{ height }}">
+    {% for g in chart.grid %}
+    <div class="absolute inset-x-0 border-t border-leaf-100" style="top: {{ g.y }}%"></div>
+    <span class="absolute -left-7 w-5 -translate-y-1/2 text-right text-[11px] text-stone-400" style="top: {{ g.y }}%">{{ g.label }}</span>
+    {% endfor %}
+    <svg class="absolute inset-0 size-full overflow-visible" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="mood-fill" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#6db068" stop-opacity="0.25" />
+          <stop offset="1" stop-color="#6db068" stop-opacity="0" />
+        </linearGradient>
+      </defs>
+      {% if chart.area_path %}<path d="{{ chart.area_path }}" fill="url(#mood-fill)" />{% endif %}
+      {% if chart.avg_path %}<path d="{{ chart.avg_path }}" fill="none" stroke="#e7b84a" stroke-width="2" stroke-dasharray="5 5" stroke-linecap="round" vector-effect="non-scaling-stroke" />{% endif %}
+      {% if chart.score_path %}<path d="{{ chart.score_path }}" fill="none" stroke="#3d7c3c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" />{% endif %}
+    </svg>
+    {% for d in chart.dots %}
+    {% set p = d.point %}
+    <button type="button" class="group absolute z-10 grid size-8 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full hover:z-20 focus:z-20 focus:outline-none"
+            style="left: {{ d.x }}%; top: {{ d.y }}%" aria-label="{{ p.date | day_label }} {{ E[p.emotion].label }}">
+      <span class="block rounded-full transition group-hover:scale-125 group-focus:scale-125 {{ 'size-4 ring-4 ring-leaf-300/60' if d.today else 'size-3' }}"
+            style="background: {{ E[p.emotion].color }}; box-shadow: 0 0 0 2px #fff, 0 0 0 3.5px {{ E[p.emotion].deep }}"></span>
+      <span class="pointer-events-none absolute hidden w-52 rounded-2xl border border-stone-100 bg-white px-3.5 py-3 text-left text-xs font-normal shadow-lg group-hover:block group-focus:block
+                   {{ 'top-full mt-1' if d.below else 'bottom-full mb-1' }}
+                   {{ 'left-0' if d.align == 'left' else 'right-0' if d.align == 'right' else 'left-1/2 -translate-x-1/2' }}">
+        <span class="block font-bold text-ink">{{ p.date | day_label }} · {{ E[p.emotion].label }}</span>
+        {% if p.words %}<span class="mt-1 block text-ink-soft">{{ p.words | join(", ") }}</span>{% endif %}
+        {% if p.note %}<span class="mt-1.5 block border-t border-stone-100 pt-1.5 text-ink-soft">“{{ p.note }}”</span>{% endif %}
+      </span>
+    </button>
+    {% endfor %}
+  </div>
+  <div class="relative mt-2 mr-3 ml-7 h-4">
+    {% for t in chart.ticks %}<span class="absolute -translate-x-1/2 text-[11px] text-stone-400" style="left: {{ t.x }}%">{{ t.label }}</span>{% endfor %}
+  </div>
+  <div class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-ink-soft">
+    <span class="flex items-center gap-1.5"><span class="h-0.5 w-4 rounded bg-leaf-600"></span> 그날의 마음</span>
+    <span class="flex items-center gap-1.5"><span class="w-4 border-t-2 border-dashed border-[#e7b84a]"></span> 최근 3회 평균</span>
+    <span>위로 갈수록 가벼운 마음 · 점 색은 감정 색</span>
+  </div>
+</div>
+{% endmacro %}
+
+{% macro emotion_bars(ratio) %}
+<ul class="space-y-2">
+  {% for r in ratio %}
+  <li class="flex items-center gap-2 text-sm">
+    {{ sticker(r.emotion, "size-7 shrink-0") }}
+    <span class="w-10 shrink-0 text-ink">{{ E[r.emotion].label }}</span>
+    <span class="h-2.5 flex-1 overflow-hidden rounded-full bg-stone-100">
+      <span class="block h-full rounded-full" style="width: {{ r.pct }}%; background: {{ E[r.emotion].color }}"></span>
+    </span>
+    <span class="w-16 shrink-0 text-right text-xs text-ink-soft">{{ r.count }}회 · {{ r.pct }}%</span>
+  </li>
+  {% endfor %}
+</ul>
+{% endmacro %}
+
+{% macro sparkline(spark) %}
+{% if spark %}
+<svg viewBox="0 0 {{ spark.width }} {{ spark.height }}" class="h-8 w-24" role="img" aria-label="최근 14일 마음 추이">
+  <polyline points="{{ spark.points }}" fill="none" stroke="#6db068" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="{{ spark.last.x }}" cy="{{ spark.last.y }}" r="3" fill="#fff" stroke="#3d7c3c" stroke-width="2" />
+</svg>
+{% else %}<span class="text-xs text-stone-400">기록 적음</span>{% endif %}
+{% endmacro %}
+
+{# 감정 달력 (스티커 붙이는 달력) #}
+{% macro calendar(cells, today, small=False) %}
+<div class="grid grid-cols-7 gap-1.5 text-center">
+  {% for w in ["일", "월", "화", "수", "목", "금", "토"] %}<span class="text-[11px] font-semibold {{ 'text-rose-400' if loop.first else 'text-stone-400' }}">{{ w }}</span>{% endfor %}
+  {% for c in cells %}
+  {% if not c.date %}<span></span>
+  {% else %}
+  <span class="relative flex aspect-square flex-col items-center justify-center rounded-2xl {{ 'ring-2 ring-leaf-400' if c.date == today else '' }} {{ 'bg-white' if c.record else ('bg-stone-50' if c.date <= today else 'bg-transparent') }}"
+        title="{{ c.date | day_label }}{% if c.record %} · {{ E[c.record.emotion].label }}{% endif %}">
+    {% if c.record %}{{ sticker(c.record.emotion, "size-[78%]") }}
+    {% else %}<span class="text-xs {{ 'text-stone-400' if c.date <= today else 'text-stone-300' }}">{{ c.date[8:] | int }}</span>{% endif %}
+  </span>
+  {% endif %}
+  {% endfor %}
+</div>
+{% endmacro %}
+
+{# 카톡 공지처럼 상단에 고정되는 교사 알림 #}
+{% macro pinned_notice(alerts, path) %}
+{% set a = alerts[0] %}
+<details class="group border-t border-white/70 bg-white/95">
+  <summary class="mx-auto flex max-w-6xl cursor-pointer list-none items-center gap-3 px-4 py-2.5 sm:px-6 [&::-webkit-details-marker]:hidden">
+    <span class="grid size-8 shrink-0 place-items-center rounded-full bg-rose-50 text-rose-500">{{ icon("megaphone", "size-4") }}</span>
+    <span class="min-w-0 flex-1 text-sm">
+      <span class="font-bold text-ink">{{ get_student(a.student_id).name }} 학생</span>
+      <span class="text-ink-soft"> · {{ a.summary }}</span>
+    </span>
+    <span class="hidden shrink-0 text-xs text-stone-400 sm:inline">{{ rel(a.date, today) }} {{ a.time }}</span>
+    {% if alerts | length > 1 %}<span class="{{ chip }} shrink-0 bg-rose-100 text-rose-700">+{{ alerts | length - 1 }}</span>{% endif %}
+    {{ icon("chevron-down", "size-4 shrink-0 text-stone-400 transition group-open:rotate-180") }}
+  </summary>
+  <ul class="mx-auto max-w-6xl space-y-2 px-4 pb-3 sm:px-6">
+    {% for a in alerts %}
+    <li class="flex flex-wrap items-center gap-2 rounded-2xl bg-stone-50 px-4 py-2.5 text-sm">
+      <span class="font-semibold text-ink">{{ get_student(a.student_id).name }}</span>
+      <span class="min-w-0 flex-1 text-ink-soft">{{ a.summary }}</span>
+      <span class="text-xs text-stone-400">{{ rel(a.date, today) }} {{ a.time }}</span>
+      <a href="/teacher/students/{{ a.student_id }}" class="{{ btn.soft }} px-3 py-1.5 text-xs">학생 보기</a>
+      <form method="post" action="/teacher/alerts/{{ a.id }}/read"><input type="hidden" name="next" value="{{ path }}" />
+        <button class="{{ btn.ghost }} px-3 py-1.5 text-xs">{{ icon("check", "size-3.5") }} 확인</button></form>
+    </li>
+    {% endfor %}
+  </ul>
+</details>
+{% endmacro %}
+
+{% macro demo_footer(path) %}
+<footer class="mx-auto w-full max-w-6xl px-4 pt-6 pb-28 text-xs leading-relaxed text-ink-soft sm:px-6 md:pb-10">
+  <div class="flex flex-col gap-3 rounded-3xl bg-white/60 p-4 sm:flex-row sm:items-center sm:justify-between">
+    <p>
+      시연용 프로토타입입니다. 학생·학교·선생님 정보는 모두 <strong>합성 데이터</strong>이고, 분석 결과는 진단이 아닌 참고 정보입니다.
+      기록은 이 서버의 로컬 파일에만 저장됩니다.
+    </p>
+    <form method="post" action="/reset" class="shrink-0 self-start sm:self-auto" data-scroll-top>
+      <input type="hidden" name="next" value="{{ path }}" />
+      <button class="inline-flex items-center gap-1.5 rounded-full border border-stone-200 bg-white px-3 py-1.5 font-semibold text-ink-soft transition hover:border-leaf-300 hover:text-leaf-700">
+        {{ icon("rotate-ccw", "size-3.5") }} 시연 데이터 초기화
+      </button>
+    </form>
+  </div>
+</footer>
+{% endmacro %}

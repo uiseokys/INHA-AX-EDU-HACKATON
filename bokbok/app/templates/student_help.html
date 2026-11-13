@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% import "_ui.html" as ui with context %}
+{% block title %}도움이 필요할 때 · {{ SERVICE }}{% endblock %}
+
+{% block content %}
+<header class="text-center">
+  <h1 class="text-2xl font-extrabold text-ink">도움이 필요할 때</h1>
+  <p class="mt-1 text-sm text-ink-soft">혼자 해결하기 어려운 일이 있다면 도움을 요청해도 괜찮아요.</p>
+</header>
+
+<section class="rounded-3xl bg-rose-50 p-5 ring-1 ring-rose-100">
+  <p class="flex items-center gap-2 text-sm font-bold text-rose-700">{{ icon("siren", "size-4") }} 지금 위험하다면 바로 전화하세요</p>
+  <div class="mt-3 grid gap-2 sm:grid-cols-3">
+    {% for cid in ["112", "109", "119"] %}{{ ui.call_button(cid, "bg-white") }}{% endfor %}
+  </div>
+</section>
+
+<ul class="grid grid-cols-2 gap-3 md:grid-cols-3">
+  {% for c in categories %}
+  <li>
+    <a href="/student/help/{{ c.id }}" class="{{ card }} group flex h-full flex-col gap-2 transition hover:-translate-y-0.5 hover:ring-2 hover:ring-leaf-200">
+      <span class="grid size-10 place-items-center rounded-2xl bg-leaf-50 text-leaf-600 transition group-hover:bg-leaf-600 group-hover:text-white">{{ icon(c.icon) }}</span>
+      <span class="font-bold text-ink">{{ c.title }}</span>
+      <span class="text-xs text-ink-soft">{{ c.summary }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+
+<div class="grid items-start gap-5 lg:grid-cols-2">
+  <section class="{{ card }}">
+    {{ ui.card_title("phone", "상담 전화") }}
+    <div class="space-y-2">{% for cid in ["1388", "117", "1366"] %}{{ ui.call_button(cid) }}{% endfor %}</div>
+  </section>
+  <section class="{{ card }}">
+    {{ ui.card_title("hand-heart", "상담 신청하기") }}
+    <div class="space-y-2">
+      <a href="/student/counsel?teacher=homeroom" class="flex items-center justify-between rounded-2xl bg-stone-50 px-4 py-3 hover:bg-leaf-50">
+        <span><span class="block text-sm font-semibold text-ink">담임 선생님과 상담</span><span class="text-xs text-ink-soft">선생님이 열어 둔 시간 중에 골라요</span></span>{{ icon("chevron-right", "size-4 text-stone-400") }}</a>
+      <a href="/student/counsel?teacher=wee" class="flex items-center justify-between rounded-2xl bg-stone-50 px-4 py-3 hover:bg-leaf-50">
+        <span><span class="block text-sm font-semibold text-ink">교내 Wee클래스 상담</span><span class="text-xs text-ink-soft">전문 상담 선생님과 이야기해요</span></span>{{ icon("chevron-right", "size-4 text-stone-400") }}</a>
+      {% for l in links %}
+      <a href="{{ l.url }}" target="_blank" rel="noopener" class="flex items-center justify-between rounded-2xl bg-stone-50 px-4 py-3 hover:bg-leaf-50">
+        <span><span class="block text-sm font-semibold text-ink">{{ l.name }}</span><span class="text-xs text-ink-soft">{{ l.desc }}</span></span>{{ icon("external-link", "size-4 shrink-0 text-stone-400") }}</a>
+      {% endfor %}
+    </div>
+  </section>
+</div>
+
+{% call ui.notice("warn") %}
+각 항목의 설명은 개발 중 넣어 둔 <strong>임시 문구</strong>예요. 팀에서 작성한 내용으로 바꿀 예정입니다. 전화번호는 실제 국내 긴급·상담 번호예요.
+{% endcall %}
+{% endblock %}

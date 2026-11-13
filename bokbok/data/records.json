@@ -1,0 +1,3746 @@
+{
+ "_notice": "시연용 합성 데이터입니다. 실제 학생 정보가 아닙니다. scripts/generate_data.py 로 생성됩니다.",
+ "records": [
+  {
+   "student_id": "S01",
+   "day_offset": -34,
+   "emotion": "calm",
+   "words": [
+    "여유로운",
+    "만족스러운",
+    "편안한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -33,
+   "emotion": "calm",
+   "words": [
+    "포근한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -32,
+   "emotion": "anxious",
+   "words": [
+    "초조한",
+    "두려운"
+   ],
+   "note": "좋아하는 노래를 들으며 등교했다",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -30,
+   "emotion": "calm",
+   "words": [
+    "포근한",
+    "여유로운",
+    "안심되는"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -29,
+   "emotion": "anxious",
+   "words": [
+    "불편한"
+   ],
+   "note": "급식에 좋아하는 메뉴가 나왔다",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -28,
+   "emotion": "joy",
+   "words": [
+    "신나는",
+    "고마운"
+   ],
+   "note": "급식에 좋아하는 메뉴가 나왔다",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -27,
+   "emotion": "calm",
+   "words": [
+    "차분한",
+    "여유로운"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -26,
+   "emotion": "calm",
+   "words": [
+    "홀가분한",
+    "여유로운"
+   ],
+   "note": "동아리에서 새 활동을 시작했다",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -25,
+   "emotion": "calm",
+   "words": [
+    "여유로운"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -24,
+   "emotion": "anxious",
+   "words": [
+    "긴장되는",
+    "초조한"
+   ],
+   "note": "친구랑 매점에 갔다",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -23,
+   "emotion": "calm",
+   "words": [
+    "포근한",
+    "안심되는"
+   ],
+   "note": "친구랑 매점에 갔다",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -22,
+   "emotion": "calm",
+   "words": [
+    "홀가분한"
+   ],
+   "note": "주말에 가족이랑 산책했다",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -21,
+   "emotion": "anxious",
+   "words": [
+    "불편한",
+    "막막한"
+   ],
+   "note": "주말에 가족이랑 산책했다",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -20,
+   "emotion": "calm",
+   "words": [
+    "안심되는",
+    "편안한",
+    "여유로운"
+   ],
+   "note": "좋아하는 노래를 들으며 등교했다",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -19,
+   "emotion": "calm",
+   "words": [
+    "홀가분한",
+    "포근한"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -18,
+   "emotion": "calm",
+   "words": [
+    "여유로운"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -17,
+   "emotion": "joy",
+   "words": [
+    "자랑스러운",
+    "뿌듯한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -16,
+   "emotion": "calm",
+   "words": [
+    "홀가분한",
+    "포근한"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -14,
+   "emotion": "joy",
+   "words": [
+    "신나는"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -11,
+   "emotion": "joy",
+   "words": [
+    "신나는"
+   ],
+   "note": "친구랑 매점에 갔다",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -10,
+   "emotion": "joy",
+   "words": [
+    "즐거운",
+    "신나는"
+   ],
+   "note": "친구랑 매점에 갔다",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -9,
+   "emotion": "joy",
+   "words": [
+    "자랑스러운",
+    "활기찬",
+    "고마운"
+   ],
+   "note": "급식에 좋아하는 메뉴가 나왔다",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -8,
+   "emotion": "anxious",
+   "words": [
+    "초조한"
+   ],
+   "note": "친구랑 매점에 갔다",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -7,
+   "emotion": "calm",
+   "words": [
+    "차분한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -6,
+   "emotion": "calm",
+   "words": [
+    "만족스러운"
+   ],
+   "note": "주말에 가족이랑 산책했다",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -5,
+   "emotion": "anxious",
+   "words": [
+    "막막한",
+    "초조한"
+   ],
+   "note": "점심시간에 혼자 있었다",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -4,
+   "emotion": "calm",
+   "words": [
+    "여유로운",
+    "포근한"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -3,
+   "emotion": "calm",
+   "words": [
+    "홀가분한"
+   ],
+   "note": "동아리에서 새 활동을 시작했다",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -2,
+   "emotion": "sad",
+   "words": [
+    "서운한",
+    "외로운"
+   ],
+   "note": "모둠 활동 때 내 의견은 그냥 넘어갔다",
+   "shared": false
+  },
+  {
+   "student_id": "S01",
+   "day_offset": -1,
+   "emotion": "calm",
+   "words": [
+    "느긋한",
+    "만족스러운"
+   ],
+   "note": "주말에 가족이랑 산책했다",
+   "shared": false
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -34,
+   "emotion": "joy",
+   "words": [
+    "설레는"
+   ],
+   "note": "급식에 좋아하는 메뉴가 나왔다",
+   "shared": true
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -33,
+   "emotion": "calm",
+   "words": [
+    "차분한"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": true
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -32,
+   "emotion": "joy",
+   "words": [
+    "뿌듯한",
+    "즐거운"
+   ],
+   "note": "급식에 좋아하는 메뉴가 나왔다",
+   "shared": false
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -31,
+   "emotion": "calm",
+   "words": [
+    "여유로운",
+    "안심되는"
+   ],
+   "note": "동아리에서 새 활동을 시작했다",
+   "shared": true
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -30,
+   "emotion": "joy",
+   "words": [
+    "즐거운"
+   ],
+   "note": "좋아하는 노래를 들으며 등교했다",
+   "shared": true
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -29,
+   "emotion": "calm",
+   "words": [
+    "느긋한",
+    "차분한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -28,
+   "emotion": "calm",
+   "words": [
+    "포근한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -27,
+   "emotion": "joy",
+   "words": [
+    "설레는"
+   ],
+   "note": "동아리에서 새 활동을 시작했다",
+   "shared": false
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -25,
+   "emotion": "calm",
+   "words": [
+    "여유로운",
+    "홀가분한"
+   ],
+   "note": "급식에 좋아하는 메뉴가 나왔다",
+   "shared": true
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -24,
+   "emotion": "calm",
+   "words": [
+    "여유로운"
+   ],
+   "note": "동아리에서 새 활동을 시작했다",
+   "shared": false
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -23,
+   "emotion": "joy",
+   "words": [
+    "행복한"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": false
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -22,
+   "emotion": "joy",
+   "words": [
+    "뿌듯한",
+    "활기찬",
+    "신나는"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -21,
+   "emotion": "calm",
+   "words": [
+    "만족스러운",
+    "여유로운"
+   ],
+   "note": "동아리에서 새 활동을 시작했다",
+   "shared": false
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -20,
+   "emotion": "joy",
+   "words": [
+    "신나는"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -19,
+   "emotion": "joy",
+   "words": [
+    "활기찬"
+   ],
+   "note": "주말에 가족이랑 산책했다",
+   "shared": true
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -18,
+   "emotion": "joy",
+   "words": [
+    "고마운",
+    "설레는"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": false
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -17,
+   "emotion": "joy",
+   "words": [
+    "고마운",
+    "설레는"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -15,
+   "emotion": "calm",
+   "words": [
+    "여유로운",
+    "만족스러운"
+   ],
+   "note": "동아리에서 새 활동을 시작했다",
+   "shared": false
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -14,
+   "emotion": "joy",
+   "words": [
+    "즐거운"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": false
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -12,
+   "emotion": "joy",
+   "words": [
+    "활기찬"
+   ],
+   "note": "급식에 좋아하는 메뉴가 나왔다",
+   "shared": false
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -11,
+   "emotion": "calm",
+   "words": [
+    "편안한",
+    "만족스러운",
+    "차분한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -10,
+   "emotion": "joy",
+   "words": [
+    "신나는"
+   ],
+   "note": "좋아하는 노래를 들으며 등교했다",
+   "shared": false
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -8,
+   "emotion": "joy",
+   "words": [
+    "뿌듯한",
+    "고마운"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -7,
+   "emotion": "joy",
+   "words": [
+    "고마운",
+    "뿌듯한",
+    "활기찬"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -6,
+   "emotion": "joy",
+   "words": [
+    "설레는",
+    "자랑스러운"
+   ],
+   "note": "급식에 좋아하는 메뉴가 나왔다",
+   "shared": true
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -5,
+   "emotion": "joy",
+   "words": [
+    "행복한",
+    "설레는",
+    "뿌듯한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -4,
+   "emotion": "joy",
+   "words": [
+    "신나는",
+    "즐거운"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -3,
+   "emotion": "joy",
+   "words": [
+    "행복한",
+    "고마운"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -2,
+   "emotion": "angry",
+   "words": [
+    "분한",
+    "미운"
+   ],
+   "note": "체육 시간에 피구를 했다",
+   "shared": false
+  },
+  {
+   "student_id": "S02",
+   "day_offset": -1,
+   "emotion": "calm",
+   "words": [
+    "홀가분한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S02",
+   "day_offset": 0,
+   "emotion": "joy",
+   "words": [
+    "활기찬",
+    "자랑스러운"
+   ],
+   "note": "체육 시간에 피구를 했다",
+   "shared": false
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -34,
+   "emotion": "anxious",
+   "words": [
+    "불편한"
+   ],
+   "note": "학원 숙제가 너무 많다",
+   "shared": false
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -33,
+   "emotion": "anxious",
+   "words": [
+    "막막한"
+   ],
+   "note": "시험 범위가 너무 넓다",
+   "shared": true
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -32,
+   "emotion": "anxious",
+   "words": [
+    "눈치 보이는"
+   ],
+   "note": "공부해도 점수가 안 오른다",
+   "shared": true
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -31,
+   "emotion": "joy",
+   "words": [
+    "뿌듯한"
+   ],
+   "note": "체육 시간에 피구를 했다",
+   "shared": false
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -30,
+   "emotion": "calm",
+   "words": [
+    "만족스러운"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": true
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -28,
+   "emotion": "angry",
+   "words": [
+    "분한"
+   ],
+   "note": "시험 범위가 너무 넓다",
+   "shared": false
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -25,
+   "emotion": "anxious",
+   "words": [
+    "불편한"
+   ],
+   "note": "수학 쪽지시험을 망쳤다",
+   "shared": true
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -24,
+   "emotion": "calm",
+   "words": [
+    "홀가분한",
+    "여유로운",
+    "차분한"
+   ],
+   "note": "좋아하는 노래를 들으며 등교했다",
+   "shared": true
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -23,
+   "emotion": "anxious",
+   "words": [
+    "긴장되는",
+    "막막한"
+   ],
+   "note": "수행평가가 한꺼번에 몰렸다",
+   "shared": true
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -22,
+   "emotion": "angry",
+   "words": [
+    "질투 나는",
+    "답답한"
+   ],
+   "note": "공부해도 점수가 안 오른다",
+   "shared": true
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -21,
+   "emotion": "joy",
+   "words": [
+    "자랑스러운",
+    "신나는",
+    "즐거운"
+   ],
+   "note": "체육 시간에 피구를 했다",
+   "shared": true
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -20,
+   "emotion": "calm",
+   "words": [
+    "여유로운"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -19,
+   "emotion": "anxious",
+   "words": [
+    "걱정되는",
+    "조마조마한"
+   ],
+   "note": "시험 범위가 너무 넓다",
+   "shared": true
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -18,
+   "emotion": "joy",
+   "words": [
+    "신나는"
+   ],
+   "note": "좋아하는 노래를 들으며 등교했다",
+   "shared": true
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -17,
+   "emotion": "joy",
+   "words": [
+    "즐거운"
+   ],
+   "note": "주말에 가족이랑 산책했다",
+   "shared": false
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -16,
+   "emotion": "anxious",
+   "words": [
+    "눈치 보이는",
+    "막막한",
+    "긴장되는"
+   ],
+   "note": "수학 쪽지시험을 망쳤다",
+   "shared": true
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -15,
+   "emotion": "anxious",
+   "words": [
+    "눈치 보이는"
+   ],
+   "note": "시험 범위가 너무 넓다",
+   "shared": true
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -14,
+   "emotion": "anxious",
+   "words": [
+    "조마조마한"
+   ],
+   "note": "공부해도 점수가 안 오른다",
+   "shared": true
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -13,
+   "emotion": "anxious",
+   "words": [
+    "초조한",
+    "불편한"
+   ],
+   "note": "수행평가가 한꺼번에 몰렸다",
+   "shared": false
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -12,
+   "emotion": "anxious",
+   "words": [
+    "두려운"
+   ],
+   "note": "학원 숙제가 너무 많다",
+   "shared": true
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -11,
+   "emotion": "anxious",
+   "words": [
+    "눈치 보이는",
+    "초조한"
+   ],
+   "note": "수학 쪽지시험을 망쳤다",
+   "shared": false
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -10,
+   "emotion": "joy",
+   "words": [
+    "뿌듯한"
+   ],
+   "note": "급식에 좋아하는 메뉴가 나왔다",
+   "shared": true
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -8,
+   "emotion": "anxious",
+   "words": [
+    "초조한",
+    "조마조마한",
+    "막막한"
+   ],
+   "note": "성적 얘기만 들으면 숨이 막힌다",
+   "shared": true
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -7,
+   "emotion": "anxious",
+   "words": [
+    "불편한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -6,
+   "emotion": "calm",
+   "words": [
+    "느긋한",
+    "만족스러운"
+   ],
+   "note": "친구랑 매점에 갔다",
+   "shared": false
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -5,
+   "emotion": "joy",
+   "words": [
+    "설레는"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": true
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -4,
+   "emotion": "calm",
+   "words": [
+    "편안한"
+   ],
+   "note": "좋아하는 노래를 들으며 등교했다",
+   "shared": false
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -3,
+   "emotion": "joy",
+   "words": [
+    "자랑스러운",
+    "설레는",
+    "뿌듯한"
+   ],
+   "note": "친구랑 매점에 갔다",
+   "shared": false
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -2,
+   "emotion": "calm",
+   "words": [
+    "차분한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S03",
+   "day_offset": -1,
+   "emotion": "anxious",
+   "words": [
+    "두려운",
+    "막막한"
+   ],
+   "note": "성적 얘기만 들으면 숨이 막힌다",
+   "shared": true
+  },
+  {
+   "student_id": "S03",
+   "day_offset": 0,
+   "emotion": "anxious",
+   "words": [
+    "두려운",
+    "조마조마한",
+    "긴장되는"
+   ],
+   "note": "수학 쪽지시험을 망쳤다",
+   "shared": true
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -34,
+   "emotion": "calm",
+   "words": [
+    "홀가분한"
+   ],
+   "note": "친구가 내 말을 무시했다",
+   "shared": false
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -33,
+   "emotion": "calm",
+   "words": [
+    "홀가분한",
+    "안심되는"
+   ],
+   "note": "모둠 활동 때 내 의견은 그냥 넘어갔다",
+   "shared": true
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -32,
+   "emotion": "sad",
+   "words": [
+    "그리운"
+   ],
+   "note": "점심시간에 혼자 있었다",
+   "shared": false
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -31,
+   "emotion": "calm",
+   "words": [
+    "느긋한",
+    "차분한"
+   ],
+   "note": "모둠 활동 때 내 의견은 그냥 넘어갔다",
+   "shared": false
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -30,
+   "emotion": "sad",
+   "words": [
+    "속상한",
+    "허전한"
+   ],
+   "note": "점심시간에 혼자 있었다",
+   "shared": true
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -29,
+   "emotion": "calm",
+   "words": [
+    "편안한",
+    "여유로운"
+   ],
+   "note": "쉬는 시간에 애들이 내 얘기를 하는 것 같아 눈치 보였다",
+   "shared": true
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -28,
+   "emotion": "calm",
+   "words": [
+    "안심되는",
+    "느긋한",
+    "차분한"
+   ],
+   "note": "친구가 내 말을 무시했다",
+   "shared": false
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -27,
+   "emotion": "calm",
+   "words": [
+    "안심되는"
+   ],
+   "note": "점심시간에 혼자 있었다",
+   "shared": true
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -26,
+   "emotion": "calm",
+   "words": [
+    "홀가분한",
+    "안심되는"
+   ],
+   "note": "점심시간에 혼자 있었다",
+   "shared": true
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -25,
+   "emotion": "calm",
+   "words": [
+    "안심되는",
+    "포근한",
+    "만족스러운"
+   ],
+   "note": "단톡에서 나만 빼고 약속을 잡은 것 같다",
+   "shared": false
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -24,
+   "emotion": "calm",
+   "words": [
+    "홀가분한"
+   ],
+   "note": "쉬는 시간에 애들이 내 얘기를 하는 것 같아 눈치 보였다",
+   "shared": false
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -23,
+   "emotion": "calm",
+   "words": [
+    "안심되는"
+   ],
+   "note": "쉬는 시간에 애들이 내 얘기를 하는 것 같아 눈치 보였다",
+   "shared": false
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -22,
+   "emotion": "calm",
+   "words": [
+    "홀가분한",
+    "만족스러운"
+   ],
+   "note": "점심시간에 혼자 있었다",
+   "shared": true
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -21,
+   "emotion": "calm",
+   "words": [
+    "포근한"
+   ],
+   "note": "친구가 내 말을 무시했다",
+   "shared": true
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -20,
+   "emotion": "joy",
+   "words": [
+    "고마운",
+    "뿌듯한",
+    "자랑스러운"
+   ],
+   "note": "쉬는 시간에 애들이 내 얘기를 하는 것 같아 눈치 보였다",
+   "shared": true
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -19,
+   "emotion": "calm",
+   "words": [
+    "편안한"
+   ],
+   "note": "모둠 활동 때 내 의견은 그냥 넘어갔다",
+   "shared": false
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -18,
+   "emotion": "calm",
+   "words": [
+    "홀가분한"
+   ],
+   "note": "모둠 활동 때 내 의견은 그냥 넘어갔다",
+   "shared": true
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -16,
+   "emotion": "joy",
+   "words": [
+    "활기찬",
+    "뿌듯한"
+   ],
+   "note": "쉬는 시간에 애들이 내 얘기를 하는 것 같아 눈치 보였다",
+   "shared": true
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -15,
+   "emotion": "calm",
+   "words": [
+    "만족스러운",
+    "포근한",
+    "홀가분한"
+   ],
+   "note": "점심시간에 혼자 있었다",
+   "shared": false
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -14,
+   "emotion": "joy",
+   "words": [
+    "자랑스러운"
+   ],
+   "note": "쉬는 시간에 애들이 내 얘기를 하는 것 같아 눈치 보였다",
+   "shared": true
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -13,
+   "emotion": "calm",
+   "words": [
+    "느긋한",
+    "포근한",
+    "차분한"
+   ],
+   "note": "점심시간에 혼자 있었다",
+   "shared": false
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -12,
+   "emotion": "calm",
+   "words": [
+    "느긋한",
+    "포근한",
+    "여유로운"
+   ],
+   "note": "친구가 내 말을 무시했다",
+   "shared": false
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -10,
+   "emotion": "calm",
+   "words": [
+    "만족스러운",
+    "포근한"
+   ],
+   "note": "점심시간에 혼자 있었다",
+   "shared": false
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -9,
+   "emotion": "sad",
+   "words": [
+    "외로운"
+   ],
+   "note": "친구가 내 말을 무시했다",
+   "shared": true
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -8,
+   "emotion": "sad",
+   "words": [
+    "눈물 나는",
+    "실망한"
+   ],
+   "note": "단톡에서 나만 빼고 약속을 잡은 것 같다",
+   "shared": false
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -7,
+   "emotion": "sad",
+   "words": [
+    "속상한",
+    "우울한"
+   ],
+   "note": "점심시간에 혼자 있었다",
+   "shared": false
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -6,
+   "emotion": "sad",
+   "words": [
+    "실망한"
+   ],
+   "note": "점심시간에 혼자 있었다",
+   "shared": false
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -5,
+   "emotion": "anxious",
+   "words": [
+    "눈치 보이는"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -3,
+   "emotion": "anxious",
+   "words": [
+    "두려운"
+   ],
+   "note": "친구가 내 말을 무시했다",
+   "shared": true
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -2,
+   "emotion": "anxious",
+   "words": [
+    "걱정되는",
+    "눈치 보이는"
+   ],
+   "note": "쉬는 시간마다 애들이 툭툭 치고 간다. 학교 가기 싫다",
+   "shared": false
+  },
+  {
+   "student_id": "S04",
+   "day_offset": -1,
+   "emotion": "sad",
+   "words": [
+    "외로운"
+   ],
+   "note": "모둠 활동 때 내 의견은 그냥 넘어갔다",
+   "shared": true
+  },
+  {
+   "student_id": "S04",
+   "day_offset": 0,
+   "emotion": "anxious",
+   "words": [
+    "초조한",
+    "눈치 보이는"
+   ],
+   "note": "친구가 내 말을 무시했다",
+   "shared": false
+  },
+  {
+   "student_id": "S05",
+   "day_offset": -28,
+   "emotion": "joy",
+   "words": [
+    "설레는"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S05",
+   "day_offset": -25,
+   "emotion": "calm",
+   "words": [
+    "포근한",
+    "편안한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S05",
+   "day_offset": -23,
+   "emotion": "calm",
+   "words": [
+    "여유로운",
+    "홀가분한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S05",
+   "day_offset": -20,
+   "emotion": "joy",
+   "words": [
+    "행복한",
+    "신나는",
+    "활기찬"
+   ],
+   "note": "급식에 좋아하는 메뉴가 나왔다",
+   "shared": true
+  },
+  {
+   "student_id": "S05",
+   "day_offset": -16,
+   "emotion": "joy",
+   "words": [
+    "신나는",
+    "고마운",
+    "활기찬"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S05",
+   "day_offset": -12,
+   "emotion": "calm",
+   "words": [
+    "차분한",
+    "느긋한",
+    "홀가분한"
+   ],
+   "note": "친구랑 매점에 갔다",
+   "shared": true
+  },
+  {
+   "student_id": "S05",
+   "day_offset": -9,
+   "emotion": "calm",
+   "words": [
+    "여유로운",
+    "만족스러운"
+   ],
+   "note": "주말에 가족이랑 산책했다",
+   "shared": false
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -33,
+   "emotion": "calm",
+   "words": [
+    "편안한"
+   ],
+   "note": "주말에 가족이랑 산책했다",
+   "shared": true
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -32,
+   "emotion": "joy",
+   "words": [
+    "신나는",
+    "뿌듯한"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": false
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -31,
+   "emotion": "calm",
+   "words": [
+    "차분한"
+   ],
+   "note": "체육 시간에 피구를 했다",
+   "shared": false
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -30,
+   "emotion": "calm",
+   "words": [
+    "편안한",
+    "만족스러운",
+    "홀가분한"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": false
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -29,
+   "emotion": "calm",
+   "words": [
+    "안심되는",
+    "차분한"
+   ],
+   "note": "주말에 가족이랑 산책했다",
+   "shared": false
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -28,
+   "emotion": "calm",
+   "words": [
+    "느긋한"
+   ],
+   "note": "좋아하는 노래를 들으며 등교했다",
+   "shared": true
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -27,
+   "emotion": "joy",
+   "words": [
+    "즐거운",
+    "설레는"
+   ],
+   "note": "동아리에서 새 활동을 시작했다",
+   "shared": false
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -26,
+   "emotion": "calm",
+   "words": [
+    "편안한",
+    "차분한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -24,
+   "emotion": "calm",
+   "words": [
+    "느긋한",
+    "홀가분한"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": false
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -22,
+   "emotion": "calm",
+   "words": [
+    "만족스러운"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": false
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -20,
+   "emotion": "joy",
+   "words": [
+    "자랑스러운"
+   ],
+   "note": "급식에 좋아하는 메뉴가 나왔다",
+   "shared": false
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -19,
+   "emotion": "calm",
+   "words": [
+    "차분한",
+    "여유로운"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": true
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -18,
+   "emotion": "joy",
+   "words": [
+    "즐거운",
+    "설레는",
+    "뿌듯한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -17,
+   "emotion": "joy",
+   "words": [
+    "설레는",
+    "고마운"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -16,
+   "emotion": "calm",
+   "words": [
+    "여유로운",
+    "만족스러운"
+   ],
+   "note": "체육 시간에 피구를 했다",
+   "shared": true
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -15,
+   "emotion": "calm",
+   "words": [
+    "차분한",
+    "안심되는"
+   ],
+   "note": "주말에 가족이랑 산책했다",
+   "shared": false
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -12,
+   "emotion": "calm",
+   "words": [
+    "포근한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -11,
+   "emotion": "calm",
+   "words": [
+    "느긋한",
+    "포근한",
+    "편안한"
+   ],
+   "note": "체육 시간에 피구를 했다",
+   "shared": false
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -10,
+   "emotion": "joy",
+   "words": [
+    "고마운"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -9,
+   "emotion": "joy",
+   "words": [
+    "신나는",
+    "설레는",
+    "행복한"
+   ],
+   "note": "친구랑 매점에 갔다",
+   "shared": true
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -8,
+   "emotion": "joy",
+   "words": [
+    "고마운",
+    "설레는",
+    "자랑스러운"
+   ],
+   "note": "동아리에서 새 활동을 시작했다",
+   "shared": false
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -7,
+   "emotion": "joy",
+   "words": [
+    "즐거운",
+    "신나는",
+    "활기찬"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -6,
+   "emotion": "sad",
+   "words": [
+    "눈물 나는"
+   ],
+   "note": "아침에 일어나기 너무 힘들었다",
+   "shared": false
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -5,
+   "emotion": "sad",
+   "words": [
+    "우울한",
+    "허전한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -4,
+   "emotion": "sad",
+   "words": [
+    "외로운"
+   ],
+   "note": "잠을 잘 못 잤다",
+   "shared": false
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -3,
+   "emotion": "anxious",
+   "words": [
+    "조마조마한",
+    "불편한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -2,
+   "emotion": "anxious",
+   "words": [
+    "막막한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S06",
+   "day_offset": -1,
+   "emotion": "anxious",
+   "words": [
+    "걱정되는",
+    "초조한"
+   ],
+   "note": "아침에 일어나기 너무 힘들었다",
+   "shared": false
+  },
+  {
+   "student_id": "S06",
+   "day_offset": 0,
+   "emotion": "sad",
+   "words": [
+    "속상한",
+    "실망한"
+   ],
+   "note": "잠을 잘 못 잤다",
+   "shared": false
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -34,
+   "emotion": "angry",
+   "words": [
+    "미운",
+    "질투 나는"
+   ],
+   "note": "엄마랑 핸드폰 때문에 다퉜다",
+   "shared": true
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -32,
+   "emotion": "calm",
+   "words": [
+    "차분한"
+   ],
+   "note": "동아리에서 새 활동을 시작했다",
+   "shared": true
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -31,
+   "emotion": "angry",
+   "words": [
+    "답답한"
+   ],
+   "note": "집에서 말이 안 통하는 느낌",
+   "shared": true
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -30,
+   "emotion": "angry",
+   "words": [
+    "짜증나는",
+    "화나는",
+    "귀찮은"
+   ],
+   "note": "엄마랑 핸드폰 때문에 다퉜다",
+   "shared": true
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -29,
+   "emotion": "sad",
+   "words": [
+    "속상한",
+    "실망한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -28,
+   "emotion": "angry",
+   "words": [
+    "짜증나는",
+    "분한"
+   ],
+   "note": "동생이랑 싸워서 혼났다",
+   "shared": true
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -27,
+   "emotion": "calm",
+   "words": [
+    "안심되는"
+   ],
+   "note": "체육 시간에 피구를 했다",
+   "shared": false
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -26,
+   "emotion": "joy",
+   "words": [
+    "뿌듯한",
+    "활기찬",
+    "고마운"
+   ],
+   "note": "주말에 가족이랑 산책했다",
+   "shared": false
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -25,
+   "emotion": "angry",
+   "words": [
+    "분한",
+    "미운",
+    "화나는"
+   ],
+   "note": "동생이랑 싸워서 혼났다",
+   "shared": false
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -24,
+   "emotion": "angry",
+   "words": [
+    "짜증나는",
+    "질투 나는"
+   ],
+   "note": "집에서 말이 안 통하는 느낌",
+   "shared": false
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -23,
+   "emotion": "calm",
+   "words": [
+    "포근한",
+    "여유로운",
+    "차분한"
+   ],
+   "note": "급식에 좋아하는 메뉴가 나왔다",
+   "shared": false
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -22,
+   "emotion": "angry",
+   "words": [
+    "미운",
+    "짜증나는"
+   ],
+   "note": "엄마랑 핸드폰 때문에 다퉜다",
+   "shared": false
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -20,
+   "emotion": "calm",
+   "words": [
+    "포근한"
+   ],
+   "note": "급식에 좋아하는 메뉴가 나왔다",
+   "shared": false
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -18,
+   "emotion": "calm",
+   "words": [
+    "차분한",
+    "여유로운",
+    "홀가분한"
+   ],
+   "note": "주말에 가족이랑 산책했다",
+   "shared": true
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -17,
+   "emotion": "angry",
+   "words": [
+    "질투 나는"
+   ],
+   "note": "아빠가 성적 얘기를 또 꺼냈다",
+   "shared": true
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -16,
+   "emotion": "angry",
+   "words": [
+    "억울한",
+    "미운",
+    "귀찮은"
+   ],
+   "note": "동생이랑 싸워서 혼났다",
+   "shared": false
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -15,
+   "emotion": "joy",
+   "words": [
+    "자랑스러운"
+   ],
+   "note": "급식에 좋아하는 메뉴가 나왔다",
+   "shared": false
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -13,
+   "emotion": "sad",
+   "words": [
+    "실망한"
+   ],
+   "note": "아빠가 성적 얘기를 또 꺼냈다",
+   "shared": true
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -12,
+   "emotion": "angry",
+   "words": [
+    "화나는",
+    "짜증나는"
+   ],
+   "note": "엄마랑 핸드폰 때문에 다퉜다",
+   "shared": true
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -11,
+   "emotion": "angry",
+   "words": [
+    "짜증나는",
+    "귀찮은",
+    "분한"
+   ],
+   "note": "아빠가 성적 얘기를 또 꺼냈다",
+   "shared": false
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -10,
+   "emotion": "joy",
+   "words": [
+    "활기찬",
+    "뿌듯한"
+   ],
+   "note": "좋아하는 노래를 들으며 등교했다",
+   "shared": false
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -9,
+   "emotion": "sad",
+   "words": [
+    "서운한"
+   ],
+   "note": "엄마랑 핸드폰 때문에 다퉜다",
+   "shared": false
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -8,
+   "emotion": "calm",
+   "words": [
+    "포근한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -7,
+   "emotion": "calm",
+   "words": [
+    "느긋한"
+   ],
+   "note": "동아리에서 새 활동을 시작했다",
+   "shared": false
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -6,
+   "emotion": "angry",
+   "words": [
+    "답답한"
+   ],
+   "note": "아빠가 성적 얘기를 또 꺼냈다",
+   "shared": false
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -5,
+   "emotion": "calm",
+   "words": [
+    "차분한",
+    "느긋한"
+   ],
+   "note": "좋아하는 노래를 들으며 등교했다",
+   "shared": true
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -4,
+   "emotion": "calm",
+   "words": [
+    "차분한"
+   ],
+   "note": "체육 시간에 피구를 했다",
+   "shared": false
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -3,
+   "emotion": "angry",
+   "words": [
+    "답답한"
+   ],
+   "note": "동생이랑 싸워서 혼났다",
+   "shared": true
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -2,
+   "emotion": "angry",
+   "words": [
+    "미운"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S07",
+   "day_offset": -1,
+   "emotion": "calm",
+   "words": [
+    "안심되는",
+    "느긋한",
+    "포근한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S07",
+   "day_offset": 0,
+   "emotion": "calm",
+   "words": [
+    "차분한",
+    "여유로운"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -34,
+   "emotion": "calm",
+   "words": [
+    "차분한",
+    "포근한"
+   ],
+   "note": "친구랑 매점에 갔다",
+   "shared": false
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -33,
+   "emotion": "calm",
+   "words": [
+    "안심되는",
+    "포근한",
+    "느긋한"
+   ],
+   "note": "급식에 좋아하는 메뉴가 나왔다",
+   "shared": false
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -32,
+   "emotion": "joy",
+   "words": [
+    "뿌듯한"
+   ],
+   "note": "체육 시간에 피구를 했다",
+   "shared": true
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -31,
+   "emotion": "joy",
+   "words": [
+    "활기찬",
+    "신나는",
+    "자랑스러운"
+   ],
+   "note": "좋아하는 노래를 들으며 등교했다",
+   "shared": false
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -30,
+   "emotion": "calm",
+   "words": [
+    "차분한"
+   ],
+   "note": "동아리에서 새 활동을 시작했다",
+   "shared": true
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -29,
+   "emotion": "calm",
+   "words": [
+    "여유로운",
+    "안심되는"
+   ],
+   "note": "친구랑 매점에 갔다",
+   "shared": false
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -27,
+   "emotion": "calm",
+   "words": [
+    "느긋한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -26,
+   "emotion": "calm",
+   "words": [
+    "차분한",
+    "포근한",
+    "편안한"
+   ],
+   "note": "급식에 좋아하는 메뉴가 나왔다",
+   "shared": false
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -25,
+   "emotion": "joy",
+   "words": [
+    "뿌듯한",
+    "고마운"
+   ],
+   "note": "친구랑 매점에 갔다",
+   "shared": true
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -24,
+   "emotion": "joy",
+   "words": [
+    "신나는",
+    "행복한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -23,
+   "emotion": "joy",
+   "words": [
+    "자랑스러운"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": false
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -21,
+   "emotion": "anxious",
+   "words": [
+    "두려운",
+    "초조한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -20,
+   "emotion": "calm",
+   "words": [
+    "안심되는"
+   ],
+   "note": "주말에 가족이랑 산책했다",
+   "shared": false
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -19,
+   "emotion": "joy",
+   "words": [
+    "즐거운"
+   ],
+   "note": "체육 시간에 피구를 했다",
+   "shared": false
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -18,
+   "emotion": "calm",
+   "words": [
+    "안심되는",
+    "만족스러운",
+    "느긋한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -17,
+   "emotion": "calm",
+   "words": [
+    "차분한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -16,
+   "emotion": "calm",
+   "words": [
+    "편안한",
+    "만족스러운"
+   ],
+   "note": "친구랑 매점에 갔다",
+   "shared": true
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -15,
+   "emotion": "calm",
+   "words": [
+    "차분한",
+    "편안한"
+   ],
+   "note": "급식에 좋아하는 메뉴가 나왔다",
+   "shared": true
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -14,
+   "emotion": "calm",
+   "words": [
+    "홀가분한",
+    "편안한"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": true
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -13,
+   "emotion": "anxious",
+   "words": [
+    "막막한",
+    "눈치 보이는",
+    "조마조마한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -12,
+   "emotion": "anxious",
+   "words": [
+    "걱정되는",
+    "조마조마한",
+    "긴장되는"
+   ],
+   "note": "급식에 좋아하는 메뉴가 나왔다",
+   "shared": true
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -11,
+   "emotion": "joy",
+   "words": [
+    "고마운"
+   ],
+   "note": "급식에 좋아하는 메뉴가 나왔다",
+   "shared": false
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -10,
+   "emotion": "calm",
+   "words": [
+    "차분한",
+    "여유로운"
+   ],
+   "note": "좋아하는 노래를 들으며 등교했다",
+   "shared": false
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -8,
+   "emotion": "calm",
+   "words": [
+    "만족스러운",
+    "홀가분한",
+    "포근한"
+   ],
+   "note": "좋아하는 노래를 들으며 등교했다",
+   "shared": false
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -7,
+   "emotion": "anxious",
+   "words": [
+    "걱정되는"
+   ],
+   "note": "좋아하는 노래를 들으며 등교했다",
+   "shared": true
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -6,
+   "emotion": "calm",
+   "words": [
+    "만족스러운"
+   ],
+   "note": "친구랑 매점에 갔다",
+   "shared": false
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -5,
+   "emotion": "calm",
+   "words": [
+    "포근한",
+    "만족스러운"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -3,
+   "emotion": "calm",
+   "words": [
+    "여유로운"
+   ],
+   "note": "체육 시간에 피구를 했다",
+   "shared": false
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -2,
+   "emotion": "calm",
+   "words": [
+    "안심되는"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S08",
+   "day_offset": -1,
+   "emotion": "calm",
+   "words": [
+    "포근한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S08",
+   "day_offset": 0,
+   "emotion": "anxious",
+   "words": [
+    "초조한",
+    "조마조마한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -34,
+   "emotion": "anxious",
+   "words": [
+    "조마조마한",
+    "눈치 보이는"
+   ],
+   "note": "점심시간에 혼자 있었다",
+   "shared": true
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -33,
+   "emotion": "sad",
+   "words": [
+    "실망한"
+   ],
+   "note": "단톡에서 나만 빼고 약속을 잡은 것 같다",
+   "shared": false
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -32,
+   "emotion": "sad",
+   "words": [
+    "우울한",
+    "서운한",
+    "실망한"
+   ],
+   "note": "모둠 활동 때 내 의견은 그냥 넘어갔다",
+   "shared": false
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -30,
+   "emotion": "sad",
+   "words": [
+    "서운한"
+   ],
+   "note": "단톡에서 나만 빼고 약속을 잡은 것 같다",
+   "shared": true
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -29,
+   "emotion": "anxious",
+   "words": [
+    "걱정되는"
+   ],
+   "note": "단톡에서 나만 빼고 약속을 잡은 것 같다",
+   "shared": true
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -28,
+   "emotion": "calm",
+   "words": [
+    "만족스러운"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -27,
+   "emotion": "sad",
+   "words": [
+    "외로운",
+    "속상한"
+   ],
+   "note": "모둠 활동 때 내 의견은 그냥 넘어갔다",
+   "shared": true
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -26,
+   "emotion": "sad",
+   "words": [
+    "속상한",
+    "우울한"
+   ],
+   "note": "쉬는 시간에 애들이 내 얘기를 하는 것 같아 눈치 보였다",
+   "shared": false
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -25,
+   "emotion": "sad",
+   "words": [
+    "허전한",
+    "속상한",
+    "눈물 나는"
+   ],
+   "note": "쉬는 시간에 애들이 내 얘기를 하는 것 같아 눈치 보였다",
+   "shared": true
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -24,
+   "emotion": "anxious",
+   "words": [
+    "불편한"
+   ],
+   "note": "모둠 활동 때 내 의견은 그냥 넘어갔다",
+   "shared": true
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -23,
+   "emotion": "anxious",
+   "words": [
+    "두려운"
+   ],
+   "note": "친구가 내 말을 무시했다",
+   "shared": false
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -21,
+   "emotion": "sad",
+   "words": [
+    "속상한"
+   ],
+   "note": "단톡에서 나만 빼고 약속을 잡은 것 같다",
+   "shared": false
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -20,
+   "emotion": "sad",
+   "words": [
+    "서운한",
+    "외로운"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -19,
+   "emotion": "sad",
+   "words": [
+    "속상한"
+   ],
+   "note": "친구가 내 말을 무시했다",
+   "shared": false
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -18,
+   "emotion": "sad",
+   "words": [
+    "실망한"
+   ],
+   "note": "단톡에서 나만 빼고 약속을 잡은 것 같다",
+   "shared": false
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -17,
+   "emotion": "joy",
+   "words": [
+    "즐거운"
+   ],
+   "note": "친구랑 매점에 갔다",
+   "shared": true
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -15,
+   "emotion": "joy",
+   "words": [
+    "활기찬"
+   ],
+   "note": "친구랑 매점에 갔다",
+   "shared": false
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -14,
+   "emotion": "calm",
+   "words": [
+    "느긋한",
+    "홀가분한",
+    "만족스러운"
+   ],
+   "note": "주말에 가족이랑 산책했다",
+   "shared": false
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -13,
+   "emotion": "joy",
+   "words": [
+    "설레는"
+   ],
+   "note": "주말에 가족이랑 산책했다",
+   "shared": false
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -12,
+   "emotion": "joy",
+   "words": [
+    "고마운",
+    "설레는"
+   ],
+   "note": "급식에 좋아하는 메뉴가 나왔다",
+   "shared": false
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -10,
+   "emotion": "joy",
+   "words": [
+    "즐거운",
+    "활기찬"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -9,
+   "emotion": "joy",
+   "words": [
+    "신나는",
+    "고마운",
+    "활기찬"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -8,
+   "emotion": "calm",
+   "words": [
+    "차분한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -7,
+   "emotion": "joy",
+   "words": [
+    "활기찬",
+    "행복한"
+   ],
+   "note": "체육 시간에 피구를 했다",
+   "shared": true
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -6,
+   "emotion": "joy",
+   "words": [
+    "활기찬",
+    "신나는"
+   ],
+   "note": "체육 시간에 피구를 했다",
+   "shared": false
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -5,
+   "emotion": "calm",
+   "words": [
+    "편안한"
+   ],
+   "note": "친구랑 매점에 갔다",
+   "shared": true
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -4,
+   "emotion": "sad",
+   "words": [
+    "그리운"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -3,
+   "emotion": "joy",
+   "words": [
+    "행복한",
+    "고마운"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S09",
+   "day_offset": -2,
+   "emotion": "calm",
+   "words": [
+    "차분한",
+    "홀가분한"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": true
+  },
+  {
+   "student_id": "S09",
+   "day_offset": 0,
+   "emotion": "calm",
+   "words": [
+    "편안한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -33,
+   "emotion": "joy",
+   "words": [
+    "뿌듯한"
+   ],
+   "note": "친구랑 매점에 갔다",
+   "shared": false
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -32,
+   "emotion": "joy",
+   "words": [
+    "고마운",
+    "활기찬",
+    "신나는"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -29,
+   "emotion": "calm",
+   "words": [
+    "여유로운"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -28,
+   "emotion": "calm",
+   "words": [
+    "포근한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -27,
+   "emotion": "joy",
+   "words": [
+    "자랑스러운"
+   ],
+   "note": "동아리에서 새 활동을 시작했다",
+   "shared": false
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -26,
+   "emotion": "calm",
+   "words": [
+    "차분한",
+    "여유로운",
+    "느긋한"
+   ],
+   "note": "주말에 가족이랑 산책했다",
+   "shared": false
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -25,
+   "emotion": "calm",
+   "words": [
+    "편안한",
+    "차분한"
+   ],
+   "note": "좋아하는 노래를 들으며 등교했다",
+   "shared": true
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -24,
+   "emotion": "joy",
+   "words": [
+    "신나는",
+    "활기찬"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -23,
+   "emotion": "joy",
+   "words": [
+    "고마운"
+   ],
+   "note": "좋아하는 노래를 들으며 등교했다",
+   "shared": true
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -22,
+   "emotion": "joy",
+   "words": [
+    "설레는",
+    "신나는"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": true
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -21,
+   "emotion": "joy",
+   "words": [
+    "행복한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -20,
+   "emotion": "joy",
+   "words": [
+    "자랑스러운",
+    "행복한"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": false
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -19,
+   "emotion": "joy",
+   "words": [
+    "고마운",
+    "즐거운"
+   ],
+   "note": "급식에 좋아하는 메뉴가 나왔다",
+   "shared": false
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -18,
+   "emotion": "calm",
+   "words": [
+    "만족스러운",
+    "홀가분한"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": true
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -17,
+   "emotion": "joy",
+   "words": [
+    "활기찬"
+   ],
+   "note": "체육 시간에 피구를 했다",
+   "shared": false
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -16,
+   "emotion": "joy",
+   "words": [
+    "고마운",
+    "즐거운"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -14,
+   "emotion": "joy",
+   "words": [
+    "고마운"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -13,
+   "emotion": "joy",
+   "words": [
+    "신나는",
+    "자랑스러운",
+    "뿌듯한"
+   ],
+   "note": "주말에 가족이랑 산책했다",
+   "shared": true
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -12,
+   "emotion": "calm",
+   "words": [
+    "차분한"
+   ],
+   "note": "동아리에서 새 활동을 시작했다",
+   "shared": false
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -11,
+   "emotion": "joy",
+   "words": [
+    "고마운"
+   ],
+   "note": "급식에 좋아하는 메뉴가 나왔다",
+   "shared": false
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -9,
+   "emotion": "calm",
+   "words": [
+    "여유로운",
+    "편안한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -8,
+   "emotion": "joy",
+   "words": [
+    "고마운",
+    "뿌듯한"
+   ],
+   "note": "체육 시간에 피구를 했다",
+   "shared": false
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -7,
+   "emotion": "joy",
+   "words": [
+    "설레는",
+    "신나는",
+    "활기찬"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -6,
+   "emotion": "calm",
+   "words": [
+    "만족스러운"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -5,
+   "emotion": "calm",
+   "words": [
+    "차분한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -4,
+   "emotion": "calm",
+   "words": [
+    "포근한",
+    "홀가분한",
+    "편안한"
+   ],
+   "note": "주말에 가족이랑 산책했다",
+   "shared": false
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -2,
+   "emotion": "calm",
+   "words": [
+    "안심되는",
+    "포근한"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": true
+  },
+  {
+   "student_id": "S10",
+   "day_offset": -1,
+   "emotion": "joy",
+   "words": [
+    "행복한",
+    "신나는",
+    "고마운"
+   ],
+   "note": "친구랑 매점에 갔다",
+   "shared": false
+  },
+  {
+   "student_id": "S10",
+   "day_offset": 0,
+   "emotion": "joy",
+   "words": [
+    "자랑스러운",
+    "신나는"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -34,
+   "emotion": "angry",
+   "words": [
+    "미운",
+    "분한",
+    "짜증나는"
+   ],
+   "note": "동아리에서 새 활동을 시작했다",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -33,
+   "emotion": "joy",
+   "words": [
+    "자랑스러운"
+   ],
+   "note": "급식에 좋아하는 메뉴가 나왔다",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -32,
+   "emotion": "joy",
+   "words": [
+    "행복한"
+   ],
+   "note": "체육 시간에 피구를 했다",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -31,
+   "emotion": "anxious",
+   "words": [
+    "걱정되는",
+    "초조한"
+   ],
+   "note": "시험 범위가 너무 넓다",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -30,
+   "emotion": "joy",
+   "words": [
+    "활기찬",
+    "고마운"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": true
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -29,
+   "emotion": "angry",
+   "words": [
+    "분한"
+   ],
+   "note": "친구랑 매점에 갔다",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -28,
+   "emotion": "calm",
+   "words": [
+    "포근한",
+    "만족스러운"
+   ],
+   "note": "좋아하는 노래를 들으며 등교했다",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -27,
+   "emotion": "joy",
+   "words": [
+    "즐거운"
+   ],
+   "note": "주말에 가족이랑 산책했다",
+   "shared": true
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -26,
+   "emotion": "anxious",
+   "words": [
+    "초조한"
+   ],
+   "note": "학원 숙제가 너무 많다",
+   "shared": true
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -25,
+   "emotion": "joy",
+   "words": [
+    "활기찬"
+   ],
+   "note": "동아리에서 새 활동을 시작했다",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -24,
+   "emotion": "joy",
+   "words": [
+    "신나는",
+    "뿌듯한"
+   ],
+   "note": "체육 시간에 피구를 했다",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -23,
+   "emotion": "anxious",
+   "words": [
+    "걱정되는",
+    "막막한",
+    "두려운"
+   ],
+   "note": "공부해도 점수가 안 오른다",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -22,
+   "emotion": "joy",
+   "words": [
+    "설레는",
+    "즐거운"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -21,
+   "emotion": "joy",
+   "words": [
+    "즐거운"
+   ],
+   "note": "주말에 가족이랑 산책했다",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -20,
+   "emotion": "joy",
+   "words": [
+    "즐거운",
+    "활기찬"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -19,
+   "emotion": "sad",
+   "words": [
+    "서운한",
+    "외로운",
+    "우울한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -18,
+   "emotion": "anxious",
+   "words": [
+    "긴장되는",
+    "조마조마한",
+    "막막한"
+   ],
+   "note": "학원 숙제가 너무 많다",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -17,
+   "emotion": "joy",
+   "words": [
+    "행복한",
+    "활기찬"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -16,
+   "emotion": "anxious",
+   "words": [
+    "눈치 보이는",
+    "초조한"
+   ],
+   "note": "시험 범위가 너무 넓다",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -15,
+   "emotion": "anxious",
+   "words": [
+    "두려운",
+    "긴장되는"
+   ],
+   "note": "공부해도 점수가 안 오른다",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -14,
+   "emotion": "angry",
+   "words": [
+    "억울한",
+    "짜증나는"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -13,
+   "emotion": "joy",
+   "words": [
+    "즐거운",
+    "고마운",
+    "설레는"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -12,
+   "emotion": "sad",
+   "words": [
+    "우울한"
+   ],
+   "note": "좋아하는 노래를 들으며 등교했다",
+   "shared": true
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -11,
+   "emotion": "joy",
+   "words": [
+    "설레는"
+   ],
+   "note": "급식에 좋아하는 메뉴가 나왔다",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -9,
+   "emotion": "joy",
+   "words": [
+    "뿌듯한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -8,
+   "emotion": "joy",
+   "words": [
+    "고마운"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -7,
+   "emotion": "joy",
+   "words": [
+    "신나는",
+    "설레는"
+   ],
+   "note": "급식에 좋아하는 메뉴가 나왔다",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -6,
+   "emotion": "anxious",
+   "words": [
+    "초조한",
+    "막막한",
+    "눈치 보이는"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -5,
+   "emotion": "sad",
+   "words": [
+    "외로운"
+   ],
+   "note": "체육 시간에 피구를 했다",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -4,
+   "emotion": "calm",
+   "words": [
+    "여유로운",
+    "편안한",
+    "포근한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -3,
+   "emotion": "sad",
+   "words": [
+    "그리운",
+    "서운한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -2,
+   "emotion": "anxious",
+   "words": [
+    "긴장되는",
+    "걱정되는"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S11",
+   "day_offset": -1,
+   "emotion": "calm",
+   "words": [
+    "홀가분한",
+    "차분한"
+   ],
+   "note": "체육 시간에 피구를 했다",
+   "shared": true
+  },
+  {
+   "student_id": "S11",
+   "day_offset": 0,
+   "emotion": "joy",
+   "words": [
+    "즐거운",
+    "자랑스러운"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -34,
+   "emotion": "joy",
+   "words": [
+    "고마운",
+    "행복한",
+    "즐거운"
+   ],
+   "note": "체육 시간에 피구를 했다",
+   "shared": false
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -33,
+   "emotion": "joy",
+   "words": [
+    "설레는"
+   ],
+   "note": "좋아하는 노래를 들으며 등교했다",
+   "shared": true
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -32,
+   "emotion": "calm",
+   "words": [
+    "차분한"
+   ],
+   "note": "친구랑 매점에 갔다",
+   "shared": false
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -30,
+   "emotion": "calm",
+   "words": [
+    "차분한",
+    "안심되는"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -29,
+   "emotion": "calm",
+   "words": [
+    "느긋한",
+    "만족스러운",
+    "편안한"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -28,
+   "emotion": "joy",
+   "words": [
+    "신나는",
+    "뿌듯한",
+    "활기찬"
+   ],
+   "note": "급식에 좋아하는 메뉴가 나왔다",
+   "shared": false
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -27,
+   "emotion": "joy",
+   "words": [
+    "고마운"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -26,
+   "emotion": "calm",
+   "words": [
+    "여유로운",
+    "만족스러운"
+   ],
+   "note": "체육 시간에 피구를 했다",
+   "shared": false
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -25,
+   "emotion": "joy",
+   "words": [
+    "고마운"
+   ],
+   "note": "동아리에서 새 활동을 시작했다",
+   "shared": true
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -23,
+   "emotion": "calm",
+   "words": [
+    "차분한"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": true
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -22,
+   "emotion": "calm",
+   "words": [
+    "차분한",
+    "홀가분한",
+    "편안한"
+   ],
+   "note": "친구랑 매점에 갔다",
+   "shared": false
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -21,
+   "emotion": "calm",
+   "words": [
+    "여유로운"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": false
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -20,
+   "emotion": "joy",
+   "words": [
+    "즐거운",
+    "자랑스러운",
+    "신나는"
+   ],
+   "note": "체육 시간에 피구를 했다",
+   "shared": false
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -19,
+   "emotion": "calm",
+   "words": [
+    "차분한",
+    "안심되는",
+    "포근한"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": false
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -18,
+   "emotion": "joy",
+   "words": [
+    "행복한",
+    "고마운"
+   ],
+   "note": "좋아하는 노래를 들으며 등교했다",
+   "shared": true
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -17,
+   "emotion": "calm",
+   "words": [
+    "편안한",
+    "만족스러운"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -16,
+   "emotion": "calm",
+   "words": [
+    "여유로운",
+    "만족스러운"
+   ],
+   "note": "좋아하는 노래를 들으며 등교했다",
+   "shared": true
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -15,
+   "emotion": "joy",
+   "words": [
+    "자랑스러운",
+    "설레는"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": true
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -14,
+   "emotion": "calm",
+   "words": [
+    "느긋한",
+    "홀가분한",
+    "포근한"
+   ],
+   "note": "체육 시간에 피구를 했다",
+   "shared": false
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -13,
+   "emotion": "calm",
+   "words": [
+    "만족스러운",
+    "편안한",
+    "홀가분한"
+   ],
+   "note": "좋아하는 노래를 들으며 등교했다",
+   "shared": false
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -12,
+   "emotion": "anxious",
+   "words": [
+    "두려운"
+   ],
+   "note": "공부해도 점수가 안 오른다",
+   "shared": false
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -11,
+   "emotion": "calm",
+   "words": [
+    "여유로운"
+   ],
+   "note": "",
+   "shared": false
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -10,
+   "emotion": "joy",
+   "words": [
+    "고마운"
+   ],
+   "note": "체육 시간에 피구를 했다",
+   "shared": false
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -8,
+   "emotion": "anxious",
+   "words": [
+    "긴장되는"
+   ],
+   "note": "수학 쪽지시험을 망쳤다",
+   "shared": false
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -7,
+   "emotion": "calm",
+   "words": [
+    "여유로운",
+    "느긋한"
+   ],
+   "note": "좋아하는 노래를 들으며 등교했다",
+   "shared": false
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -6,
+   "emotion": "calm",
+   "words": [
+    "차분한",
+    "느긋한",
+    "편안한"
+   ],
+   "note": "동아리에서 새 활동을 시작했다",
+   "shared": false
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -5,
+   "emotion": "joy",
+   "words": [
+    "활기찬",
+    "자랑스러운"
+   ],
+   "note": "친구랑 매점에 갔다",
+   "shared": false
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -4,
+   "emotion": "joy",
+   "words": [
+    "설레는"
+   ],
+   "note": "체육 시간에 피구를 했다",
+   "shared": false
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -3,
+   "emotion": "joy",
+   "words": [
+    "자랑스러운"
+   ],
+   "note": "발표를 무사히 끝냈다",
+   "shared": false
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -2,
+   "emotion": "calm",
+   "words": [
+    "차분한",
+    "만족스러운",
+    "홀가분한"
+   ],
+   "note": "친구랑 매점에 갔다",
+   "shared": false
+  },
+  {
+   "student_id": "S12",
+   "day_offset": -1,
+   "emotion": "joy",
+   "words": [
+    "고마운",
+    "신나는"
+   ],
+   "note": "좋아하는 노래를 들으며 등교했다",
+   "shared": true
+  },
+  {
+   "student_id": "S12",
+   "day_offset": 0,
+   "emotion": "joy",
+   "words": [
+    "즐거운"
+   ],
+   "note": "",
+   "shared": false
+  }
+ ]
+}

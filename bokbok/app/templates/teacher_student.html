@@ -1,0 +1,154 @@
+{% extends "layout.html" %}
+{% import "_ui.html" as ui with context %}
+{% block title %}{{ b.student.name }} · {{ SERVICE }}{% endblock %}
+
+{% block content %}
+{% set s = b.student %}
+<a href="/teacher" class="inline-flex items-center gap-1 text-sm font-semibold text-ink-soft hover:text-leaf-700">{{ icon("arrow-left", "size-4") }} 정서 현황</a>
+
+<section class="{{ card }} flex flex-col gap-4 sm:flex-row sm:items-center">
+  <span class="grid size-16 shrink-0 place-items-center rounded-3xl bg-paper text-4xl">{{ s.avatar }}</span>
+  <div class="min-w-0 flex-1">
+    <h1 class="flex flex-wrap items-center gap-2 text-2xl font-extrabold text-ink">{{ s.name }} {{ ui.level_chip(r.level) }}
+      <span class="{{ chip }} bg-sky-50 text-sky-800">{{ FOLLOWUP[b.followup] }}</span></h1>
+    <p class="mt-0.5 text-sm text-ink-soft">{{ CLASS_NAME }} · 학번 {{ s.no }} · 가상 학생</p>
+    <p class="mt-1 text-sm text-ink">{{ r.reasons | join(" · ") }}</p>
+  </div>
+  <nav class="flex flex-wrap gap-1.5 text-xs font-semibold" aria-label="바로가기">
+    {% for id, label in [("report", "감정 리포트"), ("profile", "기본 정보"), ("followup", "사후 관리"), ("records", "기록"), ("points", "포인트")] %}
+    <a href="#{{ id }}" class="rounded-full bg-stone-100 px-3 py-1.5 text-ink-soft hover:bg-leaf-50 hover:text-leaf-700">{{ label }}</a>
+    {% endfor %}
+  </nav>
+</section>
+
+{% if r.signals %}
+<section class="rounded-3xl bg-rose-50 p-5 ring-1 ring-rose-100">
+  <h2 class="flex items-center gap-2 font-bold text-rose-800">{{ icon("triangle-alert", "size-5") }} 위험 신호</h2>
+  <ul class="mt-3 space-y-2">
+    {% for sg in r.signals %}
+    <li class="flex flex-wrap items-center gap-2 rounded-2xl bg-white px-4 py-3 text-sm">
+      <span class="{{ chip }} {{ 'bg-violet-100 text-violet-800' if sg.source == 'chat' else 'bg-rose-100 text-rose-800' }}">{{ BOT ~ " 대화" if sg.source == "chat" else "감정 기록" }}</span>
+      <span class="font-semibold text-ink">{{ sg.label }}</span>
+      <span class="text-ink-soft">{{ sg.detail }}</span>
+      <span class="ml-auto text-xs text-stone-400">{{ sg.date | day_label }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+<div id="report" class="grid items-start gap-5 lg:grid-cols-[1.5fr_1fr]">
+  <section class="{{ card }}">
+    {{ ui.card_title("chart-line", "감정 변화 추이", "최근 14일") }}
+    {{ ui.mood_chart(chart) }}
+    <p class="mt-4 rounded-2xl bg-stone-50 px-4 py-3 text-sm text-ink">{{ change }}</p>
+  </section>
+  <div class="space-y-5">
+    <section class="{{ card }}">
+      {{ ui.card_title("smile", "주요 감정 · 반복 감정", "최근 2주 기록 " ~ r.record_count ~ "건") }}
+      {% if r.main %}
+      <div class="mb-4 flex items-center gap-3">{{ ui.sticker(r.main.emotion, "size-12") }}
+        <p class="text-sm text-ink">주로 <strong>{{ E[r.main.emotion].label }}</strong>을 느꼈어요 ({{ r.main.pct }}%)<br />
+          <span class="text-xs text-ink-soft">최근 7일 부정 감정 {{ r.negative_week }}일{% if r.same_run[0] >= 2 %} · ‘{{ E[r.same_run[1]].label }}’ {{ r.same_run[0] }}일 연속{% endif %}</span></p>
+      </div>
+      {{ ui.emotion_bars(r.ratio) }}
+      {% else %}<p class="text-sm text-ink-soft">최근 기록이 없어요.</p>{% endif %}
+      {% if r.repeated_words %}
+      <p class="mt-4 mb-2 text-xs font-bold text-ink-soft">자주 고른 감정 단어</p>
+      <div class="flex flex-wrap gap-1.5">{% for w in r.repeated_words %}<span class="{{ chip }} {{ 'bg-anxious/40' if w.negative else 'bg-calm/50' }} text-ink">{{ w.word }} {{ w.count }}</span>{% endfor %}</div>
+      {% endif %}
+    </section>
+  </div>
+</div>
+
+<div class="grid items-start gap-5 lg:grid-cols-2">
+  <section class="{{ card }}">
+    {{ ui.card_title("clipboard-check", "추가 확인 사항 및 권장 조치", "규칙 기반 참고 의견") }}
+    <ol class="space-y-2">{% for a in r.actions %}
+      <li class="flex gap-3 text-sm leading-relaxed text-ink"><span class="grid size-6 shrink-0 place-items-center rounded-full bg-sky-100 text-xs font-bold text-sky-800">{{ loop.index }}</span>{{ a }}</li>{% endfor %}</ol>
+  </section>
+  <section class="{{ card }}">
+    {{ ui.card_title("message-circle-heart", "반복되는 고민 주제", "부정 감정을 기록한 날의 문장 키워드 기준") }}
+    {% if r.topics %}
+    <ul class="space-y-2">
+      {% for t in r.topics %}
+      {% set shared = t.records | selectattr("shared") | list %}
+      <li class="rounded-2xl bg-stone-50 px-4 py-3">
+        <p class="text-sm"><span class="mr-1">{{ t.emoji }}</span><strong class="text-ink">{{ t.label }}</strong> <span class="text-ink-soft">· {{ t.count }}회</span></p>
+        {% for rec in shared[:2] %}<p class="mt-1 text-sm text-ink-soft">{{ rec.date | day_label }} “{{ rec.note }}”</p>{% endfor %}
+        {% if t.count > shared | length %}<p class="mt-1 text-xs text-stone-400">학생이 공유하지 않은 문장 {{ t.count - shared | length }}건은 원문을 보여 주지 않아요.</p>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}<p class="text-sm text-ink-soft">반복되는 고민 주제가 보이지 않아요.</p>{% endif %}
+  </section>
+</div>
+
+<div class="grid items-start gap-5 lg:grid-cols-2">
+  <section id="profile" class="{{ card }}">
+    {{ ui.card_title("user-round", "학기 초 기본 정보", "학생이 직접 입력한 내용") }}
+    {% if profile %}
+    <dl class="grid grid-cols-[7rem_1fr] gap-x-3 gap-y-2.5 text-sm">
+      {% for key, label in [("family", "가족 구성"), ("home", "가정 내 환경"), ("friends", "친한 친구"), ("wish", "선생님께 바라는 점"), ("concern", "최근 감정·고민")] %}
+      <dt class="text-ink-soft">{{ label }}</dt><dd class="text-ink">{{ profile[key] or "—" }}</dd>
+      {% endfor %}
+      <dt class="text-ink-soft">학교생활 만족도</dt>
+      <dd class="flex items-center gap-1">{% for n in range(1, 6) %}<span class="size-3 rounded-full {{ 'bg-leaf-500' if n <= (profile.satisfaction or 0) else 'bg-stone-200' }}"></span>{% endfor %}<span class="ml-1 text-ink">{{ profile.satisfaction or "—" }}/5</span></dd>
+      <dt class="text-ink-soft">도움받고 싶은 사람</dt><dd class="text-ink">{{ profile.helpers | join(", ") if profile.helpers else "—" }}</dd>
+    </dl>
+    {% else %}<p class="rounded-2xl bg-stone-50 px-4 py-5 text-sm text-ink-soft">학생이 아직 기본 정보를 입력하지 않았어요.</p>{% endif %}
+    <p class="mt-3 text-xs text-stone-400">민감한 정보이므로 학생 지도 목적으로만 확인해 주세요.</p>
+  </section>
+
+  <section id="followup" class="{{ card }}">
+    {{ ui.card_title("sprout", "사후 관리", "확인·상담·연계 이력을 남겨 두세요") }}
+    <form method="post" action="/teacher/students/{{ s.id }}/followup" class="space-y-3">
+      <div class="flex flex-wrap gap-1.5">
+        {% for key, label in FOLLOWUP.items() %}
+        <label class="cursor-pointer rounded-full bg-stone-100 px-3 py-1.5 text-xs font-semibold text-ink-soft has-[:checked]:bg-sky-700 has-[:checked]:text-white">
+          <input type="radio" name="status" value="{{ key }}" class="sr-only" {% if b.followup == key %}checked{% endif %} />{{ label }}</label>
+        {% endfor %}
+      </div>
+      <textarea name="note" rows="2" maxlength="500" placeholder="예: 쉬는 시간에 따로 불러 안부 확인함. 다음 주 Wee클래스 연계 예정" aria-label="사후 관리 메모" class="{{ field }}"></textarea>
+      <button class="{{ btn.primary }} w-full">저장 (이 학생의 알림도 확인 처리돼요)</button>
+    </form>
+    {% if notes or bookings %}
+    <ol class="mt-4 space-y-3 border-l-2 border-stone-100 pl-4">
+      {% for n in notes | reverse %}
+      <li class="relative text-sm"><span class="absolute top-1.5 -left-[21px] size-2 rounded-full bg-sky-400"></span>
+        <span class="block text-xs text-ink-soft">{{ n.date | day_label }} {{ n.time }}</span><span class="text-ink">{{ n.text }}</span></li>
+      {% endfor %}
+      {% for bk in bookings %}
+      <li class="relative text-sm"><span class="absolute top-1.5 -left-[21px] size-2 rounded-full bg-leaf-400"></span>
+        <span class="block text-xs text-ink-soft">상담 예약 · {{ bk.date | day_label }} {{ bk.time }}</span>
+        <span class="text-ink">{{ TEACHERS[bk.teacher].name }} · {{ bk.topic }} ({{ BOOKING_STATUS[bk.status] }})</span></li>
+      {% endfor %}
+    </ol>
+    {% endif %}
+  </section>
+</div>
+
+<section id="records" class="{{ card }}">
+  {{ ui.card_title("notebook-pen", "최근 감정 기록", "문장은 학생이 공유한 것만 보여요") }}
+  <ul class="grid gap-2 md:grid-cols-2">
+    {% for rec in records %}
+    <li class="flex items-start gap-3 rounded-2xl border border-stone-100 px-4 py-3">
+      {{ ui.sticker(rec.emotion, "size-9 shrink-0") }}
+      <div class="min-w-0">
+        <p class="text-sm font-semibold text-ink">{{ E[rec.emotion].label }} <span class="font-normal text-ink-soft">· {{ rec.date | day_label }}{% if rec.words %} · {{ rec.words | join(", ") }}{% endif %}</span></p>
+        <p class="mt-0.5 text-sm {{ 'text-ink-soft' if rec.note else 'text-stone-400' }}">{{ rec.note or "문장 비공개 또는 없음" }}</p>
+      </div>
+    </li>
+    {% else %}<li class="text-sm text-ink-soft">기록이 없어요.</li>{% endfor %}
+  </ul>
+</section>
+
+<section id="points" class="{{ card }}">
+  {{ ui.card_title("coins", "포인트", "적립 " ~ earned_total ~ "P · 보유 " ~ balance ~ "P") }}
+  {% if orders %}
+  <ul class="space-y-1.5">{% for o in orders %}{% set i = item_map.get(o.item_id) %}
+    <li class="flex items-center justify-between rounded-2xl bg-stone-50 px-4 py-2.5 text-sm"><span>{{ i.emoji if i }} {{ i.name if i else "삭제된 상품" }} · {{ o.date | day_label }}</span>
+      <span class="text-xs font-semibold text-ink-soft">{{ {"pending": "승인 대기", "approved": "승인", "rejected": "거절", "cancelled": "취소"}[o.status] }}</span></li>{% endfor %}</ul>
+  {% else %}<p class="text-sm text-ink-soft">상점 교환 내역이 없어요.</p>{% endif %}
+</section>
+{% endblock %}

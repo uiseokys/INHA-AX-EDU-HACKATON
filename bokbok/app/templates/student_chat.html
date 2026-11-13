@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% import "_ui.html" as ui with context %}
+{% block title %}{{ BOT }} · {{ SERVICE }}{% endblock %}
+
+{% block content %}
+<section class="mx-auto flex max-w-2xl flex-col overflow-hidden rounded-3xl border border-white bg-leaf-50/60 shadow-[0_8px_28px_-14px_rgba(46,84,56,0.25)]">
+  {# 머리말 #}
+  <div class="flex items-center gap-3 border-b border-leaf-100 bg-white px-4 py-3">
+    {{ ui.bokbok("happy", "size-12 shrink-0") }}
+    <div class="min-w-0 flex-1">
+      <h1 class="font-bold text-ink">{{ BOT }}</h1>
+      <p class="flex items-center gap-1 text-xs text-ink-soft">
+        <span class="size-1.5 rounded-full bg-leaf-400"></span> 마음 친구 · 언제든 이야기해
+        <span class="ml-1 {{ chip }} {{ 'bg-leaf-100 text-leaf-700' if status.enabled else 'bg-stone-100 text-stone-500' }} px-2 py-0.5 text-[10px]"
+              title="{{ status.url if status.enabled else 'BOKBOK_LLM_MODEL 을 설정하면 로컬 LLM으로 대답해요' }}">
+          {{ "로컬 AI 연결됨" if status.enabled else "규칙 기반 응답" }}
+        </span>
+      </p>
+    </div>
+    <form method="post" action="/student/chat/clear"><button class="{{ btn.ghost }} px-3 py-2 text-xs" title="대화 지우기">{{ icon("trash-2", "size-4") }}<span class="sr-only">대화 지우기</span></button></form>
+  </div>
+
+  <p class="flex gap-2 bg-white/70 px-4 py-2.5 text-[11px] leading-relaxed text-ink-soft">{{ icon("lock", "mt-0.5 size-3 shrink-0") }}{{ notice }}</p>
+
+  {# 대화 #}
+  <div id="chat-log" class="min-h-[50vh] space-y-4 px-4 py-5" aria-live="polite">
+    {% include "_chat_messages.html" %}
+    <span id="end"></span>
+  </div>
+
+  {# 빠른 답장 #}
+  <div class="flex gap-2 overflow-x-auto px-4 pb-2">
+    {% for s in suggestions %}
+    <button type="button" data-suggest="{{ s }}" class="shrink-0 rounded-full border border-leaf-200 bg-white px-3 py-1.5 text-xs font-semibold text-leaf-700 hover:bg-leaf-50">{{ s }}</button>
+    {% endfor %}
+  </div>
+
+  <form method="post" action="/student/chat" data-chat class="sticky bottom-16 flex gap-2 border-t border-leaf-100 bg-white p-3 md:bottom-0">
+    <label for="chat-input" class="sr-only">{{ BOT }}에게 보낼 말</label>
+    <input id="chat-input" name="text" maxlength="500" autocomplete="off" placeholder="{{ BOT }}에게 이야기해 봐" class="{{ field }} py-2.5" />
+    <button class="grid size-11 shrink-0 place-items-center rounded-2xl bg-leaf-600 text-white transition hover:bg-leaf-700" aria-label="보내기">{{ icon("send-horizontal") }}</button>
+  </form>
+</section>
+
+<template id="tpl-me">
+  <div data-role="me" class="flex justify-end"><div class="max-w-[78%]"><p data-text class="rounded-3xl rounded-br-md bg-leaf-600 px-4 py-2.5 text-sm leading-relaxed whitespace-pre-line text-white"></p></div></div>
+</template>
+<template id="tpl-typing">
+  <div class="flex items-end gap-2">{{ ui.bokbok("happy", "size-10 shrink-0") }}
+    <p class="flex gap-1 rounded-3xl rounded-bl-md bg-white px-4 py-3.5 shadow-sm" aria-label="{{ BOT }}가 답장을 쓰는 중">
+      <span class="size-2 animate-typing rounded-full bg-leaf-400"></span><span class="size-2 animate-typing rounded-full bg-leaf-400 [animation-delay:.15s]"></span><span class="size-2 animate-typing rounded-full bg-leaf-400 [animation-delay:.3s]"></span>
+    </p>
+  </div>
+</template>
+
+<p class="mx-auto max-w-2xl text-center text-xs text-ink-soft">
+  {{ BOT }}는 AI 캐릭터예요. 의사나 상담 선생님을 대신하지 않아요. 지금 위험하다면 <a href="tel:112" data-call="112" data-call-name="경찰" class="font-bold text-rose-600">112</a>,
+  죽고 싶은 마음이 든다면 <a href="tel:109" data-call="109" data-call-name="자살예방 상담전화" class="font-bold text-rose-600">109</a>에 바로 연락하세요.
+</p>
+{% endblock %}

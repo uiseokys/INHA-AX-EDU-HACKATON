@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+{% import "_ui.html" as ui with context %}
+{% block title %}상점 관리 · {{ SERVICE }}{% endblock %}
+
+{% macro item_visual(i, cls="size-12") %}
+{% if i.image %}<img src="/uploads/{{ i.image }}" alt="" class="{{ cls }} rounded-2xl object-cover" />
+{% else %}<span class="{{ cls }} grid place-items-center rounded-2xl bg-leaf-50 text-2xl">{{ i.emoji }}</span>{% endif %}
+{% endmacro %}
+
+{% block content %}
+<header class="flex flex-wrap items-end justify-between gap-3">
+  <div>
+    <h1 class="text-2xl font-extrabold text-ink">우리 반 복복 상점 관리</h1>
+    <p class="mt-1 text-sm text-ink-soft">상품과 가격, 판매 기간을 정하고 학생들의 교환 신청을 승인해요.</p>
+  </div>
+  <a href="/teacher/shop?edit=new#editor" class="{{ btn.primary }}">{{ icon("plus", "size-4") }} 상품 추가</a>
+</header>
+
+<section id="orders" class="{{ card }}">
+  {{ ui.card_title("shopping-bag", "교환 신청", "승인하면 포인트가 차감되고, 거절하면 학생에게 돌아가요") }}
+  <ul class="space-y-2">
+    {% for o in pending %}{% set i = item_map.get(o.item_id) %}{% set s = get_student(o.student_id) %}
+    <li class="flex flex-wrap items-center gap-3 rounded-2xl bg-amber-50 px-4 py-3 text-sm">
+      <span class="text-lg">{{ s.avatar }}</span>
+      <span class="font-bold text-ink">{{ s.name }}</span>
+      <span class="text-ink-soft">{{ i.emoji }} {{ i.name }} · {{ i.price }}P · {{ o.date | day_label }}</span>
+      <form method="post" action="/teacher/shop/orders/{{ o.id }}" class="ml-auto flex gap-1">
+        <button name="decision" value="approved" class="{{ btn.primary }} px-3 py-1.5 text-xs">승인</button>
+        <button name="decision" value="rejected" class="{{ btn.ghost }} px-3 py-1.5 text-xs">거절</button>
+      </form>
+    </li>
+    {% else %}<li class="rounded-2xl bg-stone-50 px-4 py-5 text-sm text-ink-soft">처리할 교환 신청이 없어요.</li>{% endfor %}
+  </ul>
+  {% if history %}
+  <details class="mt-3"><summary class="cursor-pointer text-xs font-semibold text-ink-soft">지난 처리 내역 {{ history | length }}건</summary>
+    <ul class="mt-2 space-y-1">{% for o in history %}{% set i = item_map.get(o.item_id) %}
+      <li class="text-xs text-ink-soft">{{ o.date | day_label }} · {{ get_student(o.student_id).name }} · {{ i.name if i else "삭제된 상품" }} · {{ {"approved": "승인", "rejected": "거절", "cancelled": "학생 취소"}[o.status] }}</li>{% endfor %}</ul>
+  </details>
+  {% endif %}
+</section>
+
+{% if editing is not none %}
+<section id="editor" class="{{ card }} ring-2 ring-leaf-200">
+  {{ ui.card_title("pencil", "상품 수정" if editing.id else "새 상품") }}
+  <form method="post" action="/teacher/shop/items" enctype="multipart/form-data" class="grid gap-4 md:grid-cols-2">
+    <input type="hidden" name="item_id" value="{{ editing.id or '' }}" />
+    <div><label class="mb-2 block text-sm font-semibold text-ink" for="it-name">상품명</label>
+      <input id="it-name" name="name" required maxlength="30" value="{{ editing.name or '' }}" class="{{ field }}" /></div>
+    <div><label class="mb-2 block text-sm font-semibold text-ink" for="it-desc">상품 설명</label>
+      <input id="it-desc" name="desc" maxlength="60" value="{{ editing.desc or '' }}" class="{{ field }}" /></div>
+    <div class="grid grid-cols-3 gap-2">
+      <div><label class="mb-2 block text-sm font-semibold text-ink" for="it-emoji">아이콘</label>
+        <input id="it-emoji" name="emoji" maxlength="4" value="{{ editing.emoji or '🎁' }}" class="{{ field }} text-center text-xl" /></div>
+      <div><label class="mb-2 block text-sm font-semibold text-ink" for="it-price">가격(P)</label>
+        <input id="it-price" name="price" type="number" min="0" max="10000" value="{{ editing.price or 100 }}" class="{{ field }}" /></div>
+      <div><label class="mb-2 block text-sm font-semibold text-ink" for="it-limit">1인 교환 횟수</label>
+        <input id="it-limit" name="limit" type="number" min="1" max="99" value="{{ editing.limit or 1 }}" class="{{ field }}" /></div>
+    </div>
+    <div><label class="mb-2 block text-sm font-semibold text-ink" for="it-image">상품 이미지 <span class="font-normal text-ink-soft">(선택 · 2MB 이하)</span></label>
+      <input id="it-image" name="image" type="file" accept="image/png,image/jpeg,image/webp,image/gif" class="{{ field }} py-2 file:mr-3 file:rounded-xl file:border-0 file:bg-leaf-50 file:px-3 file:py-1.5 file:text-leaf-700" />
+      {% if editing.image %}<label class="mt-2 flex items-center gap-2 text-xs text-ink-soft"><input type="checkbox" name="remove_image" value="1" /> 지금 이미지 지우기</label>{% endif %}</div>
+    <div class="grid grid-cols-2 gap-2">
+      <div><label class="mb-2 block text-sm font-semibold text-ink" for="it-start">판매 시작</label>
+        <input id="it-start" name="start" type="date" value="{{ editing.start or '' }}" class="{{ field }}" /></div>
+      <div><label class="mb-2 block text-sm font-semibold text-ink" for="it-end">판매 종료</label>
+        <input id="it-end" name="end" type="date" value="{{ editing.end or '' }}" class="{{ field }}" /></div>
+    </div>
+    <div class="flex items-end">{{ ui.switch("on_sale", editing.on_sale if editing.id else True, "판매 중", "끄면 학생 화면에 품절로 보여요") }}</div>
+    <div class="flex gap-2 md:col-span-2">
+      <button class="{{ btn.primary }} flex-1">저장</button>
+      <a href="/teacher/shop" class="{{ btn.ghost }}">취소</a>
+    </div>
+  </form>
+</section>
+{% endif %}
+
+<section class="{{ card }}">
+  {{ ui.card_title("store", "상품 목록") }}
+  <ul class="grid gap-3 md:grid-cols-2">
+    {% for i in items %}
+    <li class="flex items-center gap-3 rounded-2xl border border-stone-100 px-4 py-3">
+      {{ item_visual(i) }}
+      <div class="min-w-0 flex-1">
+        <p class="font-bold text-ink">{{ i.name }} <span class="{{ chip }} {{ 'bg-leaf-100 text-leaf-700' if i.on_sale else 'bg-stone-100 text-stone-500' }}">{{ "판매 중" if i.on_sale else "품절" }}</span></p>
+        <p class="text-xs text-ink-soft">{{ i.desc }}</p>
+        <p class="mt-1 text-xs text-ink-soft">{{ i.price }}P · 1인 {{ i.limit }}회 · 교환 {{ sold[i.id] }}건{% if i.start or i.end %} · {{ i.start or "" }}~{{ i.end or "" }}{% endif %}</p>
+      </div>
+      <div class="flex shrink-0 flex-col gap-1">
+        <a href="/teacher/shop?edit={{ i.id }}#editor" class="{{ btn.soft }} px-3 py-1.5 text-xs">수정</a>
+        <form method="post" action="/teacher/shop/items/{{ i.id }}/delete"><button class="{{ btn.ghost }} w-full px-3 py-1.5 text-xs">삭제</button></form>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="{{ card }}">
+  {{ ui.card_title("coins", "학생별 포인트", "적립은 감정 기록 참여로만 생겨요") }}
+  <div class="overflow-x-auto">
+    <table class="w-full min-w-[28rem] text-sm">
+      <thead><tr class="text-left text-xs text-ink-soft"><th class="py-2 font-semibold">학생</th><th class="py-2 text-right font-semibold">적립</th><th class="py-2 text-right font-semibold">사용</th><th class="py-2 text-right font-semibold">보유</th></tr></thead>
+      <tbody class="divide-y divide-stone-100">
+        {% for l in ledgers %}
+        <tr><td class="py-2.5"><a href="/teacher/students/{{ l.student.id }}#points" class="hover:underline">{{ l.student.avatar }} {{ l.student.name }}</a></td>
+          <td class="py-2.5 text-right text-ink">{{ l.earned }}P</td><td class="py-2.5 text-right text-ink-soft">{{ l.spent }}P</td><td class="py-2.5 text-right font-bold text-amber-600">{{ l.balance }}P</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

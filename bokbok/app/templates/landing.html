@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% import "_ui.html" as ui with context %}
+
+{% set steps = [
+  ("user-round", "학기 초 기본 정보", "가족, 친구, 고민, 도움받고 싶은 사람"),
+  ("smile", "감정 스티커 기록", "스티커 → 감정 단어 → 짧은 문장"),
+  ("message-circle-more", "복복이와 대화", "언제든, 힘든 날엔 먼저 말 걸기"),
+  ("shield-alert", "AI 위험 신호 분석", "감정 패턴과 대화 맥락 살피기"),
+  ("hand-heart", "맞춤형 지원 연결", "담임·Wee클래스 상담, 전문기관"),
+  ("sprout", "지속적인 사후 관리", "주간 리포트와 지원 이력"),
+] %}
+
+{% block body %}
+<div class="relative flex-1 overflow-hidden bg-linear-to-b from-leaf-50 to-paper">
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-0">
+    <div class="absolute -top-24 -left-20 size-96 animate-float rounded-full bg-leaf-200/50 blur-3xl"></div>
+    <div class="absolute top-48 -right-24 size-[26rem] animate-float rounded-full bg-joy/30 blur-3xl [animation-delay:-3s]"></div>
+  </div>
+
+  <header class="relative mx-auto flex max-w-6xl items-center justify-between px-4 py-5 sm:px-6">
+    {{ ui.logo() }}
+    <span class="{{ chip }} bg-white/80 text-ink-soft ring-1 ring-stone-200">2026 INHA AX-EDU 해커톤 · 시연용</span>
+  </header>
+
+  <main class="relative mx-auto max-w-6xl px-4 sm:px-6">
+    <section class="grid animate-fade-up items-center gap-8 pt-6 pb-12 md:grid-cols-[1.2fr_1fr] md:pt-14">
+      <div class="text-center md:text-left">
+        <span class="{{ chip }} bg-leaf-100 text-leaf-700">학생 마음 돌봄 플랫폼</span>
+        <h1 class="mt-5 text-4xl leading-tight font-extrabold tracking-tight text-ink sm:text-5xl sm:leading-tight">
+          오늘 마음에<br /><span class="text-leaf-600">스티커 하나</span> 붙여 볼까?
+        </h1>
+        <p class="mx-auto mt-4 max-w-md text-base leading-relaxed text-ink-soft md:mx-0">
+          감정 스티커로 하루를 기록하고, 마음 친구 {{ BOT }}와 이야기해요.
+          힘든 신호가 보이면 선생님과 전문기관이 함께할게요.
+        </p>
+        <div class="mt-6 flex justify-center gap-2 md:justify-start">
+          {% for eid in E %}{{ ui.sticker(eid, "size-11 animate-pop") }}{% endfor %}
+        </div>
+      </div>
+      <div class="flex justify-center">
+        {{ ui.bokbok("cheer", "size-56 animate-bounce-soft drop-shadow-xl sm:size-64", BOT ~ " 캐릭터") }}
+      </div>
+    </section>
+
+    <section class="mx-auto grid max-w-3xl gap-4 pb-12 sm:grid-cols-2">
+      <a href="/student" class="group rounded-3xl border border-white bg-white p-6 shadow-[0_16px_40px_-18px_rgba(61,124,60,0.45)] transition hover:-translate-y-1">
+        <span class="grid size-12 place-items-center rounded-2xl bg-leaf-100 text-leaf-700">{{ icon("graduation-cap", "size-6") }}</span>
+        <h2 class="mt-4 text-xl font-bold text-ink">학생으로 시작하기</h2>
+        <p class="mt-1 text-sm leading-relaxed text-ink-soft">오늘의 감정 스티커를 붙이고 포인트도 모아요.</p>
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-bold text-leaf-700">학생 화면 열기 {{ icon("arrow-right", "size-4 transition group-hover:translate-x-1") }}</span>
+      </a>
+      <a href="/teacher" class="group rounded-3xl border border-white bg-white p-6 shadow-[0_16px_40px_-18px_rgba(14,116,144,0.4)] transition hover:-translate-y-1">
+        <span class="grid size-12 place-items-center rounded-2xl bg-sky-100 text-sky-800">{{ icon("school", "size-6") }}</span>
+        <h2 class="mt-4 text-xl font-bold text-ink">선생님 화면 보기</h2>
+        <p class="mt-1 text-sm leading-relaxed text-ink-soft">우리 반 정서 현황과 알림, 상담 일정, 상점을 관리해요.</p>
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-bold text-sky-800">선생님 화면 열기 {{ icon("arrow-right", "size-4 transition group-hover:translate-x-1") }}</span>
+      </a>
+    </section>
+
+    <section class="pb-6">
+      <h2 class="mb-4 text-center text-lg font-bold text-ink">{{ SERVICE }}는 이렇게 작동해요</h2>
+      <ol class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {% for ic, title, body in steps %}
+        <li class="flex items-start gap-3 rounded-3xl border border-white bg-white/80 p-5">
+          <span class="grid size-10 shrink-0 place-items-center rounded-2xl bg-leaf-50 text-leaf-600">{{ icon(ic) }}</span>
+          <span>
+            <span class="text-xs font-bold text-leaf-600">STEP {{ loop.index }}</span>
+            <span class="block font-bold text-ink">{{ title }}</span>
+            <span class="block text-sm text-ink-soft">{{ body }}</span>
+          </span>
+        </li>
+        {% endfor %}
+      </ol>
+      <p class="mt-5 text-center text-xs text-ink-soft">분석 결과는 진단이 아닌 참고 정보예요. {{ BOT }}와의 대화는 선생님이 볼 수 없어요.</p>
+    </section>
+  </main>
+  {{ ui.demo_footer("/") }}
+</div>
+{% endblock %}

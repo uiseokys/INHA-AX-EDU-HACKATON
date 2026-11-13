@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% import "_ui.html" as ui with context %}
+{% block title %}상담 일정 · {{ SERVICE }}{% endblock %}
+
+{% set tone = {"requested": "bg-amber-100 text-amber-800", "confirmed": "bg-leaf-600 text-white", "done": "bg-stone-100 text-ink-soft", "declined": "bg-rose-100 text-rose-700", "cancelled": "bg-stone-100 text-stone-500"} %}
+
+{% block content %}
+<header>
+  <h1 class="text-2xl font-extrabold text-ink">상담 일정</h1>
+  <p class="mt-1 text-sm text-ink-soft">상담 가능한 시간을 열어 두면 학생이 빈 시간 중에 골라 신청해요.</p>
+</header>
+
+<section class="{{ card }}">
+  {{ ui.card_title("calendar-check", "상담 신청 목록") }}
+  <ul class="space-y-2">
+    {% for bk in bookings %}
+    <li class="flex flex-wrap items-center gap-2 rounded-2xl bg-stone-50 px-4 py-3 text-sm">
+      <span class="text-lg">{{ get_student(bk.student_id).avatar }}</span>
+      <a href="/teacher/students/{{ bk.student_id }}" class="font-bold text-ink hover:underline">{{ get_student(bk.student_id).name }}</a>
+      <span class="text-ink-soft">{{ bk.date | day_label }} {{ bk.time }} · {{ TEACHERS[bk.teacher].role }} · {{ bk.topic }}</span>
+      <span class="{{ chip }} {{ tone[bk.status] }}">{{ BOOKING_STATUS[bk.status] }}</span>
+      {% if bk.status in ("requested", "confirmed") %}
+      <form method="post" action="/teacher/counsel/bookings/{{ bk.id }}" class="ml-auto flex gap-1">
+        {% if bk.status == "requested" %}<button name="status" value="confirmed" class="{{ btn.primary }} px-3 py-1.5 text-xs">확정</button>{% endif %}
+        {% if bk.status == "confirmed" %}<button name="status" value="done" class="{{ btn.soft }} px-3 py-1.5 text-xs">상담 완료</button>{% endif %}
+        <button name="status" value="declined" class="{{ btn.ghost }} px-3 py-1.5 text-xs">다른 시간 요청</button>
+      </form>
+      {% endif %}
+    </li>
+    {% else %}<li class="rounded-2xl bg-stone-50 px-4 py-5 text-sm text-ink-soft">아직 상담 신청이 없어요.</li>{% endfor %}
+  </ul>
+</section>
+
+<div class="grid items-start gap-5 lg:grid-cols-2">
+  {% for tid, t in TEACHERS.items() %}
+  <section class="{{ card }}">
+    {{ ui.card_title("calendar-clock", t.role ~ " · " ~ t.name, "상담 가능 시간") }}
+    <form method="post" action="/teacher/counsel/slots" class="mb-4 flex flex-wrap gap-2">
+      <input type="hidden" name="teacher" value="{{ tid }}" />
+      <input type="date" name="date" required min="{{ today }}" value="{{ today }}" aria-label="날짜" class="{{ field }} w-auto flex-1 py-2.5" />
+      <select name="time" aria-label="시간" class="{{ field }} w-auto py-2.5">{% for tm in times %}<option>{{ tm }}</option>{% endfor %}</select>
+      <button class="{{ btn.primary }} px-4 py-2.5">{{ icon("plus", "size-4") }} 추가</button>
+    </form>
+    <ul class="grid grid-cols-2 gap-2 sm:grid-cols-3">
+      {% for s in slots[tid] %}
+      <li class="relative rounded-2xl px-3 py-2.5 text-center {{ 'bg-leaf-50 ring-1 ring-leaf-200' if s.booking else 'bg-stone-50' }}">
+        <span class="block text-xs text-ink-soft">{{ s.date | day_label }}</span>
+        <span class="block font-bold text-ink">{{ s.time }}</span>
+        <span class="block text-[11px] {{ 'text-leaf-700' if s.booking else 'text-stone-400' }}">{{ get_student(s.booking.student_id).name ~ " 신청" if s.booking else "비어 있음" }}</span>
+        {% if not s.booking %}
+        <form method="post" action="/teacher/counsel/slots/{{ s.id }}/delete" class="absolute top-1 right-1"><button class="rounded-full p-1 text-stone-300 hover:bg-white hover:text-stone-500" aria-label="이 시간 삭제">{{ icon("x", "size-3.5") }}</button></form>
+        {% endif %}
+      </li>
+      {% else %}<li class="col-span-full text-sm text-ink-soft">열어 둔 시간이 없어요.</li>{% endfor %}
+    </ul>
+  </section>
+  {% endfor %}
+</div>
+{% endblock %}

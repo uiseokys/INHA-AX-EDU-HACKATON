@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+{% import "_ui.html" as ui with context %}
+{% block title %}나의 감정 리포트 · {{ SERVICE }}{% endblock %}
+
+{% block content %}
+<header>
+  <h1 class="text-2xl font-extrabold text-ink">나의 감정 리포트</h1>
+  <p class="mt-1 text-sm text-ink-soft">이번 주와 최근 2주 동안의 감정 스티커를 정리했어요.</p>
+</header>
+
+{% call ui.notice() %}
+규칙에 따라 내 기록을 정리한 <strong>참고 정보</strong>예요. 마음 건강 상태를 진단하지 않아요. 결과가 내 느낌과 다르다면 내 느낌이 더 정확해요.
+{% endcall %}
+
+<section class="{{ card }} bg-linear-to-br from-leaf-50 to-white">
+  <div class="flex flex-col gap-5 md:flex-row md:items-center">
+    <div class="flex items-center gap-4">
+      {% if report.top_this_week %}{{ ui.sticker(report.top_this_week.emotion, "size-20 shrink-0") }}{% else %}{{ ui.bokbok("happy", "size-20 shrink-0") }}{% endif %}
+      <div>
+        <p class="text-xs font-bold text-leaf-600">이번 주 가장 많이 느낀 감정</p>
+        <p class="text-2xl font-extrabold text-ink">{{ E[report.top_this_week.emotion].label if report.top_this_week else "아직 기록이 없어요" }}</p>
+      </div>
+    </div>
+    <ul class="flex-1 space-y-1.5 md:border-l md:border-leaf-100 md:pl-5">
+      {% for line in report.summary %}<li class="flex gap-2 text-sm leading-relaxed text-ink"><span class="mt-2 size-1.5 shrink-0 rounded-full bg-leaf-400"></span>{{ line }}</li>{% endfor %}
+    </ul>
+  </div>
+</section>
+
+<div class="grid items-start gap-5 lg:grid-cols-2">
+  <section class="{{ card }}">
+    {{ ui.card_title("chart-column", "지난주와 비교한 감정 변화") }}
+    <div class="grid grid-cols-2 gap-3">
+      {% for title, recs, top, avg in [("지난주", report.last_week, report.top_last_week, report.last_week_avg), ("이번 주", report.this_week, report.top_this_week, report.week_avg)] %}
+      <div class="rounded-2xl bg-stone-50 p-4">
+        <p class="text-xs font-bold text-ink-soft">{{ title }} · {{ recs | length }}일 기록</p>
+        <div class="mt-2 flex flex-wrap gap-0.5">{% for r in recs %}{{ ui.sticker(r.emotion, "size-7") }}{% else %}<span class="text-sm text-stone-400">기록 없음</span>{% endfor %}</div>
+        {% if top %}<p class="mt-2 text-sm text-ink">주로 <strong>{{ E[top.emotion].label }}</strong></p>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="{{ card }}">
+    {{ ui.card_title("sparkles", "최근 자주 선택한 감정 단어", "최근 2주") }}
+    {% if report.words %}
+    <div class="flex flex-wrap gap-2">
+      {% for w in report.words %}
+      <span class="rounded-full px-3.5 py-2 font-semibold {{ 'bg-anxious/40 text-ink' if w.negative else 'bg-calm/50 text-ink' }}" style="font-size: {{ 13 + w.count * 1.5 }}px">{{ w.word }} <span class="text-xs text-ink-soft">{{ w.count }}</span></span>
+      {% endfor %}
+    </div>
+    {% else %}<p class="text-sm text-ink-soft">아직 고른 감정 단어가 없어요.</p>{% endif %}
+  </section>
+</div>
+
+<div class="grid items-start gap-5 lg:grid-cols-[1.4fr_1fr]">
+  <section class="{{ card }}">
+    {{ ui.card_title("chart-line", "나의 감정 변화 그래프", "최근 14일 · 점을 누르면 그날의 기록이 보여요") }}
+    {% if report.enough %}{{ ui.mood_chart(chart) }}
+    {% else %}
+    <div class="rounded-2xl bg-stone-50 px-4 py-8 text-center">
+      {{ ui.bokbok("happy", "mx-auto size-16") }}
+      <p class="mt-2 text-sm text-ink">기록이 {{ report.record_count }}개 모였어요. 5개가 넘으면 그래프로 보여 줄게요!</p>
+    </div>
+    {% endif %}
+  </section>
+  <section class="{{ card }}">
+    {{ ui.card_title("chart-pie", "최근 2주 감정 비율") }}
+    {% if report.ratio %}{{ ui.emotion_bars(report.ratio) }}{% else %}<p class="text-sm text-ink-soft">아직 기록이 없어요.</p>{% endif %}
+  </section>
+</div>
+
+<div class="grid items-start gap-5 lg:grid-cols-[1.4fr_1fr]">
+  <section class="{{ card }}">
+    {{ ui.card_title("calendar-days", month ~ "월 감정 달력") }}
+    {{ ui.calendar(calendar, today) }}
+  </section>
+  <section class="{{ card }} bg-linear-to-br from-joy/20 to-white">
+    {{ ui.card_title("circle-help", "스스로 돌아보는 질문") }}
+    <ul class="space-y-3">
+      {% for q in report.questions %}
+      <li class="rounded-2xl bg-white p-4 text-sm leading-relaxed text-ink shadow-sm">Q. {{ q }}</li>
+      {% endfor %}
+    </ul>
+    <a href="/student/chat" class="{{ btn.soft }} mt-4 w-full">{{ BOT }}와 이야기하며 생각해 보기</a>
+  </section>
+</div>
+
+<section id="records" class="{{ card }}">
+  {{ ui.card_title(None, "최근 기록", "문장을 선생님께 보여 줄지 기록마다 정할 수 있어요.") }}
+  <ul class="space-y-2">
+    {% for r in recent %}
+    <li class="flex items-start gap-3 rounded-2xl border border-stone-100 px-4 py-3">
+      {{ ui.sticker(r.emotion, "size-10 shrink-0") }}
+      <div class="min-w-0 flex-1">
+        <p class="text-sm font-semibold text-ink">{{ E[r.emotion].label }} <span class="font-normal text-ink-soft">· {{ r.date | day_label }}{% if r.words %} · {{ r.words | join(", ") }}{% endif %}</span></p>
+        <p class="mt-0.5 text-sm {{ 'text-ink-soft' if r.note else 'text-stone-400' }}">{{ r.note or "문장 없이 기록했어요" }}</p>
+      </div>
+      {% if r.note %}
+      <form method="post" action="/student/records/share" class="shrink-0">
+        <input type="hidden" name="record_id" value="{{ r.id }}" />
+        <button name="shared" value="{{ '0' if r.shared else '1' }}" aria-pressed="{{ 'true' if r.shared else 'false' }}"
+                class="flex items-center gap-1 rounded-full px-3 py-1.5 text-xs font-semibold transition {{ 'bg-leaf-100 text-leaf-700 hover:bg-leaf-200' if r.shared else 'bg-stone-100 text-ink-soft hover:bg-stone-200' }}">
+          {{ icon("share-2" if r.shared else "lock", "size-3") }} {{ "선생님께 보임" if r.shared else "나만 보기" }}
+        </button>
+      </form>
+      {% endif %}
+    </li>
+    {% else %}<li class="rounded-2xl bg-stone-50 px-4 py-5 text-sm text-ink-soft">아직 기록이 없어요.</li>{% endfor %}
+  </ul>
+</section>
+{% endblock %}

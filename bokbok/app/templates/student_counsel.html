@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+{% import "_ui.html" as ui with context %}
+{% block title %}상담 신청 · {{ SERVICE }}{% endblock %}
+
+{% set status_text = {"requested": ("확인 중", "bg-amber-100 text-amber-800"), "confirmed": ("확정", "bg-leaf-600 text-white"), "done": ("상담 완료", "bg-stone-100 text-ink-soft"), "declined": ("다른 시간으로 다시 신청해 주세요", "bg-rose-100 text-rose-700"), "cancelled": ("취소함", "bg-stone-100 text-stone-500")} %}
+
+{% block content %}
+<header>
+  <h1 class="text-2xl font-extrabold text-ink">상담 신청</h1>
+  <p class="mt-1 text-sm text-ink-soft">선생님이 열어 둔 시간 중 편한 때를 골라요. 어떤 이야기든 괜찮아요.</p>
+</header>
+
+{% if recommend %}
+<section class="flex items-start gap-3 rounded-3xl bg-leaf-50 p-5 ring-1 ring-leaf-100">
+  {{ ui.bokbok("care", "size-14 shrink-0") }}
+  <p class="text-sm leading-relaxed text-ink">요즘 기록을 보니 마음이 조금 무거워 보여. 선생님과 한 번 이야기해 보는 건 어때? 신청할지는 네가 정하면 돼.</p>
+</section>
+{% endif %}
+
+{% if mine %}
+<section class="{{ card }}">
+  {{ ui.card_title("calendar-check", "내 상담 신청") }}
+  <ul class="space-y-2">
+    {% for b in mine %}
+    {% set st = status_text[b.status] %}
+    <li class="flex flex-wrap items-center gap-2 rounded-2xl bg-stone-50 px-4 py-3 text-sm">
+      <span class="font-bold text-ink">{{ b.date | day_label }} {{ b.time }}</span>
+      <span class="text-ink-soft">{{ TEACHERS[b.teacher].name }} · {{ b.topic }}</span>
+      <span class="{{ chip }} {{ st[1] }}">{{ st[0] }}</span>
+      {% if b.status in ("requested", "confirmed") %}
+      <form method="post" action="/student/counsel/{{ b.id }}/cancel" class="ml-auto"><button class="{{ btn.ghost }} px-3 py-1.5 text-xs">취소</button></form>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+<div class="grid items-start gap-5 lg:grid-cols-2">
+  {% for tid, t in TEACHERS.items() %}
+  <section id="{{ tid }}" class="{{ card }} {{ 'ring-2 ring-leaf-300' if selected == tid }}">
+    {{ ui.card_title("user-round" if tid == "homeroom" else "heart-pulse", t.role ~ " · " ~ t.name, t.place) }}
+    {% if open_slots[tid] %}
+    <form method="post" action="/student/counsel" class="space-y-4">
+      <fieldset>
+        <legend class="mb-2 text-sm font-semibold text-ink">시간 고르기</legend>
+        <div class="grid grid-cols-2 gap-2 sm:grid-cols-3">
+          {% for s in open_slots[tid] %}
+          <label class="cursor-pointer rounded-2xl border-2 border-transparent bg-stone-50 px-2 py-2.5 text-center transition hover:bg-leaf-50 has-[:checked]:border-leaf-500 has-[:checked]:bg-leaf-50 has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-leaf-500">
+            <input type="radio" name="slot_id" value="{{ s.id }}" class="sr-only" required />
+            <span class="block text-xs text-ink-soft">{{ s.date | day_label }}</span>
+            <span class="block font-bold text-ink">{{ s.time }}</span>
+          </label>
+          {% endfor %}
+        </div>
+      </fieldset>
+      <div>
+        <label for="topic-{{ tid }}" class="mb-2 block text-sm font-semibold text-ink">이야기하고 싶은 주제 <span class="font-normal text-ink-soft">(선택)</span></label>
+        <input id="topic-{{ tid }}" name="topic" maxlength="60" placeholder="예: 친구 관계, 진로, 그냥 이야기하고 싶어요" class="{{ field }}" />
+      </div>
+      <button class="{{ btn.primary }} w-full">이 시간으로 신청하기</button>
+    </form>
+    {% else %}
+    <p class="rounded-2xl bg-stone-50 px-4 py-5 text-sm text-ink-soft">지금 열려 있는 시간이 없어요. 급한 일이라면 선생님께 직접 말하거나 아래 상담 전화를 이용해 주세요.</p>
+    {% endif %}
+  </section>
+  {% endfor %}
+</div>
+
+<section class="{{ card }}">
+  {{ ui.card_title("phone", "외부 상담 연결", "학교 밖 전문 상담 선생님과도 이야기할 수 있어요") }}
+  <div class="grid gap-2 md:grid-cols-2">
+    {{ ui.call_button("1388") }}
+    {{ ui.call_button("109") }}
+    {% for l in links %}
+    <a href="{{ l.url }}" target="_blank" rel="noopener" class="flex items-center justify-between gap-3 rounded-2xl bg-stone-50 px-4 py-3 hover:bg-leaf-50">
+      <span class="min-w-0"><span class="block text-sm font-semibold text-ink">{{ l.name }}</span><span class="block text-xs text-ink-soft">{{ l.desc }}</span></span>
+      {{ icon("external-link", "size-4 shrink-0 text-stone-400") }}</a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

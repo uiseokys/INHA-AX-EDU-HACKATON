@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% import "_ui.html" as ui with context %}
+{% block title %}내 포인트 · {{ SERVICE }}{% endblock %}
+
+{% block content %}
+<header class="flex items-center justify-between gap-3">
+  <div><h1 class="text-2xl font-extrabold text-ink">내 포인트</h1><p class="text-sm text-ink-soft">포인트는 감정을 기록한 날마다 쌓여요. 어떤 감정을 골랐는지는 상관없어요.</p></div>
+  <a href="/student/shop" class="{{ btn.dark }} shrink-0">{{ icon("store", "size-4") }} 상점 가기</a>
+</header>
+
+<div class="grid grid-cols-2 gap-3 md:grid-cols-4">
+  {% for label, value, tone in [("쓸 수 있는 포인트", balance ~ "P", "bg-joy/40 text-amber-900"), ("지금까지 모은 포인트", total ~ "P", "bg-white text-ink"), ("연속 기록", streak ~ "일", "bg-leaf-50 text-leaf-800"), (today[5:7] | int ~ "월 기록", month_count ~ "/" ~ rules.MONTH_GOAL ~ "일", "bg-white text-ink")] %}
+  <div class="rounded-3xl p-4 {{ tone }}"><p class="text-xs font-semibold opacity-80">{{ label }}</p><p class="mt-1 text-2xl font-extrabold">{{ value }}</p></div>
+  {% endfor %}
+</div>
+
+<div class="grid items-start gap-5 lg:grid-cols-[1fr_1.4fr]">
+  <section class="{{ card }}">
+    {{ ui.card_title("coins", "포인트 받는 방법") }}
+    <table class="w-full text-sm">
+      <tbody class="divide-y divide-stone-100">
+        {% for label, p in [("하루 감정 기록 완료", rules.DAILY), ("감정에 대한 추가 설명 작성", rules.NOTE), ("일주일 연속 감정 기록", rules.WEEK_STREAK), ("한 달간 꾸준히 기록 (" ~ rules.MONTH_GOAL ~ "일)", rules.MONTH)] %}
+        <tr><td class="py-2.5 text-ink">{{ label }}</td><td class="py-2.5 text-right font-bold text-amber-600">+{{ p }}P</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div class="mt-4">
+      <div class="mb-1 flex justify-between text-xs text-ink-soft"><span>이번 달 꾸준히 기록 보너스까지</span><span>{{ month_count }}/{{ rules.MONTH_GOAL }}일</span></div>
+      <div class="h-2.5 overflow-hidden rounded-full bg-stone-100"><div class="h-full rounded-full bg-linear-to-r from-leaf-400 to-joy" style="width: {{ [month_count / rules.MONTH_GOAL * 100, 100] | min }}%"></div></div>
+    </div>
+  </section>
+
+  <section class="{{ card }}">
+    {{ ui.card_title("history", "적립·사용 내역") }}
+    <ul class="divide-y divide-stone-100">
+      {% for e in entries[:40] %}
+      <li class="flex items-center justify-between py-2.5 text-sm">
+        <span><span class="text-ink">{{ e.label }}</span> <span class="text-xs text-ink-soft">· {{ e.date | day_label }}</span></span>
+        <span class="font-bold {{ 'text-amber-600' if e.amount > 0 else 'text-ink-soft' }}">{{ "+" if e.amount > 0 }}{{ e.amount }}P</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+</div>
+{% endblock %}

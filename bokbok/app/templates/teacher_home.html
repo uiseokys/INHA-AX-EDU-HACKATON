@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+{% import "_ui.html" as ui with context %}
+{% block title %}정서 현황 · {{ SERVICE }}{% endblock %}
+
+{% block content %}
+<header class="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+  <div>
+    <h1 class="text-2xl font-extrabold text-ink">{{ CLASS_NAME }} 월간 정서 현황</h1>
+    <p class="mt-1 text-sm text-ink-soft">{{ SCHOOL }} · {{ TEACHERS.homeroom.name }}</p>
+  </div>
+  <span class="{{ chip }} self-start bg-sky-100 text-sky-800 sm:self-auto">{{ month }}월 분석</span>
+</header>
+
+<div class="grid grid-cols-2 gap-3 lg:grid-cols-4">
+  <div class="rounded-3xl bg-white p-4 shadow-sm">
+    <p class="text-xs font-bold text-ink-soft">전체 학생</p>
+    <p class="mt-1 text-3xl font-extrabold text-ink">{{ total }}</p>
+    <p class="text-[11px] text-ink-soft">오늘 기록 {{ recorded_today }}명</p>
+  </div>
+  {% for lv in ["watch", "consult", "low_data"] %}
+  <a href="/teacher{{ '' if selected == lv else '?level=' ~ lv }}" data-keep-scroll
+     class="rounded-3xl border-2 p-4 transition hover:-translate-y-0.5 {{ LEVELS[lv].tile }} {{ 'border-current' if selected == lv else 'border-transparent' }}">
+    <p class="flex items-center gap-1.5 text-xs font-bold"><span class="size-2 rounded-full {{ LEVELS[lv].dot }}"></span>{{ LEVELS[lv].label }}</p>
+    <p class="mt-1 text-3xl font-extrabold">{{ counts[lv] }}</p>
+    <p class="text-[11px] opacity-80">{{ {"watch": "부정 감정이 반복되거나 평소와 달라요", "consult": "위험 신호나 급격한 변화가 있어요", "low_data": "기록이 적어 판단이 어려워요"}[lv] }}</p>
+  </a>
+  {% endfor %}
+</div>
+
+<div class="grid items-start gap-5 lg:grid-cols-[1.6fr_1fr]">
+  <section class="{{ card }} min-w-0 p-3 sm:p-5">
+    <div class="mb-3 flex flex-wrap items-center justify-between gap-2 px-1">
+      <h2 class="font-bold text-ink">학생별 확인 목록</h2>
+      <div class="flex flex-wrap gap-1.5">
+        <a href="/teacher" data-keep-scroll class="rounded-full px-3 py-1.5 text-xs font-semibold {{ 'bg-ink text-white' if selected == 'all' else 'bg-stone-100 text-ink-soft hover:bg-stone-200' }}">전체 {{ total }}</a>
+        {% for lv in LEVEL_ORDER %}
+        <a href="/teacher?level={{ lv }}" data-keep-scroll class="rounded-full px-3 py-1.5 text-xs font-semibold {{ 'bg-ink text-white' if selected == lv else 'bg-stone-100 text-ink-soft hover:bg-stone-200' }}">{{ LEVELS[lv].label }} {{ counts[lv] }}</a>
+        {% endfor %}
+      </div>
+    </div>
+    <ul class="space-y-2">
+      {% for r in rows %}
+      {% set s = r.student %}
+      <li>
+        <a href="/teacher/students/{{ s.id }}" class="flex items-center gap-3 rounded-2xl border border-stone-100 bg-white px-4 py-3 transition hover:border-leaf-200 hover:shadow-md">
+          <span class="relative grid size-11 shrink-0 place-items-center rounded-2xl bg-paper text-xl">{{ s.avatar }}
+            {% if r.unread %}<span class="absolute -top-1 -right-1 grid size-5 place-items-center rounded-full bg-rose-500 text-[10px] font-bold text-white">{{ r.unread }}</span>{% endif %}
+          </span>
+          <span class="min-w-0 flex-1">
+            <span class="flex flex-wrap items-center gap-1.5">
+              <span class="font-bold text-ink">{{ s.name }}</span>
+              <span class="text-xs text-ink-soft">{{ s.no }}</span>
+              {{ ui.level_chip(r.report.level) }}
+              {% if r.followup != "none" %}<span class="{{ chip }} bg-sky-50 text-sky-800">{{ FOLLOWUP[r.followup] }}</span>{% endif %}
+            </span>
+            <span class="mt-0.5 block truncate text-sm text-ink-soft">{{ r.report.reasons | join(" · ") }}</span>
+          </span>
+          <span class="hidden items-center gap-3 sm:flex">
+            {% if r.today %}{{ ui.sticker(r.today.emotion, "size-8") }}{% else %}<span class="grid size-8 place-items-center rounded-full bg-stone-100 text-[10px] text-stone-400">미기록</span>{% endif %}
+            {{ ui.sparkline(r.spark) }}
+          </span>
+          {{ icon("chevron-right", "size-5 shrink-0 text-stone-300") }}
+        </a>
+      </li>
+      {% else %}
+      <li class="rounded-2xl bg-stone-50 px-4 py-8 text-center text-sm text-ink-soft">해당하는 학생이 없어요.</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <div class="space-y-5">
+    <section class="{{ card }}">
+      {{ ui.card_title("chart-pie", month ~ "월 우리 반 감정 분포", "이번 달 모든 기록") }}
+      <div class="mb-4 flex h-4 overflow-hidden rounded-full">
+        {% for m in month_ratio if m.count %}<span style="width: {{ m.pct }}%; background: {{ E[m.emotion].color }}" title="{{ E[m.emotion].label }} {{ m.pct }}%"></span>{% endfor %}
+      </div>
+      {{ ui.emotion_bars(month_ratio) }}
+    </section>
+    <section class="{{ card }}">
+      {{ ui.card_title("bell", "확인하지 않은 알림") }}
+      {% if pinned %}
+      <ul class="space-y-2">
+        {% for a in pinned[:4] %}
+        <li><a href="/teacher/students/{{ a.student_id }}" class="block rounded-2xl bg-rose-50 px-4 py-3 text-sm hover:bg-rose-100">
+          <span class="font-bold text-ink">{{ get_student(a.student_id).name }}</span> <span class="text-xs text-ink-soft">· {{ rel(a.date, today) }} {{ a.time }}</span>
+          <span class="mt-0.5 block text-ink-soft">{{ a.summary }}</span></a></li>
+        {% endfor %}
+      </ul>
+      <a href="/teacher/alerts" class="{{ btn.ghost }} mt-2 w-full text-xs">알림 전체 보기</a>
+      {% else %}<p class="text-sm text-ink-soft">새 알림이 없어요.</p>{% endif %}
+    </section>
+  </div>
+</div>
+
+{% call ui.notice("warn") %}
+화면의 ‘관찰 필요·상담 권장’은 기록을 규칙으로 계산한 참고 표시이며, 실제 위험도는 선생님의 확인과 상담을 통해 판단해 주세요.
+{{ BOT }} 대화 내용은 선생님께 공개되지 않으며, 위험 신호가 감지된 사실만 알림으로 전해집니다.
+{% endcall %}
+{% endblock %}

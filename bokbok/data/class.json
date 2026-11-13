@@ -1,0 +1,61 @@
+{
+  "_notice": "시연용 합성 데이터입니다. 학교·교사·학생 이름과 정보는 모두 지어낸 것이며 실제 정보가 아닙니다. day_offset 은 오늘을 0으로 한 상대 날짜입니다.",
+  "school": "한빛중학교(가상)",
+  "class_name": "1학년 3반",
+  "teachers": {
+    "homeroom": { "id": "homeroom", "name": "김다정 선생님", "role": "담임 선생님", "place": "1학년 3반 교실" },
+    "wee": { "id": "wee", "name": "박온유 선생님", "role": "Wee클래스 상담 선생님", "place": "본관 2층 Wee클래스" }
+  },
+  "students": [
+    { "id": "S01", "name": "하늘", "no": "10301", "avatar": "🌤️", "profile": null },
+    { "id": "S02", "name": "보리", "no": "10302", "avatar": "🌾",
+      "profile": { "family": "엄마, 아빠, 동생", "home": "부모님과 함께 지내요", "friends": "이든, 루아", "wish": "수업 시간에 재밌는 이야기 많이 해 주세요", "satisfaction": 5, "concern": "요즘은 별 걱정 없어요", "helpers": ["부모님", "친구"] } },
+    { "id": "S03", "name": "솔", "no": "10303", "avatar": "🌲",
+      "profile": { "family": "엄마, 아빠", "home": "부모님과 함께 지내요", "friends": "한결", "wish": "시험 공부 방법을 알려 주세요", "satisfaction": 3, "concern": "성적이 떨어질까 봐 걱정돼요", "helpers": ["상담 선생님", "부모님"] } },
+    { "id": "S04", "name": "여울", "no": "10304", "avatar": "💧",
+      "profile": { "family": "엄마, 언니", "home": "엄마가 늦게 퇴근하셔서 혼자 있는 시간이 많아요", "friends": "잘 모르겠어요", "wish": "", "satisfaction": 2, "concern": "반 친구들이랑 잘 못 지내는 것 같아요", "helpers": ["담임 선생님"] } },
+    { "id": "S05", "name": "나래", "no": "10305", "avatar": "🪽",
+      "profile": { "family": "엄마, 아빠, 할머니", "home": "부모님과 함께 지내요", "friends": "새벽", "wish": "", "satisfaction": 4, "concern": "", "helpers": ["친구"] } },
+    { "id": "S06", "name": "다온", "no": "10306", "avatar": "🍀",
+      "profile": { "family": "아빠, 형", "home": "아빠와 형이랑 지내요", "friends": "마루, 가람", "wish": "가끔 이야기 들어 주세요", "satisfaction": 4, "concern": "잠을 잘 못 자요", "helpers": ["담임 선생님", "친구"] } },
+    { "id": "S07", "name": "마루", "no": "10307", "avatar": "⛰️",
+      "profile": { "family": "엄마, 아빠", "home": "부모님이 자주 다투세요", "friends": "다온", "wish": "혼내기 전에 이유를 먼저 물어봐 주세요", "satisfaction": 3, "concern": "집에서 자주 싸워서 짜증나요", "helpers": ["상담 선생님"] } },
+    { "id": "S08", "name": "새벽", "no": "10308", "avatar": "🌙",
+      "profile": { "family": "엄마, 아빠, 누나", "home": "부모님과 함께 지내요", "friends": "나래", "wish": "", "satisfaction": 4, "concern": "", "helpers": ["부모님"] } },
+    { "id": "S09", "name": "가람", "no": "10309", "avatar": "🌊",
+      "profile": { "family": "엄마, 아빠", "home": "다문화 가정이에요. 집에서는 두 언어를 써요", "friends": "다온", "wish": "발표 순서를 미리 알려 주세요", "satisfaction": 3, "concern": "처음엔 친구 사귀기가 어려웠어요", "helpers": ["담임 선생님", "부모님"] } },
+    { "id": "S10", "name": "이든", "no": "10310", "avatar": "☀️",
+      "profile": { "family": "엄마, 아빠, 동생 둘", "home": "부모님과 함께 지내요", "friends": "보리, 루아", "wish": "체육 시간 늘려 주세요", "satisfaction": 5, "concern": "", "helpers": ["친구", "부모님"] } },
+    { "id": "S11", "name": "루아", "no": "10311", "avatar": "🌸",
+      "profile": { "family": "엄마", "home": "엄마와 둘이 지내요", "friends": "보리, 이든", "wish": "", "satisfaction": 4, "concern": "수행평가가 많아서 바빠요", "helpers": ["부모님"] } },
+    { "id": "S12", "name": "한결", "no": "10312", "avatar": "🍃",
+      "profile": { "family": "엄마, 아빠, 형", "home": "부모님과 함께 지내요", "friends": "솔", "wish": "", "satisfaction": 4, "concern": "", "helpers": ["친구"] } }
+  ],
+  "seed": {
+    "alerts": [
+      { "id": "AL-S06", "student_id": "S06", "day_offset": -1, "source": "chat", "category": "urgent",
+        "summary": "복복이 대화에서 위험 신호가 감지되었어요. 대화 내용은 공개되지 않습니다." },
+      { "id": "AL-S04", "student_id": "S04", "day_offset": -2, "source": "record", "category": "violence",
+        "summary": "감정 기록 문장에서 또래 폭력이 의심되는 표현이 감지되었어요. 원문은 학생이 공유하지 않았습니다." }
+    ],
+    "followups": { "S03": "talking", "S07": "checked" },
+    "bookings": [
+      { "id": "BK-S03", "student_id": "S03", "teacher": "wee", "slot": [2, "15:40"], "topic": "학업 스트레스", "status": "confirmed" }
+    ],
+    "slots": {
+      "homeroom": [[1, "08:20"], [1, "15:40"], [2, "12:50"], [3, "15:40"], [4, "08:20"]],
+      "wee": [[1, "12:50"], [1, "16:20"], [2, "15:40"], [3, "12:50"], [4, "16:20"]]
+    },
+    "items": [
+      { "id": "IT1", "name": "자리 바꾸기권", "desc": "원하는 자리로 이동하기 (1주일)", "emoji": "🪑", "price": 100, "limit": 1, "on_sale": true },
+      { "id": "IT2", "name": "숙제 면제권", "desc": "지정된 과제 1회 면제", "emoji": "📚", "price": 200, "limit": 1, "on_sale": true },
+      { "id": "IT3", "name": "벌점 상쇄권", "desc": "선생님이 허용한 범위 안에서 사용", "emoji": "⭐", "price": 300, "limit": 1, "on_sale": true },
+      { "id": "IT4", "name": "음악 선택권", "desc": "수업 전 쉬는 시간 음악 고르기", "emoji": "🎵", "price": 50, "limit": 3, "on_sale": true },
+      { "id": "IT5", "name": "급식 먼저 먹기권", "desc": "점심시간 줄 맨 앞에 서기", "emoji": "🍱", "price": 80, "limit": 2, "on_sale": false }
+    ],
+    "orders": [
+      { "id": "OR-S10", "student_id": "S10", "item_id": "IT1", "day_offset": -6, "status": "approved" },
+      { "id": "OR-S02", "student_id": "S02", "item_id": "IT4", "day_offset": -1, "status": "pending" }
+    ]
+  }
+}
