@@ -1,0 +1,153 @@
+{
+  "_notice": "시연용 합성 데이터입니다. 이름·학급·사연 모두 지어낸 것이며 실제 학생 정보가 아닙니다.",
+  "school": "한빛중학교(가상)",
+  "students": [
+    {
+      "id": "S01",
+      "name": "하늘",
+      "grade": 2,
+      "class_no": 3,
+      "avatar": "🌤️",
+      "scenario": "시연용 학생 계정 · 최근 또래 관계 고민이 늘어난 흐름",
+      "consent": {
+        "trend": false,
+        "all_notes": false
+      },
+      "case_status": "none",
+      "status_note": ""
+    },
+    {
+      "id": "S02",
+      "name": "보리",
+      "grade": 2,
+      "class_no": 3,
+      "avatar": "🌾",
+      "scenario": "대체로 안정적인 감정 기록",
+      "consent": {
+        "trend": true,
+        "all_notes": false
+      },
+      "case_status": "none",
+      "status_note": ""
+    },
+    {
+      "id": "S03",
+      "name": "솔",
+      "grade": 2,
+      "class_no": 1,
+      "avatar": "🌲",
+      "scenario": "학업 스트레스가 반복되는 사례",
+      "consent": {
+        "trend": true,
+        "all_notes": false
+      },
+      "case_status": "in_progress",
+      "status_note": "교내 Wee클래스에서 주 1회 학습 상담 진행 중"
+    },
+    {
+      "id": "S04",
+      "name": "여울",
+      "grade": 2,
+      "class_no": 5,
+      "avatar": "💧",
+      "scenario": "또래 관계에 대한 어려움이 반복되는 사례",
+      "consent": {
+        "trend": true,
+        "all_notes": false
+      },
+      "case_status": "review",
+      "status_note": "공유된 기록에서 최근 변화가 보여 상담교사 확인이 필요함"
+    },
+    {
+      "id": "S05",
+      "name": "나래",
+      "grade": 1,
+      "class_no": 2,
+      "avatar": "🪽",
+      "scenario": "기록 빈도가 낮아 분석이 어려운 사례",
+      "consent": {
+        "trend": true,
+        "all_notes": false
+      },
+      "case_status": "none",
+      "status_note": ""
+    },
+    {
+      "id": "S06",
+      "name": "다온",
+      "grade": 3,
+      "class_no": 2,
+      "avatar": "🍀",
+      "scenario": "직접 상담 지원을 요청한 사례",
+      "consent": {
+        "trend": false,
+        "all_notes": false
+      },
+      "case_status": "requested",
+      "status_note": ""
+    },
+    {
+      "id": "S07",
+      "name": "마루",
+      "grade": 3,
+      "class_no": 4,
+      "avatar": "⛰️",
+      "scenario": "진로·가족 고민으로 외부 기관과 연계 중인 사례",
+      "consent": {
+        "trend": true,
+        "all_notes": false
+      },
+      "case_status": "referred",
+      "status_note": "청소년상담복지센터(가상)와 연계하여 진로 상담 진행 중"
+    },
+    {
+      "id": "S08",
+      "name": "새벽",
+      "grade": 1,
+      "class_no": 4,
+      "avatar": "🌙",
+      "scenario": "기록은 하지만 공유에는 동의하지 않은 사례",
+      "consent": {
+        "trend": false,
+        "all_notes": false
+      },
+      "case_status": "none",
+      "status_note": ""
+    }
+  ],
+  "seed_requests": [
+    {
+      "id": "REQ-S06",
+      "student_id": "S06",
+      "day_offset": -1,
+      "topic": "말하기 어려워요",
+      "message": "요즘 학교에서 지내는 게 조금 힘들어요. 다른 친구들 모르게 조용히 이야기하고 싶어요.",
+      "preferred": "선생님이 먼저 불러주세요"
+    },
+    {
+      "id": "REQ-S03",
+      "student_id": "S03",
+      "day_offset": -9,
+      "topic": "학업",
+      "message": "시험 걱정 때문에 잠이 잘 안 와요. 공부 방법을 같이 고민해주실 수 있나요?",
+      "preferred": "직접 만나서 이야기하기"
+    },
+    {
+      "id": "REQ-S07",
+      "student_id": "S07",
+      "day_offset": -12,
+      "topic": "진로",
+      "message": "진로 때문에 부모님과 자꾸 부딪혀요. 어떻게 얘기를 꺼내야 할지 모르겠어요.",
+      "preferred": "직접 만나서 이야기하기"
+    }
+  ],
+  "seed_referrals": [
+    {
+      "id": "REF-S07",
+      "student_id": "S07",
+      "agency_id": "AG07",
+      "day_offset": -5,
+      "note": "진로 탐색 프로그램 및 가족 대화 상담 연계 요청"
+    }
+  ]
+}

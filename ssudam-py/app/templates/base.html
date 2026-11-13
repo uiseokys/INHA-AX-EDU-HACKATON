@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko" class="h-full antialiased">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fbf7f1" />
+    <title>{% block title %}쓰담 · 매일의 마음을 쓰담쓰담{% endblock %}</title>
+    <meta name="description" content="하루 10초 마음 체크인과 학교생활 회고로 나를 이해하고, 필요할 때 상담 선생님과 지원기관으로 이어지는 교육 AI 서비스 (시연용 프로토타입)" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+    <link rel="stylesheet" href="/static/app.css?v={{ css_version }}" />
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body class="flex min-h-full flex-col">
+    {% block body %}{% endblock %}
+
+    {% if toast %}
+    <div data-toast role="status" class="fixed inset-x-0 bottom-24 z-50 mx-auto w-fit max-w-[90vw] animate-pop rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white shadow-xl md:bottom-10">
+      {{ toast }}
+    </div>
+    {% endif %}
+  </body>
+</html>

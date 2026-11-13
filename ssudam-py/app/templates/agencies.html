@@ -1,0 +1,160 @@
+{% extends "layout.html" %}
+{% import "_ui.html" as ui %}
+{% block title %}지원기관 추천 · 쓰담{% endblock %}
+
+{% block content %}
+{% if selected %}
+<a href="/teacher/students/{{ selected.id }}" class="inline-flex items-center gap-1 text-sm font-semibold text-ink-soft hover:text-brand-700">{{ icon("arrow-left", "size-4") }} {{ selected.name }} 학생 상세</a>
+{% endif %}
+
+<header>
+  <h1 class="text-2xl font-extrabold text-ink">지원기관 추천</h1>
+  <p class="mt-1 text-sm text-ink-soft">지원 유형과 지역을 고르면 조건에 맞는 기관을 보여 드립니다.</p>
+</header>
+
+{% call ui.notice() %}
+<strong>가상 기관 정보입니다.</strong> 기관명·소개·운영 시간은 시연을 위해 지어낸 것이며 실제 기관과 무관합니다.
+‘연결 요청’을 눌러도 실제 예약이나 상담 접수는 이루어지지 않습니다.
+{% endcall %}
+
+<section class="{{ card }} space-y-4">
+  {# 학생·지역은 고르는 즉시 다시 조회합니다 (JS 미사용 시 '조건 적용' 버튼) #}
+  <form method="get" action="/teacher/agencies" class="grid gap-4 md:grid-cols-2">
+    {% if current.type != "all" %}<input type="hidden" name="type" value="{{ current.type }}" />{% endif %}
+    <div>
+      <label for="agency-student" class="mb-2 block text-sm font-semibold text-ink">연결할 학생</label>
+      <select id="agency-student" name="student" class="{{ field }}" data-autosubmit>
+        <option value="">선택 안 함 (기관만 둘러보기)</option>
+        {% for row in students %}
+        <option value="{{ row.s.id }}" {% if selected and selected.id == row.s.id %}selected{% endif %}>{{ row.s.name }} · {{ row.s.grade }}학년 {{ row.s.class_no }}반 · {{ STATUS[row.status].label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div>
+      <label for="agency-region" class="mb-2 block text-sm font-semibold text-ink">지역</label>
+      <select id="agency-region" name="region" class="{{ field }}" data-autosubmit>
+        <option value="all">전체 지역</option>
+        {% for r in regions %}<option value="{{ r }}" {% if current.region == r %}selected{% endif %}>{{ r }}</option>{% endfor %}
+      </select>
+    </div>
+    <noscript><button class="{{ btn.soft }}">조건 적용</button></noscript>
+  </form>
+
+  <div>
+    <p class="mb-2 text-sm font-semibold text-ink">지원 유형</p>
+    <div class="flex flex-wrap gap-2">
+      {% for t in types %}
+      <a href="{{ url(type=t.id) }}" data-keep-scroll {% if current.type == t.id %}aria-current="true"{% endif %}
+         class="rounded-full px-3.5 py-2 text-sm font-semibold transition {{ 'bg-brand-500 text-white shadow-sm' if current.type == t.id else 'bg-stone-100 text-ink-soft hover:bg-brand-50 hover:text-brand-700' }}">{{ t.label }}</a>
+      {% endfor %}
+    </div>
+    {% if type_desc %}<p class="mt-2 text-xs text-ink-soft">{{ type_desc }}</p>{% endif %}
+  </div>
+
+  {% if selected %}
+  <p class="flex flex-wrap items-center gap-1.5 rounded-2xl bg-brand-50/70 px-4 py-3 text-sm text-ink">
+    {{ icon("sparkles", "size-4 text-brand-500") }}
+    {% if student_topics %}
+    {{ selected.name }} 학생의 요청·공유 기록에서 찾은 주제
+    {% for t in student_topics %}<span class="{{ chip }} bg-white text-brand-700">{{ topic_label(t) }}</span>{% endfor %}
+    를 지원하는 기관을 먼저 보여 드립니다.
+    {% else %}
+    {{ selected.name }} 학생이 공유한 정보에서 주제를 찾지 못해 조건에 맞는 기관을 모두 보여 드립니다.
+    {% endif %}
+  </p>
+  {% endif %}
+</section>
+
+<p class="px-1 text-sm font-semibold text-ink-soft">조건에 맞는 기관 {{ results | length }}곳</p>
+
+<ul class="grid items-start gap-4 md:grid-cols-2">
+  {% for m in results %}
+  {% set agency = m.agency %}
+  {% set is_linked = agency.id in linked %}
+  <li>
+    <section class="{{ card }} transition hover:shadow-[0_16px_36px_-14px_rgba(110,90,200,0.3)]">
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="{{ chip }} {{ type_tone[agency.type] }}">{{ agency_type_label(agency.type) }}</span>
+        <span class="{{ chip }} bg-butter-100 text-amber-800">가상 기관</span>
+        {% if m.matched_topics %}
+        <span class="{{ chip }} bg-brand-500 text-white">{{ icon("sparkles", "size-3") }} 추천 · {{ m.matched_topics | map("topic_label") | join(", ") }}</span>
+        {% endif %}
+      </div>
+      <h2 class="mt-3 flex items-center gap-2 text-lg font-bold text-ink">{{ icon("building-2", "size-5 shrink-0 text-ink-soft") }} {{ agency.name }}</h2>
+      <p class="mt-1 text-sm leading-relaxed text-ink-soft">{{ agency.summary }}</p>
+      <p class="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-ink-soft">
+        <span class="flex items-center gap-1">{{ icon("map-pin", "size-3.5") }} {{ agency.region }}</span>
+        <span class="flex items-center gap-1">{{ icon("clock", "size-3.5") }} {{ agency.hours }}</span>
+      </p>
+
+      <details class="group mt-4">
+        <summary class="{{ btn.outline }} w-full cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+          기관 소개 {{ icon("chevron-down", "size-4 transition group-open:rotate-180") }}
+        </summary>
+        <div class="mt-3 space-y-3 rounded-2xl bg-stone-50 p-4 text-sm">
+          <p class="leading-relaxed text-ink">{{ agency.description }}</p>
+          <div>
+            <p class="mb-1.5 text-xs font-bold text-ink-soft">지원 내용</p>
+            <div class="flex flex-wrap gap-1.5">
+              {% for s in agency.services %}<span class="{{ chip }} bg-white text-ink ring-1 ring-stone-200">{{ s }}</span>{% endfor %}
+            </div>
+          </div>
+          <p class="text-xs text-ink-soft">주로 다루는 주제: {{ agency.topics | map("topic_label") | join(", ") }} · 상담 방식: {{ agency.mode | join(", ") }}</p>
+        </div>
+      </details>
+
+      {% if is_linked %}
+      <span class="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-mint-100 px-4 py-2.5 text-sm font-bold text-mint-700">{{ icon("check", "size-4") }} 연결 요청됨</span>
+      {% else %}
+      <a href="{{ url(refer=agency.id) }}" data-keep-scroll class="{{ btn.primary }} mt-2 w-full px-4 py-2.5">{{ icon("send", "size-4") }} 연결 요청</a>
+      {% endif %}
+    </section>
+  </li>
+  {% endfor %}
+</ul>
+{% if not results %}
+<section class="{{ card }} text-center text-sm text-ink-soft">조건에 맞는 기관이 없습니다. 지원 유형이나 지역을 바꿔 보세요.</section>
+{% endif %}
+{% endblock %}
+
+{# 연결 요청 확인 창: 화면 고정 요소라 본문 영역 밖에 둡니다 #}
+{% block overlay %}
+{% if target %}
+<div class="fixed inset-0 z-50 grid place-items-end bg-ink/40 backdrop-blur-sm sm:place-items-center sm:p-4">
+  <a href="{{ url() }}" data-keep-scroll data-modal-close aria-label="닫기" class="absolute inset-0"></a>
+  <div role="dialog" aria-modal="true" aria-labelledby="referral-title" class="relative max-h-[92dvh] w-full max-w-md animate-pop overflow-y-auto rounded-t-3xl bg-white p-6 shadow-2xl sm:rounded-3xl">
+    <div class="flex items-start justify-between gap-3">
+      <h2 id="referral-title" class="text-lg font-bold text-ink">{{ target.name }}에 연결 요청</h2>
+      <a href="{{ url() }}" data-keep-scroll aria-label="닫기" class="text-stone-400 hover:text-ink">{{ icon("x") }}</a>
+    </div>
+
+    <form method="post" action="/teacher/agencies/refer">
+      <input type="hidden" name="agency_id" value="{{ target.id }}" />
+      <input type="hidden" name="type" value="{{ current.type }}" />
+      <input type="hidden" name="region" value="{{ current.region }}" />
+
+      <label for="referral-student" class="mt-4 mb-2 block text-sm font-semibold text-ink">연결할 학생</label>
+      <select id="referral-student" name="student_id" required class="{{ field }}">
+        <option value="">학생을 선택하세요</option>
+        {% for row in students %}
+        <option value="{{ row.s.id }}" {% if selected and selected.id == row.s.id %}selected{% endif %}>{{ row.s.name }} · {{ row.s.grade }}학년 {{ row.s.class_no }}반</option>
+        {% endfor %}
+      </select>
+
+      <label for="referral-note" class="mt-4 mb-2 block text-sm font-semibold text-ink">기관에 전달할 메모 <span class="font-normal text-ink-soft">(선택)</span></label>
+      <textarea id="referral-note" name="note" rows="3" maxlength="300" placeholder="예: 또래 관계 회복 프로그램 참여 문의" class="{{ field }}"></textarea>
+
+      <p class="mt-3 rounded-2xl bg-butter-50 px-4 py-3 text-xs leading-relaxed text-amber-900/80">
+        시연용 기능입니다. 실제 기관으로 정보가 전송되거나 예약·접수가 이루어지지 않으며, 연결 기록만 이 서버에 남습니다.
+        실제 연계 시에는 학생·보호자 동의 절차가 필요합니다.
+      </p>
+
+      <div class="mt-5 flex gap-2">
+        <a href="{{ url() }}" data-keep-scroll class="{{ btn.ghost }} flex-1">취소</a>
+        <button class="{{ btn.primary }} flex-1">연결 요청 기록하기</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endif %}
+{% endblock %}
