@@ -1,17 +1,25 @@
 """시연용 상태 저장소 (로컬 JSON 파일)
 
 학생 화면과 교사 화면이 같은 파일을 읽기 때문에, 학생이 남긴 기록·신청이 교사 화면에 나타납니다.
-⚠️ 시연용 구현입니다. 로그인·암호화·접근 제어 등 민감정보 보호 기능은 구현되어 있지 않고,
-   접속한 모든 사람이 하나의 상태를 함께 씁니다.
+
+· 기본(내 컴퓨터에서 실행): 상태 파일 하나를 모든 접속자가 함께 씁니다.
+· 공개 테스트 모드(BOKBOK_MULTI=1): 브라우저마다 따로 체험 공간을 만들어, 다른 사람이 한 일이 섞이지 않습니다.
+  쿠키에 담긴 무작위 체험 번호로 구분하며, 오래된 체험 공간은 자동으로 지웁니다.
+
+⚠️ 시연용 구현입니다. 로그인·암호화·접근 제어 등 민감정보 보호 기능은 구현되어 있지 않습니다.
 """
 
 from __future__ import annotations
 
 import json
 import os
+import re
+import shutil
 import threading
+import time
 import uuid
 from contextlib import contextmanager
+from contextvars import ContextVar
 from pathlib import Path
 
 from .dates import add_days, today_key
@@ -20,12 +28,64 @@ _LOCK = threading.Lock()
 BASE = Path(__file__).resolve().parent.parent
 
 
+# ── 공개 테스트 모드: 브라우저별 체험 공간 ─────────────────────────────────────
+
+SESSION_COOKIE = "bokbok_sandbox"
+SESSION_MAX_AGE = 3 * 24 * 3600  # 체험 공간 보관 기간(초)
+SESSION_MAX_COUNT = 300  # 동시에 보관할 최대 체험 공간 수
+_SID = re.compile(r"^[0-9a-f]{32}$")
+_session: ContextVar[str | None] = ContextVar("bokbok_session", default=None)
+
+
+def multi_mode() -> bool:
+    return os.environ.get("BOKBOK_MULTI", "") not in ("", "0", "false")
+
+
+def sessions_dir() -> Path:
+    return Path(os.environ.get("BOKBOK_SESSIONS", BASE / "var" / "sessions"))
+
+
+def valid_sid(sid: str | None) -> bool:
+    return bool(sid and _SID.match(sid))
+
+
+def new_sid() -> str:
+    prune_sessions()
+    return uuid.uuid4().hex
+
+
+def use_session(sid: str | None):
+    """이번 요청이 쓸 체험 공간을 정함 (미들웨어에서 호출). 돌려준 토큰으로 되돌릴 수 있음"""
+    return _session.set(sid if valid_sid(sid) else None)
+
+
+def prune_sessions() -> None:
+    """오래됐거나 너무 많이 쌓인 체험 공간 지우기"""
+    root = sessions_dir()
+    if not root.is_dir():
+        return
+    dirs = sorted((d for d in root.iterdir() if d.is_dir() and valid_sid(d.name)), key=lambda d: d.stat().st_mtime)
+    now = time.time()
+    for i, d in enumerate(dirs):
+        if now - d.stat().st_mtime > SESSION_MAX_AGE or len(dirs) - i > SESSION_MAX_COUNT:
+            shutil.rmtree(d, ignore_errors=True)
+
+
+def _session_root() -> Path | None:
+    sid = _session.get()
+    return sessions_dir() / sid if sid else None
+
+
 def state_path() -> Path:
+    root = _session_root()
+    if root:
+        return root / "state.json"
     return Path(os.environ.get("BOKBOK_STATE", BASE / "var" / "state.json"))
 
 
 def upload_dir() -> Path:
-    path = Path(os.environ.get("BOKBOK_UPLOADS", BASE / "var" / "uploads"))
+    root = _session_root()
+    path = root / "uploads" if root else Path(os.environ.get("BOKBOK_UPLOADS", BASE / "var" / "uploads"))
     path.mkdir(parents=True, exist_ok=True)
     return path
 

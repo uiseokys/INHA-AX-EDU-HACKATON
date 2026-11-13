@@ -1,0 +1,20 @@
+# Render 배포 설정 (Blueprint)
+# Render 대시보드 → New → Blueprint → 이 저장소를 고르면 아래 설정대로 '복복복' 공개 테스트 사이트가 만들어집니다.
+# 무료 요금제는 한동안 접속이 없으면 잠들었다가, 다음 접속 때 30초~1분 정도 걸려 다시 깨어납니다.
+# 서버가 다시 시작되면 체험 기록은 모두 지워지고 처음 상태로 돌아갑니다.
+services:
+  - type: web
+    name: bokbok
+    runtime: python
+    rootDir: bokbok
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT --proxy-headers --forwarded-allow-ips "*"
+    healthCheckPath: /
+    envVars:
+      - key: BOKBOK_MULTI # 방문자(브라우저)마다 따로 체험 공간 사용
+        value: "1"
+      - key: TZ # 오늘 날짜·시간을 한국 기준으로
+        value: Asia/Seoul
+      - key: PYTHON_VERSION
+        value: 3.12.7

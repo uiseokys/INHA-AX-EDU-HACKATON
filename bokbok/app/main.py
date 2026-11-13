@@ -29,7 +29,35 @@ from .models import BOT_NAME, EMOTIONS, FOLLOWUP, LEVEL_ORDER, LEVELS, SERVICE_N
 
 BASE = Path(__file__).resolve().parent
 
-app = FastAPI(title=f"{SERVICE_NAME} 학생 마음 돌봄 플랫폼", description="시연용 프로토타입 · 합성 데이터")
+app = FastAPI(
+    title=f"{SERVICE_NAME} 학생 마음 돌봄 플랫폼",
+    description="시연용 프로토타입 · 합성 데이터",
+    # 공개 테스트 모드에서는 API 문서 화면을 열지 않음
+    docs_url=None if store.multi_mode() else "/docs",
+    redoc_url=None,
+    openapi_url=None if store.multi_mode() else "/openapi.json",
+)
+
+
+@app.middleware("http")
+async def sandbox(request: Request, call_next):
+    """공개 테스트 모드: 브라우저마다 따로 체험 공간을 씀 (쿠키로 구분)"""
+    if not store.multi_mode():
+        return await call_next(request)
+    sid = request.cookies.get(store.SESSION_COOKIE)
+    fresh = not store.valid_sid(sid)
+    if fresh:
+        sid = store.new_sid()
+    token = store.use_session(sid)
+    try:
+        response = await call_next(request)
+    finally:
+        store._session.reset(token)
+    if fresh:
+        response.set_cookie(store.SESSION_COOKIE, sid, max_age=store.SESSION_MAX_AGE, httponly=True, samesite="lax",
+                            secure=request.url.scheme == "https")
+    return response
+
 app.mount("/static", StaticFiles(directory=BASE / "static"), name="static")
 templates = Jinja2Templates(directory=BASE / "templates")
 
@@ -149,6 +177,7 @@ def render(request: Request, name: str, mode: str | None = None, status_code: in
         ctx.setdefault("pinned", unread_alerts(state))
     css = BASE / "static" / "app.css"
     ctx.update(
+        MULTI=store.multi_mode(),
         mode=mode,
         nav=nav,
         path=path,

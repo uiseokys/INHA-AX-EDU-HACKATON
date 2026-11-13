@@ -252,7 +252,8 @@
   <div class="flex flex-col gap-3 rounded-3xl bg-white/60 p-4 sm:flex-row sm:items-center sm:justify-between">
     <p>
       시연용 프로토타입입니다. 학생·학교·선생님 정보는 모두 <strong>합성 데이터</strong>이고, 분석 결과는 진단이 아닌 참고 정보입니다.
-      기록은 이 서버의 로컬 파일에만 저장됩니다.
+      {% if MULTI %}지금 브라우저에서 한 일은 <strong>나만의 체험 공간</strong>에만 저장되고 다른 사람에게 보이지 않으며, 3일 뒤 지워집니다. 실제 개인정보는 입력하지 마세요.
+      {% else %}기록은 이 서버의 로컬 파일에만 저장됩니다.{% endif %}
     </p>
     <form method="post" action="/reset" class="shrink-0 self-start sm:self-auto" data-scroll-top>
       <input type="hidden" name="next" value="{{ path }}" />

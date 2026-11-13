@@ -26,6 +26,19 @@ python scripts/generate_data.py   # 합성 감정 기록 다시 만들기
 - 날짜를 고정해 시연하려면 `BOKBOK_TODAY=2026-11-14 uvicorn app.main:app` 처럼 실행합니다.
 - 화면 아래 **시연 데이터 초기화** 버튼(또는 `var/state.json` 삭제)으로 처음 상태로 돌아갑니다.
 
+## 공개 테스트 사이트 (Render)
+
+다른 팀이 체험할 수 있도록 [Render](https://render.com) 무료 요금제에 올릴 수 있게 설정해 두었습니다 (저장소 맨 위 `render.yaml`).
+
+1. Render에 GitHub 계정으로 로그인 → **New → Blueprint** → 이 저장소 선택 → **Deploy Blueprint**
+2. 몇 분 뒤 `https://<서비스 이름>.onrender.com` 주소가 생깁니다.
+
+- `BOKBOK_MULTI=1`: **방문자(브라우저)마다 따로 체험 공간**이 만들어져서, 다른 팀이 한 일과 섞이지 않습니다. 체험 공간은 3일 뒤, 또는 서버가 다시 시작되면 지워집니다.
+- `TZ=Asia/Seoul`: 오늘 날짜와 시간을 한국 기준으로 계산합니다.
+- 무료 요금제는 한동안 접속이 없으면 잠들었다가, 다음 접속 때 1분 정도 걸려 깨어납니다.
+- 공개 서버에는 로컬 LLM이 없으므로 복복이는 규칙 기반으로 대답합니다.
+- 다른 서비스에 올릴 때는 `Dockerfile`을 쓰면 됩니다.
+
 ## 챗봇 '복복이'와 로컬 LLM
 
 복복이는 **OpenAI 호환 Chat Completions API**를 제공하는 로컬 서버(Ollama, LM Studio, llama.cpp server, vLLM 등)에 연결할 수 있습니다.
