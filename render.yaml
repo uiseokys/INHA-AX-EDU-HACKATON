@@ -18,3 +18,13 @@ services:
         value: Asia/Seoul
       - key: PYTHON_VERSION
         value: 3.12.7
+      # 로컬 LLM 연결 (선택). 값은 저장소에 적지 않고 Render 대시보드 → Environment 에서 직접 넣습니다.
+      # 넣지 않으면 복복이는 규칙 기반으로 대답합니다. 방법: bokbok/README.md 의 '공개 사이트에서 내 컴퓨터의 로컬 LLM 쓰기'
+      - key: BOKBOK_LLM_URL # 예) https://<임의의-이름>.trycloudflare.com/v1
+        sync: false
+      - key: BOKBOK_LLM_MODEL
+        sync: false
+      - key: BOKBOK_LLM_API_KEY
+        sync: false
+      - key: BOKBOK_LLM_TIMEOUT # 응답을 기다리는 시간(초). 한동안 쉬던 모델은 처음 한 번 다시 올라오는 데 40초쯤 걸림
+        value: "60"
