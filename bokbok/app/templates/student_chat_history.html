@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% import "_ui.html" as ui with context %}
+{% block title %}대화 기록 · {{ SERVICE }}{% endblock %}
+
+{# 복복이와 나눈 대화를 날짜별로 다시 보는 화면. 하루 요약 + 그날 대화 원문. 학생 본인만 봅니다. #}
+{% block content %}
+<header class="flex items-center justify-between gap-3">
+  <div>
+    <h1 class="text-2xl font-extrabold text-ink">대화 기록</h1>
+    <p class="text-sm text-ink-soft">{{ BOT }}와 나눈 이야기가 하루씩 남아요. 이 화면은 나만 볼 수 있어요. 지우면 내 화면에서는 사라지지만, 기록이 바뀌지 않았다는 걸 증명하기 위해 원본은 서버에 안전하게 보존돼요.</p>
+  </div>
+  <a href="/student/chat" class="{{ btn.dark }} shrink-0">{{ icon("message-circle-more", "size-4") }} {{ BOT }}와 이야기하기</a>
+</header>
+
+<div class="mx-auto max-w-2xl space-y-4">
+  {% for d in days %}
+  <details class="group {{ card }}" {{ "open" if loop.first }}>
+    <summary class="flex cursor-pointer list-none items-start gap-3 [&::-webkit-details-marker]:hidden">
+      {{ ui.bokbok("happy", "size-10 shrink-0") }}
+      <span class="min-w-0 flex-1">
+        <span class="flex flex-wrap items-center gap-2">
+          <span class="font-bold text-ink">{{ d.date | full_label }}</span>
+          {% if d.date == today %}<span class="{{ chip }} bg-leaf-100 text-leaf-700">오늘</span>{% endif %}
+          <span class="text-xs text-ink-soft">내가 한 말 {{ d.said }}개</span>
+        </span>
+        <span class="mt-1 block text-sm text-ink">{{ d.summary or "아직 나눈 이야기가 없어." }}</span>
+        {% if d.source == "llm" %}<span class="mt-1 block text-[11px] text-ink-soft">AI가 정리한 요약이에요.</span>{% endif %}
+      </span>
+      {{ icon("chevron-down", "size-4 shrink-0 text-stone-400 transition group-open:rotate-180") }}
+    </summary>
+    <div class="mt-4 space-y-4 rounded-3xl bg-leaf-50/60 px-4 py-5">
+      {% with messages = d.messages, readonly = true %}{% include "_chat_messages.html" %}{% endwith %}
+    </div>
+    <div class="mt-3 flex items-center justify-between gap-2">
+      {% if d.date == today %}<a href="/student/chat#end" class="{{ btn.soft }} px-3 py-2 text-xs">이어서 이야기하기</a>{% else %}<span></span>{% endif %}
+      <form method="post" action="/student/chat/history/delete"><input type="hidden" name="date" value="{{ d.date }}" />
+        <button class="{{ btn.ghost }} px-3 py-2 text-xs">{{ icon("trash-2", "size-4") }} 내 화면에서 지우기</button></form>
+    </div>
+  </details>
+  {% else %}
+  <div class="{{ card }} text-center">
+    <p class="text-sm text-ink-soft">아직 남은 대화 기록이 없어요.</p>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

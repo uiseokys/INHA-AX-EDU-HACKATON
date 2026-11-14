@@ -2,6 +2,11 @@
   "_notice": "시연용 합성 데이터입니다. 학교·교사·학생 이름과 정보는 모두 지어낸 것이며 실제 정보가 아닙니다. day_offset 은 오늘을 0으로 한 상대 날짜입니다.",
   "school": "한빛중학교(가상)",
   "class_name": "1학년 3반",
+  "school_schedule": [
+    { "date": "2026-11-06", "title": "체육대회" },
+    { "date": "2026-11-20", "title": "현장체험학습" },
+    { "date": "2026-11-27", "title": "학급 자치회" }
+  ],
   "teachers": {
     "homeroom": { "id": "homeroom", "name": "김다정 선생님", "role": "담임 선생님", "place": "1학년 3반 교실" },
     "wee": { "id": "wee", "name": "박온유 선생님", "role": "Wee클래스 상담 선생님", "place": "본관 2층 Wee클래스" }
@@ -33,11 +38,29 @@
   ],
   "seed": {
     "alerts": [
-      { "id": "AL-S06", "student_id": "S06", "day_offset": -1, "source": "chat", "category": "urgent",
-        "summary": "복복이 대화에서 위험 신호가 감지되었어요. 대화 내용은 공개되지 않습니다." },
-      { "id": "AL-S04", "student_id": "S04", "day_offset": -2, "source": "record", "category": "violence",
-        "summary": "감정 기록 문장에서 또래 폭력이 의심되는 표현이 감지되었어요. 원문은 학생이 공유하지 않았습니다." }
+      { "id": "AL-S06", "student_id": "S06", "day_offset": -1, "source": "chat", "category": "signal", "level": "urgent",
+        "summary": "복복이 대화에서 긴급한 위험 신호가 감지되었어요. 오늘 안에 학생의 안전을 확인해 주세요." },
+      { "id": "AL-S04", "student_id": "S04", "day_offset": -2, "source": "record", "category": "signal", "level": "issue",
+        "summary": "감정 기록에서 위험 신호가 감지되었어요." }
     ],
+    "chats": [
+      { "day_offset": -2, "time": "16:10", "role": "bot", "text": "안녕! 나는 복복이야 🌱 오늘 하루는 어땠어?" },
+      { "day_offset": -2, "time": "16:11", "role": "me", "text": "오늘 체육 시간에 피구 했어" },
+      { "day_offset": -2, "time": "16:11", "role": "bot", "text": "오 피구! 재밌었어?" },
+      { "day_offset": -2, "time": "16:12", "role": "me", "text": "응 우리 팀이 이겼어" },
+      { "day_offset": -2, "time": "16:12", "role": "bot", "text": "와 진짜? 기분 좋았겠다!" },
+      { "day_offset": -1, "time": "20:30", "role": "bot", "text": "왔구나! 기다리고 있었어. 요즘 마음은 좀 어때?" },
+      { "day_offset": -1, "time": "20:31", "role": "me", "text": "수행평가가 너무 많아" },
+      { "day_offset": -1, "time": "20:31", "role": "bot", "text": "헐 많이 바쁘겠다. 뭐가 제일 걱정돼?" },
+      { "day_offset": -1, "time": "20:32", "role": "me", "text": "국어 발표" },
+      { "day_offset": -1, "time": "20:32", "role": "bot", "text": "발표는 떨리지. 준비는 좀 했어?" },
+      { "day_offset": -1, "time": "20:33", "role": "me", "text": "아직.. 오늘 하려고" },
+      { "day_offset": -1, "time": "20:33", "role": "bot", "text": "응, 조금씩 하면 돼. 응원할게!" }
+    ],
+    "chat_days": {
+      "-2": { "summary": "체육 시간에 피구를 했는데 우리 팀이 이겨서 기분이 좋았다는 이야기를 했어.", "count": 2, "source": "rule" },
+      "-1": { "summary": "수행평가가 많아서 바쁘고, 국어 발표가 걱정된다는 이야기를 했어.", "count": 3, "source": "rule" }
+    },
     "followups": { "S03": "talking", "S07": "checked" },
     "bookings": [
       { "id": "BK-S03", "student_id": "S03", "teacher": "wee", "slot": [2, "15:40"], "topic": "학업 스트레스", "status": "confirmed" }

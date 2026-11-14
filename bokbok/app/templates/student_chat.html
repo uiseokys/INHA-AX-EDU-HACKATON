@@ -17,10 +17,11 @@
         </span>
       </p>
     </div>
-    <form method="post" action="/student/chat/clear"><button class="{{ btn.ghost }} px-3 py-2 text-xs" title="대화 지우기">{{ icon("trash-2", "size-4") }}<span class="sr-only">대화 지우기</span></button></form>
+    <a href="/student/chat/history" class="{{ btn.ghost }} px-3 py-2 text-xs">{{ icon("history", "size-4") }} 대화 기록</a>
+    <form method="post" action="/student/chat/clear"><button class="{{ btn.ghost }} px-3 py-2 text-xs" title="오늘 대화 지우기">{{ icon("trash-2", "size-4") }}<span class="sr-only">오늘 대화 지우기</span></button></form>
   </div>
 
-  <p class="flex gap-2 bg-white/70 px-4 py-2.5 text-[11px] leading-relaxed text-ink-soft">{{ icon("lock", "mt-0.5 size-3 shrink-0") }}{{ notice }}</p>
+  <p class="flex gap-2 bg-white/70 px-4 py-2.5 text-[11px] leading-relaxed text-ink-soft">{{ icon("lock", "mt-0.5 size-3 shrink-0") }}<span>{{ notice }} <a href="/student/promise" class="font-semibold text-leaf-700 underline">약속 다시 보기</a></span></p>
 
   {# 대화 #}
   <div id="chat-log" class="min-h-[50vh] space-y-4 px-4 py-5" aria-live="polite">
@@ -54,6 +55,7 @@
 </template>
 
 <p class="mx-auto max-w-2xl text-center text-xs text-ink-soft">
+  <a href="/student/counsel#conversation" class="mb-2 block font-semibold text-leaf-700 underline">선생님과 잠깐 이야기하고 싶어요</a>
   {{ BOT }}는 AI 캐릭터예요. 의사나 상담 선생님을 대신하지 않아요. 지금 위험하다면 <a href="tel:112" data-call="112" data-call-name="경찰" class="font-bold text-rose-600">112</a>,
   죽고 싶은 마음이 든다면 <a href="tel:109" data-call="109" data-call-name="자살예방 상담전화" class="font-bold text-rose-600">109</a>에 바로 연락하세요.
 </p>

@@ -1,0 +1,203 @@
+[
+  {
+    "name": "01-landing",
+    "title": "처음 화면",
+    "path": "/",
+    "html": "html/01-landing.html",
+    "screens": [
+      "screens/01-landing--desktop.png",
+      "screens/01-landing--mobile.png"
+    ]
+  },
+  {
+    "name": "02-student-welcome",
+    "title": "학생 · 처음 접속 기본 정보 입력",
+    "path": "/student/welcome",
+    "html": "html/02-student-welcome.html",
+    "screens": [
+      "screens/02-student-welcome--desktop.png",
+      "screens/02-student-welcome--mobile.png"
+    ]
+  },
+  {
+    "name": "03-student-home",
+    "title": "학생 홈 · 기록 전",
+    "path": "/student",
+    "html": "html/03-student-home.html",
+    "screens": [
+      "screens/03-student-home--desktop.png",
+      "screens/03-student-home--mobile.png"
+    ]
+  },
+  {
+    "name": "04-student-record",
+    "title": "감정 기록 · 스티커와 단어 고르기",
+    "path": "/student/record?e=sad",
+    "html": "html/04-student-record.html",
+    "screens": [
+      "screens/04-student-record--desktop.png",
+      "screens/04-student-record--mobile.png"
+    ]
+  },
+  {
+    "name": "05-student-record-saved",
+    "title": "기록 완료 · 포인트 적립과 복복이 권유",
+    "path": "/student?saved=1",
+    "html": "html/05-student-record-saved.html",
+    "screens": [
+      "screens/05-student-record-saved--desktop.png",
+      "screens/05-student-record-saved--mobile.png"
+    ]
+  },
+  {
+    "name": "06-student-home-recorded",
+    "title": "학생 홈 · 기록 후",
+    "path": "/student",
+    "html": "html/06-student-home-recorded.html",
+    "screens": [
+      "screens/06-student-home-recorded--desktop.png",
+      "screens/06-student-home-recorded--mobile.png"
+    ]
+  },
+  {
+    "name": "07-student-report",
+    "title": "나의 감정 리포트",
+    "path": "/student/report",
+    "html": "html/07-student-report.html",
+    "screens": [
+      "screens/07-student-report--desktop.png",
+      "screens/07-student-report--mobile.png"
+    ]
+  },
+  {
+    "name": "08-student-chat",
+    "title": "복복이 대화",
+    "path": "/student/chat",
+    "html": "html/08-student-chat.html",
+    "screens": [
+      "screens/08-student-chat--desktop.png",
+      "screens/08-student-chat--mobile.png"
+    ]
+  },
+  {
+    "name": "09-student-chat-safety",
+    "title": "복복이 · 위험 신호 안전 안내",
+    "path": "/student/chat",
+    "html": "html/09-student-chat-safety.html",
+    "screens": [
+      "screens/09-student-chat-safety--desktop.png",
+      "screens/09-student-chat-safety--mobile.png"
+    ]
+  },
+  {
+    "name": "10-student-help",
+    "title": "도움이 필요할 때",
+    "path": "/student/help",
+    "html": "html/10-student-help.html",
+    "screens": [
+      "screens/10-student-help--desktop.png",
+      "screens/10-student-help--mobile.png"
+    ]
+  },
+  {
+    "name": "11-student-help-detail",
+    "title": "도움 상세 · 학교폭력",
+    "path": "/student/help/school-violence",
+    "html": "html/11-student-help-detail.html",
+    "screens": [
+      "screens/11-student-help-detail--desktop.png",
+      "screens/11-student-help-detail--mobile.png"
+    ]
+  },
+  {
+    "name": "12-student-counsel",
+    "title": "상담 신청",
+    "path": "/student/counsel",
+    "html": "html/12-student-counsel.html",
+    "screens": [
+      "screens/12-student-counsel--desktop.png",
+      "screens/12-student-counsel--mobile.png"
+    ]
+  },
+  {
+    "name": "13-student-shop",
+    "title": "우리 반 복복 상점",
+    "path": "/student/shop",
+    "html": "html/13-student-shop.html",
+    "screens": [
+      "screens/13-student-shop--desktop.png",
+      "screens/13-student-shop--mobile.png"
+    ]
+  },
+  {
+    "name": "14-student-points",
+    "title": "내 포인트",
+    "path": "/student/points",
+    "html": "html/14-student-points.html",
+    "screens": [
+      "screens/14-student-points--desktop.png",
+      "screens/14-student-points--mobile.png"
+    ]
+  },
+  {
+    "name": "15-teacher-home",
+    "title": "선생님 · 월간 정서 현황 (상단 고정 알림)",
+    "path": "/teacher",
+    "html": "html/15-teacher-home.html",
+    "screens": [
+      "screens/15-teacher-home--desktop.png",
+      "screens/15-teacher-home--mobile.png"
+    ]
+  },
+  {
+    "name": "16-teacher-student",
+    "title": "선생님 · 학생 상세 리포트",
+    "path": "/teacher/students/S01",
+    "html": "html/16-teacher-student.html",
+    "screens": [
+      "screens/16-teacher-student--desktop.png",
+      "screens/16-teacher-student--mobile-part1.png",
+      "screens/16-teacher-student--mobile-part2.png"
+    ]
+  },
+  {
+    "name": "17-teacher-alerts",
+    "title": "선생님 · 알림 (카톡 공지 형식)",
+    "path": "/teacher/alerts",
+    "html": "html/17-teacher-alerts.html",
+    "screens": [
+      "screens/17-teacher-alerts--desktop.png",
+      "screens/17-teacher-alerts--mobile.png"
+    ]
+  },
+  {
+    "name": "18-teacher-counsel",
+    "title": "선생님 · 상담 일정",
+    "path": "/teacher/counsel",
+    "html": "html/18-teacher-counsel.html",
+    "screens": [
+      "screens/18-teacher-counsel--desktop.png",
+      "screens/18-teacher-counsel--mobile.png"
+    ]
+  },
+  {
+    "name": "19-teacher-shop",
+    "title": "선생님 · 상점 관리",
+    "path": "/teacher/shop",
+    "html": "html/19-teacher-shop.html",
+    "screens": [
+      "screens/19-teacher-shop--desktop.png",
+      "screens/19-teacher-shop--mobile.png"
+    ]
+  },
+  {
+    "name": "20-teacher-shop-edit",
+    "title": "선생님 · 상품 추가",
+    "path": "/teacher/shop?edit=new",
+    "html": "html/20-teacher-shop-edit.html",
+    "screens": [
+      "screens/20-teacher-shop-edit--desktop.png",
+      "screens/20-teacher-shop-edit--mobile.png"
+    ]
+  }
+]

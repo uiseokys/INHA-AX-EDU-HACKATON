@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 100 100" role="img" aria-label="불안 스티커">
+  <circle cx="50" cy="52" r="42" fill="#C8B5E8" />
+  <ellipse cx="34" cy="30" rx="11" ry="6" fill="#fff" opacity="0.4" transform="rotate(-25 34 30)" />
+  <g stroke="#3b2f2a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+  
+    <path d="M36 66 q3.5 -4 7 0 q3.5 4 7 0 q3.5 -4 7 0 q3.5 4 7 0" />
+  
+  </g>
+  
+  <circle cx="37" cy="51" r="3.6" fill="#3b2f2a" />
+  <circle cx="63" cy="51" r="3.6" fill="#3b2f2a" />
+  
+  
+  
+  <path d="M78 28 q-5 8 0 11 q5 -3 0 -11z" fill="#8fb8ec" />
+</svg>

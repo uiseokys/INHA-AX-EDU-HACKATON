@@ -114,6 +114,9 @@
 </label>
 {% endmacro %}
 
+{# 감정 강도: 값이 없는 예전 기록에는 아무것도 그리지 않음 #}
+{% macro intensity(n, long=False) %}{% if n %}강도 {{ n }}{% if long %} · {{ INTENSITY[n] }}{% endif %}{% endif %}{% endmacro %}
+
 {% macro level_chip(level) %}
 <span class="{{ chip }} {{ LEVELS[level].chip }}"><span class="size-1.5 rounded-full {{ LEVELS[level].dot }}"></span>{{ LEVELS[level].label }}</span>
 {% endmacro %}
@@ -132,12 +135,34 @@
 {% endmacro %}
 
 {# 최근 14일 마음 점수 그래프: 선은 SVG, 점·눈금은 백분율 위치의 HTML 요소 #}
-{% macro mood_chart(chart, height="h-56") %}
-<div>
-  <div class="relative mt-4 mr-3 ml-7 {{ height }}">
+{% macro mood_chart(chart, height="h-56", controls=false) %}
+{% set has_attendance = chart.attendance_dots | length > 0 %}
+{% set has_assessments = chart.assessment_marks | length > 0 %}
+<div{% if controls %} data-mood-chart{% endif %}>
+  {% if controls %}
+  <fieldset class="mb-3" data-chart-controls hidden>
+    <legend class="sr-only">그래프 표시</legend>
+    <div class="flex flex-wrap gap-2">
+      {% for id, label, color, available in [("emotion", "감정 점수", "#3d7c3c", chart.dots), ("average", "감정 이동평균", "#9c680a", chart.avg_path), ("attendance", "출석률", "#0369a1", has_attendance), ("assessment", "평가 일정", "#6d28a8", has_assessments)] %}
+      <label class="inline-flex cursor-pointer items-center gap-1.5 rounded-full border border-stone-200 px-2.5 py-1 text-xs font-semibold text-ink">
+        <input type="checkbox" data-chart-toggle="{{ id }}" style="accent-color: {{ color }}" {% if available %}checked{% else %}disabled{% endif %} />
+        {{ label }}
+      </label>
+      {% endfor %}
+    </div>
+  </fieldset>
+  <div class="flex flex-wrap justify-between gap-2 text-xs font-semibold">
+    <span class="text-leaf-700" data-chart-layer="emotion average">마음 점수 (1~5)</span>
+    {% if has_attendance %}<span class="ml-auto text-sky-800" data-chart-layer="attendance">출석률 (%)</span>{% endif %}
+  </div>
+  {% endif %}
+  <div class="relative mt-4 mr-3 ml-7 {{ height }}"{% if has_attendance %} style="margin-right: 2.5rem"{% endif %}>
     {% for g in chart.grid %}
     <div class="absolute inset-x-0 border-t border-leaf-100" style="top: {{ g.y }}%"></div>
-    <span class="absolute -left-7 w-5 -translate-y-1/2 text-right text-[11px] text-stone-400" style="top: {{ g.y }}%">{{ g.label }}</span>
+    <span class="absolute -left-7 w-5 -translate-y-1/2 text-right text-[11px] text-stone-400" style="top: {{ g.y }}%" data-chart-layer="emotion average">{{ g.label }}</span>
+    {% if has_attendance %}
+    <span class="absolute left-full ml-2 -translate-y-1/2 text-[11px] text-sky-800" style="top: {{ g.y }}%" data-chart-layer="attendance">{{ (100 - g.y) | int }}</span>
+    {% endif %}
     {% endfor %}
     <svg class="absolute inset-0 size-full overflow-visible" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
       <defs>
@@ -146,34 +171,74 @@
           <stop offset="1" stop-color="#6db068" stop-opacity="0" />
         </linearGradient>
       </defs>
-      {% if chart.area_path %}<path d="{{ chart.area_path }}" fill="url(#mood-fill)" />{% endif %}
-      {% if chart.avg_path %}<path d="{{ chart.avg_path }}" fill="none" stroke="#e7b84a" stroke-width="2" stroke-dasharray="5 5" stroke-linecap="round" vector-effect="non-scaling-stroke" />{% endif %}
-      {% if chart.score_path %}<path d="{{ chart.score_path }}" fill="none" stroke="#3d7c3c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" />{% endif %}
+      {% if chart.area_path %}<path data-chart-layer="emotion" d="{{ chart.area_path }}" fill="url(#mood-fill)" />{% endif %}
+      {% if chart.avg_path %}<path data-chart-layer="average" d="{{ chart.avg_path }}" fill="none" stroke="#e7b84a" stroke-width="2" stroke-dasharray="5 5" stroke-linecap="round" vector-effect="non-scaling-stroke" />{% endif %}
+      {% if chart.score_path %}<path data-chart-layer="emotion" d="{{ chart.score_path }}" fill="none" stroke="#3d7c3c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" />{% endif %}
+      {% if chart.attendance_dots | length > 1 %}<polyline data-chart-layer="attendance" points="{{ chart.attendance_path }}" fill="none" stroke="#0369a1" stroke-width="2" stroke-linejoin="round" vector-effect="non-scaling-stroke" />{% endif %}
     </svg>
     {% for d in chart.dots %}
     {% set p = d.point %}
     <button type="button" class="group absolute z-10 grid size-8 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full hover:z-20 focus:z-20 focus:outline-none"
-            style="left: {{ d.x }}%; top: {{ d.y }}%" aria-label="{{ p.date | day_label }} {{ E[p.emotion].label }}">
+            style="left: {{ d.x }}%; top: {{ d.y }}%" data-chart-layer="emotion" aria-label="{{ p.date | day_label }} {{ E[p.emotion].label }}{% if controls %} · 마음 점수 {{ p.score | num }}점{% endif %}">
       <span class="block rounded-full transition group-hover:scale-125 group-focus:scale-125 {{ 'size-4 ring-4 ring-leaf-300/60' if d.today else 'size-3' }}"
             style="background: {{ E[p.emotion].color }}; box-shadow: 0 0 0 2px #fff, 0 0 0 3.5px {{ E[p.emotion].deep }}"></span>
       <span class="pointer-events-none absolute hidden w-52 rounded-2xl border border-stone-100 bg-white px-3.5 py-3 text-left text-xs font-normal shadow-lg group-hover:block group-focus:block
                    {{ 'top-full mt-1' if d.below else 'bottom-full mb-1' }}
                    {{ 'left-0' if d.align == 'left' else 'right-0' if d.align == 'right' else 'left-1/2 -translate-x-1/2' }}">
-        <span class="block font-bold text-ink">{{ p.date | day_label }} · {{ E[p.emotion].label }}</span>
+        <span class="block font-bold text-ink">{{ p.date | day_label }} · {{ E[p.emotion].label }}{% if controls %} {{ p.score | num }}점{% endif %}</span>
         {% if p.words %}<span class="mt-1 block text-ink-soft">{{ p.words | join(", ") }}</span>{% endif %}
         {% if p.note %}<span class="mt-1.5 block border-t border-stone-100 pt-1.5 text-ink-soft">“{{ p.note }}”</span>{% endif %}
       </span>
     </button>
     {% endfor %}
+    {% for d in chart.attendance_dots %}
+    <button type="button" class="group absolute z-10 grid size-5 -translate-x-1/2 -translate-y-1/2 place-items-center hover:z-20 focus:z-20"
+            style="left: {{ d.x }}%; top: {{ d.y }}%" data-chart-layer="attendance" aria-label="{{ d.date | day_label }} 출석률 {{ d.rate }}% · {{ d.status }}">
+      <span class="block size-2.5 rounded-sm border-2 border-white" style="background: #0369a1; box-shadow: 0 0 0 1px #0369a1"></span>
+      <span class="pointer-events-none absolute hidden w-40 rounded-2xl border border-stone-100 bg-white px-3 py-2 text-left text-xs font-normal shadow-lg group-hover:block group-focus:block
+                   {{ 'top-full mt-1' if d.y < 35 else 'bottom-full mb-1' }}
+                   {{ 'left-0' if d.align == 'left' else 'right-0' if d.align == 'right' else 'left-1/2 -translate-x-1/2' }}">
+        <span class="block font-bold text-ink">{{ d.date | day_label }} · {{ d.status }}</span>
+        <span class="mt-1 block text-sky-800">최근 10수업일 출석률 {{ d.rate }}%</span>
+      </span>
+    </button>
+    {% endfor %}
+    {% if controls %}
+    <p class="absolute inset-x-0 top-1/2 -translate-y-1/2 rounded-2xl bg-stone-50 p-3 text-center text-sm text-ink-soft" data-chart-empty role="status"{% if chart.dots or has_attendance or has_assessments %} hidden{% endif %}>
+      {{ "표시할 그래프를 선택해 주세요." if chart.dots or has_attendance or has_assessments else "표시할 기록이 없어요." }}
+    </p>
+    {% endif %}
   </div>
-  <div class="relative mt-2 mr-3 ml-7 h-4">
+  <div class="relative mt-2 mr-3 ml-7 h-4"{% if has_attendance %} style="margin-right: 2.5rem"{% endif %}>
     {% for t in chart.ticks %}<span class="absolute -translate-x-1/2 text-[11px] text-stone-400" style="left: {{ t.x }}%">{{ t.label }}</span>{% endfor %}
   </div>
-  <div class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-ink-soft">
-    <span class="flex items-center gap-1.5"><span class="h-0.5 w-4 rounded bg-leaf-600"></span> 그날의 마음</span>
-    <span class="flex items-center gap-1.5"><span class="w-4 border-t-2 border-dashed border-[#e7b84a]"></span> 최근 3회 평균</span>
-    <span>위로 갈수록 가벼운 마음 · 점 색은 감정 색</span>
+  {% if has_assessments %}
+  <div class="relative mt-1 mr-3 ml-7 h-6"{% if has_attendance %} style="margin-right: 2.5rem"{% endif %} data-chart-layer="assessment">
+    {% for mark in chart.assessment_marks %}
+    <button type="button" class="group absolute z-10 grid size-6 -translate-x-1/2 place-items-center rounded-full text-violet-800 hover:z-20 focus:z-20"
+            style="left: {{ mark.x }}%" aria-label="{{ mark.date | day_label }} {{ mark.events | map(attribute='label') | join(', ') }}">
+      {{ icon("calendar", "size-4") }}
+      <span class="pointer-events-none absolute bottom-full mb-1 hidden w-44 rounded-2xl border border-stone-100 bg-white px-3 py-2 text-left text-xs font-normal shadow-lg group-hover:block group-focus:block
+                   {{ 'left-0' if mark.align == 'left' else 'right-0' if mark.align == 'right' else 'left-1/2 -translate-x-1/2' }}">
+        <span class="block font-bold text-violet-800">{{ mark.date | day_label }}</span>
+        {% for event in mark.events %}
+        <span class="mt-1 block text-ink">{{ event.label }}{% if event.score is not none %} · {{ event.score }}점{% endif %}</span>
+        {% endfor %}
+      </span>
+    </button>
+    {% endfor %}
   </div>
+  {% endif %}
+  <div class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-ink-soft">
+    <span class="flex items-center gap-1.5" data-chart-layer="emotion"><span class="h-0.5 w-4 rounded bg-leaf-600"></span> 그날의 마음</span>
+    <span class="flex items-center gap-1.5" data-chart-layer="average"><span class="w-4 border-t-2 border-dashed border-[#e7b84a]"></span> 감정 최근 3회 평균</span>
+    {% if has_attendance %}
+    <span class="flex items-center gap-1.5" data-chart-layer="attendance"><span class="h-0.5 w-4 rounded" style="background: #0369a1"></span> 최근 10수업일 출석률</span>
+    {% endif %}
+    {% if has_assessments %}<span class="flex items-center gap-1.5" data-chart-layer="assessment">{{ icon("calendar", "size-3 text-violet-800") }} 시험일 · 결과 공개일</span>{% endif %}
+    <span data-chart-layer="emotion average">위로 갈수록 가벼운 마음</span>
+  </div>
+  {% if has_attendance %}<p class="mt-2 text-xs text-ink-soft" data-chart-layer="attendance">출석률 점은 수업일에만 표시돼요. 점을 누르면 그날 출결을 볼 수 있어요.</p>{% endif %}
 </div>
 {% endmacro %}
 
@@ -201,18 +266,24 @@
 {% else %}<span class="text-xs text-stone-400">기록 적음</span>{% endif %}
 {% endmacro %}
 
-{# 감정 달력 (스티커 붙이는 달력) #}
-{% macro calendar(cells, today, small=False) %}
+{# 감정 스티커와 학사일정을 같은 날짜에 표시합니다. #}
+{% macro calendar(cells, today) %}
 <div class="grid grid-cols-7 gap-1.5 text-center">
   {% for w in ["일", "월", "화", "수", "목", "금", "토"] %}<span class="text-[11px] font-semibold {{ 'text-rose-400' if loop.first else 'text-stone-400' }}">{{ w }}</span>{% endfor %}
   {% for c in cells %}
   {% if not c.date %}<span></span>
   {% else %}
-  <span class="relative flex aspect-square flex-col items-center justify-center rounded-2xl {{ 'ring-2 ring-leaf-400' if c.date == today else '' }} {{ 'bg-white' if c.record else ('bg-stone-50' if c.date <= today else 'bg-transparent') }}"
-        title="{{ c.date | day_label }}{% if c.record %} · {{ E[c.record.emotion].label }}{% endif %}">
-    {% if c.record %}{{ sticker(c.record.emotion, "size-[78%]") }}
-    {% else %}<span class="text-xs {{ 'text-stone-400' if c.date <= today else 'text-stone-300' }}">{{ c.date[8:] | int }}</span>{% endif %}
-  </span>
+  <div class="flex min-w-0 flex-col items-center gap-0.5 rounded-xl px-0.5 py-1 {{ 'ring-2 ring-leaf-400' if c.date == today else '' }} {{ 'bg-violet-50' if c.events else 'bg-stone-50' if c.date <= today else 'bg-transparent' }}"
+       data-calendar-date="{{ c.date }}"{% if c.date == today %} aria-current="date"{% endif %}>
+    <time datetime="{{ c.date }}" class="text-xs {{ 'font-bold text-leaf-700' if c.date == today else 'text-ink-soft' }}">{{ c.date[8:] | int }}</time>
+    <span class="grid size-6 place-items-center">{% if c.record %}{{ sticker(c.record.emotion, "size-6") }}{% endif %}</span>
+    <span class="h-4">
+      {% if c.events %}
+      <a href="#school-schedule-{{ c.date }}" class="block rounded bg-violet-100 px-0.5 text-[10px] font-semibold text-violet-800 hover:underline sm:px-1"
+         aria-label="{{ c.date | day_label }} 학사일정 · {{ c.events | join(' · ') }}">일정{% if c.events | length > 1 %} {{ c.events | length }}{% endif %}</a>
+      {% endif %}
+    </span>
+  </div>
   {% endif %}
   {% endfor %}
 </div>
@@ -236,6 +307,7 @@
     {% for a in alerts %}
     <li class="flex flex-wrap items-center gap-2 rounded-2xl bg-stone-50 px-4 py-2.5 text-sm">
       <span class="font-semibold text-ink">{{ get_student(a.student_id).name }}</span>
+      {% set lv = ALERT_LEVEL_CHIP[a.level or "issue"] %}<span class="{{ chip }} {{ lv.chip }}">{{ lv.label }}</span>
       <span class="min-w-0 flex-1 text-ink-soft">{{ a.summary }}</span>
       <span class="text-xs text-stone-400">{{ rel(a.date, today) }} {{ a.time }}</span>
       <a href="/teacher/students/{{ a.student_id }}" class="{{ btn.soft }} px-3 py-1.5 text-xs">학생 보기</a>

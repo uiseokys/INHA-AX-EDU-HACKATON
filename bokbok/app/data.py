@@ -3,9 +3,13 @@
 from __future__ import annotations
 
 import json
+from collections import defaultdict
 from dataclasses import replace
+from datetime import date, timedelta
 from pathlib import Path
 
+from .assessments import Assessment
+from .attendance import WINDOW, AttendanceDay, AttendanceStatus
 from .dates import add_days
 from .models import Record
 
@@ -18,6 +22,8 @@ def _load(name: str) -> dict:
 
 _class = _load("class.json")
 _records = _load("records.json")["records"]
+_attendance: dict[str, dict[AttendanceStatus, list[int]]] = _load("attendance.json")["students"]
+_assessments = _load("assessments.json")["students"]
 SIGNALS = _load("signals.json")
 HELP = _load("help.json")
 CHATBOT = _load("chatbot.json")
@@ -51,6 +57,7 @@ def seed_records(student_id: str, today: str) -> list[Record]:
             words=tuple(r["words"]),
             note=r["note"] or None,
             shared=r["shared"],
+            intensity=r.get("intensity"),
         )
         for r in _records
         if r["student_id"] == student_id
@@ -67,6 +74,37 @@ def records_for(student_id: str, state: dict, today: str) -> list[Record]:
         overrides = state["share_overrides"]
         base = [replace(r, shared=overrides[r.id]) if r.id in overrides else r for r in by_date.values()]
     return sorted((r for r in base if r.date <= today), key=lambda r: r.date)
+
+
+def attendance_for(student_id: str, today: str) -> list[AttendanceDay]:
+    """시연 기준일 전에 종료된 평일 수업일을 출결 원본으로 펼칩니다."""
+    if student_id not in _attendance:
+        return []
+    statuses = {offset: status for status, offsets in _attendance[student_id].items() for offset in offsets}
+    day = date.fromisoformat(today) - timedelta(days=1)
+    days = []
+    while len(days) < 2 * WINDOW:
+        if day.weekday() < 5:
+            days.append(AttendanceDay(day.isoformat(), statuses.get(-len(days), "present")))
+        day -= timedelta(days=1)
+    return days[::-1]
+
+
+def assessments_for(student_id: str, today: str) -> list[Assessment]:
+    return [Assessment(r["subject"], r["kind"], add_days(today, r["exam_offset"]),
+                       add_days(today, r["result_offset"]), r["score"])
+            for r in _assessments.get(student_id, [])]
+
+
+def school_schedule_for(student_id: str, today: str) -> dict[str, list[str]]:
+    events = defaultdict(list)
+    for event in _class.get("school_schedule", []):
+        events[event["date"]].append(event["title"])
+    for assessment in assessments_for(student_id, today):
+        title = f"{assessment.subject} {assessment.kind}"
+        events[assessment.exam_date].append(title)
+        events[assessment.result_date].append(f"{title} 결과 공개")
+    return events
 
 
 def profile_for(student: dict, state: dict) -> dict | None:

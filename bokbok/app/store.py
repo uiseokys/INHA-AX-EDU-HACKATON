@@ -106,14 +106,24 @@ def initial_state(today: str) -> dict:
         "profile": None,  # 시연용 학생(하늘)의 기본정보. None 이면 처음 접속 화면을 보여 줌
         "profile_skipped": False,
         "my_records": [],  # 시연용 학생이 직접 남긴 감정 기록
+        "record_later": None,  # 오늘 감정 기록을 '나중에 할게요'로 미룬 날짜. 그날은 홈을 바로 보여 줌
         "share_overrides": {},  # 기록 id → 선생님께 문장 보여 주기 여부
-        "chats": [],  # 시연용 학생과 복복이의 대화
+        # 시연용 학생과 복복이의 대화 (날짜별로 묶어 보여 줌). 처음에는 지난 이틀 치 예시 대화가 들어 있음
+        "chats": [
+            {"id": f"M-seed-{i}", "role": m["role"], "date": day(m["day_offset"]), "time": m["time"], "text": m["text"],
+             "kind": "normal", "source": "rule"}
+            for i, m in enumerate(seed.get("chats", []))
+        ],
+        # 날짜 → {"summary": 하루 요약, "count": 요약할 때 학생이 한 말 수, "source": llm | rule}
+        "chat_days": {day(int(off)): dict(v) for off, v in seed.get("chat_days", {}).items()},
         "alerts": [
             {**{k: v for k, v in a.items() if k != "day_offset"}, "date": day(a["day_offset"]), "time": "16:40", "read": False}
             for a in seed["alerts"]
         ],
         "followups": dict(seed["followups"]),
         "followup_notes": {},
+        "support_shares": [],
+        "conversation_requests": [],
         "slots": {
             teacher: [{"id": f"SL-{teacher}-{i}", "date": day(off), "time": time} for i, (off, time) in enumerate(slots)]
             for teacher, slots in seed["slots"].items()

@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% import "_ui.html" as ui with context %}
+{% block title %}공유 메모 · {{ SERVICE }}{% endblock %}
+
+{% block content %}
+<header>
+  <h1 class="text-2xl font-extrabold text-ink">공유 메모</h1>
+  <p class="mt-1 text-sm text-ink-soft">시연할 교사 역할을 골라 받은 메모를 확인하세요. 메모는 학생 상세에서 보낼 수 있어요.</p>
+</header>
+<nav class="flex flex-wrap gap-2" aria-label="시연 교사 선택">
+  {% for id, t in TEACHERS.items() %}
+  <a href="/teacher/shares?teacher={{ id }}" {% if id == teacher %}aria-current="page"{% endif %} class="{{ btn.soft if id == teacher else btn.outline }}">{{ t.role }}</a>
+  {% endfor %}
+</nav>
+<div class="grid items-start gap-5 lg:grid-cols-2">
+  {% for title, messages, person_key in [("받은 메모", received, "sender"), ("보낸 메모", sent, "recipient")] %}
+  <section class="{{ card }}">
+    {{ ui.card_title("message-square-text", title, TEACHERS[teacher].name) }}
+    <ul class="space-y-2">
+      {% for share in messages %}
+      <li class="rounded-2xl bg-stone-50 px-4 py-3 text-sm">
+        <a class="font-bold text-ink underline" href="/teacher/students/{{ share.student_id }}#shares">{{ get_student(share.student_id).name }} 학생</a>
+        <p class="mt-1 text-xs text-ink-soft">{{ TEACHERS[share[person_key]].name }} · {{ share.date | day_label }} {{ share.time }}</p>
+        <p class="mt-1 whitespace-pre-line text-ink" style="overflow-wrap: anywhere">{{ share.note }}</p>
+      </li>
+      {% else %}<li class="text-sm text-ink-soft">아직 메모가 없어요.</li>{% endfor %}
+    </ul>
+  </section>
+  {% endfor %}
+</div>
+{% endblock %}
