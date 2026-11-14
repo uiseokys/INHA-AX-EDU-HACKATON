@@ -2,5 +2,8 @@
 .claude/
 .DS_Store
 
-# Next.js 버전은 저장소에 올리지 않음 (로컬에만 보관)
+# 이전 프로토타입은 저장소에 올리지 않음 (로컬에만 보관)
 ssudam/
+ssudam-py/
+figma-export/
+figma-export.zip

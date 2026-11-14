@@ -1,8 +1,0 @@
-fastapi
-uvicorn
-jinja2
-python-multipart
-
-# 테스트용
-pytest
-httpx
