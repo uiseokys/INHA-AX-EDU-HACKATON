@@ -1,0 +1,66 @@
+{% extends "layout.html" if consent.basic else "base.html" %}
+{% import "_ui.html" as ui with context %}
+{% block title %}{{ SERVICE }}과의 약속 · {{ SERVICE }}{% endblock %}
+
+{# 처음 접속할 때 보여 주는 약속(동의) 화면. 무엇이 누구에게 보이는지 알려 주고 하나씩 확인받습니다.
+   '감정 기록' 세 가지는 서비스의 기본이라 모두 확인해야 하고, '복복이 대화' 두 가지는 고르지 않아도 됩니다
+   (고르지 않으면 복복이 대화만 잠기고 감정 기록·상점은 그대로 쓸 수 있음). 문구는 data/chatbot.json 의 promise 에 있습니다. #}
+{% macro item(name, value, text, checked, required) %}
+<label class="flex cursor-pointer items-start gap-3 rounded-2xl border-2 border-transparent bg-stone-50 px-4 py-3 text-sm leading-relaxed text-ink transition hover:bg-leaf-50 has-[:checked]:border-leaf-500 has-[:checked]:bg-leaf-50">
+  <input type="checkbox" name="{{ name }}" value="{{ value }}" class="mt-0.5 size-5 shrink-0" style="accent-color: #2f6b3f" {{ "checked" if checked }} {{ "required" if required }} />
+  <span>{{ text }}</span>
+</label>
+{% endmacro %}
+
+{% macro form_body() %}
+<form method="post" action="/student/promise" class="space-y-6" data-scroll-top>
+  {% if today_emotion %}<input type="hidden" name="today_emotion" value="1" />{% endif %}
+  {% if locked %}
+  {% call ui.notice("warn") %}{{ BOT }}와 이야기하려면 아래 ‘{{ BOT }}와 이야기할 때’의 두 가지를 약속해야 해요.{% endcall %}
+  {% endif %}
+  <fieldset>
+    <legend class="mb-2 flex items-center gap-2 font-bold text-ink">{{ icon("smile", "size-5 text-leaf-700") }} 감정을 기록할 때</legend>
+    <div class="space-y-2">
+      {% for text in promise.basic %}{{ item("basic", loop.index, text, consent.basic, True) }}{% endfor %}
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend class="mb-2 flex items-center gap-2 font-bold text-ink">{{ icon("message-circle-more", "size-5 text-leaf-700") }} {{ BOT }}와 이야기할 때 <span class="text-xs font-normal text-ink-soft">(고르지 않아도 돼요)</span></legend>
+    <div class="space-y-2">
+      {% for text in promise.chat %}{{ item("chat", loop.index, text, consent.chat or locked, False) }}{% endfor %}
+    </div>
+    <p class="mt-2 text-xs text-ink-soft">두 가지를 모두 고르면 {{ BOT }}와 이야기할 수 있어요. 고르지 않아도 감정 기록과 상점은 그대로 쓸 수 있고, 나중에 언제든 바꿀 수 있어요.</p>
+  </fieldset>
+  {% call ui.notice("warn") %}
+  실제 학교에서는 이 화면과 별도로 학기 초에 학생과 보호자에게 동의서를 받아요. (시연용 화면이라 이 서버에만 저장돼요)
+  {% endcall %}
+  <div class="flex flex-col gap-2 sm:flex-row">
+    <button class="{{ btn.primary }} flex-1">{{ "약속 저장하기" if consent.basic else "알겠어, 시작할게" }}</button>
+    {% if consent.basic %}<a href="/student" class="{{ btn.ghost }}">취소</a>{% endif %}
+  </div>
+</form>
+{% endmacro %}
+
+{% block content %}
+<header class="flex items-center gap-3">
+  {{ ui.bokbok("happy", "size-14") }}
+  <div><h1 class="text-2xl font-extrabold text-ink">{{ SERVICE }}과의 약속</h1>
+    <p class="text-sm text-ink-soft">내 기록과 대화가 누구에게 어떻게 보이는지 다시 볼 수 있어요.{% if consent.date %} · {{ consent.date | day_label }} {{ consent.time }}에 약속함{% endif %}</p></div>
+</header>
+<section class="mx-auto max-w-2xl {{ card }}">{{ form_body() }}</section>
+{% endblock %}
+
+{% block body %}
+{% if consent.basic %}{{ super() }}{% else %}
+<div class="flex-1 bg-linear-to-b from-leaf-50 to-paper px-4 py-10">
+  <div class="mx-auto max-w-2xl animate-fade-up">
+    <div class="mb-6 text-center">
+      {{ ui.bokbok("cheer", "mx-auto size-28 animate-bounce-soft") }}
+      <h1 class="mt-3 text-2xl font-extrabold text-ink">시작하기 전에, 약속 먼저 할게</h1>
+      <p class="mt-1 text-sm text-ink-soft">네 기록과 이야기가 누구에게 어떻게 보이는지 알려 줄게. 하나씩 읽고 눌러 줘.</p>
+    </div>
+    <section class="{{ card }}">{{ form_body() }}</section>
+  </div>
+</div>
+{% endif %}
+{% endblock %}

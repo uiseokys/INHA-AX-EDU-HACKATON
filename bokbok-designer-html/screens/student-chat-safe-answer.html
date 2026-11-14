@@ -1,0 +1,874 @@
+<!doctype html>
+<html lang="ko" class="h-full antialiased">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f8f1" />
+    <title>복복이 · 복복복</title>
+    <meta name="description" content="감정 스티커로 하루를 기록하고, AI 친구 복복이와 이야기하고, 필요할 때 선생님과 전문기관으로 이어지는 학생 마음 돌봄 플랫폼 (시연용 프로토타입)" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+    <link rel="stylesheet" href="../assets/app.css" />
+    <script src="../assets/ui.js" defer></script>
+  </head>
+  <body data-preview-page="student-chat-safe-answer" class="flex min-h-full flex-col">
+    
+<div class="flex-1 bg-linear-to-b from-leaf-50 via-paper to-paper">
+  <header class="sticky top-0 z-40 border-b border-white/70 bg-paper/85 backdrop-blur-md">
+    <div class="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4 sm:px-6">
+      <a href="landing.html" aria-label="복복복 처음 화면" class="shrink-0">
+<span class="inline-flex items-center gap-2">
+  
+<svg viewBox="0 0 120 120" class="size-10" aria-hidden="true">
+  
+  
+  <circle cx="20" cy="76" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="100" cy="76" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="46" cy="102" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="74" cy="102" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  
+  
+  <circle cx="96.0" cy="66.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="93.26" cy="79.01" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="85.46" cy="90.04" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="73.78" cy="97.41" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="60.0" cy="100.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="46.22" cy="97.41" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="34.54" cy="90.04" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="26.74" cy="79.01" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="24.0" cy="66.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="26.74" cy="52.99" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="34.54" cy="41.96" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="46.22" cy="34.59" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="60.0" cy="32.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="73.78" cy="34.59" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="85.46" cy="41.96" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="93.26" cy="52.99" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <ellipse cx="60" cy="66" rx="38" ry="36" fill="var(--color-fluff)" />
+  
+  <path d="M60 33 C60 26 60 22 60 17" stroke="var(--color-leaf-600)" stroke-width="3" stroke-linecap="round" fill="none" />
+  <path d="M60 20 C52 9 40 11 41 19 C47 23 55 23 60 20Z" fill="var(--color-leaf-400)" stroke="var(--color-leaf-600)" stroke-width="2" stroke-linejoin="round" />
+  <path d="M60 18 C67 6 80 8 79 16 C73 21 65 21 60 18Z" fill="var(--color-leaf-300)" stroke="var(--color-leaf-600)" stroke-width="2" stroke-linejoin="round" />
+  
+  <ellipse cx="40" cy="75" rx="6.5" ry="3.8" fill="#f4a3a0" opacity="0.55" />
+  <ellipse cx="80" cy="75" rx="6.5" ry="3.8" fill="#f4a3a0" opacity="0.55" />
+  
+  
+  <ellipse cx="48" cy="65" rx="3.2" ry="4" fill="#3b2f2a" />
+  <ellipse cx="72" cy="65" rx="3.2" ry="4" fill="#3b2f2a" />
+  <circle cx="49.2" cy="63.4" r="1.1" fill="#fff" />
+  <circle cx="73.2" cy="63.4" r="1.1" fill="#fff" />
+  <path d="M54 72 q6 6 12 0" stroke="#3b2f2a" stroke-width="2.8" stroke-linecap="round" fill="none" />
+  
+</svg>
+
+  <span class="font-extrabold tracking-tight text-leaf-700 text-xl">복복복</span>
+</span>
+</a>
+      <span class="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold whitespace-nowrap bg-leaf-100 text-leaf-700">학생</span>
+      <nav class="ml-3 hidden items-center gap-1 md:flex" aria-label="주 메뉴">
+        
+        <a href="student-home.html" 
+           class="whitespace-nowrap relative flex items-center gap-1.5 rounded-full px-3.5 py-2 text-sm font-semibold transition text-ink-soft hover:bg-white/70 hover:text-ink">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> 홈
+          
+        </a>
+        
+        <a href="student-report.html" 
+           class="whitespace-nowrap relative flex items-center gap-1.5 rounded-full px-3.5 py-2 text-sm font-semibold transition text-ink-soft hover:bg-white/70 hover:text-ink">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg> 리포트
+          
+        </a>
+        
+        <a href="student-chat.html" aria-current="page"
+           class="whitespace-nowrap relative flex items-center gap-1.5 rounded-full px-3.5 py-2 text-sm font-semibold transition bg-white text-leaf-700 shadow-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/><path d="M8 12h.01"/><path d="M12 12h.01"/><path d="M16 12h.01"/></svg> 복복이
+          
+        </a>
+        
+        <a href="student-counsel.html" 
+           class="whitespace-nowrap relative flex items-center gap-1.5 rounded-full px-3.5 py-2 text-sm font-semibold transition text-ink-soft hover:bg-white/70 hover:text-ink">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true"><path d="M11 14h2a2 2 0 0 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/><path d="m14.45 13.39 5.05-4.694C20.196 8 21 6.85 21 5.75a2.75 2.75 0 0 0-4.797-1.837.276.276 0 0 1-.406 0A2.75 2.75 0 0 0 11 5.75c0 1.2.802 2.248 1.5 2.946L16 11.95"/><path d="m2 15 6 6"/><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a1 1 0 0 0-2.75-2.91"/></svg> 상담
+          
+        </a>
+        
+        <a href="student-shop-before.html" 
+           class="whitespace-nowrap relative flex items-center gap-1.5 rounded-full px-3.5 py-2 text-sm font-semibold transition text-ink-soft hover:bg-white/70 hover:text-ink">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true"><path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5"/><path d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"/><path d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"/></svg> 상점
+          
+        </a>
+        
+        <a href="student-help.html" 
+           class="whitespace-nowrap relative flex items-center gap-1.5 rounded-full px-3.5 py-2 text-sm font-semibold transition text-ink-soft hover:bg-white/70 hover:text-ink">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/><circle cx="12" cy="12" r="4"/></svg> 도움
+          
+        </a>
+        
+      </nav>
+      <div class="ml-auto flex items-center gap-2">
+        
+        <a href="student-points.html" class="flex items-center gap-1 rounded-full bg-joy/40 px-3 py-1.5 text-xs font-bold text-amber-900 transition hover:bg-joy/60" aria-label="내 포인트 485P">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-3.5" aria-hidden="true"><path d="M13.744 17.736a6 6 0 1 1-7.48-7.48"/><path d="M15 6h1v4"/><path d="m6.134 14.768.866-.5 2 3.464"/><circle cx="16" cy="8" r="6"/></svg> 485P
+        </a>
+        
+        <a href="teacher-home.html" class="flex items-center gap-1.5 rounded-full border border-stone-200 bg-white px-3 py-1.5 text-xs font-semibold text-ink-soft transition hover:border-leaf-300 hover:text-leaf-700">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-3.5" aria-hidden="true"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg><span class="hidden sm:inline">선생님 화면</span>
+        </a>
+      </div>
+    </div>
+    
+  </header>
+
+  <main class="mx-auto w-full max-w-6xl px-4 pt-6 sm:px-6">
+    <div class="space-y-5 animate-fade-up">
+      
+<section class="mx-auto flex max-w-2xl flex-col overflow-hidden rounded-3xl border border-white bg-leaf-50/60 shadow-[0_8px_28px_-14px_rgba(46,84,56,0.25)]">
+  
+  <div class="flex items-center gap-3 border-b border-leaf-100 bg-white px-4 py-3">
+    
+<svg viewBox="0 0 120 120" class="size-12 shrink-0" aria-hidden="true">
+  
+  
+  <circle cx="20" cy="76" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="100" cy="76" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="46" cy="102" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="74" cy="102" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  
+  
+  <circle cx="96.0" cy="66.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="93.26" cy="79.01" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="85.46" cy="90.04" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="73.78" cy="97.41" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="60.0" cy="100.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="46.22" cy="97.41" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="34.54" cy="90.04" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="26.74" cy="79.01" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="24.0" cy="66.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="26.74" cy="52.99" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="34.54" cy="41.96" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="46.22" cy="34.59" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="60.0" cy="32.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="73.78" cy="34.59" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="85.46" cy="41.96" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="93.26" cy="52.99" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <ellipse cx="60" cy="66" rx="38" ry="36" fill="var(--color-fluff)" />
+  
+  <path d="M60 33 C60 26 60 22 60 17" stroke="var(--color-leaf-600)" stroke-width="3" stroke-linecap="round" fill="none" />
+  <path d="M60 20 C52 9 40 11 41 19 C47 23 55 23 60 20Z" fill="var(--color-leaf-400)" stroke="var(--color-leaf-600)" stroke-width="2" stroke-linejoin="round" />
+  <path d="M60 18 C67 6 80 8 79 16 C73 21 65 21 60 18Z" fill="var(--color-leaf-300)" stroke="var(--color-leaf-600)" stroke-width="2" stroke-linejoin="round" />
+  
+  <ellipse cx="40" cy="75" rx="6.5" ry="3.8" fill="#f4a3a0" opacity="0.55" />
+  <ellipse cx="80" cy="75" rx="6.5" ry="3.8" fill="#f4a3a0" opacity="0.55" />
+  
+  
+  <ellipse cx="48" cy="65" rx="3.2" ry="4" fill="#3b2f2a" />
+  <ellipse cx="72" cy="65" rx="3.2" ry="4" fill="#3b2f2a" />
+  <circle cx="49.2" cy="63.4" r="1.1" fill="#fff" />
+  <circle cx="73.2" cy="63.4" r="1.1" fill="#fff" />
+  <path d="M54 72 q6 6 12 0" stroke="#3b2f2a" stroke-width="2.8" stroke-linecap="round" fill="none" />
+  
+</svg>
+
+    <div class="min-w-0 flex-1">
+      <h1 class="font-bold text-ink">복복이</h1>
+      <p class="flex items-center gap-1 text-xs text-ink-soft">
+        <span class="size-1.5 rounded-full bg-leaf-400"></span> 마음 친구 · 언제든 이야기해
+        <span class="ml-1 inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold whitespace-nowrap bg-stone-100 text-stone-500 px-2 py-0.5 text-[10px]"
+              title="BOKBOK_LLM_MODEL 을 설정하면 로컬 LLM으로 대답해요">
+          규칙 기반 응답
+        </span>
+      </p>
+    </div>
+    <a href="student-chat-history.html" class="inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-semibold text-ink-soft transition hover:bg-stone-100 hover:text-ink px-3 py-2 text-xs"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg> 대화 기록</a>
+    <form method="post" data-preview-action="/student/chat/clear"><button class="inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-semibold text-ink-soft transition hover:bg-stone-100 hover:text-ink px-3 py-2 text-xs" title="오늘 대화 지우기"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span class="sr-only">오늘 대화 지우기</span></button></form>
+  </div>
+
+  <p class="flex gap-2 bg-white/70 px-4 py-2.5 text-[11px] leading-relaxed text-ink-soft"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 size-3 shrink-0" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span>복복이와 나눈 대화는 선생님께 보이지 않아요. 도움이 필요해 보일 때는 처음에 약속한 대로, 그런 신호가 있다는 것만 선생님께 전해져요. <a href="student-promise.html" class="font-semibold text-leaf-700 underline">약속 다시 보기</a></span></p>
+
+  
+  <div id="chat-log" class="min-h-[50vh] space-y-4 px-4 py-5" aria-live="polite">
+    
+
+
+
+<div data-role="bot" class="flex items-end gap-2">
+  
+<svg viewBox="0 0 120 120" class="size-10 shrink-0" aria-hidden="true">
+  
+  
+  <circle cx="20" cy="76" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="100" cy="76" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="46" cy="102" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="74" cy="102" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  
+  
+  <circle cx="96.0" cy="66.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="93.26" cy="79.01" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="85.46" cy="90.04" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="73.78" cy="97.41" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="60.0" cy="100.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="46.22" cy="97.41" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="34.54" cy="90.04" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="26.74" cy="79.01" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="24.0" cy="66.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="26.74" cy="52.99" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="34.54" cy="41.96" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="46.22" cy="34.59" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="60.0" cy="32.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="73.78" cy="34.59" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="85.46" cy="41.96" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="93.26" cy="52.99" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <ellipse cx="60" cy="66" rx="38" ry="36" fill="var(--color-fluff)" />
+  
+  <path d="M60 33 C60 26 60 22 60 17" stroke="var(--color-leaf-600)" stroke-width="3" stroke-linecap="round" fill="none" />
+  <path d="M60 20 C52 9 40 11 41 19 C47 23 55 23 60 20Z" fill="var(--color-leaf-400)" stroke="var(--color-leaf-600)" stroke-width="2" stroke-linejoin="round" />
+  <path d="M60 18 C67 6 80 8 79 16 C73 21 65 21 60 18Z" fill="var(--color-leaf-300)" stroke="var(--color-leaf-600)" stroke-width="2" stroke-linejoin="round" />
+  
+  <ellipse cx="40" cy="75" rx="6.5" ry="3.8" fill="#f4a3a0" opacity="0.55" />
+  <ellipse cx="80" cy="75" rx="6.5" ry="3.8" fill="#f4a3a0" opacity="0.55" />
+  
+  
+  <ellipse cx="48" cy="65" rx="3.2" ry="4" fill="#3b2f2a" />
+  <ellipse cx="72" cy="65" rx="3.2" ry="4" fill="#3b2f2a" />
+  <circle cx="49.2" cy="63.4" r="1.1" fill="#fff" />
+  <circle cx="73.2" cy="63.4" r="1.1" fill="#fff" />
+  <path d="M54 72 q6 6 12 0" stroke="#3b2f2a" stroke-width="2.8" stroke-linecap="round" fill="none" />
+  
+</svg>
+
+  <div class="max-w-[82%]">
+    <p class="mb-1 text-[11px] font-semibold text-ink-soft">복복이</p>
+    <p class="rounded-3xl rounded-bl-md px-4 py-2.5 text-sm leading-relaxed whitespace-pre-line bg-white text-ink shadow-sm">오늘 기록에서 ‘슬픔 · 많이’을 골랐네. 지금도 그 마음에 대해 이야기하고 싶어?</p>
+    
+    
+    
+    <p class="mt-1 text-[10px] text-stone-400">13:26</p>
+  </div>
+</div>
+
+
+
+<div data-role="me" class="flex justify-end">
+  <div class="max-w-[78%]">
+    <p class="rounded-3xl rounded-br-md bg-leaf-600 px-4 py-2.5 text-sm leading-relaxed whitespace-pre-line text-white">친구들이 나만 빼고 놀아서 속상했어</p>
+    <p class="mt-1 text-right text-[10px] text-stone-400">13:26</p>
+  </div>
+</div>
+
+
+
+<div data-role="bot" class="flex items-end gap-2">
+  
+<svg viewBox="0 0 120 120" class="size-10 shrink-0" aria-hidden="true">
+  
+  
+  <circle cx="20" cy="76" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="100" cy="76" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="46" cy="102" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="74" cy="102" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  
+  
+  <circle cx="96.0" cy="66.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="93.26" cy="79.01" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="85.46" cy="90.04" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="73.78" cy="97.41" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="60.0" cy="100.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="46.22" cy="97.41" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="34.54" cy="90.04" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="26.74" cy="79.01" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="24.0" cy="66.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="26.74" cy="52.99" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="34.54" cy="41.96" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="46.22" cy="34.59" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="60.0" cy="32.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="73.78" cy="34.59" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="85.46" cy="41.96" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="93.26" cy="52.99" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <ellipse cx="60" cy="66" rx="38" ry="36" fill="var(--color-fluff)" />
+  
+  <path d="M60 33 C60 26 60 22 60 17" stroke="var(--color-leaf-600)" stroke-width="3" stroke-linecap="round" fill="none" />
+  <path d="M60 20 C52 9 40 11 41 19 C47 23 55 23 60 20Z" fill="var(--color-leaf-400)" stroke="var(--color-leaf-600)" stroke-width="2" stroke-linejoin="round" />
+  <path d="M60 18 C67 6 80 8 79 16 C73 21 65 21 60 18Z" fill="var(--color-leaf-300)" stroke="var(--color-leaf-600)" stroke-width="2" stroke-linejoin="round" />
+  
+  <ellipse cx="40" cy="75" rx="6.5" ry="3.8" fill="#f4a3a0" opacity="0.55" />
+  <ellipse cx="80" cy="75" rx="6.5" ry="3.8" fill="#f4a3a0" opacity="0.55" />
+  
+  
+  <ellipse cx="48" cy="65" rx="3.2" ry="4" fill="#3b2f2a" />
+  <ellipse cx="72" cy="65" rx="3.2" ry="4" fill="#3b2f2a" />
+  <circle cx="49.2" cy="63.4" r="1.1" fill="#fff" />
+  <circle cx="73.2" cy="63.4" r="1.1" fill="#fff" />
+  <path d="M54 72 q6 6 12 0" stroke="#3b2f2a" stroke-width="2.8" stroke-linecap="round" fill="none" />
+  
+</svg>
+
+  <div class="max-w-[82%]">
+    <p class="mb-1 text-[11px] font-semibold text-ink-soft">복복이</p>
+    <p class="rounded-3xl rounded-bl-md px-4 py-2.5 text-sm leading-relaxed whitespace-pre-line bg-white text-ink shadow-sm">혼자 있는 느낌이 들면 정말 외롭지… 그때 어떤 기분이었는지 조금 더 말해 줄래?</p>
+    
+    
+    
+    <p class="mt-1 text-[10px] text-stone-400">13:26</p>
+  </div>
+</div>
+
+
+
+<div data-role="me" class="flex justify-end">
+  <div class="max-w-[78%]">
+    <p class="rounded-3xl rounded-br-md bg-leaf-600 px-4 py-2.5 text-sm leading-relaxed whitespace-pre-line text-white">요즘은 그냥 사라지고싶어</p>
+    <p class="mt-1 text-right text-[10px] text-stone-400">13:26</p>
+  </div>
+</div>
+
+
+
+<div data-role="bot" class="flex items-end gap-2">
+  
+<svg viewBox="0 0 120 120" class="size-10 shrink-0" aria-hidden="true">
+  
+  
+  <circle cx="20" cy="76" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="100" cy="76" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="46" cy="102" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="74" cy="102" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  
+  
+  <circle cx="96.0" cy="66.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="93.26" cy="79.01" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="85.46" cy="90.04" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="73.78" cy="97.41" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="60.0" cy="100.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="46.22" cy="97.41" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="34.54" cy="90.04" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="26.74" cy="79.01" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="24.0" cy="66.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="26.74" cy="52.99" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="34.54" cy="41.96" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="46.22" cy="34.59" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="60.0" cy="32.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="73.78" cy="34.59" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="85.46" cy="41.96" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="93.26" cy="52.99" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <ellipse cx="60" cy="66" rx="38" ry="36" fill="var(--color-fluff)" />
+  
+  <path d="M60 33 C60 26 60 22 60 17" stroke="var(--color-leaf-600)" stroke-width="3" stroke-linecap="round" fill="none" />
+  <path d="M60 20 C52 9 40 11 41 19 C47 23 55 23 60 20Z" fill="var(--color-leaf-400)" stroke="var(--color-leaf-600)" stroke-width="2" stroke-linejoin="round" />
+  <path d="M60 18 C67 6 80 8 79 16 C73 21 65 21 60 18Z" fill="var(--color-leaf-300)" stroke="var(--color-leaf-600)" stroke-width="2" stroke-linejoin="round" />
+  
+  <ellipse cx="40" cy="75" rx="6.5" ry="3.8" fill="#f4a3a0" opacity="0.55" />
+  <ellipse cx="80" cy="75" rx="6.5" ry="3.8" fill="#f4a3a0" opacity="0.55" />
+  
+  
+  <ellipse cx="48" cy="65" rx="3" ry="3.6" fill="#3b2f2a" />
+  <ellipse cx="72" cy="65" rx="3" ry="3.6" fill="#3b2f2a" />
+  <path d="M44 57 l7 2 M76 57 l-7 2" stroke="#3b2f2a" stroke-width="2.4" stroke-linecap="round" />
+  <path d="M55 75 q5 3 10 0" stroke="#3b2f2a" stroke-width="2.6" stroke-linecap="round" fill="none" />
+  
+</svg>
+
+  <div class="max-w-[82%]">
+    <p class="mb-1 text-[11px] font-semibold text-ink-soft">복복이</p>
+    <p class="rounded-3xl rounded-bl-md px-4 py-2.5 text-sm leading-relaxed whitespace-pre-line bg-rose-50 text-ink ring-1 ring-rose-100">그런 마음이 들 만큼 많이 힘들었구나. 말해 줘서 정말 고마워. 지금 혼자 견디지 않았으면 좋겠어. 아래에서 바로 도움을 받을 수 있어.</p>
+    
+    
+    <div class="mt-2 space-y-2 rounded-3xl bg-white p-3 shadow-sm">
+      
+      
+      
+      <a href="tel:109" data-call="109" data-call-name="자살예방 상담전화" class="flex items-center justify-between rounded-2xl bg-rose-50 px-3.5 py-2.5 text-sm hover:bg-rose-100">
+        <span class="font-semibold text-ink">자살예방 상담전화</span><span class="flex items-center gap-1 font-extrabold text-rose-600"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-3.5" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>109</span>
+      </a>
+      
+      
+      <a href="tel:1388" data-call="1388" data-call-name="청소년 상담전화" class="flex items-center justify-between rounded-2xl bg-rose-50 px-3.5 py-2.5 text-sm hover:bg-rose-100">
+        <span class="font-semibold text-ink">청소년 상담전화</span><span class="flex items-center gap-1 font-extrabold text-rose-600"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-3.5" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>1388</span>
+      </a>
+      
+      
+      <a href="tel:112" data-call="112" data-call-name="경찰" class="flex items-center justify-between rounded-2xl bg-rose-50 px-3.5 py-2.5 text-sm hover:bg-rose-100">
+        <span class="font-semibold text-ink">경찰</span><span class="flex items-center gap-1 font-extrabold text-rose-600"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-3.5" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>112</span>
+      </a>
+      
+      
+      
+      
+      <form method="post" data-preview-action="/student/chat/safety" class="rounded-2xl bg-stone-50 p-3">
+        <p class="text-sm font-semibold text-ink">지금 안전한 곳에 있나요?</p>
+        <div class="mt-2 flex gap-2">
+          <button name="answer" value="yes" class="inline-flex items-center justify-center gap-2 rounded-2xl border border-stone-200 bg-white px-4 py-2.5 text-sm font-semibold text-ink transition hover:border-leaf-300 hover:text-leaf-700 flex-1 px-3 py-2 text-xs">네, 안전해요</button>
+          <button name="answer" value="no" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-rose-50 px-4 py-2.5 text-sm font-semibold text-rose-700 transition hover:bg-rose-100 flex-1 px-3 py-2 text-xs">아니요</button>
+        </div>
+      </form>
+      
+      
+      
+      <a href="student-counsel.html" class="flex items-center justify-between rounded-2xl bg-leaf-50 px-3.5 py-2.5 text-sm font-semibold text-leaf-800 hover:bg-leaf-100">선생님과 함께 이야기해 보는 건 어떨까요? <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      
+      
+      
+      <a href="student-help.html" class="flex items-center justify-between rounded-2xl bg-leaf-50 px-3.5 py-2.5 text-sm font-semibold text-leaf-800 hover:bg-leaf-100">전문 상담기관에 연결해 드릴까요? <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      
+      
+    </div>
+    
+    
+    
+    <p class="mt-1 text-[10px] text-stone-400">13:26</p>
+  </div>
+</div>
+
+
+
+<div data-role="me" class="flex justify-end">
+  <div class="max-w-[78%]">
+    <p class="rounded-3xl rounded-br-md bg-leaf-600 px-4 py-2.5 text-sm leading-relaxed whitespace-pre-line text-white">응, 안전한 곳에 있어</p>
+    <p class="mt-1 text-right text-[10px] text-stone-400">13:26</p>
+  </div>
+</div>
+
+
+
+<div data-role="bot" class="flex items-end gap-2">
+  
+<svg viewBox="0 0 120 120" class="size-10 shrink-0" aria-hidden="true">
+  
+  
+  <circle cx="20" cy="76" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="100" cy="76" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="46" cy="102" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="74" cy="102" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  
+  
+  <circle cx="96.0" cy="66.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="93.26" cy="79.01" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="85.46" cy="90.04" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="73.78" cy="97.41" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="60.0" cy="100.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="46.22" cy="97.41" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="34.54" cy="90.04" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="26.74" cy="79.01" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="24.0" cy="66.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="26.74" cy="52.99" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="34.54" cy="41.96" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="46.22" cy="34.59" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="60.0" cy="32.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="73.78" cy="34.59" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="85.46" cy="41.96" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="93.26" cy="52.99" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <ellipse cx="60" cy="66" rx="38" ry="36" fill="var(--color-fluff)" />
+  
+  <path d="M60 33 C60 26 60 22 60 17" stroke="var(--color-leaf-600)" stroke-width="3" stroke-linecap="round" fill="none" />
+  <path d="M60 20 C52 9 40 11 41 19 C47 23 55 23 60 20Z" fill="var(--color-leaf-400)" stroke="var(--color-leaf-600)" stroke-width="2" stroke-linejoin="round" />
+  <path d="M60 18 C67 6 80 8 79 16 C73 21 65 21 60 18Z" fill="var(--color-leaf-300)" stroke="var(--color-leaf-600)" stroke-width="2" stroke-linejoin="round" />
+  
+  <ellipse cx="40" cy="75" rx="6.5" ry="3.8" fill="#f4a3a0" opacity="0.55" />
+  <ellipse cx="80" cy="75" rx="6.5" ry="3.8" fill="#f4a3a0" opacity="0.55" />
+  
+  
+  <ellipse cx="48" cy="65" rx="3.2" ry="4" fill="#3b2f2a" />
+  <ellipse cx="72" cy="65" rx="3.2" ry="4" fill="#3b2f2a" />
+  <circle cx="49.2" cy="63.4" r="1.1" fill="#fff" />
+  <circle cx="73.2" cy="63.4" r="1.1" fill="#fff" />
+  <path d="M54 72 q6 6 12 0" stroke="#3b2f2a" stroke-width="2.8" stroke-linecap="round" fill="none" />
+  
+</svg>
+
+  <div class="max-w-[82%]">
+    <p class="mb-1 text-[11px] font-semibold text-ink-soft">복복이</p>
+    <p class="rounded-3xl rounded-bl-md px-4 py-2.5 text-sm leading-relaxed whitespace-pre-line bg-white text-ink shadow-sm">다행이야. 그래도 이 마음은 꼭 믿을 수 있는 어른과 나눴으면 해.</p>
+    
+    
+    
+    <p class="mt-1 text-[10px] text-stone-400">13:26</p>
+  </div>
+</div>
+
+
+    <span id="end"></span>
+  </div>
+
+  
+  <div class="flex gap-2 overflow-x-auto px-4 pb-2">
+    
+    <button type="button" data-suggest="오늘 있었던 일 말하기" class="shrink-0 rounded-full border border-leaf-200 bg-white px-3 py-1.5 text-xs font-semibold text-leaf-700 hover:bg-leaf-50">오늘 있었던 일 말하기</button>
+    
+    <button type="button" data-suggest="그냥 기분이 별로야" class="shrink-0 rounded-full border border-leaf-200 bg-white px-3 py-1.5 text-xs font-semibold text-leaf-700 hover:bg-leaf-50">그냥 기분이 별로야</button>
+    
+    <button type="button" data-suggest="친구 때문에 속상해" class="shrink-0 rounded-full border border-leaf-200 bg-white px-3 py-1.5 text-xs font-semibold text-leaf-700 hover:bg-leaf-50">친구 때문에 속상해</button>
+    
+    <button type="button" data-suggest="시험이 걱정돼" class="shrink-0 rounded-full border border-leaf-200 bg-white px-3 py-1.5 text-xs font-semibold text-leaf-700 hover:bg-leaf-50">시험이 걱정돼</button>
+    
+  </div>
+
+  <form method="post" data-preview-action="/student/chat" data-chat class="sticky bottom-16 flex gap-2 border-t border-leaf-100 bg-white p-3 md:bottom-0">
+    <label for="chat-input" class="sr-only">복복이에게 보낼 말</label>
+    <input id="chat-input" name="text" maxlength="500" autocomplete="off" placeholder="복복이에게 이야기해 봐" class="w-full rounded-2xl border border-stone-200 bg-white px-4 py-3 text-sm text-ink placeholder:text-stone-400 transition focus:border-leaf-400 focus:outline-none focus:ring-4 focus:ring-leaf-100 py-2.5" />
+    <button class="grid size-11 shrink-0 place-items-center rounded-2xl bg-leaf-600 text-white transition hover:bg-leaf-700" aria-label="보내기"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5" aria-hidden="true"><path d="M3.714 3.048a.498.498 0 0 0-.683.627l2.843 7.627a2 2 0 0 1 0 1.396l-2.842 7.627a.498.498 0 0 0 .682.627l18-8.5a.5.5 0 0 0 0-.904z"/><path d="M6 12h16"/></svg></button>
+  </form>
+</section>
+
+<template id="tpl-me">
+  <div data-role="me" class="flex justify-end"><div class="max-w-[78%]"><p data-text class="rounded-3xl rounded-br-md bg-leaf-600 px-4 py-2.5 text-sm leading-relaxed whitespace-pre-line text-white"></p></div></div>
+</template>
+<template id="tpl-typing">
+  <div class="flex items-end gap-2">
+<svg viewBox="0 0 120 120" class="size-10 shrink-0" aria-hidden="true">
+  
+  
+  <circle cx="20" cy="76" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="100" cy="76" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="46" cy="102" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="74" cy="102" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  
+  
+  <circle cx="96.0" cy="66.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="93.26" cy="79.01" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="85.46" cy="90.04" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="73.78" cy="97.41" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="60.0" cy="100.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="46.22" cy="97.41" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="34.54" cy="90.04" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="26.74" cy="79.01" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="24.0" cy="66.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="26.74" cy="52.99" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="34.54" cy="41.96" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="46.22" cy="34.59" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="60.0" cy="32.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="73.78" cy="34.59" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="85.46" cy="41.96" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="93.26" cy="52.99" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <ellipse cx="60" cy="66" rx="38" ry="36" fill="var(--color-fluff)" />
+  
+  <path d="M60 33 C60 26 60 22 60 17" stroke="var(--color-leaf-600)" stroke-width="3" stroke-linecap="round" fill="none" />
+  <path d="M60 20 C52 9 40 11 41 19 C47 23 55 23 60 20Z" fill="var(--color-leaf-400)" stroke="var(--color-leaf-600)" stroke-width="2" stroke-linejoin="round" />
+  <path d="M60 18 C67 6 80 8 79 16 C73 21 65 21 60 18Z" fill="var(--color-leaf-300)" stroke="var(--color-leaf-600)" stroke-width="2" stroke-linejoin="round" />
+  
+  <ellipse cx="40" cy="75" rx="6.5" ry="3.8" fill="#f4a3a0" opacity="0.55" />
+  <ellipse cx="80" cy="75" rx="6.5" ry="3.8" fill="#f4a3a0" opacity="0.55" />
+  
+  
+  <ellipse cx="48" cy="65" rx="3.2" ry="4" fill="#3b2f2a" />
+  <ellipse cx="72" cy="65" rx="3.2" ry="4" fill="#3b2f2a" />
+  <circle cx="49.2" cy="63.4" r="1.1" fill="#fff" />
+  <circle cx="73.2" cy="63.4" r="1.1" fill="#fff" />
+  <path d="M54 72 q6 6 12 0" stroke="#3b2f2a" stroke-width="2.8" stroke-linecap="round" fill="none" />
+  
+</svg>
+
+    <p class="flex gap-1 rounded-3xl rounded-bl-md bg-white px-4 py-3.5 shadow-sm" aria-label="복복이가 답장을 쓰는 중">
+      <span class="size-2 animate-typing rounded-full bg-leaf-400"></span><span class="size-2 animate-typing rounded-full bg-leaf-400 [animation-delay:.15s]"></span><span class="size-2 animate-typing rounded-full bg-leaf-400 [animation-delay:.3s]"></span>
+    </p>
+  </div>
+</template>
+
+<p class="mx-auto max-w-2xl text-center text-xs text-ink-soft">
+  복복이는 AI 캐릭터예요. 의사나 상담 선생님을 대신하지 않아요. 지금 위험하다면 <a href="tel:112" data-call="112" data-call-name="경찰" class="font-bold text-rose-600">112</a>,
+  죽고 싶은 마음이 든다면 <a href="tel:109" data-call="109" data-call-name="자살예방 상담전화" class="font-bold text-rose-600">109</a>에 바로 연락하세요.
+</p>
+
+    </div>
+  </main>
+
+  
+<footer class="mx-auto w-full max-w-6xl px-4 pt-6 pb-28 text-xs leading-relaxed text-ink-soft sm:px-6 md:pb-10">
+  <div class="flex flex-col gap-3 rounded-3xl bg-white/60 p-4 sm:flex-row sm:items-center sm:justify-between">
+    <p>
+      시연용 프로토타입입니다. 학생·학교·선생님 정보는 모두 <strong>합성 데이터</strong>이고, 분석 결과는 진단이 아닌 참고 정보입니다.
+      기록은 이 서버의 로컬 파일에만 저장됩니다.
+    </p>
+    <form method="post" data-preview-action="/reset" class="shrink-0 self-start sm:self-auto" data-scroll-top>
+      <input type="hidden" name="next" value="/student/chat" />
+      <button class="inline-flex items-center gap-1.5 rounded-full border border-stone-200 bg-white px-3 py-1.5 font-semibold text-ink-soft transition hover:border-leaf-300 hover:text-leaf-700">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-3.5" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg> 시연 데이터 초기화
+      </button>
+    </form>
+  </div>
+</footer>
+
+</div>
+
+
+<nav aria-label="주 메뉴" class="fixed inset-x-0 bottom-0 z-40 border-t border-stone-200/70 bg-white/95 pb-[env(safe-area-inset-bottom)] backdrop-blur md:hidden">
+  <div class="mx-auto flex max-w-md">
+    
+    <a href="student-home.html" 
+       class="relative flex flex-1 flex-col items-center gap-1 py-2.5 text-[11px] font-semibold transition text-stone-400">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> 홈
+      
+    </a>
+    
+    <a href="student-report.html" 
+       class="relative flex flex-1 flex-col items-center gap-1 py-2.5 text-[11px] font-semibold transition text-stone-400">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg> 리포트
+      
+    </a>
+    
+    <a href="student-chat.html" aria-current="page"
+       class="relative flex flex-1 flex-col items-center gap-1 py-2.5 text-[11px] font-semibold transition text-leaf-600">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/><path d="M8 12h.01"/><path d="M12 12h.01"/><path d="M16 12h.01"/></svg> 복복이
+      
+    </a>
+    
+    <a href="student-counsel.html" 
+       class="relative flex flex-1 flex-col items-center gap-1 py-2.5 text-[11px] font-semibold transition text-stone-400">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5" aria-hidden="true"><path d="M11 14h2a2 2 0 0 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/><path d="m14.45 13.39 5.05-4.694C20.196 8 21 6.85 21 5.75a2.75 2.75 0 0 0-4.797-1.837.276.276 0 0 1-.406 0A2.75 2.75 0 0 0 11 5.75c0 1.2.802 2.248 1.5 2.946L16 11.95"/><path d="m2 15 6 6"/><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a1 1 0 0 0-2.75-2.91"/></svg> 상담
+      
+    </a>
+    
+    <a href="student-shop-before.html" 
+       class="relative flex flex-1 flex-col items-center gap-1 py-2.5 text-[11px] font-semibold transition text-stone-400">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5" aria-hidden="true"><path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5"/><path d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"/><path d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"/></svg> 상점
+      
+    </a>
+    
+    <a href="student-help.html" 
+       class="relative flex flex-1 flex-col items-center gap-1 py-2.5 text-[11px] font-semibold transition text-stone-400">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/><circle cx="12" cy="12" r="4"/></svg> 도움
+      
+    </a>
+    
+  </div>
+</nav>
+
+
+
+
+    
+    <dialog id="call-dialog" class="m-auto w-72 rounded-3xl bg-white p-0 text-center shadow-2xl backdrop:bg-ink/40 backdrop:backdrop-blur-sm">
+      <div class="px-6 pt-6 pb-4">
+        <p class="text-xs font-semibold text-ink-soft" data-call-name></p>
+        <p class="mt-1 text-3xl font-extrabold tracking-wide text-ink" data-call-number></p>
+        <p class="mt-2 text-xs text-ink-soft">이 번호로 전화를 걸까요?</p>
+      </div>
+      <div class="grid grid-cols-2 border-t border-stone-100 text-sm font-bold">
+        <button type="button" data-call-close class="py-3.5 text-ink-soft hover:bg-stone-50">취소</button>
+        <a data-call-go href="#" class="border-l border-stone-100 py-3.5 text-leaf-700 hover:bg-leaf-50">통화</a>
+      </div>
+    </dialog>
+
+    
+  <template id="tpl-preview-reply">
+
+
+
+
+<div data-role="bot" class="flex items-end gap-2">
+  
+<svg viewBox="0 0 120 120" class="size-10 shrink-0" aria-hidden="true">
+  
+  
+  <circle cx="20" cy="76" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="100" cy="76" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="46" cy="102" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="74" cy="102" r="8" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  
+  
+  <circle cx="96.0" cy="66.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="93.26" cy="79.01" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="85.46" cy="90.04" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="73.78" cy="97.41" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="60.0" cy="100.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="46.22" cy="97.41" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="34.54" cy="90.04" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="26.74" cy="79.01" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="24.0" cy="66.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="26.74" cy="52.99" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="34.54" cy="41.96" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="46.22" cy="34.59" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="60.0" cy="32.0" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="73.78" cy="34.59" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="85.46" cy="41.96" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <circle cx="93.26" cy="52.99" r="11" fill="var(--color-fluff)" stroke="var(--color-fluff-line)" stroke-width="2.5" />
+  
+  <ellipse cx="60" cy="66" rx="38" ry="36" fill="var(--color-fluff)" />
+  
+  <path d="M60 33 C60 26 60 22 60 17" stroke="var(--color-leaf-600)" stroke-width="3" stroke-linecap="round" fill="none" />
+  <path d="M60 20 C52 9 40 11 41 19 C47 23 55 23 60 20Z" fill="var(--color-leaf-400)" stroke="var(--color-leaf-600)" stroke-width="2" stroke-linejoin="round" />
+  <path d="M60 18 C67 6 80 8 79 16 C73 21 65 21 60 18Z" fill="var(--color-leaf-300)" stroke="var(--color-leaf-600)" stroke-width="2" stroke-linejoin="round" />
+  
+  <ellipse cx="40" cy="75" rx="6.5" ry="3.8" fill="#f4a3a0" opacity="0.55" />
+  <ellipse cx="80" cy="75" rx="6.5" ry="3.8" fill="#f4a3a0" opacity="0.55" />
+  
+  
+  <ellipse cx="48" cy="65" rx="3.2" ry="4" fill="#3b2f2a" />
+  <ellipse cx="72" cy="65" rx="3.2" ry="4" fill="#3b2f2a" />
+  <circle cx="49.2" cy="63.4" r="1.1" fill="#fff" />
+  <circle cx="73.2" cy="63.4" r="1.1" fill="#fff" />
+  <path d="M54 72 q6 6 12 0" stroke="#3b2f2a" stroke-width="2.8" stroke-linecap="round" fill="none" />
+  
+</svg>
+
+  <div class="max-w-[82%]">
+    <p class="mb-1 text-[11px] font-semibold text-ink-soft">복복이</p>
+    <p class="rounded-3xl rounded-bl-md px-4 py-2.5 text-sm leading-relaxed whitespace-pre-line bg-white text-ink shadow-sm">혼자 있는 느낌이 들면 정말 외롭지… 그때 어떤 기분이었는지 조금 더 말해 줄래?</p>
+    
+    
+    
+    <p class="mt-1 text-[10px] text-stone-400">13:26</p>
+  </div>
+</div>
+
+
+</template>
+</body>
+</html>

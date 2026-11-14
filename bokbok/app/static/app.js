@@ -1,4 +1,22 @@
-// 복복복 화면 보조 스크립트 (없어도 모든 기능은 폼 전송으로 동작합니다)
+// 복복복 화면 보조 스크립트
+
+for (const chart of document.querySelectorAll("[data-mood-chart]")) {
+  const controls = chart.querySelector("[data-chart-controls]");
+  const toggles = [...controls.querySelectorAll("[data-chart-toggle]")];
+  const layers = chart.querySelectorAll("[data-chart-layer]");
+  const empty = chart.querySelector("[data-chart-empty]");
+  const update = () => {
+    const shown = new Set(toggles.filter(toggle => toggle.checked).map(toggle => toggle.dataset.chartToggle));
+    for (const layer of layers) {
+      const visible = layer.dataset.chartLayer.split(" ").some(name => shown.has(name));
+      layer.toggleAttribute("hidden", !visible);
+    }
+    empty.hidden = shown.size > 0;
+  };
+  controls.addEventListener("change", update);
+  controls.hidden = false;
+  update();
+}
 
 // 1) 같은 화면에서 폼을 보내거나 조건을 바꾼 뒤에는 보던 위치로 되돌아오기
 const SCROLL_KEY = "bokbok:scroll";
@@ -62,7 +80,8 @@ if (chatLog) scrollChat();
 
 async function sendChat(text) {
   const mine = document.getElementById("tpl-me").content.cloneNode(true);
-  mine.querySelector("[data-text]").textContent = text;
+  const mineText = mine.querySelector("[data-text]");
+  mineText.textContent = text;
   chatLog.append(mine);
   const typing = document.getElementById("tpl-typing").content.cloneNode(true).firstElementChild;
   chatLog.append(typing);
@@ -73,6 +92,9 @@ async function sendChat(text) {
     typing.remove();
     const holder = document.createElement("div");
     holder.innerHTML = html;
+    // 서버가 욕설을 * 로 가린 말로 내 말풍선을 바꿈
+    const shown = holder.querySelector("[data-role='me'] p");
+    if (shown) mineText.textContent = shown.textContent;
     // 서버가 돌려준 조각에는 학생의 말도 들어 있으므로 복복이의 대답만 붙임
     holder.querySelectorAll("[data-role='bot']").forEach((el) => chatLog.append(el));
   } catch {
@@ -97,4 +119,81 @@ if (chatForm) {
       chatForm.requestSubmit();
     }),
   );
+}
+
+// 7) 감정 휠: 강도 고리. 값은 슬라이더(name=intensity)가 갖고, 스크립트가 없으면 슬라이더로 고릅니다
+const wheelForm = document.querySelector("form[data-wheel]");
+if (wheelForm) {
+  const range = wheelForm.querySelector("[name=intensity]");
+  const dial = wheelForm.querySelector("[data-dial]");
+  const arc = dial.querySelector("[data-dial-arc]");
+  const handle = dial.querySelector("[data-dial-handle]");
+  const text = wheelForm.querySelector("[data-dial-text]");
+  const labels = JSON.parse(dial.dataset.labels);
+
+  const setLevel = (value) => {
+    const level = Math.min(5, Math.max(1, Math.round(Number(value)) || 3));
+    range.name = "intensity";
+    range.value = level;
+    delete dial.dataset.unset;
+    dial.style.setProperty("--level", level);
+    arc.setAttribute("stroke-dasharray", `${level} 5`);
+    handle.textContent = level;
+    text.textContent = `강도 ${level} · ${labels[level]}`;
+    range.setAttribute("aria-valuetext", text.textContent);
+  };
+
+  // 아직 정하지 않은 상태: 값을 보내지 않아 '강도 없음'으로 저장됨 (건드리지 않은 3이 일부러 고른 3처럼 보이지 않게)
+  const unsetText = "고리를 돌려 정해 보세요";
+  const clearLevel = () => {
+    range.removeAttribute("name");
+    range.value = 3;
+    dial.dataset.unset = "";
+    arc.setAttribute("stroke-dasharray", "0 5");
+    handle.textContent = "?";
+    text.textContent = unsetText;
+    range.setAttribute("aria-valuetext", "아직 정하지 않음");
+  };
+
+  // 고리 위의 위치 → 1~5 (시계 방향으로 72°마다 한 칸, 한 바퀴를 다 채운 맨 위가 5). 한가운데는 방향을 알 수 없어 무시
+  const levelAt = (e) => {
+    const box = dial.getBoundingClientRect();
+    const dx = e.clientX - (box.left + box.width / 2);
+    const dy = e.clientY - (box.top + box.height / 2);
+    if (Math.hypot(dx, dy) < box.width * 0.1) return null;
+    const deg = ((Math.atan2(dx, -dy) * 180) / Math.PI + 360) % 360;
+    return Math.round(deg / 72) % 5 || 5;
+  };
+
+  dial.addEventListener("pointerdown", (e) => {
+    const level = levelAt(e);
+    if (level === null) return;
+    e.preventDefault();
+    e.target.setPointerCapture(e.pointerId);
+    dial.dataset.dragging = "";
+    setLevel(level);
+  });
+  dial.addEventListener("pointermove", (e) => {
+    if (!("dragging" in dial.dataset)) return;
+    const level = levelAt(e);
+    // 끄는 중에 맨 위를 살짝 넘어가도 '아주 많이'(5)와 '아주 조금'(1)이 서로 뒤바뀌지 않게 함
+    if (level === null || Math.abs(level - Number(range.value)) === 4) return;
+    setLevel(level);
+  });
+  const stopDrag = () => delete dial.dataset.dragging;
+  dial.addEventListener("pointerup", stopDrag);
+  dial.addEventListener("pointercancel", stopDrag);
+  range.addEventListener("input", () => setLevel(range.value));
+
+  // 다시 고르기: 스티커·단어·강도 선택을 풀고, 키보드로 이어서 고를 수 있게 첫 스티커로 초점을 옮김
+  wheelForm.querySelector("[data-wheel-reset]").addEventListener("click", (e) => {
+    e.preventDefault();
+    wheelForm.querySelectorAll("[name=emotion], [name=words]").forEach((el) => (el.checked = false));
+    clearLevel();
+    wheelForm.querySelector("[name=emotion]").focus();
+  });
+
+  if ("unset" in dial.dataset) clearLevel();
+  else setLevel(range.value);
+  wheelForm.dataset.dialReady = "";
 }

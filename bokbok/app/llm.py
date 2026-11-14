@@ -10,6 +10,7 @@ Ollama, LM Studio, llama.cpp server, vLLM 등 'OpenAI 호환 Chat Completions AP
 
 예) Ollama:    BOKBOK_LLM_MODEL=<받아 둔 모델 이름> uvicorn app.main:app
     LM Studio: BOKBOK_LLM_URL=http://localhost:1234/v1 BOKBOK_LLM_MODEL=<모델 이름> uvicorn app.main:app
+    oMLX:      scripts/run_local_llm.sh (oMLX는 8000번 포트와 API 키를 쓰므로 스크립트가 맞춰 줍니다)
 """
 
 from __future__ import annotations
@@ -47,7 +48,7 @@ def chat(messages: list[dict], max_tokens: int = 300, temperature: float = 0.7) 
     if not cfg["model"]:
         raise LLMError("BOKBOK_LLM_MODEL 이 설정되지 않았습니다.")
     body = json.dumps(
-        {"model": cfg["model"], "messages": messages, "max_tokens": max_tokens, "temperature": temperature, "stream": False}
+        {"model": cfg["model"], "messages": messages, "max_tokens": max_tokens, "temperature": temperature, "top_p": 0.8, "stream": False}
     ).encode()
     headers = {"Content-Type": "application/json"}
     if cfg["api_key"]:

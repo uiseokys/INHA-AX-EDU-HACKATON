@@ -7,6 +7,8 @@
 from __future__ import annotations
 
 from .analysis import SeriesPoint
+from .assessments import Assessment
+from .attendance import STATUS_LABELS, AttendanceSummary
 from .models import EMOTIONS
 
 
@@ -35,12 +37,13 @@ def _smooth_path(pts: list[tuple[float, float]]) -> str:
     return path
 
 
-def mood_chart(series: list[SeriesPoint], today: str) -> dict:
-    """최근 14일 마음 점수 그래프 (실선: 그날의 점수, 점선: 최근 3회 이동평균)"""
+def mood_chart(series: list[SeriesPoint], today: str, *, attendance: AttendanceSummary | None = None,
+               assessments: list[Assessment] | None = None) -> dict:
+    """마음 점수와 출석률, 평가 일정을 같은 날짜 위치에 배치합니다."""
     n = len(series)
 
     def x(i: int) -> float:
-        return 100 * i / (n - 1)
+        return 100 * i / max(n - 1, 1)
 
     def y(score: float) -> float:
         return 100 * (5 - score) / 4  # 5점이 맨 위(0%), 1점이 맨 아래(100%)
@@ -53,10 +56,35 @@ def mood_chart(series: list[SeriesPoint], today: str) -> dict:
     if len(score_pts) >= 2:
         area_path = f"{score_path} L {score_pts[-1][0]:.2f} 100 L {score_pts[0][0]:.2f} 100 Z"
 
+    rates = attendance.rolling_rates() if attendance else {}
+    statuses = {d.date: STATUS_LABELS[d.status] for d in attendance.recent.days + attendance.previous.days} if attendance else {}
+    attendance_dots = []
+    for i, p in enumerate(series):
+        if p.date in rates:
+            rate = rates[p.date]
+            attendance_dots.append({"date": p.date, "rate": rate, "status": statuses[p.date], "x": round(x(i), 2),
+                                    "y": 100 - rate, "align": "left" if x(i) < 30 else "right" if x(i) > 70 else "center"})
+
+    evaluation_dates = {}
+    for assessment in assessments or []:
+        title = f"{assessment.subject} {assessment.kind}"
+        score = assessment.score if assessment.result_date <= today else None
+        if assessment.exam_date <= today:
+            evaluation_dates.setdefault(assessment.exam_date, []).append({"label": f"시험일 · {title}", "score": score})
+        if assessment.result_date <= today:
+            evaluation_dates.setdefault(assessment.result_date, []).append({"label": f"결과 공개 · {title}", "score": score})
+
     return {
         "score_path": score_path if len(score_pts) >= 2 else "",
         "avg_path": _smooth_path(avg_pts) if len(avg_pts) >= 2 else "",
         "area_path": area_path,
+        "attendance_dots": attendance_dots,
+        "attendance_path": " ".join(f"{d['x']},{d['y']}" for d in attendance_dots),
+        "assessment_marks": [
+            {"date": p.date, "x": round(x(i), 2), "events": evaluation_dates[p.date],
+             "align": "left" if x(i) < 30 else "right" if x(i) > 70 else "center"}
+            for i, p in enumerate(series) if p.date in evaluation_dates
+        ],
         "dots": [
             {
                 "x": round(x(i), 2),

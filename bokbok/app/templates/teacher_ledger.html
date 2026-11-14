@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+{% import "_ui.html" as ui with context %}
+{% block title %}기록 보존 · {{ SERVICE }}{% endblock %}
+
+{# 기록의 무결성 및 위변조 방지: 추가만 가능한 보존 기록(app/ledger.py)의 상태와 내역.
+   원본 내용은 서버에 보존하되 이 화면에는 보여 주지 않고, 해시만 보여 줍니다. #}
+{% set mono = "font-family: ui-monospace, SFMono-Regular, Menlo, monospace; word-break: break-all" %}
+{% block content %}
+<header>
+  <h1 class="text-2xl font-extrabold text-ink">기록 보존</h1>
+  <p class="mt-1 text-sm text-ink-soft">감정 기록, {{ BOT }} 대화, 알림, 선생님의 조치는 만들어지는 순간 원본 그대로 보존 기록에 덧붙여져요. 나중에 고치거나 지울 수 없고, 바뀐 곳이 있으면 바로 드러나요.</p>
+</header>
+
+{% if check.ok %}
+<section class="flex items-center gap-3 rounded-3xl bg-leaf-50 p-5 text-leaf-800">
+  <span class="grid size-10 shrink-0 place-items-center rounded-full bg-leaf-100">{{ icon("shield-check", "size-5") }}</span>
+  <div class="min-w-0 flex-1">
+    <p class="font-bold">위변조 흔적이 없어요</p>
+    <p class="text-sm">보존 기록 {{ check.count }}건을 처음부터 끝까지 다시 계산해 확인했어요. (확인 시각 {{ checked_at[:10] }} {{ checked_at[11:19] }}, 서버 기준)</p>
+  </div>
+</section>
+{% else %}
+<section class="flex items-center gap-3 rounded-3xl bg-rose-50 p-5 text-rose-800 ring-1 ring-rose-100">
+  <span class="grid size-10 shrink-0 place-items-center rounded-full bg-rose-100">{{ icon("shield-alert", "size-5") }}</span>
+  <div class="min-w-0 flex-1">
+    <p class="font-bold">보존 기록이 바뀐 흔적이 있어요</p>
+    <p class="text-sm">{{ check.problem }} · {{ check.at }}번째 기록부터 확인이 필요해요. 그 앞의 {{ check.count }}건은 정상이에요.</p>
+  </div>
+</section>
+{% endif %}
+
+<div class="grid gap-3 md:grid-cols-3">
+  {% for ic, title, body in [
+    ("clock", "서버 기준 시각", "기록 시각은 요청을 받은 서버의 시계로만 찍어요. 학생이나 선생님의 기기 시각은 쓰지 않아요."),
+    ("lock", "고치거나 지울 수 없는 구조", "보존 기록에는 덧붙이기만 있어요. 기록을 고치면 새 줄이 생기고, 화면에서 지워도 ‘지웠다’는 줄만 생겨요."),
+    ("shield-check", "원본 보존과 해시", "원본과 그 해시를 함께 남기고, 줄마다 바로 앞줄의 해시를 이어 붙여요. 한 글자만 바뀌어도 그 뒤가 모두 어긋나요."),
+  ] %}
+  <section class="{{ card }}">
+    <p class="flex items-center gap-2 font-bold text-ink">{{ icon(ic, "size-5 text-leaf-700") }} {{ title }}</p>
+    <p class="mt-2 text-sm leading-relaxed text-ink-soft">{{ body }}</p>
+  </section>
+  {% endfor %}
+</div>
+
+<section class="{{ card }}">
+  {{ ui.card_title("history", "보존 기록 내역", "최근 " ~ rows | length ~ "건 · 전체 " ~ total ~ "건") }}
+  {% if head %}
+  <p class="rounded-2xl bg-stone-50 px-4 py-3 text-sm text-ink">마지막 해시 ({{ head.seq }}번째 기록)
+    <span class="mt-1 block text-xs text-ink-soft" style="{{ mono }}">{{ head.hash }}</span>
+    <span class="mt-1 block text-[11px] text-ink-soft">이 값을 학교 밖(교육청, 공증 서비스 등)에 주기적으로 맡겨 두면, 그 시점까지의 기록 전체가 바뀌지 않았음을 나중에 증명할 수 있어요.</span></p>
+  {% endif %}
+  <ul class="mt-3 divide-y divide-stone-100">
+    {% for e in rows %}
+    <li class="py-3 text-sm">
+      <p class="flex flex-wrap items-center gap-2">
+        <span class="{{ chip }} bg-stone-100 text-stone-600">#{{ e.seq }}</span>
+        <span class="font-semibold text-ink">{{ KINDS[e.kind] }}</span>
+        {% if e.student_id %}<span class="text-ink-soft">{{ get_student(e.student_id).name }} 학생</span>{% endif %}
+        <span class="ml-auto text-xs text-stone-400">{{ e.ts[:10] }} {{ e.ts[11:19] }} ({{ e.ts[19:] }})</span>
+      </p>
+      <p class="mt-1 text-ink-soft">
+        {% if e.kind in ("alert", "alert_update") %}{{ e.payload.summary }}
+        {% elif e.kind == "followup" %}{{ e.payload.text }}
+        {% elif e.kind == "alert_read" %}{{ e.payload.by }}로 확인함
+        {% elif e.kind == "share" %}{{ "선생님께 보여 주기로 바꿈" if e.payload.shared else "선생님께 보여 주지 않기로 바꿈" }}
+        {% elif e.kind == "chat_hide" %}학생이 {{ e.payload.date | day_label }} 대화 {{ e.payload.messages }}개를 자기 화면에서 지움 (원본은 보존됨)
+        {% elif e.kind == "reset" %}{{ e.payload.what }}
+        {% elif e.kind == "consent" %}감정 기록 약속 확인 · {{ BOT }} 대화 {{ "약속함" if e.payload.chat else "약속하지 않음" }}
+        {% else %}내용은 이 화면에 보여 주지 않아요 (원본 보존됨){% endif %}
+      </p>
+      <p class="mt-1 text-[11px] text-stone-400" style="{{ mono }}">해시 {{ e.hash[:24] }}… · 앞줄 {{ e.prev[:12] }}…</p>
+    </li>
+    {% else %}
+    <li class="py-8 text-center text-sm text-ink-soft">아직 보존된 기록이 없어요. 학생 화면에서 감정을 기록하거나 {{ BOT }}와 이야기하면 여기에 쌓여요.</li>
+    {% endfor %}
+  </ul>
+</section>
+
+{% call ui.notice("warn") %}
+시연용 구현이에요. 처음부터 들어 있는 합성 데이터(다른 학생들의 지난 기록)는 보존 기록에 없고, 이 화면을 연 뒤에 생긴 기록부터 쌓여요.
+서버 관리자가 보존 기록 파일 전체를 새로 만들어 내는 것까지 막으려면 ‘마지막 해시’를 외부에 맡기는 절차가 함께 필요해요.
+{% endcall %}
+{% endblock %}

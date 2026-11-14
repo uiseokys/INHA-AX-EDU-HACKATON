@@ -1,0 +1,21 @@
+{
+  "_notice": "가상 학생의 합성 평가 기록. 날짜는 오늘을 0으로 한 상대 날짜이며 모든 점수는 100점 만점입니다.",
+  "students": {
+    "S01": [
+      {"subject": "영어", "kind": "단원평가", "exam_offset": -23, "result_offset": -20, "score": 78},
+      {"subject": "영어", "kind": "단원평가", "exam_offset": -5, "result_offset": -2, "score": 84}
+    ],
+    "S03": [
+      {"subject": "국어", "kind": "수행평가", "exam_offset": -23, "result_offset": -19, "score": 88},
+      {"subject": "국어", "kind": "수행평가", "exam_offset": -10, "result_offset": -4, "score": 91}
+    ],
+    "S04": [
+      {"subject": "수학", "kind": "단원평가", "exam_offset": -26, "result_offset": -23, "score": 82},
+      {"subject": "수학", "kind": "단원평가", "exam_offset": -11, "result_offset": -8, "score": 71}
+    ],
+    "S06": [
+      {"subject": "과학", "kind": "단원평가", "exam_offset": -23, "result_offset": -20, "score": 76},
+      {"subject": "과학", "kind": "단원평가", "exam_offset": -9, "result_offset": -6, "score": 87}
+    ]
+  }
+}

@@ -36,6 +36,57 @@
 </section>
 {% endif %}
 
+<section id="conversation" class="{{ card }} scroll-mt-32">
+  {{ ui.card_title("hand-heart", "선생님과 잠깐 이야기하고 싶어요", "시간을 고르거나 이유를 적지 않아도 요청할 수 있어요.") }}
+  {% if conversations %}
+  <ul class="mb-4 space-y-2">
+    {% for r in conversations %}
+    <li id="{{ r.teacher }}-conversation" class="scroll-mt-32 space-y-2 rounded-2xl bg-leaf-50 px-4 py-3 text-sm">
+      <div class="flex flex-wrap items-center gap-2">
+        <strong>{{ TEACHERS[r.teacher].name }}</strong>
+        <span class="{{ chip }} bg-white text-leaf-700">{{ {"requested": "요청 보냄", "acknowledged": "선생님이 확인함", "proposed": "이야기할 시간 제안"}[r.status] }}</span>
+      </div>
+      {% if r.status == "proposed" %}
+      <p class="text-ink">{{ r.slot[:10] | day_label }} {{ r.slot[11:] }} · {{ TEACHERS[r.teacher].place }}</p>
+      {% if r.slot[:10] < today %}<p class="text-ink-soft">제안한 날짜가 지났어요. 다른 시간을 부탁할 수 있어요.</p>{% endif %}
+      {% endif %}
+      <div class="flex flex-wrap items-center gap-1">
+        {% if r.status == "proposed" %}
+        {% if r.slot[:10] >= today %}
+        <form method="post" action="/student/counsel/requests/{{ r.id }}/accept">
+          <input type="hidden" name="slot" value="{{ r.slot }}" />
+          <button class="{{ btn.primary }} px-3 py-2 text-xs">이 시간으로 확정</button>
+        </form>
+        {% endif %}
+        <form method="post" action="/student/counsel/requests/{{ r.id }}/another-time">
+          <input type="hidden" name="slot" value="{{ r.slot }}" />
+          <button class="{{ btn.soft }} px-3 py-2 text-xs">다른 시간 부탁하기</button>
+        </form>
+        {% endif %}
+        <form method="post" action="/student/counsel/requests/{{ r.id }}/cancel">
+          <button class="{{ btn.ghost }} px-3 py-2 text-xs">요청 취소</button>
+        </form>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% set pending_teachers = conversations | map(attribute="teacher") | list %}
+  {% if pending_teachers | length < TEACHERS | length %}
+  <form method="post" action="/student/counsel/requests" class="flex flex-wrap items-end gap-2">
+    <label class="block min-w-0 flex-1 text-xs font-semibold text-ink-soft">이야기할 선생님
+      <select name="teacher" class="{{ field }}" required>
+        {% for tid, t in TEACHERS.items() if tid not in pending_teachers %}
+        <option value="{{ tid }}" {% if selected == tid %}selected{% endif %}>{{ t.role }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <button class="{{ btn.primary }}">대화 요청 보내기</button>
+  </form>
+  {% endif %}
+  <p class="mt-2 text-xs text-ink-soft">요청에는 이름과 이야기하고 싶다는 뜻만 담겨요. 급한 일이라면 <a href="/student/help" class="font-semibold underline">지금 도움받기</a>를 이용해 주세요.</p>
+</section>
+
 <div class="grid items-start gap-5 lg:grid-cols-2">
   {% for tid, t in TEACHERS.items() %}
   <section id="{{ tid }}" class="{{ card }} {{ 'ring-2 ring-leaf-300' if selected == tid }}">
@@ -61,7 +112,7 @@
       <button class="{{ btn.primary }} w-full">이 시간으로 신청하기</button>
     </form>
     {% else %}
-    <p class="rounded-2xl bg-stone-50 px-4 py-5 text-sm text-ink-soft">지금 열려 있는 시간이 없어요. 급한 일이라면 선생님께 직접 말하거나 아래 상담 전화를 이용해 주세요.</p>
+    <p class="rounded-2xl bg-stone-50 px-4 py-5 text-sm text-ink-soft">지금 열려 있는 시간이 없어요. 위에서 대화 요청을 보낼 수 있어요.</p>
     {% endif %}
   </section>
   {% endfor %}

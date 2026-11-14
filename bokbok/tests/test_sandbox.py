@@ -41,8 +41,8 @@ def test_reset_only_clears_own_sandbox(multi):
     for c in (a, b):
         c.post("/student/welcome", data={"family": "가족"})
     a.post("/reset", data={"next": "/"})
-    assert a.get("/student", follow_redirects=False).status_code == 303
-    assert b.get("/student", follow_redirects=False).status_code == 200
+    assert a.get("/student", follow_redirects=False).headers["location"] == "/student/welcome"
+    assert b.get("/student", follow_redirects=False).headers["location"] == "/student/record"
 
 
 def test_uploads_are_private_to_sandbox(multi):

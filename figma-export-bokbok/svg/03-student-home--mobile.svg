@@ -1,0 +1,374 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="1681" viewBox="0 0 390 1681"><defs><linearGradient id="g0" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4f964c"/><stop offset="1" stop-color="#316332"/></linearGradient><filter id="s1" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#294f2a" flood-opacity="0.8"/></filter><clipPath id="c2"><rect x="16" y="89" width="358" height="232.5" rx="24"/></clipPath><filter id="s3" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#2e5237" flood-opacity="0.2"/></filter><filter id="s4" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#2f6b3f" flood-opacity="0.7"/></filter><filter id="s5" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#2e5237" flood-opacity="0.2"/></filter><clipPath id="c6"><rect x="16" y="583.5" width="358" height="182" rx="24"/></clipPath><filter id="s7" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#2e5237" flood-opacity="0.2"/></filter><filter id="s8" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#2e5237" flood-opacity="0.2"/></filter><filter id="s9" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#2e5237" flood-opacity="0.2"/></filter><linearGradient id="g10" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0f7ef"/><stop offset="0.5" stop-color="#f5f8f1"/><stop offset="1" stop-color="#f5f8f1"/></linearGradient></defs><rect id="배경" x="0" y="0" width="390" height="1681" fill="#f5f8f1"/><g id="박스 · 하늘아, 오늘 마음은 어때?"><rect x="0" y="0" width="390" height="1681" rx="0" fill="#f5f8f1"/><g id="박스 · 하늘아, 오늘 마음은 어때?"><rect x="0" y="0" width="390" height="1681" rx="0" fill="url(#g10)"/><g id="본문 · 하늘아, 오늘 마음은 어때?"><g id="섹션 · 하늘아, 오늘 마음은 어때?" clip-path="url(#c2)"><rect x="16" y="89" width="358" height="232.5" rx="24" fill="url(#g0)" filter="url(#s1)"/><g opacity="0.25"><g id="아이콘"><svg viewBox="0 0 120 120" x="238" y="201.5" width="160" height="160">
+  
+  
+  <circle cx="20" cy="76" r="8" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="100" cy="76" r="8" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="46" cy="102" r="8" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="74" cy="102" r="8" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  
+  
+  <circle cx="96.0" cy="66.0" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="93.26" cy="79.01" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="85.46" cy="90.04" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="73.78" cy="97.41" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="60.0" cy="100.0" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="46.22" cy="97.41" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="34.54" cy="90.04" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="26.74" cy="79.01" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="24.0" cy="66.0" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="26.74" cy="52.99" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="34.54" cy="41.96" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="46.22" cy="34.59" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="60.0" cy="32.0" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="73.78" cy="34.59" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="85.46" cy="41.96" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="93.26" cy="52.99" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <ellipse cx="60" cy="66" rx="38" ry="36" fill="#fbf3e2" stroke="none"/>
+  
+  <path d="M60 33 C60 26 60 22 60 17" stroke="#3d7c3c" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M60 20 C52 9 40 11 41 19 C47 23 55 23 60 20Z" fill="#6db068" stroke="#3d7c3c" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M60 18 C67 6 80 8 79 16 C73 21 65 21 60 18Z" fill="#95c98f" stroke="#3d7c3c" stroke-width="2" stroke-linejoin="round"/>
+  
+  <ellipse cx="40" cy="75" rx="6.5" ry="3.8" fill="#f4a3a0" opacity="0.55" stroke="none"/>
+  <ellipse cx="80" cy="75" rx="6.5" ry="3.8" fill="#f4a3a0" opacity="0.55" stroke="none"/>
+  
+  
+  <ellipse cx="48" cy="65" rx="3.2" ry="4" fill="#3b2f2a" stroke="none"/>
+  <ellipse cx="72" cy="65" rx="3.2" ry="4" fill="#3b2f2a" stroke="none"/>
+  <circle cx="49.2" cy="63.4" r="1.1" fill="#ffffff" stroke="none"/>
+  <circle cx="73.2" cy="63.4" r="1.1" fill="#ffffff" stroke="none"/>
+  <path d="M54 72 q6 6 12 0" stroke="#3b2f2a" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+  
+</svg></g></g><text id="11월 14일 토요일 · 1학년 3반" font-family="Noto Sans KR" font-size="14" font-weight="400" fill="#ffffff" fill-opacity="0.8" xml:space="preserve"><tspan x="36" y="123.8">11월 14일 토요일 · 1학년 3반</tspan></text><text id="하늘아, 오늘 마음은 어때?" font-family="Noto Sans KR" font-size="24" font-weight="800" fill="#ffffff" xml:space="preserve"><tspan x="36" y="157.2">하늘아, 오늘 마음은 어때?</tspan></text><g id="박스 · 11일 연속 기록"><rect x="36" y="177" width="124.1" height="28" rx="14" fill="#ffffff" fill-opacity="0.2"/><g id="아이콘"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x="48" y="183" width="16" height="16"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4" fill="none" stroke="#ffffff" stroke-width="2"/></svg></g><text id="11일 연속 기록" font-family="Noto Sans KR" font-size="14" font-weight="700" fill="#ffffff" xml:space="preserve"><tspan x="68" y="195.8">11일 연속 기록</tspan></text></g><g id="링크 · 470P"><rect x="168.1" y="177" width="79" height="28" rx="14" fill="#ffffff" fill-opacity="0.2"/><g id="아이콘"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x="180.1" y="183" width="16" height="16"><path d="M13.744 17.736a6 6 0 1 1-7.48-7.48" fill="none" stroke="#ffffff" stroke-width="2"/><path d="M15 6h1v4" fill="none" stroke="#ffffff" stroke-width="2"/><path d="m6.134 14.768.866-.5 2 3.464" fill="none" stroke="#ffffff" stroke-width="2"/><circle cx="16" cy="8" r="6" fill="none" stroke="#ffffff" stroke-width="2"/></svg></g><text id="470P" font-family="Noto Sans KR" font-size="14" font-weight="700" fill="#ffffff" xml:space="preserve"><tspan x="200.1" y="195.8">470P</tspan></text></g><g id="목록 · 최근 7일 감정 스티커"><rect x="36" y="225" width="316" height="76.5" rx="24" fill="#ffffff" fill-opacity="0.9"/><g id="항목 · 일"><text id="일" font-family="Noto Sans KR" font-size="11" font-weight="700" fill="#64736a" xml:space="preserve"><tspan x="57.2" y="250.4">일</tspan></text><g id="평온 스티커"><svg viewBox="0 0 100 100" aria-label="평온 스티커" x="48" y="259.5" width="28" height="28">
+  <circle cx="50" cy="52" r="42" fill="#a9dcc5" stroke="none"/>
+  <ellipse cx="34" cy="30" rx="11" ry="6" fill="#ffffff" opacity="0.4" transform="rotate(-25 34 30)" stroke="none"/>
+  <g stroke="#3b2f2a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+  
+    <path d="M31 49 q6 6 12 0 M57 49 q6 6 12 0" fill="none" stroke="#3b2f2a" stroke-width="3.4"/>
+    <path d="M42 63 q8 7 16 0" fill="none" stroke="#3b2f2a" stroke-width="3.4"/>
+  
+  </g>
+  
+  
+  <ellipse cx="27" cy="60" rx="6" ry="3.5" fill="#f08a84" opacity="0.45" stroke="none"/>
+  <ellipse cx="73" cy="60" rx="6" ry="3.5" fill="#f08a84" opacity="0.45" stroke="none"/>
+  
+  
+  
+</svg></g></g><g id="항목 · 월"><text id="월" font-family="Noto Sans KR" font-size="11" font-weight="700" fill="#64736a" xml:space="preserve"><tspan x="101.2" y="250.4">월</tspan></text><g id="불안 스티커"><svg viewBox="0 0 100 100" aria-label="불안 스티커" x="92" y="259.5" width="28" height="28">
+  <circle cx="50" cy="52" r="42" fill="#c8b5e8" stroke="none"/>
+  <ellipse cx="34" cy="30" rx="11" ry="6" fill="#ffffff" opacity="0.4" transform="rotate(-25 34 30)" stroke="none"/>
+  <g stroke="#3b2f2a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+  
+    <path d="M36 66 q3.5 -4 7 0 q3.5 4 7 0 q3.5 -4 7 0 q3.5 4 7 0" fill="none" stroke="#3b2f2a" stroke-width="3.4"/>
+  
+  </g>
+  
+  <circle cx="37" cy="51" r="3.6" fill="#3b2f2a" stroke="none"/>
+  <circle cx="63" cy="51" r="3.6" fill="#3b2f2a" stroke="none"/>
+  
+  
+  
+  <path d="M78 28 q-5 8 0 11 q5 -3 0 -11z" fill="#8fb8ec" stroke="none"/>
+</svg></g></g><g id="항목 · 화"><text id="화" font-family="Noto Sans KR" font-size="11" font-weight="700" fill="#64736a" xml:space="preserve"><tspan x="145.2" y="250.4">화</tspan></text><g id="평온 스티커"><svg viewBox="0 0 100 100" aria-label="평온 스티커" x="136" y="259.5" width="28" height="28">
+  <circle cx="50" cy="52" r="42" fill="#a9dcc5" stroke="none"/>
+  <ellipse cx="34" cy="30" rx="11" ry="6" fill="#ffffff" opacity="0.4" transform="rotate(-25 34 30)" stroke="none"/>
+  <g stroke="#3b2f2a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+  
+    <path d="M31 49 q6 6 12 0 M57 49 q6 6 12 0" fill="none" stroke="#3b2f2a" stroke-width="3.4"/>
+    <path d="M42 63 q8 7 16 0" fill="none" stroke="#3b2f2a" stroke-width="3.4"/>
+  
+  </g>
+  
+  
+  <ellipse cx="27" cy="60" rx="6" ry="3.5" fill="#f08a84" opacity="0.45" stroke="none"/>
+  <ellipse cx="73" cy="60" rx="6" ry="3.5" fill="#f08a84" opacity="0.45" stroke="none"/>
+  
+  
+  
+</svg></g></g><g id="항목 · 수"><text id="수" font-family="Noto Sans KR" font-size="11" font-weight="700" fill="#64736a" xml:space="preserve"><tspan x="189.2" y="250.4">수</tspan></text><g id="평온 스티커"><svg viewBox="0 0 100 100" aria-label="평온 스티커" x="180" y="259.5" width="28" height="28">
+  <circle cx="50" cy="52" r="42" fill="#a9dcc5" stroke="none"/>
+  <ellipse cx="34" cy="30" rx="11" ry="6" fill="#ffffff" opacity="0.4" transform="rotate(-25 34 30)" stroke="none"/>
+  <g stroke="#3b2f2a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+  
+    <path d="M31 49 q6 6 12 0 M57 49 q6 6 12 0" fill="none" stroke="#3b2f2a" stroke-width="3.4"/>
+    <path d="M42 63 q8 7 16 0" fill="none" stroke="#3b2f2a" stroke-width="3.4"/>
+  
+  </g>
+  
+  
+  <ellipse cx="27" cy="60" rx="6" ry="3.5" fill="#f08a84" opacity="0.45" stroke="none"/>
+  <ellipse cx="73" cy="60" rx="6" ry="3.5" fill="#f08a84" opacity="0.45" stroke="none"/>
+  
+  
+  
+</svg></g></g><g id="항목 · 목"><text id="목" font-family="Noto Sans KR" font-size="11" font-weight="700" fill="#64736a" xml:space="preserve"><tspan x="233.2" y="250.4">목</tspan></text><g id="슬픔 스티커"><svg viewBox="0 0 100 100" aria-label="슬픔 스티커" x="224" y="259.5" width="28" height="28">
+  <circle cx="50" cy="52" r="42" fill="#afc9ee" stroke="none"/>
+  <ellipse cx="34" cy="30" rx="11" ry="6" fill="#ffffff" opacity="0.4" transform="rotate(-25 34 30)" stroke="none"/>
+  <g stroke="#3b2f2a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+  
+    <path d="M30 41 L41 37 M70 41 L59 37" fill="none" stroke="#3b2f2a" stroke-width="3.4"/>
+    <path d="M42 68 q8 -8 16 0" fill="none" stroke="#3b2f2a" stroke-width="3.4"/>
+  
+  </g>
+  
+  <circle cx="37" cy="51" r="3.6" fill="#3b2f2a" stroke="none"/>
+  <circle cx="63" cy="51" r="3.6" fill="#3b2f2a" stroke="none"/>
+  
+  
+  <path d="M68 57 q-4 7 0 10 q4 -3 0 -10z" fill="#5b8fd8" stroke="none"/>
+  
+</svg></g></g><g id="항목 · 금"><text id="금" font-family="Noto Sans KR" font-size="11" font-weight="700" fill="#64736a" xml:space="preserve"><tspan x="277.2" y="250.4">금</tspan></text><g id="평온 스티커"><svg viewBox="0 0 100 100" aria-label="평온 스티커" x="268" y="259.5" width="28" height="28">
+  <circle cx="50" cy="52" r="42" fill="#a9dcc5" stroke="none"/>
+  <ellipse cx="34" cy="30" rx="11" ry="6" fill="#ffffff" opacity="0.4" transform="rotate(-25 34 30)" stroke="none"/>
+  <g stroke="#3b2f2a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+  
+    <path d="M31 49 q6 6 12 0 M57 49 q6 6 12 0" fill="none" stroke="#3b2f2a" stroke-width="3.4"/>
+    <path d="M42 63 q8 7 16 0" fill="none" stroke="#3b2f2a" stroke-width="3.4"/>
+  
+  </g>
+  
+  
+  <ellipse cx="27" cy="60" rx="6" ry="3.5" fill="#f08a84" opacity="0.45" stroke="none"/>
+  <ellipse cx="73" cy="60" rx="6" ry="3.5" fill="#f08a84" opacity="0.45" stroke="none"/>
+  
+  
+  
+</svg></g></g><g id="항목 · 토"><rect x="306" y="231" width="40" height="64.5" rx="16" fill="#dcefda"/><text id="토" font-family="Noto Sans KR" font-size="11" font-weight="700" fill="#316332" xml:space="preserve"><tspan x="321.2" y="250.4">토</tspan></text><g id="박스"><rect x="322" y="269.5" width="8" height="8" rx="4" fill="#d6d3d1"/></g></g></g></g><g id="섹션 · 오늘의 감정 스티커"><rect x="16" y="341.5" width="358" height="222" rx="24" fill="#ffffff" filter="url(#s3)"/><rect x="16.5" y="342" width="357" height="221" rx="23.5" fill="none" stroke="#ffffff" stroke-width="1"/><g id="박스"><rect x="37" y="365.5" width="36" height="36" rx="16" fill="#f0f7ef"/><g id="아이콘"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x="45" y="373.5" width="20" height="20"><path d="M15 10V9" fill="none" stroke="#3d7c3c" stroke-width="2"/><path d="M16.472 15a6 6 0 01-8.943 0" fill="none" stroke="#3d7c3c" stroke-width="2"/><path d="M9 10V9" fill="none" stroke="#3d7c3c" stroke-width="2"/><circle cx="12" cy="12" r="10" fill="none" stroke="#3d7c3c" stroke-width="2"/></svg></g></g><text id="오늘의 감정 스티커" font-family="Noto Sans KR" font-size="16" font-weight="700" fill="#26332a" xml:space="preserve"><tspan x="83" y="379.7">오늘의 감정 스티커</tspan></text><text id="지금 내 마음과 가장 비슷한 스티커를 골라 봐요." font-family="Noto Sans KR" font-size="12" font-weight="400" fill="#64736a" xml:space="preserve"><tspan x="83" y="400.7">지금 내 마음과 가장 비슷한 스티커를 골라 봐요.</tspan></text><g id="링크 · 기쁨"><rect x="37" y="420.5" width="56.8" height="94" rx="16" fill="#fafaf9"/><g id="기쁨 스티커"><svg viewBox="0 0 100 100" aria-label="기쁨 스티커" x="41.4" y="432.5" width="48" height="48">
+  <circle cx="50" cy="52" r="42" fill="#ffd66b" stroke="none"/>
+  <ellipse cx="34" cy="30" rx="11" ry="6" fill="#ffffff" opacity="0.4" transform="rotate(-25 34 30)" stroke="none"/>
+  <g stroke="#3b2f2a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+  
+    <path d="M31 48 q6 -8 12 0 M57 48 q6 -8 12 0" fill="none" stroke="#3b2f2a" stroke-width="3.4"/>
+    <path d="M37 60 q13 16 26 0 z" fill="#3b2f2a" stroke="#3b2f2a" stroke-width="3.4"/>
+  
+  </g>
+  
+  
+  <ellipse cx="27" cy="60" rx="6" ry="3.5" fill="#f08a84" opacity="0.45" stroke="none"/>
+  <ellipse cx="73" cy="60" rx="6" ry="3.5" fill="#f08a84" opacity="0.45" stroke="none"/>
+  
+  
+  
+</svg></g><text id="기쁨" font-family="Noto Sans KR" font-size="12" font-weight="600" fill="#64736a" xml:space="preserve"><tspan x="55" y="498.7">기쁨</tspan></text></g><g id="링크 · 평온"><rect x="101.8" y="420.5" width="56.8" height="94" rx="16" fill="#fafaf9"/><g id="평온 스티커"><svg viewBox="0 0 100 100" aria-label="평온 스티커" x="106.2" y="432.5" width="48" height="48">
+  <circle cx="50" cy="52" r="42" fill="#a9dcc5" stroke="none"/>
+  <ellipse cx="34" cy="30" rx="11" ry="6" fill="#ffffff" opacity="0.4" transform="rotate(-25 34 30)" stroke="none"/>
+  <g stroke="#3b2f2a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+  
+    <path d="M31 49 q6 6 12 0 M57 49 q6 6 12 0" fill="none" stroke="#3b2f2a" stroke-width="3.4"/>
+    <path d="M42 63 q8 7 16 0" fill="none" stroke="#3b2f2a" stroke-width="3.4"/>
+  
+  </g>
+  
+  
+  <ellipse cx="27" cy="60" rx="6" ry="3.5" fill="#f08a84" opacity="0.45" stroke="none"/>
+  <ellipse cx="73" cy="60" rx="6" ry="3.5" fill="#f08a84" opacity="0.45" stroke="none"/>
+  
+  
+  
+</svg></g><text id="평온" font-family="Noto Sans KR" font-size="12" font-weight="600" fill="#64736a" xml:space="preserve"><tspan x="119.8" y="498.7">평온</tspan></text></g><g id="링크 · 슬픔"><rect x="166.6" y="420.5" width="56.8" height="94" rx="16" fill="#fafaf9"/><g id="슬픔 스티커"><svg viewBox="0 0 100 100" aria-label="슬픔 스티커" x="171" y="432.5" width="48" height="48">
+  <circle cx="50" cy="52" r="42" fill="#afc9ee" stroke="none"/>
+  <ellipse cx="34" cy="30" rx="11" ry="6" fill="#ffffff" opacity="0.4" transform="rotate(-25 34 30)" stroke="none"/>
+  <g stroke="#3b2f2a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+  
+    <path d="M30 41 L41 37 M70 41 L59 37" fill="none" stroke="#3b2f2a" stroke-width="3.4"/>
+    <path d="M42 68 q8 -8 16 0" fill="none" stroke="#3b2f2a" stroke-width="3.4"/>
+  
+  </g>
+  
+  <circle cx="37" cy="51" r="3.6" fill="#3b2f2a" stroke="none"/>
+  <circle cx="63" cy="51" r="3.6" fill="#3b2f2a" stroke="none"/>
+  
+  
+  <path d="M68 57 q-4 7 0 10 q4 -3 0 -10z" fill="#5b8fd8" stroke="none"/>
+  
+</svg></g><text id="슬픔" font-family="Noto Sans KR" font-size="12" font-weight="600" fill="#64736a" xml:space="preserve"><tspan x="184.6" y="498.7">슬픔</tspan></text></g><g id="링크 · 불안"><rect x="231.4" y="420.5" width="56.8" height="94" rx="16" fill="#fafaf9"/><g id="불안 스티커"><svg viewBox="0 0 100 100" aria-label="불안 스티커" x="235.8" y="432.5" width="48" height="48">
+  <circle cx="50" cy="52" r="42" fill="#c8b5e8" stroke="none"/>
+  <ellipse cx="34" cy="30" rx="11" ry="6" fill="#ffffff" opacity="0.4" transform="rotate(-25 34 30)" stroke="none"/>
+  <g stroke="#3b2f2a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+  
+    <path d="M36 66 q3.5 -4 7 0 q3.5 4 7 0 q3.5 -4 7 0 q3.5 4 7 0" fill="none" stroke="#3b2f2a" stroke-width="3.4"/>
+  
+  </g>
+  
+  <circle cx="37" cy="51" r="3.6" fill="#3b2f2a" stroke="none"/>
+  <circle cx="63" cy="51" r="3.6" fill="#3b2f2a" stroke="none"/>
+  
+  
+  
+  <path d="M78 28 q-5 8 0 11 q5 -3 0 -11z" fill="#8fb8ec" stroke="none"/>
+</svg></g><text id="불안" font-family="Noto Sans KR" font-size="12" font-weight="600" fill="#64736a" xml:space="preserve"><tspan x="249.4" y="498.7">불안</tspan></text></g><g id="링크 · 분노"><rect x="296.2" y="420.5" width="56.8" height="94" rx="16" fill="#fafaf9"/><g id="분노 스티커"><svg viewBox="0 0 100 100" aria-label="분노 스티커" x="300.6" y="432.5" width="48" height="48">
+  <circle cx="50" cy="52" r="42" fill="#f2a49b" stroke="none"/>
+  <ellipse cx="34" cy="30" rx="11" ry="6" fill="#ffffff" opacity="0.4" transform="rotate(-25 34 30)" stroke="none"/>
+  <g stroke="#3b2f2a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+  
+    <path d="M30 38 L43 44 M70 38 L57 44" fill="none" stroke="#3b2f2a" stroke-width="3.4"/>
+    <path d="M41 68 q9 -7 18 0" fill="none" stroke="#3b2f2a" stroke-width="3.4"/>
+  
+  </g>
+  
+  <circle cx="37" cy="51" r="3.6" fill="#3b2f2a" stroke="none"/>
+  <circle cx="63" cy="51" r="3.6" fill="#3b2f2a" stroke="none"/>
+  
+  
+  
+  
+</svg></g><text id="분노" font-family="Noto Sans KR" font-size="12" font-weight="600" fill="#64736a" xml:space="preserve"><tspan x="314.2" y="498.7">분노</tspan></text></g><g id="아이콘"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x="94" y="527.5" width="14" height="14"><path d="M13.744 17.736a6 6 0 1 1-7.48-7.48" fill="none" stroke="#e17100" stroke-width="2"/><path d="M15 6h1v4" fill="none" stroke="#e17100" stroke-width="2"/><path d="m6.134 14.768.866-.5 2 3.464" fill="none" stroke="#e17100" stroke-width="2"/><circle cx="16" cy="8" r="6" fill="none" stroke="#e17100" stroke-width="2"/></svg></g><text id="기록하면 +10P, 이유를 적으면 +5P 더!" font-family="Noto Sans KR" font-size="12" font-weight="400" fill="#64736a" xml:space="preserve"><tspan x="112" y="538.7">기록하면 +10P, 이유를 적으면 +5P 더!</tspan></text></g><g id="섹션 · 마음 친구 복복이 언제든 이야기하고 싶을 때" clip-path="url(#c6)"><rect x="16" y="583.5" width="358" height="182" rx="24" fill="#ffffff" filter="url(#s5)"/><rect x="16.5" y="584" width="357" height="181" rx="23.5" fill="none" stroke="#ffffff" stroke-width="1"/><g id="아이콘"><svg viewBox="0 0 120 120" x="37" y="604.5" width="80" height="80">
+  
+  
+  <circle cx="20" cy="76" r="8" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="100" cy="76" r="8" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="46" cy="102" r="8" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="74" cy="102" r="8" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  
+  
+  <circle cx="96.0" cy="66.0" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="93.26" cy="79.01" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="85.46" cy="90.04" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="73.78" cy="97.41" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="60.0" cy="100.0" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="46.22" cy="97.41" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="34.54" cy="90.04" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="26.74" cy="79.01" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="24.0" cy="66.0" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="26.74" cy="52.99" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="34.54" cy="41.96" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="46.22" cy="34.59" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="60.0" cy="32.0" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="73.78" cy="34.59" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="85.46" cy="41.96" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="93.26" cy="52.99" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <ellipse cx="60" cy="66" rx="38" ry="36" fill="#fbf3e2" stroke="none"/>
+  
+  <path d="M60 33 C60 26 60 22 60 17" stroke="#3d7c3c" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M60 20 C52 9 40 11 41 19 C47 23 55 23 60 20Z" fill="#6db068" stroke="#3d7c3c" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M60 18 C67 6 80 8 79 16 C73 21 65 21 60 18Z" fill="#95c98f" stroke="#3d7c3c" stroke-width="2" stroke-linejoin="round"/>
+  
+  <ellipse cx="40" cy="75" rx="6.5" ry="3.8" fill="#f4a3a0" opacity="0.55" stroke="none"/>
+  <ellipse cx="80" cy="75" rx="6.5" ry="3.8" fill="#f4a3a0" opacity="0.55" stroke="none"/>
+  
+  
+  <ellipse cx="48" cy="65" rx="3.2" ry="4" fill="#3b2f2a" stroke="none"/>
+  <ellipse cx="72" cy="65" rx="3.2" ry="4" fill="#3b2f2a" stroke="none"/>
+  <circle cx="49.2" cy="63.4" r="1.1" fill="#ffffff" stroke="none"/>
+  <circle cx="73.2" cy="63.4" r="1.1" fill="#ffffff" stroke="none"/>
+  <path d="M54 72 q6 6 12 0" stroke="#3b2f2a" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+  
+</svg></g><text id="마음 친구 복복이" font-family="Noto Sans KR" font-size="12" font-weight="700" fill="#3d7c3c" xml:space="preserve"><tspan x="133" y="624">마음 친구 복복이</tspan></text><text id="언제든 이야기하고 싶을 때 찾아와. 오늘 있었던 일, 고민, 아무 말이나" font-family="Noto Sans KR" font-size="14" font-weight="400" fill="#26332a" xml:space="preserve"><tspan x="133" y="647.6">언제든 이야기하고 싶을 때 찾아와. 오늘</tspan><tspan x="133" y="670.3">있었던 일, 고민, 아무 말이나 좋아!</tspan></text><g id="링크 · 복복이와 대화하기"><rect x="37" y="700.5" width="316" height="44" rx="16" fill="#3d7c3c" filter="url(#s4)"/><g id="아이콘"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x="133" y="714.5" width="16" height="16"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" fill="none" stroke="#ffffff" stroke-width="2"/><path d="M8 12h.01" fill="none" stroke="#ffffff" stroke-width="2"/><path d="M12 12h.01" fill="none" stroke="#ffffff" stroke-width="2"/><path d="M16 12h.01" fill="none" stroke="#ffffff" stroke-width="2"/></svg></g><text id="복복이와 대화하기" font-family="Noto Sans KR" font-size="14" font-weight="700" fill="#ffffff" xml:space="preserve"><tspan x="157" y="727.3">복복이와 대화하기</tspan></text></g></g><g id="링크 · 이번 주 나의 감정"><rect x="16" y="785.5" width="358" height="173" rx="24" fill="#ffffff" filter="url(#s7)"/><rect x="16.5" y="786" width="357" height="172" rx="23.5" fill="none" stroke="#ffffff" stroke-width="1"/><g id="박스"><rect x="37" y="806.5" width="36" height="36" rx="16" fill="#f0f7ef"/><g id="아이콘"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x="45" y="814.5" width="20" height="20"><path d="M3 3v16a2 2 0 0 0 2 2h16" fill="none" stroke="#3d7c3c" stroke-width="2"/><path d="M18 17V9" fill="none" stroke="#3d7c3c" stroke-width="2"/><path d="M13 17V5" fill="none" stroke="#3d7c3c" stroke-width="2"/><path d="M8 17v-3" fill="none" stroke="#3d7c3c" stroke-width="2"/></svg></g></g><text id="이번 주 나의 감정" font-family="Noto Sans KR" font-size="16" font-weight="700" fill="#26332a" xml:space="preserve"><tspan x="83" y="829.7">이번 주 나의 감정</tspan></text><g id="평온 스티커"><svg viewBox="0 0 100 100" aria-label="평온 스티커" x="37" y="858.5" width="48" height="48">
+  <circle cx="50" cy="52" r="42" fill="#a9dcc5" stroke="none"/>
+  <ellipse cx="34" cy="30" rx="11" ry="6" fill="#ffffff" opacity="0.4" transform="rotate(-25 34 30)" stroke="none"/>
+  <g stroke="#3b2f2a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+  
+    <path d="M31 49 q6 6 12 0 M57 49 q6 6 12 0" fill="none" stroke="#3b2f2a" stroke-width="3.4"/>
+    <path d="M42 63 q8 7 16 0" fill="none" stroke="#3b2f2a" stroke-width="3.4"/>
+  
+  </g>
+  
+  
+  <ellipse cx="27" cy="60" rx="6" ry="3.5" fill="#f08a84" opacity="0.45" stroke="none"/>
+  <ellipse cx="73" cy="60" rx="6" ry="3.5" fill="#f08a84" opacity="0.45" stroke="none"/>
+  
+  
+  
+</svg></g><text id="가장 많이 느낀 감정은" font-family="Noto Sans KR" font-size="14" font-weight="400" fill="#26332a" xml:space="preserve"><tspan x="97" y="877.3">가장 많이 느낀 감정은</tspan></text><text id="평온" font-family="Noto Sans KR" font-size="14" font-weight="700" fill="#26332a" xml:space="preserve"><tspan x="97" y="897.3">평온</tspan></text><text id="(5번 중 3번)" font-family="Noto Sans KR" font-size="14" font-weight="400" fill="#26332a" xml:space="preserve"><tspan x="121.2" y="897.3">(5번 중 3번)</tspan></text><text id="리포트 보기" font-family="Noto Sans KR" font-size="12" font-weight="700" fill="#316332" xml:space="preserve"><tspan x="37" y="930.7">리포트 보기</tspan></text><g id="아이콘"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x="95.6" y="919.5" width="14" height="14"><path d="M5 12h14" fill="none" stroke="#316332" stroke-width="2"/><path d="m12 5 7 7-7 7" fill="none" stroke="#316332" stroke-width="2"/></svg></g></g><g id="섹션 · 선생님과 이야기하기"><rect x="16" y="978.5" width="358" height="186" rx="24" fill="#ffffff" filter="url(#s8)"/><rect x="16.5" y="979" width="357" height="185" rx="23.5" fill="none" stroke="#ffffff" stroke-width="1"/><g id="박스"><rect x="37" y="999.5" width="36" height="36" rx="16" fill="#f0f7ef"/><g id="아이콘"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x="45" y="1007.5" width="20" height="20"><path d="M11 14h2a2 2 0 0 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16" fill="none" stroke="#3d7c3c" stroke-width="2"/><path d="m14.45 13.39 5.05-4.694C20.196 8 21 6.85 21 5.75a2.75 2.75 0 0 0-4.797-1.837.276.276 0 0 1-.406 0A2.75 2.75 0 0 0 11 5.75c0 1.2.802 2.248 1.5 2.946L16 11.95" fill="none" stroke="#3d7c3c" stroke-width="2"/><path d="m2 15 6 6" fill="none" stroke="#3d7c3c" stroke-width="2"/><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a1 1 0 0 0-2.75-2.91" fill="none" stroke="#3d7c3c" stroke-width="2"/></svg></g></g><text id="선생님과 이야기하기" font-family="Noto Sans KR" font-size="16" font-weight="700" fill="#26332a" xml:space="preserve"><tspan x="83" y="1022.7">선생님과 이야기하기</tspan></text><text id="담임 선생님이나 Wee클래스 선생님께 편한 시간에 상담을 신청할 수 있어" font-family="Noto Sans KR" font-size="14" font-weight="400" fill="#64736a" xml:space="preserve"><tspan x="37" y="1066.3">담임 선생님이나 Wee클래스 선생님께 편한 시간에 상담을</tspan><tspan x="37" y="1086.3">신청할 수 있어요.</tspan></text><g id="링크 · 상담 신청하기"><rect x="37" y="1103.5" width="316" height="40" rx="16" fill="#f0f7ef"/><text id="상담 신청하기" font-family="Noto Sans KR" font-size="14" font-weight="600" fill="#316332" xml:space="preserve"><tspan x="157" y="1128.3">상담 신청하기</tspan></text></g></g><g id="섹션 · 도움이 필요할 때"><rect x="16" y="1184.5" width="358" height="188" rx="24" fill="#ffffff" filter="url(#s9)"/><rect x="16.5" y="1185" width="357" height="187" rx="23.5" fill="none" stroke="#ffffff" stroke-width="1"/><g id="박스"><rect x="37" y="1205.5" width="36" height="36" rx="16" fill="#f0f7ef"/><g id="아이콘"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x="45" y="1213.5" width="20" height="20"><circle cx="12" cy="12" r="10" fill="none" stroke="#3d7c3c" stroke-width="2"/><path d="m4.93 4.93 4.24 4.24" fill="none" stroke="#3d7c3c" stroke-width="2"/><path d="m14.83 9.17 4.24-4.24" fill="none" stroke="#3d7c3c" stroke-width="2"/><path d="m14.83 14.83 4.24 4.24" fill="none" stroke="#3d7c3c" stroke-width="2"/><path d="m9.17 14.83-4.24 4.24" fill="none" stroke="#3d7c3c" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="#3d7c3c" stroke-width="2"/></svg></g></g><text id="도움이 필요할 때" font-family="Noto Sans KR" font-size="16" font-weight="700" fill="#26332a" xml:space="preserve"><tspan x="83" y="1228.7">도움이 필요할 때</tspan></text><text id="학교폭력, 가정폭력, 온라인 그루밍… 혼자 해결하기 어려운 일은 도움을 " font-family="Noto Sans KR" font-size="14" font-weight="400" fill="#64736a" xml:space="preserve"><tspan x="37" y="1272.3">학교폭력, 가정폭력, 온라인 그루밍… 혼자 해결하기</tspan><tspan x="37" y="1292.3">어려운 일은 도움을 요청해도 괜찮아요.</tspan></text><g id="링크 · 도움 정보"><rect x="37" y="1309.5" width="217.1" height="42" rx="16" fill="#f0f7ef"/><text id="도움 정보" font-family="Noto Sans KR" font-size="14" font-weight="600" fill="#316332" xml:space="preserve"><tspan x="119.7" y="1335.3">도움 정보</tspan></text></g><g id="링크 · 1388"><rect x="262.1" y="1309.5" width="90.9" height="42" rx="16" fill="#ffffff"/><rect x="262.6" y="1310" width="89.9" height="41" rx="15.5" fill="none" stroke="#e7e5e4" stroke-width="1"/><g id="아이콘"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x="279.1" y="1322.5" width="16" height="16"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" fill="none" stroke="#26332a" stroke-width="2"/></svg></g><text id="1388" font-family="Noto Sans KR" font-size="14" font-weight="600" fill="#26332a" xml:space="preserve"><tspan x="303.1" y="1335.3">1388</tspan></text></g></g><g id="링크 · 기본 정보 보기·고치기"><text id="기본 정보 보기·고치기" font-family="Noto Sans KR" font-size="12" font-weight="400" fill="#64736a" xml:space="preserve"><tspan x="143.8" y="1404.7">기본 정보 보기·고치기</tspan></text></g></g><g id="하단 · 시연용 프로토타입입니다. 학생·학교·선생님 "><g id="박스 · 시연용 프로토타입입니다. 학생·학교·선생님 "><rect x="16" y="1432.5" width="358" height="136" rx="24" fill="#ffffff" fill-opacity="0.6"/><text id="시연용 프로토타입입니다. 학생·학교·선생님 정보는 모두" font-family="Noto Sans KR" font-size="12" font-weight="400" fill="#64736a" xml:space="preserve"><tspan x="32" y="1461.7">시연용 프로토타입입니다. 학생·학교·선생님 정보는 모두</tspan></text><text id="합성 데이터" font-family="Noto Sans KR" font-size="12" font-weight="700" fill="#64736a" xml:space="preserve"><tspan x="294.7" y="1461.7">합성</tspan><tspan x="32" y="1481.2">데이터</tspan></text><text id="이고, 분석 결과는 진단이 아닌 참고 정보입니다. 기록은 이 서버의 로컬" font-family="Noto Sans KR" font-size="12" font-weight="400" fill="#64736a" xml:space="preserve"><tspan x="63.1" y="1481.2">이고, 분석 결과는 진단이 아닌 참고 정보입니다. 기록은 이</tspan><tspan x="32" y="1500.7">서버의 로컬 파일에만 저장됩니다.</tspan></text><g id="입력 폼 · 시연 데이터 초기화"><g id="버튼 · 시연 데이터 초기화"><rect x="32" y="1519" width="134.7" height="33.5" rx="16.8" fill="#ffffff"/><rect x="32.5" y="1519.5" width="133.7" height="32.5" rx="16.3" fill="none" stroke="#e7e5e4" stroke-width="1"/><g id="아이콘"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x="45" y="1528.8" width="14" height="14"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" fill="none" stroke="#64736a" stroke-width="2"/><path d="M3 3v5h5" fill="none" stroke="#64736a" stroke-width="2"/></svg></g><text id="시연 데이터 초기화" font-family="Noto Sans KR" font-size="12" font-weight="600" fill="#64736a" xml:space="preserve"><tspan x="65" y="1539.2">시연 데이터 초기화</tspan></text></g></g></g></g><g id="헤더 · 복복복 학생 홈 리포트 복복이 상점 도움 4"><rect x="0" y="0" width="390" height="65" rx="0" fill="#f4f8f1" fill-opacity="0.9"/><rect x="0" y="64" width="390" height="1" fill="#ffffff" fill-opacity="0.7"/><g id="링크 · 복복복 처음 화면"><g id="아이콘"><svg viewBox="0 0 120 120" x="16" y="8.5" width="40" height="40">
+  
+  
+  <circle cx="20" cy="76" r="8" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="100" cy="76" r="8" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="46" cy="102" r="8" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="74" cy="102" r="8" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  
+  
+  <circle cx="96.0" cy="66.0" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="93.26" cy="79.01" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="85.46" cy="90.04" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="73.78" cy="97.41" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="60.0" cy="100.0" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="46.22" cy="97.41" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="34.54" cy="90.04" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="26.74" cy="79.01" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="24.0" cy="66.0" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="26.74" cy="52.99" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="34.54" cy="41.96" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="46.22" cy="34.59" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="60.0" cy="32.0" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="73.78" cy="34.59" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="85.46" cy="41.96" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <circle cx="93.26" cy="52.99" r="11" fill="#fbf3e2" stroke="#6b5446" stroke-width="2.5"/>
+  
+  <ellipse cx="60" cy="66" rx="38" ry="36" fill="#fbf3e2" stroke="none"/>
+  
+  <path d="M60 33 C60 26 60 22 60 17" stroke="#3d7c3c" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M60 20 C52 9 40 11 41 19 C47 23 55 23 60 20Z" fill="#6db068" stroke="#3d7c3c" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M60 18 C67 6 80 8 79 16 C73 21 65 21 60 18Z" fill="#95c98f" stroke="#3d7c3c" stroke-width="2" stroke-linejoin="round"/>
+  
+  <ellipse cx="40" cy="75" rx="6.5" ry="3.8" fill="#f4a3a0" opacity="0.55" stroke="none"/>
+  <ellipse cx="80" cy="75" rx="6.5" ry="3.8" fill="#f4a3a0" opacity="0.55" stroke="none"/>
+  
+  
+  <ellipse cx="48" cy="65" rx="3.2" ry="4" fill="#3b2f2a" stroke="none"/>
+  <ellipse cx="72" cy="65" rx="3.2" ry="4" fill="#3b2f2a" stroke="none"/>
+  <circle cx="49.2" cy="63.4" r="1.1" fill="#ffffff" stroke="none"/>
+  <circle cx="73.2" cy="63.4" r="1.1" fill="#ffffff" stroke="none"/>
+  <path d="M54 72 q6 6 12 0" stroke="#3b2f2a" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+  
+</svg></g><text id="복복복" font-family="Noto Sans KR" font-size="20" font-weight="800" letter-spacing="-0.5" fill="#316332" xml:space="preserve"><tspan x="64" y="35.7">복복복</tspan></text></g><g id="박스 · 학생"><rect x="126.4" y="20" width="40.8" height="24" rx="12" fill="#dcefda"/><text id="학생" font-family="Noto Sans KR" font-size="12" font-weight="600" fill="#316332" xml:space="preserve"><tspan x="136.4" y="36.2">학생</tspan></text></g><g id="링크 · 내 포인트 470P"><rect x="254" y="18" width="72" height="28" rx="14" fill="#ffd76b" fill-opacity="0.4"/><g id="아이콘"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x="266" y="25" width="14" height="14"><path d="M13.744 17.736a6 6 0 1 1-7.48-7.48" fill="none" stroke="#7b3306" stroke-width="2"/><path d="M15 6h1v4" fill="none" stroke="#7b3306" stroke-width="2"/><path d="m6.134 14.768.866-.5 2 3.464" fill="none" stroke="#7b3306" stroke-width="2"/><circle cx="16" cy="8" r="6" fill="none" stroke="#7b3306" stroke-width="2"/></svg></g><text id="470P" font-family="Noto Sans KR" font-size="12" font-weight="700" fill="#7b3306" xml:space="preserve"><tspan x="284" y="36.2">470P</tspan></text></g><g id="링크 · 선생님 화면"><rect x="334" y="18" width="40" height="28" rx="14" fill="#ffffff"/><rect x="334.5" y="18.5" width="39" height="27" rx="13.5" fill="none" stroke="#e7e5e4" stroke-width="1"/><g id="아이콘"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x="347" y="25" width="14" height="14"><path d="m17 2 4 4-4 4" fill="none" stroke="#64736a" stroke-width="2"/><path d="M3 11v-1a4 4 0 0 1 4-4h14" fill="none" stroke="#64736a" stroke-width="2"/><path d="m7 22-4-4 4-4" fill="none" stroke="#64736a" stroke-width="2"/><path d="M21 13v1a4 4 0 0 1-4 4H3" fill="none" stroke="#64736a" stroke-width="2"/></svg></g></g></g></g><g id="메뉴 · 주 메뉴"><rect x="0" y="1619.5" width="390" height="61.5" rx="0" fill="#ffffff" fill-opacity="0.9"/><rect x="0" y="1619.5" width="390" height="1" fill="#e7e5e4" fill-opacity="0.7"/><g id="링크 · 홈"><g id="아이콘"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x="29" y="1630.5" width="20" height="20"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" fill="none" stroke="#3d7c3c" stroke-width="2"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" fill="none" stroke="#3d7c3c" stroke-width="2"/></svg></g><text id="홈" font-family="Noto Sans KR" font-size="11" font-weight="600" fill="#3d7c3c" xml:space="preserve"><tspan x="34.2" y="1665.9">홈</tspan></text></g><g id="링크 · 리포트"><g id="아이콘"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x="107" y="1630.5" width="20" height="20"><path d="M3 3v16a2 2 0 0 0 2 2h16" fill="none" stroke="#a6a09b" stroke-width="2"/><path d="M18 17V9" fill="none" stroke="#a6a09b" stroke-width="2"/><path d="M13 17V5" fill="none" stroke="#a6a09b" stroke-width="2"/><path d="M8 17v-3" fill="none" stroke="#a6a09b" stroke-width="2"/></svg></g><text id="리포트" font-family="Noto Sans KR" font-size="11" font-weight="600" fill="#a6a09b" xml:space="preserve"><tspan x="102.7" y="1665.9">리포트</tspan></text></g><g id="링크 · 복복이"><g id="아이콘"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x="185" y="1630.5" width="20" height="20"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" fill="none" stroke="#a6a09b" stroke-width="2"/><path d="M8 12h.01" fill="none" stroke="#a6a09b" stroke-width="2"/><path d="M12 12h.01" fill="none" stroke="#a6a09b" stroke-width="2"/><path d="M16 12h.01" fill="none" stroke="#a6a09b" stroke-width="2"/></svg></g><text id="복복이" font-family="Noto Sans KR" font-size="11" font-weight="600" fill="#a6a09b" xml:space="preserve"><tspan x="180.7" y="1665.9">복복이</tspan></text></g><g id="링크 · 상점"><g id="아이콘"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x="263" y="1630.5" width="20" height="20"><path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5" fill="none" stroke="#a6a09b" stroke-width="2"/><path d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244" fill="none" stroke="#a6a09b" stroke-width="2"/><path d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05" fill="none" stroke="#a6a09b" stroke-width="2"/></svg></g><text id="상점" font-family="Noto Sans KR" font-size="11" font-weight="600" fill="#a6a09b" xml:space="preserve"><tspan x="263.5" y="1665.9">상점</tspan></text></g><g id="링크 · 도움"><g id="아이콘"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x="341" y="1630.5" width="20" height="20"><circle cx="12" cy="12" r="10" fill="none" stroke="#a6a09b" stroke-width="2"/><path d="m4.93 4.93 4.24 4.24" fill="none" stroke="#a6a09b" stroke-width="2"/><path d="m14.83 9.17 4.24-4.24" fill="none" stroke="#a6a09b" stroke-width="2"/><path d="m14.83 14.83 4.24 4.24" fill="none" stroke="#a6a09b" stroke-width="2"/><path d="m9.17 14.83-4.24 4.24" fill="none" stroke="#a6a09b" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="#a6a09b" stroke-width="2"/></svg></g><text id="도움" font-family="Noto Sans KR" font-size="11" font-weight="600" fill="#a6a09b" xml:space="preserve"><tspan x="341.5" y="1665.9">도움</tspan></text></g></g></g></svg>

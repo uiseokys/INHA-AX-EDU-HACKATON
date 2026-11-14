@@ -51,6 +51,36 @@ def mix(rng, weights):
     return rng.choices(list(weights), weights=list(weights.values()))[0]
 
 
+POSITIVE = ("joy", "calm")
+MILD = {1: 2, 2: 3, 3: 1}  # 가벼운 부정 감정이 대부분
+MODERATE = {2: 2, 3: 4, 4: 1}
+HEAVY = {3: 2, 4: 4, 5: 2}  # 많이 힘든 날이 대부분
+
+
+def intensity(sid, off, emotion, rng):
+    """감정 강도 1~5 (1 아주 조금 ~ 5 아주 많이). 학생별 시나리오에 맞춰 고릅니다."""
+    if emotion in POSITIVE:
+        return mix(rng, {2: 1, 3: 3, 4: 3, 5: 1})
+    recent = off >= -6
+    if sid == "S01":  # 최근 또래 관계로 조금씩 무거워지는 중
+        weights = MODERATE if recent else MILD
+    elif sid == "S03":  # 학업 불안이 보통 강도로 꾸준히 반복 → '같은 감정 반복'으로 주의
+        weights = {3: 5, 4: 1}
+    elif sid == "S04":  # 또래 관계 어려움이 길게 이어지고 최근 더 무거워짐
+        weights = HEAVY if off >= -9 else MODERATE
+    elif sid == "S06":  # 평소 밝다가 최근 갑자기 달라짐
+        weights = {4: 3, 5: 3} if recent else MILD
+    elif sid == "S07":  # 가족과 자주 부딪힘. 평소엔 가볍게 지나가지만 최근 며칠은 크게 화남 → '많이 힘든 날'로 주의
+        weights = {2: 1, 4: 3} if recent else {1: 3, 2: 4, 3: 1}
+    elif sid == "S09":  # 힘들었다가 회복 중
+        weights = MODERATE if off < -17 else MILD
+    elif sid == "S11":  # 감정 기복은 있지만 강도는 약함
+        weights = {1: 2, 2: 4, 3: 1}
+    else:
+        weights = MILD
+    return mix(rng, weights)
+
+
 def scenario(sid, rng):
     """학생별 시나리오: day_offset → 기록 (없으면 None)"""
     out = {}
@@ -119,8 +149,9 @@ def main() -> None:
     for i in range(1, 13):
         sid = f"S{i:02d}"
         rng = random.Random(f"bokbok-{sid}")
+        level_rng = random.Random(f"bokbok-{sid}-intensity")  # 강도는 따로 뽑아, 감정·문장은 예전 데이터와 같게 유지
         for off, rec in sorted(scenario(sid, rng).items()):
-            logs.append({"student_id": sid, "day_offset": off, **rec})
+            logs.append({"student_id": sid, "day_offset": off, **rec, "intensity": intensity(sid, off, rec["emotion"], level_rng)})
 
     (DATA_DIR / "records.json").write_text(
         json.dumps(
@@ -133,9 +164,9 @@ def main() -> None:
     )
     with (DATA_DIR / "records.csv").open("w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
-        w.writerow(["student_id", "day_offset", "emotion", "words", "note", "shared_with_teacher"])
+        w.writerow(["student_id", "day_offset", "emotion", "intensity", "words", "note", "shared_with_teacher"])
         for r in logs:
-            w.writerow([r["student_id"], r["day_offset"], r["emotion"], "|".join(r["words"]), r["note"], int(r["shared"])])
+            w.writerow([r["student_id"], r["day_offset"], r["emotion"], r["intensity"], "|".join(r["words"]), r["note"], int(r["shared"])])
     print(f"합성 감정 기록 {len(logs)}건 생성 → data/records.json, data/records.csv")
 
 

@@ -19,6 +19,7 @@ class Record:
     words: tuple[str, ...] = ()
     note: str | None = None
     shared: bool = False  # 학생이 이 문장을 선생님께 보여 주기로 했는지
+    intensity: int | None = None  # 그 감정이 얼마나 컸는지 1~5 (예전 기록·합성 기록에는 없음)
 
 
 @dataclass(frozen=True)
@@ -49,6 +50,9 @@ EMOTIONS: dict[str, Emotion] = {
                 ("짜증나는", "억울한", "답답한", "화나는", "분한", "미운", "질투 나는", "귀찮은")),
     ]
 }
+
+# 감정 강도(1~5)를 화면에 보여 줄 때 쓰는 말
+INTENSITY_LABELS: dict[int, str] = {1: "아주 조금", 2: "조금", 3: "보통", 4: "많이", 5: "아주 많이"}
 
 # 교사 화면의 학생 상태. 위험도 판정이 아니라 '선생님이 무엇을 하면 좋을지'를 나타냅니다.
 LEVELS: dict[str, dict[str, str]] = {

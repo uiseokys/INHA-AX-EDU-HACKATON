@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>복복복 · HTML 화면 모음</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="assets/app.css">
+  <style>
+    main { width: min(100% - 32px, 1080px); margin: auto; padding: 48px 0; }
+    h1 { margin: 0 0 8px; font-size: clamp(1.6rem, 4vw, 2rem); font-weight: 800; }
+    header p { margin: 0 0 14px; color: var(--color-ink-soft); }
+    header nav { display: flex; flex-wrap: wrap; gap: 16px; margin: 18px 0 32px; }
+    header a { color: var(--color-leaf-700); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+    .catalog { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 285px), 1fr)); gap: 16px; align-items: start; }
+    section { background: white; padding: 18px 20px; border-radius: 20px; }
+    h2 { color: var(--color-leaf-800); font-weight: 800; margin-bottom: 8px; }
+    ul { padding: 0; list-style: none; margin: 0; }
+    li + li { border-top: 1px solid var(--color-leaf-50); }
+    li a { display: block; padding: 7px 0; font-size: .9rem; }
+    li a:hover, li a:focus-visible { color: var(--color-leaf-700); text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>복복복 HTML 화면 모음</h1>
+      <p>현재 학생·선생님 UI를 100개 화면과 상태로 열어 볼 수 있어요.</p>
+      <nav aria-label="시연과 편집 안내">
+        <a href="screens/landing.html">홈페이지에서 시연 시작</a>
+        <a href="EDITING.html">HTML·CSS 편집 안내</a>
+      </nav>
+    </header>
+    <div class="catalog">
+      <section>
+        <h2>시작</h2>
+        <ul>
+          <li><a href="screens/landing.html">홈페이지</a></li>
+          <li><a href="screens/landing-reset.html">시연 데이터를 처음 상태로 되돌렸어요</a></li>
+          <li><a href="screens/student-promise-first.html">첫 방문 · 약속</a></li>
+          <li><a href="screens/student-promise-required.html">‘감정을 기록할 때’의 세 가지를 모두 눌러 주세요</a></li>
+          <li><a href="screens/student-welcome.html">첫 방문 · 기본 정보</a></li>
+          <li><a href="screens/student-promise-locked.html">복복이 대화 · 약속 필요</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>학생</h2>
+        <ul>
+          <li><a href="screens/student-record.html">감정 휠 · 선택 전</a></li>
+          <li><a href="screens/student-shop-before.html">상점 · 교환 신청 전</a></li>
+          <li><a href="screens/student-counsel.html">상담 신청</a></li>
+          <li><a href="screens/student-promise.html">약속 다시 보기·수정</a></li>
+          <li><a href="screens/student-home.html">학생 홈 · 기록 후</a></li>
+          <li><a href="screens/student-report.html">감정 리포트</a></li>
+          <li><a href="screens/student-chat.html">복복이 대화 · 첫 인사</a></li>
+          <li><a href="screens/student-chat-history.html">복복이 대화 기록</a></li>
+          <li><a href="screens/student-help.html">도움이 필요할 때</a></li>
+          <li><a href="screens/student-shop.html">우리 반 복복 상점 · 교환 내역</a></li>
+          <li><a href="screens/student-points.html">내 포인트</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>감정 휠 상태</h2>
+        <ul>
+          <li><a href="screens/student-record-joy.html">감정 휠 · 기쁨 선택</a></li>
+          <li><a href="screens/student-record-calm.html">감정 휠 · 평온 선택</a></li>
+          <li><a href="screens/student-record-sad.html">감정 휠 · 슬픔 선택</a></li>
+          <li><a href="screens/student-record-anxious.html">감정 휠 · 불안 선택</a></li>
+          <li><a href="screens/student-record-angry.html">감정 휠 · 분노 선택</a></li>
+          <li><a href="screens/student-record-saved-locked.html">기록 완료 · 대화 약속 전</a></li>
+          <li><a href="screens/student-record-saved.html">기록 완료 · 포인트와 대화 권유</a></li>
+          <li><a href="screens/student-record-edit.html">감정 휠 · 저장한 강도와 단어 수정</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>대화 상태</h2>
+        <ul>
+          <li><a href="screens/student-chat-today-emotion.html">복복이 대화 · 오늘 감정으로 시작</a></li>
+          <li><a href="screens/student-chat-reply.html">복복이 대화 · 일반 답장</a></li>
+          <li><a href="screens/student-chat-emotion-suggestion.html">복복이 대화 · AI 감정 기록 제안</a></li>
+          <li><a href="screens/student-chat-safety.html">복복이 대화 · 긴급 안전 안내</a></li>
+          <li><a href="screens/student-chat-safe-answer.html">복복이 대화 · 안전하다고 답한 상태</a></li>
+          <li><a href="screens/student-chat-unsafe-answer.html">복복이 대화 · 안전하지 않다고 답한 상태</a></li>
+          <li><a href="screens/student-chat-history-empty.html">복복이 대화 기록 · 빈 화면</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>도움 상세</h2>
+        <ul>
+          <li><a href="screens/student-help-school-violence.html">도움 상세 · 학교폭력</a></li>
+          <li><a href="screens/student-help-domestic-violence.html">도움 상세 · 가정폭력</a></li>
+          <li><a href="screens/student-help-grooming.html">도움 상세 · 온라인 그루밍</a></li>
+          <li><a href="screens/student-help-sexual-violence.html">도움 상세 · 성범죄</a></li>
+          <li><a href="screens/student-help-mind.html">도움 상세 · 심리 상담</a></li>
+          <li><a href="screens/student-help-other.html">도움 상세 · 기타 도움</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>학생 상태</h2>
+        <ul>
+          <li><a href="screens/student-welcome-edit.html">기본 정보 수정</a></li>
+          <li><a href="screens/student-record-reset.html">감정 휠 · 선택 초기화</a></li>
+          <li><a href="screens/student-home-unrecorded.html">학생 홈 · 기록 미룬 상태</a></li>
+          <li><a href="screens/student-home-profile-saved.html">기본 정보를 저장했어요</a></li>
+          <li><a href="screens/student-counsel-homeroom.html">상담 신청 · 담임 선생님 선택</a></li>
+          <li><a href="screens/student-counsel-wee.html">상담 신청 · Wee클래스 상담 선생님 선택</a></li>
+          <li><a href="screens/student-promise-today-emotion.html">오늘 감정으로 대화 · 약속 필요</a></li>
+          <li><a href="screens/student-home-promise-saved.html">약속을 저장했어요</a></li>
+          <li><a href="screens/student-report-private.html">감정 리포트 · 문장 공유 끔</a></li>
+          <li><a href="screens/student-counsel-booked.html">상담 신청 · 신청 내역</a></li>
+          <li><a href="screens/student-counsel-slot-taken.html">방금 다른 친구가 신청한 시간이에요. 다른 시간을 골라 주세요</a></li>
+          <li><a href="screens/student-counsel-confirmed.html">상담 신청 · 확정 내역</a></li>
+          <li><a href="screens/student-counsel-cancelled.html">상담 신청 · 취소</a></li>
+          <li><a href="screens/student-shop-ordered.html">상점 · 교환 신청 완료</a></li>
+          <li><a href="screens/student-shop-not-enough.html">포인트가 부족하거나 더 교환할 수 없는 상품이에요</a></li>
+          <li><a href="screens/student-shop-image.html">상점 · 상품 이미지가 있는 경우</a></li>
+          <li><a href="screens/student-shop-cancelled.html">상점 · 교환 신청 취소</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>선생님</h2>
+        <ul>
+          <li><a href="screens/teacher-counsel.html">상담 일정과 신청 관리</a></li>
+          <li><a href="screens/teacher-shop.html">상점 관리 · 교환 승인·거절</a></li>
+          <li><a href="screens/teacher-home.html">학급 월간 정서 현황</a></li>
+          <li><a href="screens/teacher-alerts.html">알림 · 읽음·안 읽음</a></li>
+          <li><a href="screens/teacher-shares.html">공유 메모 · 담임 선생님</a></li>
+          <li><a href="screens/teacher-ledger.html">기록 보존 · 보존 내역과 해시</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>정서 현황 필터</h2>
+        <ul>
+          <li><a href="screens/teacher-home-consult.html">정서 현황 · 상담 권장 필터</a></li>
+          <li><a href="screens/teacher-home-watch.html">정서 현황 · 관찰 필요 필터</a></li>
+          <li><a href="screens/teacher-home-low_data.html">정서 현황 · 기록 부족 필터</a></li>
+          <li><a href="screens/teacher-home-stable.html">정서 현황 · 안정 필터</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>학생 상세</h2>
+        <ul>
+          <li><a href="screens/teacher-student-s01.html">학생 상세 · 하늘</a></li>
+          <li><a href="screens/teacher-student-s02.html">학생 상세 · 보리</a></li>
+          <li><a href="screens/teacher-student-s03.html">학생 상세 · 솔</a></li>
+          <li><a href="screens/teacher-student-s04.html">학생 상세 · 여울</a></li>
+          <li><a href="screens/teacher-student-s05.html">학생 상세 · 나래</a></li>
+          <li><a href="screens/teacher-student-s06.html">학생 상세 · 다온</a></li>
+          <li><a href="screens/teacher-student-s07.html">학생 상세 · 마루</a></li>
+          <li><a href="screens/teacher-student-s08.html">학생 상세 · 새벽</a></li>
+          <li><a href="screens/teacher-student-s09.html">학생 상세 · 가람</a></li>
+          <li><a href="screens/teacher-student-s10.html">학생 상세 · 이든</a></li>
+          <li><a href="screens/teacher-student-s11.html">학생 상세 · 루아</a></li>
+          <li><a href="screens/teacher-student-s12.html">학생 상세 · 한결</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>상품 편집</h2>
+        <ul>
+          <li><a href="screens/teacher-shop-edit-it1.html">상품 수정 · 자리 바꾸기권</a></li>
+          <li><a href="screens/teacher-shop-edit-it2.html">상품 수정 · 숙제 면제권</a></li>
+          <li><a href="screens/teacher-shop-edit-it3.html">상품 수정 · 벌점 상쇄권</a></li>
+          <li><a href="screens/teacher-shop-edit-it4.html">상품 수정 · 음악 선택권</a></li>
+          <li><a href="screens/teacher-shop-edit-it5.html">상품 수정 · 급식 먼저 먹기권</a></li>
+          <li><a href="screens/teacher-shop-edit-image.html">상품 수정 · 등록 이미지 있음</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>선생님 상태</h2>
+        <ul>
+          <li><a href="screens/teacher-ledger-empty.html">기록 보존 · 빈 화면</a></li>
+          <li><a href="screens/teacher-shares-empty.html">공유 메모 · 빈 화면</a></li>
+          <li><a href="screens/teacher-counsel-slot-added.html">상담 가능 시간을 추가했어요</a></li>
+          <li><a href="screens/teacher-counsel-confirmed.html">상담 일정 · 확정 후</a></li>
+          <li><a href="screens/teacher-counsel-done.html">상담 일정 · 상담 완료 후</a></li>
+          <li><a href="screens/teacher-counsel-declined.html">상담 일정 · 다른 시간 요청</a></li>
+          <li><a href="screens/teacher-student-followup-saved.html">학생 상세 · 사후 관리 저장</a></li>
+          <li><a href="screens/teacher-student-share-saved.html">학생 상세 · 지원 메모 공유</a></li>
+          <li><a href="screens/teacher-shop-new.html">상점 관리 · 새 상품</a></li>
+          <li><a href="screens/teacher-shop-item-saved.html">상품을 저장했어요</a></li>
+          <li><a href="screens/teacher-shop-bad-image.html">이미지는 PNG·JPG·WEBP·GIF 2MB 이하만 올릴 수 있어요</a></li>
+          <li><a href="screens/teacher-shop-approved.html">상점 관리 · 교환 승인 후</a></li>
+          <li><a href="screens/teacher-shop-rejected.html">상점 관리 · 교환 거절 후</a></li>
+          <li><a href="screens/teacher-shop-item-deleted.html">상품을 삭제했어요</a></li>
+          <li><a href="screens/teacher-alerts-read.html">알림 · 확인 후</a></li>
+          <li><a href="screens/teacher-shares-wee.html">공유 메모 · 상담 선생님</a></li>
+          <li><a href="screens/teacher-ledger-warning.html">기록 보존 · 위변조 경고</a></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

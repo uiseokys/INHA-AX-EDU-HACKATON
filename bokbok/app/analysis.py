@@ -17,14 +17,12 @@ import math
 from collections import Counter
 from dataclasses import dataclass, field
 
-from .data import SIGNALS
+from .attendance import AttendanceSummary
+from .data import SIGNALS, teacher_record
 from .dates import add_days, day_label, short_label, week_start
 from .models import EMOTIONS, Record
 
 RULES = SIGNALS["rules"]
-CHAT_SIGNAL_LABELS = {c["id"]: c["label"] for c in SIGNALS["risk"]} | {"unsafe": "‘지금 안전하지 않다’고 응답"}
-
-
 def _norm(text: str) -> str:
     return "".join(text.split())
 
@@ -40,6 +38,35 @@ def risk_hits(text: str | None) -> list[dict]:
         if matched:
             hits.append({"id": cat["id"], "label": cat["label"], "help": cat["help"], "matched": matched})
     return hits
+
+
+# 하루 기록 구분: 고른 감정과 강도(1~5)로 나눕니다. 가벼운 부정 감정은 누구에게나 있는 '보통 날'로 봅니다.
+DAY_KINDS = {"good": "좋은 날", "ok": "보통 날", "hard": "힘든 날", "very_hard": "많이 힘든 날"}
+
+
+def day_kind(r: Record) -> str:
+    """good(긍정 감정) · ok(부정, 강도 1~2) · hard(부정, 강도 3) · very_hard(부정, 강도 4~5)
+
+    강도가 없는 예전 기록은 '보통'(3)으로 봅니다. 그래서 강도를 쓰기 전의 기준과 결과가 이어집니다.
+    """
+    if not EMOTIONS[r.emotion].negative:
+        return "good"
+    n = r.intensity or RULES["default_intensity"]
+    if n <= RULES["mild_intensity_max"]:
+        return "ok"
+    return "very_hard" if n >= RULES["strong_intensity_min"] else "hard"
+
+
+def is_hard(r: Record) -> bool:
+    return day_kind(r) in ("hard", "very_hard")
+
+
+def mood_score(r: Record) -> float:
+    """그날의 마음 점수 1(무거움)~5(가벼움). 감정마다 정해 둔 점수를 쓰되, 가벼운 부정 감정('보통 날')은 가운데 점수로 봅니다.
+
+    이렇게 해야 '조금 걱정되는 날'이 며칠 이어졌다고 평소보다 크게 나빠진 것으로 계산되지 않습니다.
+    """
+    return RULES["mild_negative_score"] if day_kind(r) == "ok" else EMOTIONS[r.emotion].score
 
 
 def round1(n: float) -> float:
@@ -79,7 +106,7 @@ def build_series(records: list[Record], today: str, days: int = 14) -> list[Seri
         if r is None:
             out.append(SeriesPoint(d, short_label(d)))
             continue
-        score = EMOTIONS[r.emotion].score
+        score = mood_score(r)
         recent.append(score)
         out.append(SeriesPoint(d, short_label(d), score, _mean(recent[-RULES["moving_average_window"]:]), r.emotion, r.words, r.note))
     return out
@@ -125,14 +152,14 @@ def topics(records: list[Record]) -> list[dict]:
 
 
 def _same_negative_run(records: list[Record], today: str) -> tuple[int, str | None]:
-    """가장 최근(오늘·어제)부터 이어지는 '같은 부정 감정' 연속 기록 일수"""
+    """가장 최근(오늘·어제)부터 이어지는 '같은 부정 감정' 연속 기록 일수 (강도 1~2의 가벼운 날은 세지 않음)"""
     by_date = {r.date: r for r in records}
     start = today if today in by_date else add_days(today, -1)
     first = by_date.get(start)
-    if not first or not EMOTIONS[first.emotion].negative:
+    if not first or not is_hard(first):
         return 0, None
     n, d = 0, start
-    while d in by_date and by_date[d].emotion == first.emotion:
+    while d in by_date and by_date[d].emotion == first.emotion and is_hard(by_date[d]):
         n, d = n + 1, add_days(d, -1)
     return n, first.emotion
 
@@ -172,7 +199,7 @@ def student_report(records: list[Record], today: str) -> StudentReport:
     recent14 = _in(records, add_days(today, -13), today)
     top = _top_emotion(this_week)
     top_last = _top_emotion(last_week)
-    avg, last_avg = _mean([EMOTIONS[r.emotion].score for r in this_week]), _mean([EMOTIONS[r.emotion].score for r in last_week])
+    avg, last_avg = _mean([mood_score(r) for r in this_week]), _mean([mood_score(r) for r in last_week])
 
     summary = []
     if top:
@@ -217,6 +244,7 @@ class Signal:
     source: str  # record | chat | pattern
     label: str
     detail: str
+    level: str = "issue"  # care(살펴보기) · issue(확인 필요) · urgent(긴급)
 
 
 @dataclass
@@ -236,42 +264,63 @@ class TeacherReport:
     topics: list[dict]
     signals: list[Signal]
     actions: list[str]  # 추가 확인 사항 및 권장 조치
+    week_kinds: dict[str, int] = field(default_factory=dict)  # 최근 7일의 하루 구분별 일수 (DAY_KINDS)
 
 
-def teacher_report(records: list[Record], today: str, alerts: list[dict] | None = None) -> TeacherReport:
-    """records 는 전체 기록을 넘깁니다. 문장 키워드는 내부 분석에만 쓰고, 화면에는 공유된 문장만 보여 줍니다."""
+def teacher_report(records: list[Record], today: str, alerts: list[dict] | None = None, *,
+                   attendance: AttendanceSummary | None = None) -> TeacherReport:
+    """전체 기록에서 위험 신호를 확인하고, 교사용 그래프와 주제에는 공유 문장만 사용합니다."""
     recent7 = _in(records, add_days(today, -6), today)
     recent14 = _in(records, add_days(today, -13), today)
     base = _in(records, add_days(today, -34), add_days(today, -8))
-    baseline = _mean([EMOTIONS[r.emotion].score for r in base]) if len(base) >= 5 else None
-    recent = _mean([EMOTIONS[r.emotion].score for r in recent7]) if len(recent7) >= 3 else None
+    baseline = _mean([mood_score(r) for r in base]) if len(base) >= 5 else None
+    recent = _mean([mood_score(r) for r in recent7]) if len(recent7) >= 3 else None
     negative_week = sum(1 for r in recent7 if EMOTIONS[r.emotion].negative)
+    week_kinds = {k: sum(1 for r in recent7 if day_kind(r) == k) for k in DAY_KINDS}
+    very_hard_week = week_kinds["very_hard"]
+    hard_week = week_kinds["hard"] + very_hard_week  # 힘든 날 + 많이 힘든 날
     run, run_emotion = _same_negative_run(records, today)
-    series = build_series(records, today, 14)
+    public_records = [teacher_record(r) for r in recent14]
+    series = build_series(public_records, today, 14)
     drop = round1(baseline - recent) if baseline is not None and recent is not None else None
 
     signals: list[Signal] = []
     for r in recent14:
-        for hit in risk_hits(r.note):
-            signals.append(Signal(r.date, "record", hit["label"],
-                                  "감정 기록 문장에서 감지" + ("" if r.shared else " · 원문은 학생이 공유하지 않음")))
+        hits = risk_hits(r.note)
+        if hits:  # 어떤 표현이었는지(분류·키워드)는 보여 주지 않고, 신호가 있었다는 사실과 단계만 알림
+            level = "urgent" if any(h["id"] == "urgent" for h in hits) else "issue"
+            signals.append(Signal(r.date, "record", "감정 기록에서 위험 신호가 감지되었어요", "", level))
     for a in alerts or []:
         if a["source"] == "chat" and a["date"] >= add_days(today, -13):
-            label = CHAT_SIGNAL_LABELS.get(a["category"], "위험 신호")
-            signals.append(Signal(a["date"], "chat", label, "복복이 대화에서 감지 · 대화 내용은 공개되지 않음"))
+            # 선생님께는 무슨 이야기였는지(분류·요약)를 보여 주지 않고, 신호가 있었다는 사실과 단계만 알림
+            level = a.get("level", "issue")
+            label = "대화에서 살펴볼 신호가 감지되었어요" if level == "care" else "대화에서 위험 신호가 감지되었어요"
+            if not any(s.source == "chat" and s.date == a["date"] and s.level == level for s in signals):
+                signals.append(Signal(a["date"], "chat", label, "", level))
 
     consult, watch, reasons = False, False, []
-    if signals:
+    if any(s.level != "care" for s in signals):
         consult = True
         reasons.append("위험 신호 감지")
-    if negative_week >= RULES["negative_week_consult"] or run >= RULES["same_negative_consult"]:
-        consult = True
-    elif negative_week >= RULES["negative_week_watch"] or run >= RULES["same_negative_watch"]:
+    elif signals:  # 구체적인 피해 없이 마음이 힘들어 보이는 대화만 있을 때
         watch = True
+        reasons.append("복복이 대화에서 살펴볼 신호")
+    attendance_declining = attendance is not None and attendance.declining
+    if attendance_declining and hard_week:
+        watch = True
+        reasons.append("출석률 하락과 힘든 날이 함께 나타남")
+    if (very_hard_week >= RULES["very_hard_week_consult"] or hard_week >= RULES["negative_week_consult"]
+            or run >= RULES["same_negative_consult"]):
+        consult = True
+    elif (very_hard_week >= RULES["very_hard_week_watch"] or hard_week >= RULES["negative_week_watch"]
+          or run >= RULES["same_negative_watch"]):
+        watch = True
+    if very_hard_week >= RULES["very_hard_week_watch"]:
+        reasons.append(f"많이 힘든 날 {very_hard_week}일 (최근 7일)")
     if run >= RULES["same_negative_watch"]:
         reasons.append(f"‘{EMOTIONS[run_emotion].label}’ {run}일 연속")
-    elif negative_week >= RULES["negative_week_watch"]:
-        reasons.append(f"부정적 감정 반복 (7일 중 {negative_week}일)")
+    elif hard_week >= RULES["negative_week_watch"] and hard_week > very_hard_week:  # 위 이유와 같은 날들이면 겹쳐 쓰지 않음
+        reasons.append(f"힘든 날 반복 (7일 중 {hard_week}일)")
     if drop is not None and drop >= RULES["baseline_drop_consult"]:
         consult = True
         reasons.append("최근 정서 변화 급증")
@@ -280,10 +329,12 @@ def teacher_report(records: list[Record], today: str, alerts: list[dict] | None 
         reasons.append("평소보다 마음 점수 하락")
 
     main = _top_emotion(recent14)
-    if (main and EMOTIONS[main["emotion"]].negative and main["pct"] >= RULES["repeat_negative_pct"]
-            and len(recent14) >= RULES["min_records"]):
+    # 2주 기록의 절반 이상이 같은 부정 감정으로 '힘든 날'일 때 (가벼운 날은 세지 않음)
+    same_hard = sum(1 for r in recent14 if main and r.emotion == main["emotion"] and is_hard(r))
+    if (main and EMOTIONS[main["emotion"]].negative and len(recent14) >= RULES["min_records"]
+            and same_hard * 100 >= RULES["repeat_negative_pct"] * len(recent14)):
         watch = True
-        reasons.append(f"‘{EMOTIONS[main['emotion']].label}’ 반복 (2주 중 {main['count']}일)")
+        reasons.append(f"‘{EMOTIONS[main['emotion']].label}’ 반복 (2주 중 {same_hard}일)")
 
     if len(recent14) < RULES["min_records"] and not consult:
         level = "low_data"
@@ -293,18 +344,22 @@ def teacher_report(records: list[Record], today: str, alerts: list[dict] | None 
     if level == "stable":
         reasons = ["특이 변화 없음"]
 
-    tps = topics(recent14)
+    tps = topics(public_records)
     actions = []
-    if any(s.source == "chat" for s in signals) or any("자해" in s.label or "안전" in s.label for s in signals):
+    if any(s.level == "urgent" for s in signals):
         actions.append("오늘 안에 학생의 안전을 직접 확인하고, Wee클래스와 함께 대응을 의논해 주세요.")
-    if any("폭력" in s.label for s in signals):
-        actions.append("또래 폭력 여부를 조심스럽게 확인하고, 필요하면 학교폭력 대응 절차를 안내해 주세요.")
-    if any("가정" in s.label or "그루밍" in s.label for s in signals):
-        actions.append("가정·온라인 피해 가능성이 있어 학생과 단둘이 이야기할 시간을 마련해 주세요.")
+    elif any(s.level == "issue" for s in signals):
+        actions.append("학생과 단둘이 이야기할 시간을 마련해 무슨 일이 있는지 조심스럽게 들어 주세요. 필요하면 Wee클래스와 함께 의논해 주세요.")
+    if any(s.level == "care" for s in signals):
+        actions.append("복복이 대화에서 살펴볼 신호가 있었어요. 이유를 캐묻기보다 가벼운 안부 대화로 먼저 다가가 주세요.")
+    if very_hard_week >= RULES["very_hard_week_watch"]:
+        actions.append(f"최근 일주일에 ‘많이 힘든 날’이 {very_hard_week}일 있었어요. 그날 무슨 일이 있었는지 편하게 물어봐 주세요.")
     if run >= RULES["same_negative_watch"]:
         actions.append(f"‘{EMOTIONS[run_emotion].label}’이 계속되고 있어요. 가벼운 안부 대화로 요즘 상황을 물어봐 주세요.")
     if tps:
         actions.append(f"‘{tps[0]['label']}’ 관련 고민이 반복돼요. 면담 때 이 주제를 먼저 꺼내 보세요.")
+    if attendance_declining:
+        actions.append("최근 출석률이 낮아졌어요. 출결 사유를 먼저 확인하고 학생에게 가볍게 안부를 물어봐 주세요.")
     if level == "low_data":
         actions.append("기록이 적어 흐름을 판단하기 어려워요. 기록을 강요하기보다 안부를 먼저 물어봐 주세요.")
     if not actions:
@@ -326,6 +381,7 @@ def teacher_report(records: list[Record], today: str, alerts: list[dict] | None 
         topics=tps,
         signals=sorted(signals, key=lambda s: s.date, reverse=True),
         actions=actions,
+        week_kinds=week_kinds,
     )
 
 

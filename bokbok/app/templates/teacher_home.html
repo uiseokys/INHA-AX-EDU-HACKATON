@@ -22,10 +22,24 @@
      class="rounded-3xl border-2 p-4 transition hover:-translate-y-0.5 {{ LEVELS[lv].tile }} {{ 'border-current' if selected == lv else 'border-transparent' }}">
     <p class="flex items-center gap-1.5 text-xs font-bold"><span class="size-2 rounded-full {{ LEVELS[lv].dot }}"></span>{{ LEVELS[lv].label }}</p>
     <p class="mt-1 text-3xl font-extrabold">{{ counts[lv] }}</p>
-    <p class="text-[11px] opacity-80">{{ {"watch": "부정 감정이 반복되거나 평소와 달라요", "consult": "위험 신호나 급격한 변화가 있어요", "low_data": "기록이 적어 판단이 어려워요"}[lv] }}</p>
+    <p class="text-[11px] opacity-80">{{ {"watch": "감정이나 출결에 살펴볼 변화가 있어요", "consult": "위험 신호나 급격한 변화가 있어요", "low_data": "기록이 적어 판단이 어려워요"}[lv] }}</p>
   </a>
   {% endfor %}
 </div>
+
+{% if conversations %}
+<section class="{{ card }}">
+  {{ ui.card_title("hand-heart", "답할 대화 요청") }}
+  <ul class="space-y-2">
+    {% for r in conversations %}
+    <li><a href="/teacher/counsel#{{ r.id }}" class="flex flex-wrap items-center justify-between gap-2 rounded-2xl bg-leaf-50 px-4 py-3 text-sm hover:bg-leaf-100">
+      <span><strong>{{ get_student(r.student_id).name }}</strong> · {{ TEACHERS[r.teacher].role }}에게 요청</span>
+      <span class="text-xs font-semibold text-leaf-700">{{ "요청 확인" if r.status == "requested" else "시간 제안" }}</span>
+    </a></li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
 
 <div class="grid items-start gap-5 lg:grid-cols-[1.6fr_1fr]">
   <section class="{{ card }} min-w-0 p-3 sm:p-5">
@@ -54,6 +68,9 @@
               {% if r.followup != "none" %}<span class="{{ chip }} bg-sky-50 text-sky-800">{{ FOLLOWUP[r.followup] }}</span>{% endif %}
             </span>
             <span class="mt-0.5 block truncate text-sm text-ink-soft">{{ r.report.reasons | join(" · ") }}</span>
+            {% if r.attendance.recent.rate is not none %}
+            <span class="mt-1 block text-xs text-ink-soft">출석률 {{ r.attendance.recent.rate }}%{% if r.attendance.declining %} · {{ r.attendance.drop }}%p 하락{% endif %}</span>
+            {% endif %}
           </span>
           <span class="hidden items-center gap-3 sm:flex">
             {% if r.today %}{{ ui.sticker(r.today.emotion, "size-8") }}{% else %}<span class="grid size-8 place-items-center rounded-full bg-stone-100 text-[10px] text-stone-400">미기록</span>{% endif %}
@@ -77,23 +94,32 @@
       {{ ui.emotion_bars(month_ratio) }}
     </section>
     <section class="{{ card }}">
-      {{ ui.card_title("bell", "확인하지 않은 알림") }}
-      {% if pinned %}
-      <ul class="space-y-2">
-        {% for a in pinned[:4] %}
-        <li><a href="/teacher/students/{{ a.student_id }}" class="block rounded-2xl bg-rose-50 px-4 py-3 text-sm hover:bg-rose-100">
-          <span class="font-bold text-ink">{{ get_student(a.student_id).name }}</span> <span class="text-xs text-ink-soft">· {{ rel(a.date, today) }} {{ a.time }}</span>
-          <span class="mt-0.5 block text-ink-soft">{{ a.summary }}</span></a></li>
+      {{ ui.card_title("bell", "조치가 남은 알림") }}
+      {% if alert_tasks %}
+      <ul class="max-h-80 space-y-2 overflow-y-auto">
+        {% for a in alert_tasks %}
+        <li><a href="/teacher/alerts#{{ a.id }}" class="block rounded-2xl bg-stone-50 px-4 py-3 text-sm hover:bg-leaf-50">
+          {% set level = ALERT_LEVEL_CHIP[a.level or "issue"] %}
+          <span class="font-bold text-ink">{{ get_student(a.student_id).name }}</span>
+          <span class="{{ chip }} {{ level.chip }}">{{ level.label }}</span>
+          {% if a.task %}
+          <span class="mt-1 block break-words font-semibold text-ink">{{ a.task.action }}</span>
+          <span class="text-xs text-ink-soft">{{ TEACHERS[a.task.teacher].role }} · {{ a.task.due | day_label }}</span>
+          {% if a.task.due < today %}<span class="text-xs font-semibold text-rose-700">예정일 지남</span>{% endif %}
+          {% else %}
+          <span class="mt-1 block text-ink-soft">다음 행동 정하기</span>
+          {% endif %}
+        </a></li>
         {% endfor %}
       </ul>
       <a href="/teacher/alerts" class="{{ btn.ghost }} mt-2 w-full text-xs">알림 전체 보기</a>
-      {% else %}<p class="text-sm text-ink-soft">새 알림이 없어요.</p>{% endif %}
+      {% else %}<p class="text-sm text-ink-soft">남은 조치가 없어요.</p>{% endif %}
     </section>
   </div>
 </div>
 
 {% call ui.notice("warn") %}
 화면의 ‘관찰 필요·상담 권장’은 기록을 규칙으로 계산한 참고 표시이며, 실제 위험도는 선생님의 확인과 상담을 통해 판단해 주세요.
-{{ BOT }} 대화 내용은 선생님께 공개되지 않으며, 위험 신호가 감지된 사실만 알림으로 전해집니다.
+{{ BOT }} 대화는 도움이 필요해 보이는 신호가 있다는 사실과 단계만 알림으로 전해집니다.
 {% endcall %}
 {% endblock %}

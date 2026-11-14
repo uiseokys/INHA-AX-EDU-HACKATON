@@ -71,9 +71,20 @@
 </div>
 
 <div class="grid items-start gap-5 lg:grid-cols-[1.4fr_1fr]">
-  <section class="{{ card }}">
+  <section id="emotion-calendar" class="{{ card }} scroll-mt-20">
     {{ ui.card_title("calendar-days", month ~ "월 감정 달력") }}
     {{ ui.calendar(calendar, today) }}
+    <h3 class="mt-4 text-sm font-bold text-ink">학사일정</h3>
+    <ul class="mt-2 space-y-1.5">
+      {% for day in calendar if day.events %}
+      <li id="school-schedule-{{ day.date }}" class="flex scroll-mt-20 flex-wrap items-baseline gap-x-2 rounded-xl bg-violet-50 px-3 py-2 text-sm target:ring-2 target:ring-violet-300">
+        <time datetime="{{ day.date }}" class="shrink-0 font-semibold text-violet-800">{{ day.date | day_label }}</time>
+        <span class="text-ink">{{ day.events | join(' · ') }}</span>
+      </li>
+      {% else %}
+      <li class="text-sm text-ink-soft">이번 달에 표시할 학사일정이 없어요.</li>
+      {% endfor %}
+    </ul>
   </section>
   <section class="{{ card }} bg-linear-to-br from-joy/20 to-white">
     {{ ui.card_title("circle-help", "스스로 돌아보는 질문") }}
@@ -93,7 +104,7 @@
     <li class="flex items-start gap-3 rounded-2xl border border-stone-100 px-4 py-3">
       {{ ui.sticker(r.emotion, "size-10 shrink-0") }}
       <div class="min-w-0 flex-1">
-        <p class="text-sm font-semibold text-ink">{{ E[r.emotion].label }} <span class="font-normal text-ink-soft">· {{ r.date | day_label }}{% if r.words %} · {{ r.words | join(", ") }}{% endif %}</span></p>
+        <p class="text-sm font-semibold text-ink">{{ E[r.emotion].label }} <span class="font-normal text-ink-soft">· {{ r.date | day_label }}{% if r.intensity %} · {{ ui.intensity(r.intensity) }}{% endif %}{% if r.words %} · {{ r.words | join(", ") }}{% endif %}</span></p>
         <p class="mt-0.5 text-sm {{ 'text-ink-soft' if r.note else 'text-stone-400' }}">{{ r.note or "문장 없이 기록했어요" }}</p>
       </div>
       {% if r.note %}

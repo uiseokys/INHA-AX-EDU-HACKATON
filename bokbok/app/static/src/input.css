@@ -142,11 +142,385 @@ select {
   outline-offset: 2px;
 }
 
+/*
+  감정 휠 (templates/student_record.html)
+  라디오·체크박스의 선택 상태(:has)만으로 배치와 전환을 만듭니다. 스크립트는 강도 고리를 끄는 데만 씁니다.
+  길이 단위 cqw 는 휠 너비의 1% 입니다. 고른 감정의 색(--pick, --pick-soft)은 템플릿에서 정해 줍니다.
+*/
+.wheel-idle {
+  display: inline;
+}
+.wheel-picked,
+.wheel-when {
+  display: none;
+}
+.wheel-form:has([name="emotion"]:checked) .wheel-idle {
+  display: none;
+}
+.wheel-form:has([name="emotion"]:checked) .wheel-picked {
+  display: revert;
+}
+.wheel-form:not(:has([name="emotion"]:checked)) .wheel-submit {
+  opacity: 0.55;
+}
+
+.wheel {
+  position: relative;
+  container-type: inline-size;
+  aspect-ratio: 1;
+  width: calc(100% + 1.5rem);
+  max-width: 400px;
+  margin-left: 50%;
+  translate: -50% 0;
+}
+/* 바탕의 은은한 빛: 고르기 전에는 초록, 고른 뒤에는 그 감정의 색 */
+.wheel::before,
+.wheel::after {
+  content: "";
+  position: absolute;
+  inset: 2cqw;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--color-leaf-100) 0%, transparent 68%);
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+.wheel::after {
+  background: radial-gradient(circle, color-mix(in srgb, var(--pick-soft, transparent) 55%, transparent) 0%, transparent 68%);
+  opacity: 0;
+}
+.wheel:has([name="emotion"]:checked)::before {
+  opacity: 0;
+}
+.wheel:has([name="emotion"]:checked)::after {
+  opacity: 1;
+}
+
+.wheel-orbit {
+  position: absolute;
+  inset: 16cqw;
+  border-radius: 50%;
+  border: 2px dashed var(--color-leaf-200);
+  transition:
+    opacity 0.4s ease,
+    scale 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.wheel:has([name="emotion"]:checked) .wheel-orbit {
+  opacity: 0;
+  scale: 1.2;
+}
+
+.wheel-guide {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  transition:
+    opacity 0.3s ease,
+    scale 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.wheel-guide-img {
+  width: 27cqw;
+  height: 27cqw;
+}
+.wheel:has([name="emotion"]:checked) .wheel-guide {
+  opacity: 0;
+  scale: 0.5;
+}
+
+/* 스티커 노드 */
+.wheel-node {
+  --a: calc(var(--i) * 72deg - 90deg);
+  --tx: calc(cos(var(--a)) * 34cqw);
+  --ty: calc(sin(var(--a)) * 34cqw);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 20;
+  display: flex;
+  width: 25cqw;
+  height: 25cqw;
+  margin: -12.5cqw 0 0 -12.5cqw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5cqw;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 8px 22px -8px rgb(46 84 56 / 0.35);
+  cursor: pointer;
+  transform: translate(var(--tx), var(--ty));
+  transition:
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.4s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+.wheel-sticker {
+  width: 14cqw;
+  height: 14cqw;
+}
+.wheel-name {
+  font-size: clamp(11px, 3.4cqw, 13px);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-ink-soft);
+}
+.wheel:not(:has([name="emotion"]:checked)) .wheel-node {
+  animation: wheel-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  animation-delay: calc(var(--i) * 70ms);
+}
+@media (hover: hover) {
+  .wheel-node:hover {
+    z-index: 30;
+    transform: translate(var(--tx), var(--ty)) scale(1.1);
+    box-shadow:
+      0 0 0 6px color-mix(in srgb, var(--c) 45%, transparent),
+      0 12px 28px -8px var(--c);
+  }
+}
+.wheel-node:has(:focus-visible) {
+  outline: 2px solid var(--color-leaf-500);
+  outline-offset: 3px;
+}
+.wheel:has([name="emotion"]:checked) .wheel-node {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(var(--tx), var(--ty)) scale(0.5);
+}
+.wheel:has([name="emotion"]:checked) .wheel-node:has(:checked) {
+  z-index: 35;
+  opacity: 1;
+  pointer-events: auto; /* 가운데 스티커 위를 쓸어 넘기면 화면이 스크롤되도록 고리보다 위에서 받음 */
+  cursor: default;
+  border-color: var(--d);
+  box-shadow: 0 12px 30px -8px var(--c);
+  transform: translate(0, 0) scale(1.08);
+}
+.wheel:has([name="emotion"]:checked) .wheel-node:has(:checked) .wheel-name {
+  color: var(--d);
+}
+
+/* 감정 단어 칩 */
+.wheel-word {
+  --a: calc(var(--k) * 45deg - 67.5deg);
+  --kx: calc(cos(var(--a)) * 36cqw * var(--on, 0));
+  --ky: calc(sin(var(--a)) * 42cqw * var(--on, 0));
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 25;
+  visibility: hidden;
+  padding: 0.4rem 0.8rem;
+  border: 2px solid transparent;
+  border-radius: 9999px;
+  background: var(--color-stone-100);
+  color: var(--color-ink-soft);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: pointer;
+  opacity: var(--on, 0);
+  transform: translate(-50%, -50%) translate(var(--kx), var(--ky)) scale(calc(0.3 + 0.7 * var(--on, 0)));
+  transition:
+    transform 0.5s cubic-bezier(0.34, 1.45, 0.64, 1),
+    opacity 0.3s ease,
+    visibility 0.3s,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+  transition-delay: calc(var(--on, 0) * (var(--k) * 35ms + 150ms)), calc(var(--on, 0) * (var(--k) * 35ms + 150ms)), 0s, 0s, 0s, 0s;
+}
+@media (hover: hover) {
+  .wheel-word:hover {
+    background: var(--color-stone-200);
+  }
+}
+.wheel-word:has(:checked) {
+  border-color: var(--d);
+  background: var(--c);
+  color: var(--color-ink);
+}
+.wheel-word:has(:focus-visible) {
+  outline: 2px solid var(--color-leaf-500);
+  outline-offset: 2px;
+}
+
+/* 강도 고리 */
+.wheel-dial {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 28;
+  width: 40cqw;
+  height: 40cqw;
+  margin: -20cqw 0 0 -20cqw;
+  border-radius: 50%;
+  opacity: 0;
+  scale: 0.6;
+  pointer-events: none; /* 누르는 영역은 고리 띠(.wheel-dial-hit)와 손잡이뿐 */
+  transition:
+    opacity 0.4s ease 0.1s,
+    scale 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;
+}
+.wheel-form[data-dial-ready] .wheel:has([name="emotion"]:checked) .wheel-dial {
+  opacity: 1;
+  scale: 1;
+}
+.wheel-dial-ring {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+.wheel-dial-hit {
+  fill: none;
+  stroke: transparent;
+  stroke-width: 18;
+  pointer-events: none;
+  touch-action: none;
+  cursor: pointer;
+}
+.wheel-form[data-dial-ready] .wheel:has([name="emotion"]:checked) .wheel-dial-hit {
+  pointer-events: stroke;
+}
+.wheel-form[data-dial-ready] .wheel:has([name="emotion"]:checked) .wheel-dial-handle {
+  pointer-events: auto;
+}
+.wheel-dial-track {
+  fill: none;
+  stroke: var(--color-stone-200);
+  stroke-width: 5;
+}
+.wheel-dial-arc {
+  fill: none;
+  stroke: var(--pick, var(--color-leaf-500));
+  stroke-width: 5;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.3s ease;
+}
+.wheel-dial-tick {
+  fill: #fff;
+}
+.wheel-dial-handle {
+  --t: calc(var(--level) * 72deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: max(30px, 9cqw);
+  height: max(30px, 9cqw);
+  place-items: center;
+  border: 3px solid var(--pick, var(--color-leaf-500));
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 4px 12px -2px color-mix(in srgb, var(--pick, #000) 45%, transparent);
+  color: var(--pick, var(--color-leaf-700));
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  transform: translate(-50%, -50%) rotate(var(--t)) translateY(-17.6cqw) rotate(calc(var(--t) * -1));
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    scale 0.15s ease;
+}
+/* 아직 정하지 않음: 손잡이가 맨 위에서 '?'로 기다림 */
+.wheel-dial[data-unset] .wheel-dial-handle {
+  --t: 0deg;
+  animation: dial-hint 1.6s ease-in-out infinite;
+}
+.wheel-dial[data-dragging] .wheel-dial-handle {
+  scale: 1.15;
+  cursor: grabbing;
+}
+.wheel-form:has(.wheel-range:focus-visible) .wheel-dial-handle {
+  outline: 2px solid var(--color-leaf-500);
+  outline-offset: 3px;
+}
+
+/* 고리가 보일 때만 필요한 안내 */
+.wheel-dial-only {
+  display: none;
+}
+.wheel-form[data-dial-ready] .wheel-dial-only {
+  display: inline;
+}
+
+/* 강도 줄: 스크립트가 없으면 슬라이더, 있으면 고리 + 글자 */
+.wheel-level {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 0.75rem;
+  margin-top: 0.75rem;
+}
+.wheel-range {
+  width: 9rem;
+  accent-color: var(--pick, var(--color-leaf-600));
+}
+.wheel-level-text {
+  display: none;
+  padding: 0.3rem 0.8rem;
+  border-radius: 9999px;
+  background: color-mix(in srgb, var(--pick-soft, #fff) 45%, #fff);
+  color: var(--color-ink);
+  font-size: 0.875rem;
+  font-weight: 800;
+}
+.wheel-form[data-dial-ready] .wheel-level-text {
+  display: inline-block;
+}
+.wheel-form:has(.wheel-dial[data-unset]) .wheel-level-text {
+  background: var(--color-stone-100);
+  color: var(--color-ink-soft);
+  font-weight: 600;
+}
+.wheel-form[data-dial-ready] .wheel-level-hint {
+  display: none;
+}
+.wheel-form[data-dial-ready] .wheel-range {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* 휠이 좁을 때(화면 너비 약 345px 이하) 긴 단어끼리 겹치지 않게 칩을 조금 줄임 */
+@container (max-width: 300px) {
+  .wheel-word {
+    padding: 0.35rem 0.55rem;
+    font-size: 12px;
+  }
+}
+
+@keyframes dial-hint {
+  50% {
+    scale: 1.18;
+  }
+}
+@keyframes wheel-in {
+  from {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.3);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+    transition-delay: 0s !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }

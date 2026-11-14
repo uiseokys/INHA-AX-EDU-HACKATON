@@ -26,7 +26,7 @@
       {% endfor %}
       {% endif %}
       {% for o in safety.options %}
-      {% if o.id == "safe" %}
+      {% if o.id == "safe" %}{% if not readonly %}
       <form method="post" action="/student/chat/safety" class="rounded-2xl bg-stone-50 p-3">
         <p class="text-sm font-semibold text-ink">{{ o.label }}</p>
         <div class="mt-2 flex gap-2">
@@ -34,10 +34,24 @@
           <button name="answer" value="no" class="{{ btn.danger }} flex-1 px-3 py-2 text-xs">아니요</button>
         </div>
       </form>
-      {% else %}
+      {% endif %}{% else %}
       <a href="{{ o.href }}" class="flex items-center justify-between rounded-2xl bg-leaf-50 px-3.5 py-2.5 text-sm font-semibold text-leaf-800 hover:bg-leaf-100">{{ o.label }} {{ icon("arrow-right", "size-4") }}</a>
       {% endif %}
       {% endfor %}
+    </div>
+    {% endif %}
+    {% if m.help and m.kind == "normal" %}
+    {# 피해가 의심되는 이야기를 했을 때: 대화는 그대로 이어 가고, 도움받을 곳으로 가는 길만 조용히 보여 줌 #}
+    <a href="/student/help/{{ m.help }}" class="mt-2 flex items-center justify-between rounded-2xl bg-leaf-50 px-3.5 py-2.5 text-sm font-semibold text-leaf-800 hover:bg-leaf-100">도움받을 수 있는 곳 보기 {{ icon("arrow-right", "size-4") }}</a>
+    {% endif %}
+    {% if m.emotions and not readonly %}
+    <div class="mt-2 rounded-2xl bg-leaf-50 px-3 py-2 text-xs text-ink-soft">
+      <p>지금 마음에 가까운 감정이 있으면 골라 봐.</p>
+      <div class="mt-1.5 flex flex-wrap gap-2">
+        {% for e in m.emotions %}
+        <a href="/student/record?e={{ e }}" class="{{ btn.outline }} px-3 py-2 text-xs">{{ E[e].label }} 기록하기</a>
+        {% endfor %}
+      </div>
     </div>
     {% endif %}
     <p class="mt-1 text-[10px] text-stone-400">{{ m.time }}{% if m.source == "llm" %} · AI 답변{% endif %}</p>

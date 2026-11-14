@@ -11,7 +11,8 @@
     "편안한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S01",
@@ -21,7 +22,8 @@
     "포근한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S01",
@@ -32,7 +34,8 @@
     "두려운"
    ],
    "note": "좋아하는 노래를 들으며 등교했다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S01",
@@ -44,7 +47,8 @@
     "안심되는"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S01",
@@ -54,7 +58,8 @@
     "불편한"
    ],
    "note": "급식에 좋아하는 메뉴가 나왔다",
-   "shared": false
+   "shared": false,
+   "intensity": 1
   },
   {
    "student_id": "S01",
@@ -65,7 +70,8 @@
     "고마운"
    ],
    "note": "급식에 좋아하는 메뉴가 나왔다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S01",
@@ -76,7 +82,8 @@
     "여유로운"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S01",
@@ -87,7 +94,8 @@
     "여유로운"
    ],
    "note": "동아리에서 새 활동을 시작했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S01",
@@ -97,7 +105,8 @@
     "여유로운"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S01",
@@ -108,7 +117,8 @@
     "초조한"
    ],
    "note": "친구랑 매점에 갔다",
-   "shared": false
+   "shared": false,
+   "intensity": 1
   },
   {
    "student_id": "S01",
@@ -119,7 +129,8 @@
     "안심되는"
    ],
    "note": "친구랑 매점에 갔다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S01",
@@ -129,7 +140,8 @@
     "홀가분한"
    ],
    "note": "주말에 가족이랑 산책했다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S01",
@@ -140,7 +152,8 @@
     "막막한"
    ],
    "note": "주말에 가족이랑 산책했다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S01",
@@ -152,7 +165,8 @@
     "여유로운"
    ],
    "note": "좋아하는 노래를 들으며 등교했다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S01",
@@ -163,7 +177,8 @@
     "포근한"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S01",
@@ -173,7 +188,8 @@
     "여유로운"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S01",
@@ -184,7 +200,8 @@
     "뿌듯한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S01",
@@ -195,7 +212,8 @@
     "포근한"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S01",
@@ -205,7 +223,8 @@
     "신나는"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S01",
@@ -215,7 +234,8 @@
     "신나는"
    ],
    "note": "친구랑 매점에 갔다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S01",
@@ -226,7 +246,8 @@
     "신나는"
    ],
    "note": "친구랑 매점에 갔다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S01",
@@ -238,7 +259,8 @@
     "고마운"
    ],
    "note": "급식에 좋아하는 메뉴가 나왔다",
-   "shared": false
+   "shared": false,
+   "intensity": 5
   },
   {
    "student_id": "S01",
@@ -248,7 +270,8 @@
     "초조한"
    ],
    "note": "친구랑 매점에 갔다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S01",
@@ -258,7 +281,8 @@
     "차분한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 5
   },
   {
    "student_id": "S01",
@@ -268,7 +292,8 @@
     "만족스러운"
    ],
    "note": "주말에 가족이랑 산책했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S01",
@@ -279,7 +304,8 @@
     "초조한"
    ],
    "note": "점심시간에 혼자 있었다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S01",
@@ -290,7 +316,8 @@
     "포근한"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": false
+   "shared": false,
+   "intensity": 5
   },
   {
    "student_id": "S01",
@@ -300,7 +327,8 @@
     "홀가분한"
    ],
    "note": "동아리에서 새 활동을 시작했다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S01",
@@ -311,7 +339,8 @@
     "외로운"
    ],
    "note": "모둠 활동 때 내 의견은 그냥 넘어갔다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S01",
@@ -322,7 +351,8 @@
     "만족스러운"
    ],
    "note": "주말에 가족이랑 산책했다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S02",
@@ -332,7 +362,8 @@
     "설레는"
    ],
    "note": "급식에 좋아하는 메뉴가 나왔다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S02",
@@ -342,7 +373,8 @@
     "차분한"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S02",
@@ -353,7 +385,8 @@
     "즐거운"
    ],
    "note": "급식에 좋아하는 메뉴가 나왔다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S02",
@@ -364,7 +397,8 @@
     "안심되는"
    ],
    "note": "동아리에서 새 활동을 시작했다",
-   "shared": true
+   "shared": true,
+   "intensity": 2
   },
   {
    "student_id": "S02",
@@ -374,7 +408,8 @@
     "즐거운"
    ],
    "note": "좋아하는 노래를 들으며 등교했다",
-   "shared": true
+   "shared": true,
+   "intensity": 4
   },
   {
    "student_id": "S02",
@@ -385,7 +420,8 @@
     "차분한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S02",
@@ -395,7 +431,8 @@
     "포근한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S02",
@@ -405,7 +442,8 @@
     "설레는"
    ],
    "note": "동아리에서 새 활동을 시작했다",
-   "shared": false
+   "shared": false,
+   "intensity": 5
   },
   {
    "student_id": "S02",
@@ -416,7 +454,8 @@
     "홀가분한"
    ],
    "note": "급식에 좋아하는 메뉴가 나왔다",
-   "shared": true
+   "shared": true,
+   "intensity": 4
   },
   {
    "student_id": "S02",
@@ -426,7 +465,8 @@
     "여유로운"
    ],
    "note": "동아리에서 새 활동을 시작했다",
-   "shared": false
+   "shared": false,
+   "intensity": 5
   },
   {
    "student_id": "S02",
@@ -436,7 +476,8 @@
     "행복한"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S02",
@@ -448,7 +489,8 @@
     "신나는"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S02",
@@ -459,7 +501,8 @@
     "여유로운"
    ],
    "note": "동아리에서 새 활동을 시작했다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S02",
@@ -469,7 +512,8 @@
     "신나는"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S02",
@@ -479,7 +523,8 @@
     "활기찬"
    ],
    "note": "주말에 가족이랑 산책했다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S02",
@@ -490,7 +535,8 @@
     "설레는"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S02",
@@ -501,7 +547,8 @@
     "설레는"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S02",
@@ -512,7 +559,8 @@
     "만족스러운"
    ],
    "note": "동아리에서 새 활동을 시작했다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S02",
@@ -522,7 +570,8 @@
     "즐거운"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": false
+   "shared": false,
+   "intensity": 5
   },
   {
    "student_id": "S02",
@@ -532,7 +581,8 @@
     "활기찬"
    ],
    "note": "급식에 좋아하는 메뉴가 나왔다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S02",
@@ -544,7 +594,8 @@
     "차분한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S02",
@@ -554,7 +605,8 @@
     "신나는"
    ],
    "note": "좋아하는 노래를 들으며 등교했다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S02",
@@ -565,7 +617,8 @@
     "고마운"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S02",
@@ -577,7 +630,8 @@
     "활기찬"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S02",
@@ -588,7 +642,8 @@
     "자랑스러운"
    ],
    "note": "급식에 좋아하는 메뉴가 나왔다",
-   "shared": true
+   "shared": true,
+   "intensity": 4
   },
   {
    "student_id": "S02",
@@ -600,7 +655,8 @@
     "뿌듯한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S02",
@@ -611,7 +667,8 @@
     "즐거운"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S02",
@@ -622,7 +679,8 @@
     "고마운"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S02",
@@ -633,7 +691,8 @@
     "미운"
    ],
    "note": "체육 시간에 피구를 했다",
-   "shared": false
+   "shared": false,
+   "intensity": 1
   },
   {
    "student_id": "S02",
@@ -643,7 +702,8 @@
     "홀가분한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S02",
@@ -654,7 +714,8 @@
     "자랑스러운"
    ],
    "note": "체육 시간에 피구를 했다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S03",
@@ -664,7 +725,8 @@
     "불편한"
    ],
    "note": "학원 숙제가 너무 많다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S03",
@@ -674,7 +736,8 @@
     "막막한"
    ],
    "note": "시험 범위가 너무 넓다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S03",
@@ -684,7 +747,8 @@
     "눈치 보이는"
    ],
    "note": "공부해도 점수가 안 오른다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S03",
@@ -694,7 +758,8 @@
     "뿌듯한"
    ],
    "note": "체육 시간에 피구를 했다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S03",
@@ -704,7 +769,8 @@
     "만족스러운"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": true
+   "shared": true,
+   "intensity": 2
   },
   {
    "student_id": "S03",
@@ -714,7 +780,8 @@
     "분한"
    ],
    "note": "시험 범위가 너무 넓다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S03",
@@ -724,7 +791,8 @@
     "불편한"
    ],
    "note": "수학 쪽지시험을 망쳤다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S03",
@@ -736,7 +804,8 @@
     "차분한"
    ],
    "note": "좋아하는 노래를 들으며 등교했다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S03",
@@ -747,7 +816,8 @@
     "막막한"
    ],
    "note": "수행평가가 한꺼번에 몰렸다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S03",
@@ -758,7 +828,8 @@
     "답답한"
    ],
    "note": "공부해도 점수가 안 오른다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S03",
@@ -770,7 +841,8 @@
     "즐거운"
    ],
    "note": "체육 시간에 피구를 했다",
-   "shared": true
+   "shared": true,
+   "intensity": 4
   },
   {
    "student_id": "S03",
@@ -780,7 +852,8 @@
     "여유로운"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 5
   },
   {
    "student_id": "S03",
@@ -791,7 +864,8 @@
     "조마조마한"
    ],
    "note": "시험 범위가 너무 넓다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S03",
@@ -801,7 +875,8 @@
     "신나는"
    ],
    "note": "좋아하는 노래를 들으며 등교했다",
-   "shared": true
+   "shared": true,
+   "intensity": 2
   },
   {
    "student_id": "S03",
@@ -811,7 +886,8 @@
     "즐거운"
    ],
    "note": "주말에 가족이랑 산책했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S03",
@@ -823,7 +899,8 @@
     "긴장되는"
    ],
    "note": "수학 쪽지시험을 망쳤다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S03",
@@ -833,7 +910,8 @@
     "눈치 보이는"
    ],
    "note": "시험 범위가 너무 넓다",
-   "shared": true
+   "shared": true,
+   "intensity": 4
   },
   {
    "student_id": "S03",
@@ -843,7 +921,8 @@
     "조마조마한"
    ],
    "note": "공부해도 점수가 안 오른다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S03",
@@ -854,7 +933,8 @@
     "불편한"
    ],
    "note": "수행평가가 한꺼번에 몰렸다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S03",
@@ -864,7 +944,8 @@
     "두려운"
    ],
    "note": "학원 숙제가 너무 많다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S03",
@@ -875,7 +956,8 @@
     "초조한"
    ],
    "note": "수학 쪽지시험을 망쳤다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S03",
@@ -885,7 +967,8 @@
     "뿌듯한"
    ],
    "note": "급식에 좋아하는 메뉴가 나왔다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S03",
@@ -897,7 +980,8 @@
     "막막한"
    ],
    "note": "성적 얘기만 들으면 숨이 막힌다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S03",
@@ -907,7 +991,8 @@
     "불편한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S03",
@@ -918,7 +1003,8 @@
     "만족스러운"
    ],
    "note": "친구랑 매점에 갔다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S03",
@@ -928,7 +1014,8 @@
     "설레는"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": true
+   "shared": true,
+   "intensity": 5
   },
   {
    "student_id": "S03",
@@ -938,7 +1025,8 @@
     "편안한"
    ],
    "note": "좋아하는 노래를 들으며 등교했다",
-   "shared": false
+   "shared": false,
+   "intensity": 5
   },
   {
    "student_id": "S03",
@@ -950,7 +1038,8 @@
     "뿌듯한"
    ],
    "note": "친구랑 매점에 갔다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S03",
@@ -960,7 +1049,8 @@
     "차분한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S03",
@@ -971,7 +1061,8 @@
     "막막한"
    ],
    "note": "성적 얘기만 들으면 숨이 막힌다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S03",
@@ -983,7 +1074,8 @@
     "긴장되는"
    ],
    "note": "수학 쪽지시험을 망쳤다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S04",
@@ -993,7 +1085,8 @@
     "홀가분한"
    ],
    "note": "친구가 내 말을 무시했다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S04",
@@ -1004,7 +1097,8 @@
     "안심되는"
    ],
    "note": "모둠 활동 때 내 의견은 그냥 넘어갔다",
-   "shared": true
+   "shared": true,
+   "intensity": 5
   },
   {
    "student_id": "S04",
@@ -1014,7 +1108,8 @@
     "그리운"
    ],
    "note": "점심시간에 혼자 있었다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S04",
@@ -1025,7 +1120,8 @@
     "차분한"
    ],
    "note": "모둠 활동 때 내 의견은 그냥 넘어갔다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S04",
@@ -1036,7 +1132,8 @@
     "허전한"
    ],
    "note": "점심시간에 혼자 있었다",
-   "shared": true
+   "shared": true,
+   "intensity": 2
   },
   {
    "student_id": "S04",
@@ -1047,7 +1144,8 @@
     "여유로운"
    ],
    "note": "쉬는 시간에 애들이 내 얘기를 하는 것 같아 눈치 보였다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S04",
@@ -1059,7 +1157,8 @@
     "차분한"
    ],
    "note": "친구가 내 말을 무시했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S04",
@@ -1069,7 +1168,8 @@
     "안심되는"
    ],
    "note": "점심시간에 혼자 있었다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S04",
@@ -1080,7 +1180,8 @@
     "안심되는"
    ],
    "note": "점심시간에 혼자 있었다",
-   "shared": true
+   "shared": true,
+   "intensity": 4
   },
   {
    "student_id": "S04",
@@ -1092,7 +1193,8 @@
     "만족스러운"
    ],
    "note": "단톡에서 나만 빼고 약속을 잡은 것 같다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S04",
@@ -1102,7 +1204,8 @@
     "홀가분한"
    ],
    "note": "쉬는 시간에 애들이 내 얘기를 하는 것 같아 눈치 보였다",
-   "shared": false
+   "shared": false,
+   "intensity": 5
   },
   {
    "student_id": "S04",
@@ -1112,7 +1215,8 @@
     "안심되는"
    ],
    "note": "쉬는 시간에 애들이 내 얘기를 하는 것 같아 눈치 보였다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S04",
@@ -1123,7 +1227,8 @@
     "만족스러운"
    ],
    "note": "점심시간에 혼자 있었다",
-   "shared": true
+   "shared": true,
+   "intensity": 4
   },
   {
    "student_id": "S04",
@@ -1133,7 +1238,8 @@
     "포근한"
    ],
    "note": "친구가 내 말을 무시했다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S04",
@@ -1145,7 +1251,8 @@
     "자랑스러운"
    ],
    "note": "쉬는 시간에 애들이 내 얘기를 하는 것 같아 눈치 보였다",
-   "shared": true
+   "shared": true,
+   "intensity": 2
   },
   {
    "student_id": "S04",
@@ -1155,7 +1262,8 @@
     "편안한"
    ],
    "note": "모둠 활동 때 내 의견은 그냥 넘어갔다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S04",
@@ -1165,7 +1273,8 @@
     "홀가분한"
    ],
    "note": "모둠 활동 때 내 의견은 그냥 넘어갔다",
-   "shared": true
+   "shared": true,
+   "intensity": 5
   },
   {
    "student_id": "S04",
@@ -1176,7 +1285,8 @@
     "뿌듯한"
    ],
    "note": "쉬는 시간에 애들이 내 얘기를 하는 것 같아 눈치 보였다",
-   "shared": true
+   "shared": true,
+   "intensity": 5
   },
   {
    "student_id": "S04",
@@ -1188,7 +1298,8 @@
     "홀가분한"
    ],
    "note": "점심시간에 혼자 있었다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S04",
@@ -1198,7 +1309,8 @@
     "자랑스러운"
    ],
    "note": "쉬는 시간에 애들이 내 얘기를 하는 것 같아 눈치 보였다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S04",
@@ -1210,7 +1322,8 @@
     "차분한"
    ],
    "note": "점심시간에 혼자 있었다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S04",
@@ -1222,7 +1335,8 @@
     "여유로운"
    ],
    "note": "친구가 내 말을 무시했다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S04",
@@ -1233,7 +1347,8 @@
     "포근한"
    ],
    "note": "점심시간에 혼자 있었다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S04",
@@ -1243,7 +1358,8 @@
     "외로운"
    ],
    "note": "친구가 내 말을 무시했다",
-   "shared": true
+   "shared": true,
+   "intensity": 4
   },
   {
    "student_id": "S04",
@@ -1254,7 +1370,8 @@
     "실망한"
    ],
    "note": "단톡에서 나만 빼고 약속을 잡은 것 같다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S04",
@@ -1265,7 +1382,8 @@
     "우울한"
    ],
    "note": "점심시간에 혼자 있었다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S04",
@@ -1275,7 +1393,8 @@
     "실망한"
    ],
    "note": "점심시간에 혼자 있었다",
-   "shared": false
+   "shared": false,
+   "intensity": 5
   },
   {
    "student_id": "S04",
@@ -1285,7 +1404,8 @@
     "눈치 보이는"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 5
   },
   {
    "student_id": "S04",
@@ -1295,7 +1415,8 @@
     "두려운"
    ],
    "note": "친구가 내 말을 무시했다",
-   "shared": true
+   "shared": true,
+   "intensity": 5
   },
   {
    "student_id": "S04",
@@ -1306,7 +1427,8 @@
     "눈치 보이는"
    ],
    "note": "쉬는 시간마다 애들이 툭툭 치고 간다. 학교 가기 싫다",
-   "shared": false
+   "shared": false,
+   "intensity": 5
   },
   {
    "student_id": "S04",
@@ -1316,7 +1438,8 @@
     "외로운"
    ],
    "note": "모둠 활동 때 내 의견은 그냥 넘어갔다",
-   "shared": true
+   "shared": true,
+   "intensity": 5
   },
   {
    "student_id": "S04",
@@ -1327,7 +1450,8 @@
     "눈치 보이는"
    ],
    "note": "친구가 내 말을 무시했다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S05",
@@ -1337,7 +1461,8 @@
     "설레는"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S05",
@@ -1348,7 +1473,8 @@
     "편안한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S05",
@@ -1359,7 +1485,8 @@
     "홀가분한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S05",
@@ -1371,7 +1498,8 @@
     "활기찬"
    ],
    "note": "급식에 좋아하는 메뉴가 나왔다",
-   "shared": true
+   "shared": true,
+   "intensity": 5
   },
   {
    "student_id": "S05",
@@ -1383,7 +1511,8 @@
     "활기찬"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S05",
@@ -1395,7 +1524,8 @@
     "홀가분한"
    ],
    "note": "친구랑 매점에 갔다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S05",
@@ -1406,7 +1536,8 @@
     "만족스러운"
    ],
    "note": "주말에 가족이랑 산책했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S06",
@@ -1416,7 +1547,8 @@
     "편안한"
    ],
    "note": "주말에 가족이랑 산책했다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S06",
@@ -1427,7 +1559,8 @@
     "뿌듯한"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S06",
@@ -1437,7 +1570,8 @@
     "차분한"
    ],
    "note": "체육 시간에 피구를 했다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S06",
@@ -1449,7 +1583,8 @@
     "홀가분한"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S06",
@@ -1460,7 +1595,8 @@
     "차분한"
    ],
    "note": "주말에 가족이랑 산책했다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S06",
@@ -1470,7 +1606,8 @@
     "느긋한"
    ],
    "note": "좋아하는 노래를 들으며 등교했다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S06",
@@ -1481,7 +1618,8 @@
     "설레는"
    ],
    "note": "동아리에서 새 활동을 시작했다",
-   "shared": false
+   "shared": false,
+   "intensity": 5
   },
   {
    "student_id": "S06",
@@ -1492,7 +1630,8 @@
     "차분한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S06",
@@ -1503,7 +1642,8 @@
     "홀가분한"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S06",
@@ -1513,7 +1653,8 @@
     "만족스러운"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S06",
@@ -1523,7 +1664,8 @@
     "자랑스러운"
    ],
    "note": "급식에 좋아하는 메뉴가 나왔다",
-   "shared": false
+   "shared": false,
+   "intensity": 5
   },
   {
    "student_id": "S06",
@@ -1534,7 +1676,8 @@
     "여유로운"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": true
+   "shared": true,
+   "intensity": 5
   },
   {
    "student_id": "S06",
@@ -1546,7 +1689,8 @@
     "뿌듯한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S06",
@@ -1557,7 +1701,8 @@
     "고마운"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S06",
@@ -1568,7 +1713,8 @@
     "만족스러운"
    ],
    "note": "체육 시간에 피구를 했다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S06",
@@ -1579,7 +1725,8 @@
     "안심되는"
    ],
    "note": "주말에 가족이랑 산책했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S06",
@@ -1589,7 +1736,8 @@
     "포근한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S06",
@@ -1601,7 +1749,8 @@
     "편안한"
    ],
    "note": "체육 시간에 피구를 했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S06",
@@ -1611,7 +1760,8 @@
     "고마운"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S06",
@@ -1623,7 +1773,8 @@
     "행복한"
    ],
    "note": "친구랑 매점에 갔다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S06",
@@ -1635,7 +1786,8 @@
     "자랑스러운"
    ],
    "note": "동아리에서 새 활동을 시작했다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S06",
@@ -1647,7 +1799,8 @@
     "활기찬"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S06",
@@ -1657,7 +1810,8 @@
     "눈물 나는"
    ],
    "note": "아침에 일어나기 너무 힘들었다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S06",
@@ -1668,7 +1822,8 @@
     "허전한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 5
   },
   {
    "student_id": "S06",
@@ -1678,7 +1833,8 @@
     "외로운"
    ],
    "note": "잠을 잘 못 잤다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S06",
@@ -1689,7 +1845,8 @@
     "불편한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 5
   },
   {
    "student_id": "S06",
@@ -1699,7 +1856,8 @@
     "막막한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 5
   },
   {
    "student_id": "S06",
@@ -1710,7 +1868,8 @@
     "초조한"
    ],
    "note": "아침에 일어나기 너무 힘들었다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S06",
@@ -1721,7 +1880,8 @@
     "실망한"
    ],
    "note": "잠을 잘 못 잤다",
-   "shared": false
+   "shared": false,
+   "intensity": 5
   },
   {
    "student_id": "S07",
@@ -1732,7 +1892,8 @@
     "질투 나는"
    ],
    "note": "엄마랑 핸드폰 때문에 다퉜다",
-   "shared": true
+   "shared": true,
+   "intensity": 2
   },
   {
    "student_id": "S07",
@@ -1742,7 +1903,8 @@
     "차분한"
    ],
    "note": "동아리에서 새 활동을 시작했다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S07",
@@ -1752,7 +1914,8 @@
     "답답한"
    ],
    "note": "집에서 말이 안 통하는 느낌",
-   "shared": true
+   "shared": true,
+   "intensity": 2
   },
   {
    "student_id": "S07",
@@ -1764,7 +1927,8 @@
     "귀찮은"
    ],
    "note": "엄마랑 핸드폰 때문에 다퉜다",
-   "shared": true
+   "shared": true,
+   "intensity": 1
   },
   {
    "student_id": "S07",
@@ -1775,7 +1939,8 @@
     "실망한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 1
   },
   {
    "student_id": "S07",
@@ -1786,7 +1951,8 @@
     "분한"
    ],
    "note": "동생이랑 싸워서 혼났다",
-   "shared": true
+   "shared": true,
+   "intensity": 2
   },
   {
    "student_id": "S07",
@@ -1796,7 +1962,8 @@
     "안심되는"
    ],
    "note": "체육 시간에 피구를 했다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S07",
@@ -1808,7 +1975,8 @@
     "고마운"
    ],
    "note": "주말에 가족이랑 산책했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S07",
@@ -1820,7 +1988,8 @@
     "화나는"
    ],
    "note": "동생이랑 싸워서 혼났다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S07",
@@ -1831,7 +2000,8 @@
     "질투 나는"
    ],
    "note": "집에서 말이 안 통하는 느낌",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S07",
@@ -1843,7 +2013,8 @@
     "차분한"
    ],
    "note": "급식에 좋아하는 메뉴가 나왔다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S07",
@@ -1854,7 +2025,8 @@
     "짜증나는"
    ],
    "note": "엄마랑 핸드폰 때문에 다퉜다",
-   "shared": false
+   "shared": false,
+   "intensity": 1
   },
   {
    "student_id": "S07",
@@ -1864,7 +2036,8 @@
     "포근한"
    ],
    "note": "급식에 좋아하는 메뉴가 나왔다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S07",
@@ -1876,7 +2049,8 @@
     "홀가분한"
    ],
    "note": "주말에 가족이랑 산책했다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S07",
@@ -1886,7 +2060,8 @@
     "질투 나는"
    ],
    "note": "아빠가 성적 얘기를 또 꺼냈다",
-   "shared": true
+   "shared": true,
+   "intensity": 2
   },
   {
    "student_id": "S07",
@@ -1898,7 +2073,8 @@
     "귀찮은"
    ],
    "note": "동생이랑 싸워서 혼났다",
-   "shared": false
+   "shared": false,
+   "intensity": 1
   },
   {
    "student_id": "S07",
@@ -1908,7 +2084,8 @@
     "자랑스러운"
    ],
    "note": "급식에 좋아하는 메뉴가 나왔다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S07",
@@ -1918,7 +2095,8 @@
     "실망한"
    ],
    "note": "아빠가 성적 얘기를 또 꺼냈다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S07",
@@ -1929,7 +2107,8 @@
     "짜증나는"
    ],
    "note": "엄마랑 핸드폰 때문에 다퉜다",
-   "shared": true
+   "shared": true,
+   "intensity": 1
   },
   {
    "student_id": "S07",
@@ -1941,7 +2120,8 @@
     "분한"
    ],
    "note": "아빠가 성적 얘기를 또 꺼냈다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S07",
@@ -1952,7 +2132,8 @@
     "뿌듯한"
    ],
    "note": "좋아하는 노래를 들으며 등교했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S07",
@@ -1962,7 +2143,8 @@
     "서운한"
    ],
    "note": "엄마랑 핸드폰 때문에 다퉜다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S07",
@@ -1972,7 +2154,8 @@
     "포근한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S07",
@@ -1982,7 +2165,8 @@
     "느긋한"
    ],
    "note": "동아리에서 새 활동을 시작했다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S07",
@@ -1992,7 +2176,8 @@
     "답답한"
    ],
    "note": "아빠가 성적 얘기를 또 꺼냈다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S07",
@@ -2003,7 +2188,8 @@
     "느긋한"
    ],
    "note": "좋아하는 노래를 들으며 등교했다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S07",
@@ -2013,7 +2199,8 @@
     "차분한"
    ],
    "note": "체육 시간에 피구를 했다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S07",
@@ -2023,7 +2210,8 @@
     "답답한"
    ],
    "note": "동생이랑 싸워서 혼났다",
-   "shared": true
+   "shared": true,
+   "intensity": 2
   },
   {
    "student_id": "S07",
@@ -2033,7 +2221,8 @@
     "미운"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S07",
@@ -2045,7 +2234,8 @@
     "포근한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S07",
@@ -2056,7 +2246,8 @@
     "여유로운"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S08",
@@ -2067,7 +2258,8 @@
     "포근한"
    ],
    "note": "친구랑 매점에 갔다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S08",
@@ -2079,7 +2271,8 @@
     "느긋한"
    ],
    "note": "급식에 좋아하는 메뉴가 나왔다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S08",
@@ -2089,7 +2282,8 @@
     "뿌듯한"
    ],
    "note": "체육 시간에 피구를 했다",
-   "shared": true
+   "shared": true,
+   "intensity": 2
   },
   {
    "student_id": "S08",
@@ -2101,7 +2295,8 @@
     "자랑스러운"
    ],
    "note": "좋아하는 노래를 들으며 등교했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S08",
@@ -2111,7 +2306,8 @@
     "차분한"
    ],
    "note": "동아리에서 새 활동을 시작했다",
-   "shared": true
+   "shared": true,
+   "intensity": 4
   },
   {
    "student_id": "S08",
@@ -2122,7 +2318,8 @@
     "안심되는"
    ],
    "note": "친구랑 매점에 갔다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S08",
@@ -2132,7 +2329,8 @@
     "느긋한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S08",
@@ -2144,7 +2342,8 @@
     "편안한"
    ],
    "note": "급식에 좋아하는 메뉴가 나왔다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S08",
@@ -2155,7 +2354,8 @@
     "고마운"
    ],
    "note": "친구랑 매점에 갔다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S08",
@@ -2166,7 +2366,8 @@
     "행복한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S08",
@@ -2176,7 +2377,8 @@
     "자랑스러운"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S08",
@@ -2187,7 +2389,8 @@
     "초조한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 1
   },
   {
    "student_id": "S08",
@@ -2197,7 +2400,8 @@
     "안심되는"
    ],
    "note": "주말에 가족이랑 산책했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S08",
@@ -2207,7 +2411,8 @@
     "즐거운"
    ],
    "note": "체육 시간에 피구를 했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S08",
@@ -2219,7 +2424,8 @@
     "느긋한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S08",
@@ -2229,7 +2435,8 @@
     "차분한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S08",
@@ -2240,7 +2447,8 @@
     "만족스러운"
    ],
    "note": "친구랑 매점에 갔다",
-   "shared": true
+   "shared": true,
+   "intensity": 4
   },
   {
    "student_id": "S08",
@@ -2251,7 +2459,8 @@
     "편안한"
    ],
    "note": "급식에 좋아하는 메뉴가 나왔다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S08",
@@ -2262,7 +2471,8 @@
     "편안한"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": true
+   "shared": true,
+   "intensity": 5
   },
   {
    "student_id": "S08",
@@ -2274,7 +2484,8 @@
     "조마조마한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S08",
@@ -2286,7 +2497,8 @@
     "긴장되는"
    ],
    "note": "급식에 좋아하는 메뉴가 나왔다",
-   "shared": true
+   "shared": true,
+   "intensity": 1
   },
   {
    "student_id": "S08",
@@ -2296,7 +2508,8 @@
     "고마운"
    ],
    "note": "급식에 좋아하는 메뉴가 나왔다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S08",
@@ -2307,7 +2520,8 @@
     "여유로운"
    ],
    "note": "좋아하는 노래를 들으며 등교했다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S08",
@@ -2319,7 +2533,8 @@
     "포근한"
    ],
    "note": "좋아하는 노래를 들으며 등교했다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S08",
@@ -2329,7 +2544,8 @@
     "걱정되는"
    ],
    "note": "좋아하는 노래를 들으며 등교했다",
-   "shared": true
+   "shared": true,
+   "intensity": 2
   },
   {
    "student_id": "S08",
@@ -2339,7 +2555,8 @@
     "만족스러운"
    ],
    "note": "친구랑 매점에 갔다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S08",
@@ -2350,7 +2567,8 @@
     "만족스러운"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 5
   },
   {
    "student_id": "S08",
@@ -2360,7 +2578,8 @@
     "여유로운"
    ],
    "note": "체육 시간에 피구를 했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S08",
@@ -2370,7 +2589,8 @@
     "안심되는"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S08",
@@ -2380,7 +2600,8 @@
     "포근한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S08",
@@ -2391,7 +2612,8 @@
     "조마조마한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S09",
@@ -2402,7 +2624,8 @@
     "눈치 보이는"
    ],
    "note": "점심시간에 혼자 있었다",
-   "shared": true
+   "shared": true,
+   "intensity": 4
   },
   {
    "student_id": "S09",
@@ -2412,7 +2635,8 @@
     "실망한"
    ],
    "note": "단톡에서 나만 빼고 약속을 잡은 것 같다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S09",
@@ -2424,7 +2648,8 @@
     "실망한"
    ],
    "note": "모둠 활동 때 내 의견은 그냥 넘어갔다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S09",
@@ -2434,7 +2659,8 @@
     "서운한"
    ],
    "note": "단톡에서 나만 빼고 약속을 잡은 것 같다",
-   "shared": true
+   "shared": true,
+   "intensity": 2
   },
   {
    "student_id": "S09",
@@ -2444,7 +2670,8 @@
     "걱정되는"
    ],
    "note": "단톡에서 나만 빼고 약속을 잡은 것 같다",
-   "shared": true
+   "shared": true,
+   "intensity": 2
   },
   {
    "student_id": "S09",
@@ -2454,7 +2681,8 @@
     "만족스러운"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S09",
@@ -2465,7 +2693,8 @@
     "속상한"
    ],
    "note": "모둠 활동 때 내 의견은 그냥 넘어갔다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S09",
@@ -2476,7 +2705,8 @@
     "우울한"
    ],
    "note": "쉬는 시간에 애들이 내 얘기를 하는 것 같아 눈치 보였다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S09",
@@ -2488,7 +2718,8 @@
     "눈물 나는"
    ],
    "note": "쉬는 시간에 애들이 내 얘기를 하는 것 같아 눈치 보였다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S09",
@@ -2498,7 +2729,8 @@
     "불편한"
    ],
    "note": "모둠 활동 때 내 의견은 그냥 넘어갔다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S09",
@@ -2508,7 +2740,8 @@
     "두려운"
    ],
    "note": "친구가 내 말을 무시했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S09",
@@ -2518,7 +2751,8 @@
     "속상한"
    ],
    "note": "단톡에서 나만 빼고 약속을 잡은 것 같다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S09",
@@ -2529,7 +2763,8 @@
     "외로운"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S09",
@@ -2539,7 +2774,8 @@
     "속상한"
    ],
    "note": "친구가 내 말을 무시했다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S09",
@@ -2549,7 +2785,8 @@
     "실망한"
    ],
    "note": "단톡에서 나만 빼고 약속을 잡은 것 같다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S09",
@@ -2559,7 +2796,8 @@
     "즐거운"
    ],
    "note": "친구랑 매점에 갔다",
-   "shared": true
+   "shared": true,
+   "intensity": 4
   },
   {
    "student_id": "S09",
@@ -2569,7 +2807,8 @@
     "활기찬"
    ],
    "note": "친구랑 매점에 갔다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S09",
@@ -2581,7 +2820,8 @@
     "만족스러운"
    ],
    "note": "주말에 가족이랑 산책했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S09",
@@ -2591,7 +2831,8 @@
     "설레는"
    ],
    "note": "주말에 가족이랑 산책했다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S09",
@@ -2602,7 +2843,8 @@
     "설레는"
    ],
    "note": "급식에 좋아하는 메뉴가 나왔다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S09",
@@ -2613,7 +2855,8 @@
     "활기찬"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S09",
@@ -2625,7 +2868,8 @@
     "활기찬"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S09",
@@ -2635,7 +2879,8 @@
     "차분한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S09",
@@ -2646,7 +2891,8 @@
     "행복한"
    ],
    "note": "체육 시간에 피구를 했다",
-   "shared": true
+   "shared": true,
+   "intensity": 5
   },
   {
    "student_id": "S09",
@@ -2657,7 +2903,8 @@
     "신나는"
    ],
    "note": "체육 시간에 피구를 했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S09",
@@ -2667,7 +2914,8 @@
     "편안한"
    ],
    "note": "친구랑 매점에 갔다",
-   "shared": true
+   "shared": true,
+   "intensity": 4
   },
   {
    "student_id": "S09",
@@ -2677,7 +2925,8 @@
     "그리운"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S09",
@@ -2688,7 +2937,8 @@
     "고마운"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S09",
@@ -2699,7 +2949,8 @@
     "홀가분한"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": true
+   "shared": true,
+   "intensity": 4
   },
   {
    "student_id": "S09",
@@ -2709,7 +2960,8 @@
     "편안한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 5
   },
   {
    "student_id": "S10",
@@ -2719,7 +2971,8 @@
     "뿌듯한"
    ],
    "note": "친구랑 매점에 갔다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S10",
@@ -2731,7 +2984,8 @@
     "신나는"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S10",
@@ -2741,7 +2995,8 @@
     "여유로운"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S10",
@@ -2751,7 +3006,8 @@
     "포근한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S10",
@@ -2761,7 +3017,8 @@
     "자랑스러운"
    ],
    "note": "동아리에서 새 활동을 시작했다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S10",
@@ -2773,7 +3030,8 @@
     "느긋한"
    ],
    "note": "주말에 가족이랑 산책했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S10",
@@ -2784,7 +3042,8 @@
     "차분한"
    ],
    "note": "좋아하는 노래를 들으며 등교했다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S10",
@@ -2795,7 +3054,8 @@
     "활기찬"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S10",
@@ -2805,7 +3065,8 @@
     "고마운"
    ],
    "note": "좋아하는 노래를 들으며 등교했다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S10",
@@ -2816,7 +3077,8 @@
     "신나는"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": true
+   "shared": true,
+   "intensity": 5
   },
   {
    "student_id": "S10",
@@ -2826,7 +3088,8 @@
     "행복한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S10",
@@ -2837,7 +3100,8 @@
     "행복한"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S10",
@@ -2848,7 +3112,8 @@
     "즐거운"
    ],
    "note": "급식에 좋아하는 메뉴가 나왔다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S10",
@@ -2859,7 +3124,8 @@
     "홀가분한"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": true
+   "shared": true,
+   "intensity": 4
   },
   {
    "student_id": "S10",
@@ -2869,7 +3135,8 @@
     "활기찬"
    ],
    "note": "체육 시간에 피구를 했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S10",
@@ -2880,7 +3147,8 @@
     "즐거운"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S10",
@@ -2890,7 +3158,8 @@
     "고마운"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S10",
@@ -2902,7 +3171,8 @@
     "뿌듯한"
    ],
    "note": "주말에 가족이랑 산책했다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S10",
@@ -2912,7 +3182,8 @@
     "차분한"
    ],
    "note": "동아리에서 새 활동을 시작했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S10",
@@ -2922,7 +3193,8 @@
     "고마운"
    ],
    "note": "급식에 좋아하는 메뉴가 나왔다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S10",
@@ -2933,7 +3205,8 @@
     "편안한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S10",
@@ -2944,7 +3217,8 @@
     "뿌듯한"
    ],
    "note": "체육 시간에 피구를 했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S10",
@@ -2956,7 +3230,8 @@
     "활기찬"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 5
   },
   {
    "student_id": "S10",
@@ -2966,7 +3241,8 @@
     "만족스러운"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S10",
@@ -2976,7 +3252,8 @@
     "차분한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S10",
@@ -2988,7 +3265,8 @@
     "편안한"
    ],
    "note": "주말에 가족이랑 산책했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S10",
@@ -2999,7 +3277,8 @@
     "포근한"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": true
+   "shared": true,
+   "intensity": 2
   },
   {
    "student_id": "S10",
@@ -3011,7 +3290,8 @@
     "고마운"
    ],
    "note": "친구랑 매점에 갔다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S10",
@@ -3022,7 +3302,8 @@
     "신나는"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S11",
@@ -3034,7 +3315,8 @@
     "짜증나는"
    ],
    "note": "동아리에서 새 활동을 시작했다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S11",
@@ -3044,7 +3326,8 @@
     "자랑스러운"
    ],
    "note": "급식에 좋아하는 메뉴가 나왔다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S11",
@@ -3054,7 +3337,8 @@
     "행복한"
    ],
    "note": "체육 시간에 피구를 했다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S11",
@@ -3065,7 +3349,8 @@
     "초조한"
    ],
    "note": "시험 범위가 너무 넓다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S11",
@@ -3076,7 +3361,8 @@
     "고마운"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S11",
@@ -3086,7 +3372,8 @@
     "분한"
    ],
    "note": "친구랑 매점에 갔다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S11",
@@ -3097,7 +3384,8 @@
     "만족스러운"
    ],
    "note": "좋아하는 노래를 들으며 등교했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S11",
@@ -3107,7 +3395,8 @@
     "즐거운"
    ],
    "note": "주말에 가족이랑 산책했다",
-   "shared": true
+   "shared": true,
+   "intensity": 4
   },
   {
    "student_id": "S11",
@@ -3117,7 +3406,8 @@
     "초조한"
    ],
    "note": "학원 숙제가 너무 많다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S11",
@@ -3127,7 +3417,8 @@
     "활기찬"
    ],
    "note": "동아리에서 새 활동을 시작했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S11",
@@ -3138,7 +3429,8 @@
     "뿌듯한"
    ],
    "note": "체육 시간에 피구를 했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S11",
@@ -3150,7 +3442,8 @@
     "두려운"
    ],
    "note": "공부해도 점수가 안 오른다",
-   "shared": false
+   "shared": false,
+   "intensity": 1
   },
   {
    "student_id": "S11",
@@ -3161,7 +3454,8 @@
     "즐거운"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S11",
@@ -3171,7 +3465,8 @@
     "즐거운"
    ],
    "note": "주말에 가족이랑 산책했다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S11",
@@ -3182,7 +3477,8 @@
     "활기찬"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S11",
@@ -3194,7 +3490,8 @@
     "우울한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S11",
@@ -3206,7 +3503,8 @@
     "막막한"
    ],
    "note": "학원 숙제가 너무 많다",
-   "shared": false
+   "shared": false,
+   "intensity": 1
   },
   {
    "student_id": "S11",
@@ -3217,7 +3515,8 @@
     "활기찬"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S11",
@@ -3228,7 +3527,8 @@
     "초조한"
    ],
    "note": "시험 범위가 너무 넓다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S11",
@@ -3239,7 +3539,8 @@
     "긴장되는"
    ],
    "note": "공부해도 점수가 안 오른다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S11",
@@ -3250,7 +3551,8 @@
     "짜증나는"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 1
   },
   {
    "student_id": "S11",
@@ -3262,7 +3564,8 @@
     "설레는"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 5
   },
   {
    "student_id": "S11",
@@ -3272,7 +3575,8 @@
     "우울한"
    ],
    "note": "좋아하는 노래를 들으며 등교했다",
-   "shared": true
+   "shared": true,
+   "intensity": 2
   },
   {
    "student_id": "S11",
@@ -3282,7 +3586,8 @@
     "설레는"
    ],
    "note": "급식에 좋아하는 메뉴가 나왔다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S11",
@@ -3292,7 +3597,8 @@
     "뿌듯한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S11",
@@ -3302,7 +3608,8 @@
     "고마운"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S11",
@@ -3313,7 +3620,8 @@
     "설레는"
    ],
    "note": "급식에 좋아하는 메뉴가 나왔다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S11",
@@ -3325,7 +3633,8 @@
     "눈치 보이는"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 1
   },
   {
    "student_id": "S11",
@@ -3335,7 +3644,8 @@
     "외로운"
    ],
    "note": "체육 시간에 피구를 했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S11",
@@ -3347,7 +3657,8 @@
     "포근한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S11",
@@ -3358,7 +3669,8 @@
     "서운한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S11",
@@ -3369,7 +3681,8 @@
     "걱정되는"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 1
   },
   {
    "student_id": "S11",
@@ -3380,7 +3693,8 @@
     "차분한"
    ],
    "note": "체육 시간에 피구를 했다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S11",
@@ -3391,7 +3705,8 @@
     "자랑스러운"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S12",
@@ -3403,7 +3718,8 @@
     "즐거운"
    ],
    "note": "체육 시간에 피구를 했다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S12",
@@ -3413,7 +3729,8 @@
     "설레는"
    ],
    "note": "좋아하는 노래를 들으며 등교했다",
-   "shared": true
+   "shared": true,
+   "intensity": 4
   },
   {
    "student_id": "S12",
@@ -3423,7 +3740,8 @@
     "차분한"
    ],
    "note": "친구랑 매점에 갔다",
-   "shared": false
+   "shared": false,
+   "intensity": 5
   },
   {
    "student_id": "S12",
@@ -3434,7 +3752,8 @@
     "안심되는"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S12",
@@ -3446,7 +3765,8 @@
     "편안한"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S12",
@@ -3458,7 +3778,8 @@
     "활기찬"
    ],
    "note": "급식에 좋아하는 메뉴가 나왔다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S12",
@@ -3468,7 +3789,8 @@
     "고마운"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S12",
@@ -3479,7 +3801,8 @@
     "만족스러운"
    ],
    "note": "체육 시간에 피구를 했다",
-   "shared": false
+   "shared": false,
+   "intensity": 5
   },
   {
    "student_id": "S12",
@@ -3489,7 +3812,8 @@
     "고마운"
    ],
    "note": "동아리에서 새 활동을 시작했다",
-   "shared": true
+   "shared": true,
+   "intensity": 4
   },
   {
    "student_id": "S12",
@@ -3499,7 +3823,8 @@
     "차분한"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": true
+   "shared": true,
+   "intensity": 2
   },
   {
    "student_id": "S12",
@@ -3511,7 +3836,8 @@
     "편안한"
    ],
    "note": "친구랑 매점에 갔다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S12",
@@ -3521,7 +3847,8 @@
     "여유로운"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": false
+   "shared": false,
+   "intensity": 5
   },
   {
    "student_id": "S12",
@@ -3533,7 +3860,8 @@
     "신나는"
    ],
    "note": "체육 시간에 피구를 했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S12",
@@ -3545,7 +3873,8 @@
     "포근한"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S12",
@@ -3556,7 +3885,8 @@
     "고마운"
    ],
    "note": "좋아하는 노래를 들으며 등교했다",
-   "shared": true
+   "shared": true,
+   "intensity": 2
   },
   {
    "student_id": "S12",
@@ -3567,7 +3897,8 @@
     "만족스러운"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S12",
@@ -3578,7 +3909,8 @@
     "만족스러운"
    ],
    "note": "좋아하는 노래를 들으며 등교했다",
-   "shared": true
+   "shared": true,
+   "intensity": 4
   },
   {
    "student_id": "S12",
@@ -3589,7 +3921,8 @@
     "설레는"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": true
+   "shared": true,
+   "intensity": 4
   },
   {
    "student_id": "S12",
@@ -3601,7 +3934,8 @@
     "포근한"
    ],
    "note": "체육 시간에 피구를 했다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S12",
@@ -3613,7 +3947,8 @@
     "홀가분한"
    ],
    "note": "좋아하는 노래를 들으며 등교했다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S12",
@@ -3623,7 +3958,8 @@
     "두려운"
    ],
    "note": "공부해도 점수가 안 오른다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S12",
@@ -3633,7 +3969,8 @@
     "여유로운"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S12",
@@ -3643,7 +3980,8 @@
     "고마운"
    ],
    "note": "체육 시간에 피구를 했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S12",
@@ -3653,7 +3991,8 @@
     "긴장되는"
    ],
    "note": "수학 쪽지시험을 망쳤다",
-   "shared": false
+   "shared": false,
+   "intensity": 1
   },
   {
    "student_id": "S12",
@@ -3664,7 +4003,8 @@
     "느긋한"
    ],
    "note": "좋아하는 노래를 들으며 등교했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S12",
@@ -3676,7 +4016,8 @@
     "편안한"
    ],
    "note": "동아리에서 새 활동을 시작했다",
-   "shared": false
+   "shared": false,
+   "intensity": 3
   },
   {
    "student_id": "S12",
@@ -3687,7 +4028,8 @@
     "자랑스러운"
    ],
    "note": "친구랑 매점에 갔다",
-   "shared": false
+   "shared": false,
+   "intensity": 2
   },
   {
    "student_id": "S12",
@@ -3697,7 +4039,8 @@
     "설레는"
    ],
    "note": "체육 시간에 피구를 했다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S12",
@@ -3707,7 +4050,8 @@
     "자랑스러운"
    ],
    "note": "발표를 무사히 끝냈다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S12",
@@ -3719,7 +4063,8 @@
     "홀가분한"
    ],
    "note": "친구랑 매점에 갔다",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   },
   {
    "student_id": "S12",
@@ -3730,7 +4075,8 @@
     "신나는"
    ],
    "note": "좋아하는 노래를 들으며 등교했다",
-   "shared": true
+   "shared": true,
+   "intensity": 3
   },
   {
    "student_id": "S12",
@@ -3740,7 +4086,8 @@
     "즐거운"
    ],
    "note": "",
-   "shared": false
+   "shared": false,
+   "intensity": 4
   }
  ]
 }
